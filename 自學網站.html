@@ -1,0 +1,2197 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<title>我的自學計畫</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
+<link rel="icon" href="0-應用型照片/1a6af2e11436.png">
+<style type="text/css">
+body {
+  font-family: "Karma", sans-serif;
+  background-color:	#E6E6FA;
+  }
+.w3-bar-block .w3-bar-item {
+  padding:30px
+  }
+.arrangement {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.custom-text {
+  background-color: black;
+  font-family: "menlo";
+  color: white;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+thead {
+  background-color: #FFE4E1;
+}
+tbody {
+  background-color:	#E6C3C3;
+}
+th ,td {
+  border: 1px solid	#000000;
+}
+
+
+.w3-button {
+  border: 4px solid 	#FFFF00;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 24px;
+  cursor: pointer;
+  background-color: #F4A460;
+  border-radius: 50px;
+}
+
+.top_button {
+  background-color: transparent;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.sidebar {
+  width: 1800px;
+  height: 250px;
+  background-color:	#808080;
+  border-radius: 70px;
+  position: fixed;
+  bottom: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  
+}
+.record.sidebar_button_1 {
+  width: 100px;
+  height: 100px;
+  border-radius: 360px;
+  top: 35px;
+  left: 110px;
+  position: absolute;
+  background-color:	#FF69B4;
+  border: 4px solid	#4B0080;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+  cursor: pointer;
+
+}
+
+.sidebar_button_1_1:hover::after {
+  font-family: "DFkai-SB";
+  content: "來看看看我的精彩記錄吧";
+  top: 130px;
+  left: 800px;
+  transform: translateX(-50%);
+  position: absolute;
+  text-align: center;
+  font-size: 40px;
+  color: 	#F08080;
+  white-space: nowrap;
+  font-weight: bold;
+}
+
+.introduce.sidebar_button_2 {
+  width: 100px;
+  height: 100px;
+  border-radius: 360px;
+  top: 35px;
+  left: 410px;
+  position: absolute;
+  background-color:	#1E90FF;
+  border: 4px solid #00477D;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 50px;
+  cursor: pointer;
+}
+.sidebar_button_2_1:hover::after {
+  font-family: "DFkai-SB";
+  content: "自我介紹";
+  top: 130px;
+  left: 550px;
+  transform: translateX(-50%);
+  position: absolute;
+  text-align: center;
+  font-size: 40px;
+  color:	#7FFFD4;
+  white-space: nowrap;
+  font-weight: bold;
+}
+.why_website.sidebar_button_3 {
+  width: 100px;
+  height: 100px;
+  border-radius: 360px;
+  top: 35px;
+  left: 710px;
+  position: absolute;
+  background-color:	#90EE90;
+  border: 4px solid	#32CD32;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 50px;
+  cursor: pointer;
+}
+.sidebar_button_3_1:hover::after {
+  font-family: "DFkai-SB";
+  content: "為什麼要設計這個網站";
+  top: 130px;
+  left: 200px;
+  transform: translateX(-50%);
+  position: absolute;
+  text-align: center;
+  font-size: 40px;
+  color:	#0fca2e;
+  white-space: nowrap;
+  font-weight: bold;
+}
+.mailto.sidebar_button_4 {
+  width: 100px;
+  height: 100px;
+  border-radius: 360px;
+  top: 35px;
+  left: 1010px;
+  position: absolute;
+  background-color:	#B399FF;
+  border: 4px solid	#6640FF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 50px;
+}
+.sidebar_button_4_1:hover::after {
+  font-family: "DFkai-SB";
+  content: "委員們如果有任何建議（不論非學方面或網頁方面）或有什麼想告訴我的都可以寄Email跟我說喔！";
+  top: 130px;
+  left: -100px;
+  transform: translateX(-50%);
+  position: absolute;
+  text-align: center;
+  font-size: 30px;
+  color: #b0a7e4;
+  white-space: nowrap;
+  font-weight: bold;
+}
+.why_homeschool.sidebar_button_5 {
+  width: 100px;
+  height: 100px;
+  border-radius: 360px;
+  top: 35px;
+  left: 1310px;
+  position: absolute;
+  background-color:	#96e6e6;
+  border: 4px solid	#057d77;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 50px;
+  cursor: pointer;
+}
+.sidebar_button_5_1:hover::after {
+  font-family: "DFkai-SB";
+  content: "為什麼會想要自學";
+  top: 130px;
+  left: -350px;
+  transform: translateX(-50%);
+  position: absolute;
+  text-align: center;
+  font-size: 40px;
+  color: #ed90ba;
+  white-space: nowrap;
+  font-weight: bold;
+}
+.about_website.sidebar_button_6 {
+  width: 100px;
+  height: 100px;
+  border-radius: 360px;
+  top: 35px;
+  left: 1610px;
+  position: absolute;
+  background-color:	#566ced;
+  border: 4px solid	#0D33FF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 50px;
+  cursor: pointer;
+}
+.sidebar_button_6_1:hover::after {
+  font-family: "DFkai-SB";
+  content: "架設網站的心路歷程";
+  top: 130px;
+  left: -650px;
+  transform: translateX(-50%);
+  position: absolute;
+  text-align: center;
+  font-size: 40px;
+  color:	#87CEEB;
+  white-space: nowrap;
+  font-weight: bold;
+}
+
+
+
+
+</style>
+
+</head>
+<body>
+
+
+<!-- 側邊欄 (默認為隱藏) -->
+
+
+<div class="sidebar w3-animate-bottom" style="display: none;" id="sidebar" >
+  <div class="record sidebar_button_1 sidebar_button_1_1" onclick="record_continue()">⇪</div>
+  <div class="introduce sidebar_button_2 sidebar_button_2_1" onclick="introduce_open()">𓀞</div>
+  <div class="why_website sidebar_button_3 sidebar_button_3_1" onclick="why_website_open()">✎</div>
+  <a href="mailto:leonchen012@gmail.com" onclick="send_mail()"
+    class="mailto sidebar_button_4 sidebar_button_4_1">✉</a>
+  <div class="why_homeschool sidebar_button_5 sidebar_button_5_1" onclick="why_homeschool_open()">𓍝</div>
+  <div class="about_website sidebar_button_6 sidebar_button_6_1" onclick="about_website_open()">☄</div>
+
+</div>
+
+
+<!--增加每週的紀錄鍵-->
+<form>
+<div id="myOverlay" onclick="closSidebar()"></div>  
+  <div class="w3-container">
+    <div id="id01" class="w3-modal">
+      <div class="w3-modal-content w3-animate-top" style="background-color:#F5FFFA; border-radius: 17px">
+        <div class="w3-container">
+          <span onclick="closedialog();" class="w3-display-topright" style="position:absolute; top:10px; right:10px; cursor: pointer;">關閉</span>
+          <p><textarea name="comments" placeholder="記錄期間" rows="1" cols="100" id="a"></textarea></p>
+          <p><textarea name="comments" placeholder="你的紀錄" rows="10" cols="100" id="b"></textarea></p>
+          <input type="file" accept=".JPG,.PDF,.DOC,audio/*,video/*,image/*" multiple>
+          <p><button id="send"
+            class="w3-btn w3-block">送出</button></p>
+        </div>
+      </div>
+      </div>
+    </div>
+  <div>  
+</form>
+
+
+<!--自我介紹文-->
+<div class="w3-container">
+  <div id="introduce" class="w3-modal">
+    <div class="w3-modal-content w3-animate-top" style="background-color: white; border-radius: 20px;">
+      <div class="w3-container" style="font-size :20px; ">
+        <span onclick="introduce_close();" class="w3-display-topright" style="position: absolute; top:10px; right:10px; cursor: pointer;">྾</span>
+          <p>嗨！我叫陳禮煬，目前是我自學已經第二年囉。那自從自學後，坐在電腦前寫程式、研究金融商品等等已經成為我的日常囉！（為什麼會說「金融商品」而不是「股票」呢？因為剛開始第一年我確實是只有學習「股票」的知識，但我到後來發現，其實金融商品都是環環相扣的。譬如說：假設要學習「定存」跟「活存」的差別好了，那大部分的人應該都知道，「定存」的利息雖然有，但是通膨的速度會把利息吃掉，所以帳面上來看有拿到錢，但其實算下來那時候的這個金額可以買的東西反而比現在還多。所以當我學到「通膨」的時候，又會牽扯到全球的整個經濟發展，那經濟的發展又跟股市以及虛擬貨幣圈能夠掛上關係。因此後來我決定，不能單單只有學「股市」，其他方面也要大概瞭解一下，我覺得這樣才算得上是學「完整」)。當然也不乏運動、社交以及課內學習，只不過這些佔的時間就不那麼多。
+          </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--為什麼要設計這個網站-->
+<div class="w3-container">
+  <div id="why_website" class="w3-modal">
+    <div class="w3-modal-content w3-animate-top" style="background-color: white; border-radius: 20px">
+      <div class="w3-container" style="font-size :20px">
+        <span onclick="why_website_close();" class="w3-display-bottomright" style="position: absolute; top:10px; right:10px; cursor: pointer;">྾</span>
+          <p>我會製作這個網站的最主要原因是想要知道自己的程度在哪裡。其實我在國中以前就有稍微的學習過一點程式，所以我在最一開始其實有寫過一個很簡單、極度單調的網頁。雖然做完的時候會很有成就感，但是大概10秒之後就覺得「嗯？難道我能夠這樣嗎？！」所以我決定要好好開始學寫網頁！！那再來第二原因是因為...[成果報告書]真的有點複雜@.@當我看到這個的時候我還滿慶幸我有這個紀錄哈哈，而且我想說：「喔耶～我不用寫這個了🤣」。但是人算不如天算...最後我還是沒辦法在學期內把整個網站弄好=.=“所以我緊急的完成了成果報告書(笑)。那為什麼我會進度這麼慢？因為我是用邊學邊做的方式，可能我想到要怎麼呈現，但是我不會啊，所以我就去查查查查查查....因此進度就會比較慢一點。
+            </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--為什麼想要自學-->
+<div class="w3-container">
+  <div id="why_homeschool" class="w3-modal">
+    <div class="w3-modal-content w3-animate-top" style="background-color: white; border-radius: 20px">
+      <div class="w3-container" style="font-size :20px">
+        <span onclick="why_homeschool_close();" class="w3-display-bottomright" style="position: absolute; top:20px; right:20px; cursor: pointer;">྾</span>
+          <p><br>
+            為什麼會想要自學，這個我覺得其實要追朔到2019-2020左右，那時候我無意間在圖書館時看到自學界大家都認識的「陳怡光」的「我家就是國際學校」這本書，而在我讀完之後，我就對自學這條路開始有了興趣。<br>
+            <br>
+            雖然說我們都知道全台灣最有名最早開始自學的是現在的數位發展部部長「唐鳳」嘛，但陳怡光是台灣自學機制建立以前比較早期的自學家庭，那目前自學的人口比例說真的是逐年提高。而且他直到現在也一直不斷地在推動台灣的自學教育，希望能夠讓自學的機制越來越完善。<br>
+            <br>
+            為什麼我讀完那本書之後會對自學產生興趣呢？因為我覺得說，即使國中是被編列在於義務教育中，但他也不是那麼的重要。總不可能我今天去路口的7-11買養樂多然後你問他說多少錢，他跟你解二元一次聯立方程式來取得要付多少錢吧。所以應該是說，國中以上的知識就比較偏向「專業化」一點了，那既然要朝著專業化前進，何不就在某個特別的領域「專業」呢？！而且這個特別的領域應該要是夠特別的，不夠特別的我不要。<br>
+            <br>
+            簡單來說就是學在學校學不到的東西而且也沒有學校會教的。這時我就想到了其實我一直以來都對程式跟金融感興趣，那以前是礙於說每天7:30到學校，下午4:00下課，晚上再去補習，因此沒時間去學課外我想學的東西。那這時候既然有自學這條路可以選擇，可以去學我一直想學的，而剛好爸媽也都覺得是可以走的一條路，那還有什麼猶豫的理由呢！於是我開始著手查詢自學相關的法規啊、成功與失敗案例、計畫書該怎麼寫、開始自學了可能會遇到的問題那要怎麼克服等等的，反正就是我已經想好很多自學後劇情會怎麼跑，那預先再去多做點功課這樣。甚至為了多了解自學一點，在小港有個是專門在幫助自學生或「拒學生」的一個學習機構叫做「only實驗教育」，我還有去參加他們的一個講述關於自學應該是什麼人適合以及自學背後真正意義的座談會。那查詢完、該了解的了解、想了解的了解之後再次確認自己心中的想法，就開始寫計畫書，之後送審，最後通過😍😍😍。<br>
+            <br>
+            審查時有個小插曲讓我到現在還印象深刻，因為審查總共有3階段，第一階段是先初步看看說有沒有什麼缺件需要補件的；第二階段就是評審委員對於這份自學計畫書覺得哪些地方有問題、有異議、有需要修改或者想要再多了解的地方；那這時候就走到第三階段是面審，面審之後如果還是沒有通過就真的正式被刷下來了。我還記得我那時候走到面審那一關的時候我很緊張，話都說不太好，因為我知道這次就是生死關卡了，勝敗只在一瞬間哈哈哈哈！不過索性最後是通過了。這真的要感謝審核我自學計畫書的評審委員們（謝謝～～<br>
+            <br>
+            說到這裡，我覺得其實台灣的教育體制可以學一下美國，（我喜歡在閒暇時間去看看世界各地國家的特色跟與台灣不同的地方哈哈）。像美國，國小部分我好像沒有看過，不過國中有分必修課跟選修課。在選修課中，學生可以依照自己的興趣跟專長來選課。雖然這又衍生到另一個問題，以亞洲的教育來說，基本上要叫一個人在國中時就已經知道自己的興趣跟專長是有點困難的，所以說要教育改革嘛…..也不是說改就改一天兩天就可以完成的事。那先不論功課量或是考試壓力等等，先只講「學習的豐富程度」就好了。在台灣，所有的東西都是必修，也就是說，不管你喜不喜歡、擅長不擅長，全部都得學、全部都得吸收，甚至後面還要考試。那這個的問題在於，譬如有些人真的是理科腦，你叫他去讀文科的，他覺得那是頭腦要爆炸的信號書；而有些人不管讀文科還是理科都一律掛點，但如果叫他去學個技能，他可以學得很快很厲害，甚至如果以學到的技能來養活自己的話，賺到的錢搞不好比你我多。那你可能就問到啦：「社團的運作有點像是選修，不對嗎？」你說的沒錯，社團運作像是選修，但也就是一些比較邊角餘料的東西，你說要在裡面真的學到比較稍微專業一點的，我想有一定的難度，到最後如果真的是要pro級的，還是要去外面另外找補習班。當然並不是說歐美的教育能夠在學校就完全學好，畢竟總是有一好沒兩好嘛；也不是說西方教育就是優質，東方教育就是比較低下。我想是互相學習，各有優缺點吧！那我覺得另一個問題是在於「考試」，台灣的考試壓力其實算滿大的，現在比較好了，聽說5,6,7年級生那種的真的可怕。不過我覺得考試壓力這個也不能夠怪誰啦，畢竟東方教育的風氣就是這樣：「讀書第一 其餘滾蛋。」<br>
+            <br>
+            </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--建立網站的心路歷程-->
+<div class="w3-container">
+  <div id="about_website" class="w3-modal">
+    <div class="w3-modal-content w3-animate-top" style="background-color: white; border-radius: 20px">
+      <div class="w3-container" style="font-size :20px">
+        <span onclick="about_website_close();" class="w3-display-bottomright" style="position: absolute; top:20px; right:20px; cursor: pointer;">྾</span>
+          <p><br>
+            關於建立網站的心（ㄍㄢ）路（ㄎㄨˇ）歷（ㄊㄢˊ🤣）程的話，其實您現在看到的這個顏色相當豐富的版本是已經第九代了。<br>
+            <br>
+            最初代是完全沒有顏色，只有白底黑字，也沒有最上面的導航欄（就是有標題然後左右各一個按鍵的那個），當然也就沒有現在的由下往上浮現的底部欄彈出式視窗囉。就只有底端一個橫幅寫標題（連標題的字也是死板板的，不是書寫體），下面開始排列黑白的第幾週第幾週紀錄開啟鍵。<br>
+            <br>
+            第二代我開始設計導航欄，左邊有側邊欄（那時候還是側邊欄）的按鍵、右邊有新增紀錄的按鍵。且這時標題的字就開始活潑起來囉！<br>
+            <br>
+            第三代我讓他的導航欄有顏色而且把中間的東西框起來，除此以外，其他的都還是黑白。<br>
+            <br>
+            第四代我開始將導航欄以外的背景塗上顏色，但第幾週第幾週的按鍵依然是黑白，也沒有滑鼠在按鍵上時顏色不見。<br>
+            <br>
+            第五代我稍微調整了一下按鍵與按鍵之間的間距，從本來左右只有10個像素，調到15個像素；本來上下只有2個像素，現在變成5像素。哇調完之後看起來清爽多了耶，不會像以前那麼擁擠。<br>
+            <br>
+            接下來第六代開始有重大更新啦！首先側邊欄已經不在側邊了，我把他從側邊改成在底部，並且所有的彈出式視窗都有入場的動畫。不然以前都是按，出現；按，消失。現在變成是由上往下滑入，感覺比較（優雅？）的進場哈哈哈。而所有的按鍵有顏色跟框線也是從這一代開始的，不過滑鼠懸浮時顏色不見還沒有。<br>
+            <br>
+            第七代是我自己程式碼內部的更新，因為我常常會去爬文學到很多東西很多呈現方式嘛，那我就把他用註解的方式打在我的「筆記區」裡面，但久而久之就變得很亂，所以需要整理一下。另外因為沒有經驗時不是很了解定義函式的撇步，那現在已經更迭到第七代了，少說也有點心得，所以就把單純用英數字組成的函式名稱改成以「那項函式代表的功能或代表的動作」來命名。這樣其實比較不容易亂掉，而且也不用再捲回去看說這個函式到底是為什麼要定義，因為看名稱就知道了啊！<br>
+            <br>
+            第八代，當我的滑鼠移到第幾週第幾週的按鍵時，他橘色會不見，但當我滑鼠移開時，橘色又會回來。我覺得這是一個多酷的設定啊！！另外，當滑鼠移到底部欄的某個按鍵時，一小行文字會出現這也是從這時候開始的。<br>
+            <br>
+            第九代就是您目前看到的版本，所有的東西包括彈出式視窗、按鍵的邊邊角角都被修剪成了圓弧的。我對這個版本非常喜歡🥰～<br>
+            <br>
+            此外，關於網站有一點是我想說的，其實依照我的A計畫，他應該是一個「超文本檔案」然後作為成果報告書表格的附件寄送給您。但這樣就變得非常麻煩，因為您還要先讀完我的成果報告書上關於網頁的說明，然後把做為附件的檔案下載進入您的電腦裡，才能開始看。但我想到您可能會因為擔心病毒或其他的問題而要求我以別種方式來交報告，那這樣我一年多的學習加上一年多的寫網頁不就白費了嗎😔😔。<br>
+            <br>
+            所以就進入B計畫，買一個網域。首先關於網域我想要先稍微介紹一下，網域的意思就是代表說，以這個網名的區域都是for這個網頁的。但網域有分免費的跟要錢的，當然我目前是進入C計畫，用免費的。我使用的是GitHub旗下的服務。要錢的，價格從下至百元上至百萬元都有，那百元俱樂部的雖然便宜，但我不敢買不敢用。而這時您可能會說：「你很奇怪耶，要錢的你不敢用，但免費的用得嚇嚇叫。」<br>
+            <br>
+            首先，我今天花錢買網域代表我希望我的網頁放上去是安全的嘛，不會容易被駭客盜入然後心血就全部丟進海裡了。那這種百元型態的網域他低於行情價，低於行情價的東西我想應該很多人會被自己或身邊的人勸退才是。他比較便宜，相較的他也有可能比較高風險。那為什麼GitHub我敢用？我先講一下GitHub是什麼，他是被譽為軟體工程師界的FaceBook的一個平台，世界各地的工程師們會把自己的程式碼放在上面跟大家分享，甚至有問題時也會在上面發問並取得解答。那為何我捨棄要錢的轉而投靠GitHub這種免錢的呢？因為GitHub他是間大公司，如果今天出事的話，那要擔心的應該不是只有我，其他在享用他們的服務的人應該也要擔心，但最擔心的應該是公司內部高層吧哈哈。<br>
+            <br>
+            不過是不是貴的網域就代表安全、就代表比較好？也不全然，通常網域的價錢除了取決於安全性之外，也取決於熱門性。如果今天這個網域是很多公司行號搶著要的話，那自然價格就會偏高（這時就看誰口袋深囉～）。另外還有一件事情對於價格有影響，就是結尾。普遍會看到就是.com結尾的，那這種的通常會稍微貴一點，再來其他的就是.net、.edu、.gov、.org等等的域名。這個的好處還有一個就是可以辨別類別，像我們看到edu就可以知道這是跟教育有關的；看到.gov就可以知道跟政府有關的。所以說網域的價格有很多的因素在控制，不能夠單單看一個面向來斷定他好或不好。<br>
+            <br>
+            </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 頂端選單 -->
+<div class="w3-top,w3-white,w3-xlarge,w3-button w3-padding-16 w3-left,w3-right,w3-center" style="background-color:#374947;">
+  <div class="w3-white w3-xlarge" style="max-width:800px;margin:auto">
+    <div class="top_button w3-padding-16 w3-left" onclick="sidebar_openorclose()">☰</div>
+    <div class="top_button w3-padding-16 w3-right " onclick="showdialog()">✚</div>
+    <div class="w3-center w3-padding-16 ">𝑴𝒚 𝒉𝒐𝒎𝒆𝒔𝒄𝒉𝒐𝒐𝒍𝒊𝒏𝒈 𝒂𝒄𝒉𝒊𝒆𝒗𝒎𝒆𝒏𝒕&𝒓𝒆𝒄𝒐𝒓𝒅</div>
+  </div>
+</div>
+      
+<!-- 頁面內容的排列 -->
+<div class="w3-main w3-content w3-padding arrangement" style="max-width:2400px;margin-top:70px ;font-size:22px; ">
+
+  <!-- 第一週的大門-->
+  <div class="w3-row-padding w3-padding w3-center arrangement " >
+    <div class="w3-button w3-padding w3-hover-none button_1:hover" onclick="w1_on()">第一週(2022/8/30-2022/9/6)</div>
+  </div>
+
+  <!-- 第二週的大門-->
+  <div class="w3-row-padding w3-padding w3-center arrangement" >
+    <div class="w3-button w3-padding w3-hover-none button_1:hover" onclick="w2_on()">第二週(2022/9/12-2022/9/16)</div>
+  </div>
+
+  <!-- 第三週的大門-->
+  <div class="w3-row-padding w3-padding w3-center arrangement" >
+    <div class="w3-button w3-padding w3-hover-none button_1:hover" onclick="w3_on()">第三週(2022/9/19-2022/9/23)</div>
+  </div>
+  
+  <!-- 第四週的大門-->
+  <div class="w3-row-padding w3-padding w3-center arrangement" >
+    <div class="w3-button w3-padding w3-hover-none button_1:hover" onclick="w4_on()">第四週(2022/9/26-2022/9/30)</div>
+  </div>
+  
+  <!--第五週的大門-->
+  <div class="w3-row-padding w3-padding w3-center arrangement" >
+    <div class="w3-button w3-padding w3-hover-none button_1:hover" onclick="w5_on()">第五週(2022/10/3-2022/10/7)</div>
+  </div>
+  
+  <!--第六週的大門-->
+  <div class="w3-row-padding w3-padding w3-center arrangement" >
+    <div class="w3-button w3-padding w3-hover-none button_1:hover" onclick="w6_on()">第六週(2022/10/10-2022/10/14)</div>
+  </div>
+  
+  <!--第七週的大門-->
+  <div class="w3-row-padding w3-padding w3-center arrangement" >
+    <div class="w3-button w3-padding w3-hover-none button_1:hover" onclick="w7_on()">第七週(2022/10/17-2022/10/21)</div>
+  </div>
+  
+  <!--第八週的大門-->
+  <div class="w3-row-padding w3-padding w3-center arrangement" >
+    <div class="w3-button w3-padding w3-hover-none button_1:hover" onclick="w8_on()">第八週(2022/10/24-2022/10/28)</div>
+  </div>
+  <!--第九週的大門-->
+  <div class="w3-row-padding w3-padding w3-center arrangement" >
+    <div class="w3-button w3-padding w3-hover-none button_1:hover" onclick="w9_on()">第九週(2022/10/31-2022/11/04)</div>
+  </div>
+  <!--第十週的大門-->
+  <div class="w3-row-padding w3-padding w3-center arrangement" >
+    <div class="w3-button w3-padding w3-hover-none button_1:hover" onclick="w10_on()">第十週(2022/11/07-2022/11/11)</div>
+  </div>
+  <!--第十一週的大門-->
+  <div class="w3-row-padding w3-padding w3-center arrangement" >
+    <div class="w3-button w3-padding w3-hover-none button_1:hover" onclick="w11_on()">第十一週(2022/11/14-2022/11/18)</div>
+  </div>
+  <!--第十二週的大門-->
+  <div class="w3-row-padding w3-padding w3-center arrangement" >
+    <div class="w3-button w3-padding w3-hover-none button_1:hover" onclick="w12_on()">第十二週(2022/11/21-2022/11/25)</div>
+  </div>
+  <!--第十三週的大門-->
+  <div class="w3-row-padding w3-padding w3-center arrangement" >
+    <div class="w3-button w3-padding w3-hover-none button_1:hover" onclick="w13_on()">第十三週(2022/11/28-2022/12/02)</div>
+  </div>
+  <!--第十四週的大門-->
+  <div class="w3-row-padding w3-padding w3-center arrangement" >
+    <div class="w3-button w3-padding w3-hover-none button_1:hover" onclick="w14_on()">第十四週(2022.12.05-2022.12.09)</div>
+  </div>
+  <!--第十五週的大門-->
+  <div class="w3-row-padding w3-padding w3-center arrangement" >
+    <div class="w3-button w3-padding w3-hover-none button_1:hover" onclick="w15_on()">第十五週(2022/12/12-2022/12/16)</div>
+  </div>
+  <!--第十六週的大門-->
+  <div class="w3-row-padding w3-padding w3-center arrangement" >
+    <div class="w3-button w3-padding w3-hover-none button_1:hover" onclick="w16_on()">第十六週(2022/12/19-2022/12/23)</div>
+  </div>
+  <!--第十七週的大門-->
+  <div class="w3-row-padding w3-padding w3-center arrangement" >
+    <div class="w3-button w3-padding w3-hover-none button_1:hover" onclick="w17_on()">第十七週(2022/12/26-2022/12/30)</div>
+  </div>
+  <!--第十八週的大門-->
+  <div class="w3-row-padding w3-padding w3-center arrangement" >
+    <div class="w3-button w3-padding w3-hover-none button_1:hover" onclick="w18_on()">第十八週(2022/01/02-2022/01/06)</div>
+  </div>
+  <!--第十九週的大門-->
+  <div class="w3-row-padding w3-padding w3-center arrangement" >
+    <div class="w3-button w3-padding w3-hover-none button_1:hover" onclick="w19_on()">第十九週(2022/01/09-2022/01/13)</div>
+  </div>
+  <!--第二十週的大門-->
+  <div class="w3-row-padding w3-padding w3-center arrangement" >
+    <div class="w3-button w3-padding w3-hover-none button_1:hover" onclick="w20_on()">第二十週(2023/01/16-2023/01/20)</div>
+  </div>
+  <!--第二十一週的大門-->
+  <div class="w3-row-padding w3-padding w3-center arrangement" >
+    <div class="w3-button w3-padding w3-hover-none button_1:hover" onclick="w21_on()">第二十一週(2023/01/30-2023/02/03)</div>
+  </div>
+  <!--第二十二週的大門-->
+  <div class="w3-row-padding w3-padding w3-center arrangement" >
+    <div class="w3-button w3-padding w3-hover-none button_1:hover" onclick="w22_on()">第二十二週(2023/02/06-2023/02/10)</div>
+  </div>
+  <!--第二十三週的大門-->
+  <div class="w3-row-padding w3-padding w3-center arrangement" >
+    <div class="w3-button w3-padding w3-hover-none button_1:hover" onclick="w23_on()">第二十三週(2023/02/13-2023/02/17)</div>
+  </div>
+  <!--第二十四週的大門-->
+  <div class="w3-row-padding w3-padding w3-center arrangement" >
+    <div class="w3-button w3-padding w3-hover-none button_1:hover" onclick="w24_on()">第二十四週(2023/02/20-2023/02/24)</div>
+  </div>
+  <!--第二十五週的大門-->
+  <div class="w3-row-padding w3-padding w3-center arrangement" >
+    <div class="w3-button w3-padding w3-hover-none button_1:hover" onclick="w25_on()">第二十五週(2023/02/27-2023/03/03)</div>
+  </div>
+  <!--第二十六週的大門-->
+  <div class="w3-row-padding w3-padding w3-center arrangement" >
+    <div class="w3-button w3-padding w3-hover-none button_1:hover" onclick="w26_on()">第二十六週(2023/03/06-2023/03/10)</div>
+  </div>
+  <!--第二十七週的大門-->
+  <div class="w3-row-padding w3-padding w3-center arrangement" >
+    <div class="w3-button w3-padding w3-hover-none button_1:hover" onclick="w27_on()">第二十七週(2023/03/13-2023/03/17)</div>
+  </div>
+  <!--第二十八週的大門-->
+  <div class="w3-row-padding w3-padding w3-center arrangement" >
+    <div class="w3-button w3-padding w3-hover-none button_1:hover" onclick="w28_on()">第二十八週(2023/03/20-2023/03/24)</div>
+  </div>
+  <!--第二十九週的大門-->
+  <div class="w3-row-padding w3-padding w3-center arrangement" >
+    <div class="w3-button w3-padding w3-hover-none button_1:hover" onclick="w29_on()">第二十九週(2023/03/27-2023/03/31)</div>
+  </div>
+  <!--第三十週的大門-->
+  <div class="w3-row-padding w3-padding w3-center arrangement" >
+    <div class="w3-button w3-padding w3-hover-none button_1:hover" onclick="w30_on()">第三十週(2023/04/03-2023/04/07)</div>
+  </div>
+  <!--第三十一週的大門-->
+  <div class="w3-row-padding w3-padding w3-center arrangement" >
+    <div class="w3-button w3-padding w3-hover-none button_1:hover" onclick="w31_on()">第三十一週(2023/04/10-2023/04/14)</div>
+  </div>
+  <!--第三十二週的大門-->
+  <div class="w3-row-padding w3-padding w3-center arrangement" >
+    <div class="w3-button w3-padding w3-hover-none button_1:hover" onclick="w32_on()">第三十二週(2023/04/17-2023/04/21)</div>
+  </div>
+  <!--第三十三週的大門-->
+  <div class="w3-row-padding w3-padding w3-center arrangement" >
+    <div class="w3-button w3-padding w3-hover-none button_1:hover" onclick="w33_on()">第三十三週(2023/04/24-2023/04/28)</div>
+  </div>
+  <!--第三十四週的大門-->
+  <div class="w3-row-padding w3-padding w3-center arrangement" >
+    <div class="w3-button w3-padding w3-hover-none button_1:hover" onclick="w34_on()">第三十四週(2023/05/01-2023/05/05)</div>
+  </div>
+  <!--第三十五週的大門-->
+  <div class="w3-row-padding w3-padding w3-center arrangement" >
+    <div class="w3-button w3-padding w3-hover-none button_1:hover" onclick="w35_on()">第三十五週(2023/05/08-2023/05/12)</div>
+  </div>
+  <!--第三十六週的大門-->
+  <div class="w3-row-padding w3-padding w3-center arrangement" >
+    <div class="w3-button w3-padding w3-hover-none button_1:hover" onclick="w36_on()">第三十六週(2023/05/15-2023/05/19)</div>
+  </div>
+  <!--第三十七週的大門-->
+  <div class="w3-row-padding w3-padding w3-center arrangement" >
+    <div class="w3-button w3-padding w3-hover-none button_1:hover" onclick="w37_on()">第三十七週(2023/05/22-2023/05/26)</div>
+  </div>
+  <!--第三十八週的大門-->
+  <div class="w3-row-padding w3-padding w3-center arrangement" >
+    <div class="w3-button w3-padding w3-hover-none button_1:hover" onclick="w38_on()">第三十八週(2023/05/29-2023/06/02)</div>
+  </div>
+  <!--第三十九週的大門-->
+  <div class="w3-row-padding w3-padding w3-center arrangement" >
+    <div class="w3-button w3-padding w3-hover-none button_1:hover" onclick="w39_on()">第三十九週(2023/06/05-2023/06/09)</div>
+  </div>
+  <!--第四十週的大門-->
+  <div class="w3-row-padding w3-padding w3-center arrangement" >
+    <div class="w3-button w3-padding w3-hover-none button_1:hover" onclick="w40_on()">第四十週(2023/06/12-2023/06/16)</div>
+  </div>
+  <!--第四十一週的大門-->
+  <div class="w3-row-padding w3-padding w3-center arrangement" >
+    <div class="w3-button w3-padding w3-hover-none button_1:hover" onclick="w41_on()">第四十一週(2023.06.19-2023.06.23)</div>
+  </div>
+  <!--第四十二週的大門-->
+  <div class="w3-row-padding w3-padding w3-center arrangement" >
+    <div class="w3-button w3-padding w3-hover-none button_1:hover" onclick="w42_on()">第四十二週(2023.06.26-2023.06.30)</div>
+  </div>
+  <!--第四十三週的大門-->
+  <div class="w3-row-padding w3-padding w3-center arrangement" >
+    <div class="w3-button w3-padding w3-hover-none button_1:hover" onclick="w43_on()">回顧篇{上}(2023/07/03-2023/07/07)</div>
+  </div>
+  <!--第四十四週的大門-->
+  <div class="w3-row-padding w3-padding w3-center arrangement" >
+    <div class="w3-button w3-padding w3-hover-none button_1:hover" onclick="w44_on()">回顧篇{下}(2023/07/10-2023/07/14)</div>
+  </div>
+
+
+  <!-- Second Photo Grid-->
+  <div class="w3-row-padding w3-padding-16 w3-center">
+
+  </div>
+</div>
+<!-- Pagination
+<div class="w3-center w3-padding-32">
+  <div class="w3-bar">
+    <a href="#" class="w3-bar-item w3-button w3-hover-black">«</a>
+    <a href="#" class="w3-bar-item w3-black w3-button">1</a>
+    <a href="#" class="w3-bar-item w3-button w3-hover-black">2</a>
+    <a href="#" class="w3-bar-item w3-button w3-hover-black">3</a>
+    <a href="#" class="w3-bar-item w3-button w3-hover-black">4</a>
+    <a href="#" class="w3-bar-item w3-button w3-hover-black">»</a>
+  </div>
+</div> -->
+      
+  <hr id="about">
+    
+  <!-- About Section -->
+
+  <hr>
+  
+<!--第一週的內容-->
+<div class="w3-container">
+  <div class="w3-modal" id="w1">
+    <div class="w3-modal-content w3-animate-top" style="background-color: white; border-radius: 20px">
+      <div class="w3-container" style="font-size :20px">
+        <span onclick="w1_off();" class="w3-display-bottomright " style="position: absolute; top: 20px; right:20px; cursor: pointer;">྾</span>
+        <p>2022.08.30-2022.09.06<br>
+          這個禮拜最開心的莫過於網站終於啟用啦!。雖然這個網站的外型是網路上找的，但是很多東西都是老師一步一步帶著我一起做。從一開始決定說要做網頁，到後來想說什麼地方要放什麼按鍵，每個按鍵裡面又有什麼內容，那或許這個區塊這樣設計會更好看等等。那能有這個成果真的非常感謝我的老師，他不只有教我怎麼設計網頁，甚至還給我建議怎麼做可以讓頁面看起來更豐富、更多元。最後我在這個”長期課程”中學到「永遠不要以為寫程式很簡單」，譬如說當我看到這個網站時(委員如果有空的話也可以去看看我在說哪個網站➡<a href="https://www.whatismyip.com.tw/" target="_blank">https://www.whatismyip.com.tw/</a>)，我以為這只是簡單幾行程式碼就搞定(很簡單嘛，你看，總共只有25行而已欸)，沒想到背後所有跟電腦端、伺服器端、網路端的連動是很複雜的。所以永遠不要以為做XXX事很簡單!!<br><br>
+          </p>
+      </div>
+    </div>
+  </div>
+</div> 
+
+<!--第二週的內容-->
+<div class="w3-container">
+  <div class="w3-modal" id="w2">
+    <div class="w3-modal-content w3-animate-top" style="background-color: white; border-radius: 20px">
+      <div class="w3-container" style="font-size :20px">
+        <span onclick="w2_off();" class="w3-display-bottomright" style="position: absolute; top: 20px; right:20px; cursor: pointer;">྾</span>
+        <p>2022.09.12-2022.09.16<br>
+          這個禮拜我第一次嘗試了當沖！！直到這禮拜，我終於瞭解了為什麼以前人們總是說：「做當沖心臟要很強。」我覺得是因為，當沖就是要在開盤到收盤這短短的4個半小時內買賣股票，那如果說判斷錯了或者是沒有抓準時機就有可能會錯失機會。講一個我的例子好了，我會習慣看「即時交易明細」那個表格來判斷說：從開盤到現在大家的買氣是怎樣，那這樣的趨勢可能會造成什麼走向、大概平均每個證券戶都買/賣幾張，由此看說大家是看好或不看好。最初我看那個表的目的確實是這樣，結果看到後來我發現了一個驚人的東西。有些時候可能只有過了5秒而已，但是價錢波動已經2-3塊過去了，我本來很不解為什麼會有這樣的現象發生，人手應該不可能按這麼快啊，就算可以，那網路的延遲呢？後來我查到了，其實造成這個現象的原因是機器人。有人利用寫程式的方式來控制這支的價錢上下，一開始我不信，但是後來結合了我的程式學習經驗，我想…機器人的判斷確實比人還要快沒錯。<br><br>
+          </p>
+      </div>
+    </div>
+  </div>
+</div> 
+
+<!--第三週的內容-->
+<div class="w3-container">
+  <div class="w3-modal" id="w3">
+    <div class="w3-modal-content w3-animate-top" style="background-color: white; border-radius: 20px">
+      <div class="w3-container" style="font-size: 20px">
+        <span onclick="w3_off();" class="w3-display-bottomright" style="position: absolute; top: 20px; right: 20px; cursor: pointer">྾</span>
+        <p>2022.09.19-2022.09.23<br>
+          這個禮拜我去考了全民英檢初級複試！！我覺得並沒有想像中的那麼難，但其實比想像中的還難。為什麼會這樣說呢？我覺得不難的地方在於那些題目、題型其實在平常時就已經練習過了，都只是換湯不換藥；而我覺得難的部分是正在做的事情的”名稱”跟平常不一樣，平常叫做「練習」，現在叫做「考試」。不知道為什麼，只要是跟「考試」相關的，那種壓力就會排山倒海地襲來(~_~;)。所以為什麼常常會有人，模擬考的時候明明成績還不錯、還滿亮眼的，結果去會考出來，那個成績根本不符合應有的水準。<br><br>
+          </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--第四週的內容-->
+<div class="w3-container">
+  <div class="w3-modal" id="w4">
+    <div class="w3-modal-content w3-animate-top" style="background-color: white; border-radius: 20px">
+      <div class="w3-container" style="font-size: 20px">
+        <span onclick="w4_off();" class="w3-display-bottomright" style="position: absolute; top: 20px; right: 20px; cursor: pointer">྾</span>
+        <p>2022.09.26-2022.09.30<br>
+          這禮拜我又重新開始學習刷機。其實這個項目是只在一年級的申請書裡面才有，二年級的我已經把這個刪掉了。那為什麼我會又重新開始學呢？因為在上一次(大概10個月前)有嘗試過，但是可能有幾個步驟沒有做好，所以我把手機搞壞了ಥ_ಥ（不過還好那個是已經很久然後被淘汰的舊SAMSUNG手機啦，所以壞掉了也無妨 也是因為這樣我才敢弄:D）。那看到這邊可能會有疑問說：「手機用的好好的，幹嘛沒事去搞個刷機呢？」我必須承認說我當初會想要學這個的原因之一是覺得說：「哇～如果能夠把手機裡的系統整個換掉，那將會是一件多酷的事情啊！」再來其二的原因是我本來就對電子產品有些興趣，也有些了解，而且這個跟程式也有點關聯!（雖然說弄的方式不太一樣。寫程式是從無到有完全自己創造，但刷機是按個按鍵讓手機進入刷機模式，然後用電腦做想要對手機做的事情。簡單來講就是比較簡單。）<br><br>
+          </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--第五週的內容-->
+<div class="w3-container">
+  <div class="w3-modal" id="w5">
+    <div class="w3-modal-content w3-animate-top" style="background-color: white; border-radius: 20px">
+      <div class="w3-container" style="font-size: 20px">
+        <span onclick="w5_off();" class="w3-display-bottomright" style="position: absolute; top: 20px; right: 20px; cursor: pointer">྾</span>
+        <p>2022.10.03-2022.10.07<br>
+          這個禮拜原諒我講點跟自學計畫沒有關係的：）<br>
+          我禮拜二(10/4)去了左營大路那邊買了一杯豆漿，但是跟其他不同。那杯帶有一點點的燒焦味，我覺得很奇怪，一開始以為只是品管不佳，煮焦了沒注意到然後拿出來賣。但是後來想到：「不可能沒注意到吧！把豆漿從鍋子裡倒出來時一定會發現鍋底燒焦了啊。」所以我拿出了我最擅長的技能「搜尋！」結果上面都說[那只是做得不好而已]。我還是不信！所以我打了電話到那間店，詢問說這個究竟是故意的還是只是真的做得不好而已？從那通電話以後我得到了答案。其實是故意煮燒焦的。因為左營大路那邊是早期國民黨的老兵們從中國撤退來台時居住的眷村密集所在地，早期中國戰爭頻繁，所以物資缺乏甚至根本無法專注於煮東西，因此就容易燒焦。那來台以後當然就把那邊的文化、習慣帶過來。所以燒焦的味道就自然而然形成了「古早味」的代表囉。（順帶一提，那間店已經是第三代傳承了）<br><br>
+          </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--第六週的內容-->
+<div class="w3-container">
+  <div class="w3-modal" id="w6">
+    <div class="w3-modal-content w3-animate-top" style="background-color: white; border-radius: 20px">
+      <div class="w3-container" style="font-size: 20px">
+        <span onclick="w6_off();" class="w3-display-bottomright" style="position: absolute; top: 20px; right: 20px; cursor: pointer">྾</span>
+        <p>2022.10.10-2022.10.14<br>
+          這禮拜我開始將重心移往「日文學習」的部分！<br>
+          以往的學習重心都在程式學習上面，日文方面都是狂背單字而已。現在開始，我會在文法上多加練習！！！！！來分享一個這週我學到的其中幾個好了。
+          <br>
+          【這是句型結構】<br>
+          例：私は学生(ga ku sei)です。(我是學生。)
+          其中「私は」就是日文文法中的「主語」（有點類似英文中的主詞）；而「学生です」就是日文文法中的「述部」。「述部」顧名思義就是對「主語」詳加描述或說明。
+          <br>
+          【這是助詞講解】<br>
+          例：あの方(ka tta)は先生です。(那位是老師。)＊日文的「先生」意思跟中文不同。
+          其中「は」就是助詞，用來提示主語。本身並沒有意義（有點像中文「這個啊」的那個「啊」）。日文文法中「助詞」的角色非常重要(不像中文會被當成贅字)。如果一個句子中沒有加入「助詞」，那單字與單字間就無法產生關聯。
+          <br>
+          【”です”到底是什麼？】<br>
+          常常都會看到「什麼什麼です」，但這個到底是什麼意思勒？其實日文的文體有分「丁寧體」和「普通體」，而「です」就是丁寧體，「だ」則是普通體，這兩個都屬於＜斷定助動詞＞，用來表示句子的結束。<br>
+          ＊並不是所有的句尾的丁寧體都是「です」。例如動詞句的丁寧體結尾就是
+          「ます」，不過這部分會在以後再做介紹。<br>
+          ＊關於「丁寧體」跟「普通體」之後會專門找一個禮拜來好好學、好好介紹！<br><br>
+          </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--第七週的內容-->
+<div class="w3-container">
+  <div class="w3-modal" id="w7">
+    <div class="w3-modal-content w3-animate-top" style="background-color: white; border-radius: 20px;">
+      <div class="w3-container" style="font-size: 20px">
+        <span onclick="w7_off();" class="w3-display-bottomright" style="position: absolute; top: 20px; right: 20px; cursor: pointer">྾</span>
+        <p>2022.10.17-2022.10.21<br>這禮拜我學了「python網頁爬蟲」。<br>這裡解釋一下網頁爬蟲。網頁爬蟲就是利用程式去抓取網頁中你想要的資料，亦可用網頁爬蟲充當使用者點擊網頁(就像是真人在跟網頁互動這樣)。例如說我到Pinterest(一個圖片分享網站)，然後查詢「五月天」。並且把搜尋結果的圖片一一存檔到自己的電腦上。那如果自己一個一個去按「另存圖片」這樣的話太花時間，這時候就凸顯出網頁爬蟲的重要性。我之所以會想要學習這個是因為其實只要懂html，那你的基礎已經被建立起來了，因為網頁爬蟲是要懂網頁的基本架構才有辦法去做一個取資料的動作。不過目前我才剛學一個禮拜，還有很多是不懂的。後續學了更多會再繼續補充分享～<br><br>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--第八週的內容-->
+<div class="w3-container">
+  <div class="w3-modal" id="w8">
+    <div class="w3-modal-content w3-animate-top" style="background-color: white; border-radius: 20px;">
+      <div class="w3-container" style="font-size: 20px">
+        <span onclick="w8_off();" class="w3-display-bottomright" style="position: absolute; top: 20px; right: 20px; cursor: pointer">྾</span>
+        <p>2022.10.24-2022.10.28<br>
+          接續上禮拜的網路爬蟲～<br>這禮拜我要分享的東西會比較鬆散，不會組合成一個文。<br>那首先是我學習到原來如果要用網頁爬蟲的話，會有另一個軟體。舉個例子，我通常是習慣用chrome，那chrome就會有一個chromedriver(以此類推，如果是其他的瀏覽器也會有各自的driver)。<br>第二個就是檔名盡量不要跟套件名稱重複。那什麼是套件名稱呢？套件名稱就是一個軟體包的名稱，譬如說在做爬蟲時比較被廣泛使用的套件叫做「selenium」，那可能會有人懶得想檔名，就直接用套件名稱下去命名，但是這樣是很容易讓程式執行時出錯的。<br><br>（然後全民英檢成績快要出來了，好期待啊( ^ω^ )）<br><br>
+          </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--第九週的內容-->
+<div class="w3-container">
+  <div class="w3-modal" id="w9">
+    <div class="w3-modal-content w3-animate-top" style="background-color: white; border-radius: 20px;">
+      <div class="w3-container" style="font-size: 20px;">
+        <span onclick="w9_off()" class="w3-display-bottomright" style="position: absolute; top: 20px; right: 20px; cursor: pointer;">྾</span>
+          <p>2022.10.31-2022.11.04<br>
+            [全民英檢初級分數出來了，結果還是沒過(哭哭…..)我已經考二次了，會再去考第三次的！！而且只會考三次！]<br><br>
+            這個禮拜我學到了如何表示「濕氣很重」的日文！<br>
+            因為這陣子高雄一直在下雨，所以我就去學了跟「下雨有關的」日文單詞，而「濕氣很重」是我想分享的其中一個。<br>
+            【單詞講解】<br>首先，濕氣的日文叫做「湿気si kke(有點像ㄒㄧ ㄎㄟ )」。然後中文都會說「濕氣很重」，但在日文基本上不會說「湿気が重い(濕氣是重的)」，通常都會說「湿気が多い(濕氣是多的)」或者是「湿気がすごい(直翻會變成 濕氣很厲害，所以比較好的是說 濕氣是嚴重得厲害)」。那反過來就是「湿気が少ない(濕氣是少的)」。<br>
+            【例句】<br>湿気がすごいから、除湿機もう１つ必要がな。(濕氣很重，可能會再需要一台除濕機。)<br>
+            而上述的例句中，「湿気がすごい」就是剛剛講的[濕氣是嚴重得厲害]。<br><br>
+            </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--第十週的內容-->
+<div class="w3-container">
+  <div class="w3-modal" id="w10">
+    <div class="w3-modal-content w3-animate-top" style="background-color: white; border-radius: 20px">
+      <div class="w3-container" style="font-size: 20px">
+        <span onclick="w10_off();" class="w3-display-bottomright" style="position: absolute; top: 20px; right: 20px; cursor: pointer">྾</span>
+          <p>2022.11.07-2022.11.11<br>
+            這個禮拜我又學到了新的「網頁爬蟲」的知識囉！<br>【以下這個括號都將會是程式碼】<br>
+            先解釋一個語法。＊selenium中的「.」代表是進到下一個動作喔！<br>
+            【A = driver.find_element(By.CLASS_NAME,"search-input")】
+            <br>
+            最前面的「A」代表是一個[變數]，變數有點像「代名詞」的感覺，也就是說|等於|後面的那一長串都可以用一個A來代表(概念有點形同選擇題的1,2,3,4)
+            <br>
+            “等於”後面的【driver.find_element】這句話的用意就是為了要找網頁中的「元素」是什麼。因為網頁爬蟲的目的就是要讓程式像是人在操作嘛，那我們在操作網頁時一定會先找我們要按的按鈕，然後才按下去。所以這句話{ driver.find_element }就是要讓電腦找我們要的區塊在哪裡。<br>
+            ＊[element]的t後面如果加了個”s”就表示要找的元素不止一個。<br>
+            
+            【By.CLASS_NAME】就是要讓電腦知道「如何找」。上面講過[driver.find_element]是用來找元素的，那[By.CLASS_NAME]就是代表「透過屬性名稱」來尋找。＊尋找可以有很多方法，可以透過CLASS_NAME(屬性的名稱)、可以透過ID(自命名的)、可以透過LINK_TEXT(按鈕顯示出來的文字)等等的很多方法。<br>
+            
+            【”search input”】這個是我想要找的屬性名稱的「名稱」。我告訴電腦接下來的這個動作的代表號是什麼、我也已經告訴電腦我想要尋找網頁中的元素、我甚至還告訴電腦我要用什麼方法來找，但這還不夠，現在我還要告訴電腦我想要找的元素名稱是什麼，而【”search input”】就是元素名稱的名稱。<br><br>
+            </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--第十一週的內容-->
+<div class="w3-container">
+  <div class="w3-modal" id="w11">
+    <div class="w3-modal-content w3-animate-top" style="background-color: white; border-radius: 20px;">
+      <div class="w3-container" style="font-size: 20px">
+        <span onclick="w11_off();" class="w3-display-bottomright" style="position: absolute; top: 20px; right:20px; cursor: pointer;">྾</span>
+          <p>2022.11.14-2022.11.18<br>
+            委員們看到現在，應該會很好奇：「為什麼好像已經好幾個禮拜都沒有紀錄”金融知識”相關的了？」我已經很久沒有親手體驗買賣了，其實我會放掉「親手體驗」的原因很簡單，因為這幾個月的股市超級爛。委員們回想一下就知道了，這幾個禮拜中國20大剛結束，對於如何解決台灣又是更加強硬、俄羅斯又開始徵兵、美國眾議院議長斐洛西訪台、拜登一再重申若兩岸開戰，屆時美方將會援助、中方不斷”提醒”台灣不要踩到紅線，以免後果難拾、晶片量囤積過多，導致台廠晶片訂單銳減、後疫情時代，科技業大公司不斷裁員，台灣將會被波及到。<br>種種的事件都會影響到投資人對於全台甚至全球未來的景氣感到極度擔憂，所以這個擔憂，就很硬的直接反應在了股市上面。基於此現象，我覺得此時進場可能不太好，因為以前在學習股市知識時有學到：「不要有賭徒心態，不要覺得這次賺下次一定賺，之前好≠現在好≠之後好，無時無刻保持邏輯思考、保持理智、保持判斷力。」萬一等下沒判斷好賠了錢，那就真的是後果”難拾”了。<br>不過我覺得這樣子繼續偏廢也不是辦法，所以接下來的走向會是開始進入「如何理財」的學習方面。會有這個想法是因為，有一天爸爸問我：「你覺得開源重要還是節流重要？」他這席話直接點醒了我！「對啊，如果一直賺錢一直賺錢，可是不會好好管理，不斷地讓金錢流失，那也還是沒用啊！」所以下禮拜開始會漸漸地分享我學習到的理財知識！
+            <br>（網頁爬蟲的學習大概告一個段落，因為充當使用者點擊網頁按鈕、抓取網頁資料、讓程式自動填入字等等，這些我都已經有學到，所以下一階段將會學習「圖像處理」）。<br><br>
+            </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--第十二週的內容-->
+<div class="w3-container">
+  <div class="w3-modal" id="w12">
+    <div class="w3-modal-content w3-animate-top" style="background-color: white; border-radius: 20px;">
+      <div class="w3-container" style="font-size: 20px;">
+        <span onclick="w12_off();" class="w3-display-bottomright" style="position: absolute; top: 20px; right: 20px; cursor: pointer;">྾</span>
+        <p>2022.11.21-2022.11.25<br>
+          這個禮拜我想要分享日文的學習部分！因為最近剛好讀到一些領域的專門用語，既然如此，就來分享一下跟我的剋星----數學有關的日文單字吧～<br>
+          首先，來講面積單位好了。＊如果有出現”―”代表的是長音的意思，日文中的”R”都會發成”L”的音，因為日文沒有捲舌這個東西。<br>
+          【平方公尺：平方(へいほうhei hou)メートル(me to ru公尺的意思)】<br>
+          【平方公分：平方(へいほうhei hou)センチメートル(sen chi me to ru公分的意思)】<br>
+          【平方公里：平方(へいほうhei hou)キロメートル(ki ro me to ru公里的意思)】<br>
+          接下來，是跟長度有關的單字。<br>
+          【公分：センチメートル(sen chi me to ru)】<br>
+          【公尺：メートル(me to ru)】<br>
+          【公里：キロメートル(ki ro me to ru)】<br>
+          【毫米：ミリメートル(mi ri me to ru)】<br>
+          其實稍加觀察可以發現，日文跟中文一樣，都是套個模式上去而已，而且這些都是片假名，片假名比較常用在講外來語的部分上，所以「メートル」就是英文的”meter”，而「センチメートル」當然就是英文的”centimeter”囉，同理可證，「キロメートル」就是英文的”kilometer”。<br>
+          最後是重量的部分。<br>
+          【公克：グラム(gu ra mu)】<br>
+          【公斤：キログラム(ki ro gu ra mu】<br>
+          其實這個也跟上面的一樣，「グラム」是英文的”gram”，所以「キログラム」就是英文的”kilogram”了。<br>
+          再讓我講最後一個「溫度」的單位好了。＊如果那個字的拼音有重複字頭的話代表是促音，促音就是要稍微停頓一下再繼續念。（書寫要表達促音是這個字”っ”。<br>
+          【攝氏：摂氏(se sshi)】<br>
+          【華氏：華氏(ka shi】（這個沒有重複字頭就不用停頓）<br>
+          【零下：零下(rei ka)】<br>
+            不過我開頭說的剋星其實並不是在這些裡面，而是現在的數學…..現在的真的好難喔><”。不過我覺得說真的，以上的日文真的算還滿簡單的，因為就只是把英文日文化而已。除了溫度之外，溫度唸起來就比較有中文的感覺了。<br><br>
+          </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--第十三週的內容-->
+<div class="w3-container">
+  <div class="w3-modal" id="w13">
+    <div class="w3-modal-content w3-animate-top" style="background-color: white; border-radius: 20px;">
+      <div class="w3-container" style="font-size: 20px;">
+        <span onclick="w13_off();" class="w3-display-bottomright" style="position: absolute; top: 20px; right: 20px; cursor: pointer;">྾</span>
+        <p>2022.11.28-2022.12.02<br>
+          這週來分享一些有關「理財」的好了！<br>
+          這幾天我發現了一個很棒的YouTube頻道，叫「堆金積玉」。我覺得這頻道內的內容都非常的讚！很有幫助。而且他不只是在講述跟「理財」方面有關的而已，更多的是還有講一些跟「元宇宙」、「加密貨幣」相關的，甚至還有講述「可以改變什麼生活習慣來提高工作效率」等等含金量非常高的影片內容！
+          不過今天我要分享的是完全顛覆我想像的東西----貸款。其實以我之前那些單薄的知識來說，我一直覺得說「貸款」就是跟未來借錢的感覺。我現在先預支，之後再慢慢還。但是在我看完了<a href="https://www.youtube.com/watch?v=CbWZhY98Cpk" target="_balnk">https://www.youtube.com/watch?v=CbWZhY98Cpk 這部影片後</a>之後，我整理出以下幾點：<br><br>
+          1.	有公司的人為何會對於貸款有好感？因為他們可以利用公司的名義去貸款，這樣做的話有幾個好處。首先因為可以有抵押品(不動產、動產、有價證券等)給銀行，所以獲得的貸款利率有機會是比較低的，這樣一來到時候要還的總金額就會跟一般的有差別了；再者，這樣做可以將公司的財務跟個人的財務分開來管理，而且，如果讓法人跟銀行建立良好的往來關係的話，這樣一來若公司未來成長需要資金周轉時，也比較容易拿到錢。<br><br>
+          2.	如果貸來的錢是為了讓錢去滾錢，而不是用來拆東牆補西牆，這樣的話就非常的值得。<br><br>
+          3.	其實如果資產大多是以股票的形式存在的話，他們可以拿股票去借錢。有幾個理由讓他們這麼做：<br>第一，當他們需要用錢時，並不會將股票賣掉去變現，而是用股票去抵押貸款。如此一來不但可以避稅，甚至在持有股票的情況下還能拿到錢。不過，用股票貸款還是有風險的。例如，如果該支股票的維持率低於130%，銀行就會通知必須在期限內補繳保證金，若沒補齊，銀行就有權利「直接」將抵押的股票售出。<br><br>
+          總的來說，其實貸款借錢並沒有想像中的那麼可怕，那麼高不可攀，那麼危險。其實只要好好善用槓桿以及一些巧妙的方法，貸款反而對自己是很大的益處呢！<br>
+          </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--第十四週的內容-->
+<div class="w3-container">
+  <div class="w3-modal" id="w14">
+    <div class="w3-modal-content w3-animate-top" style="background-color: white; border-radius: 20px;">
+      <div class="w3-container" style="font-size: 20px;">
+        <span onclick="w14_off();" class="w3-display-bottomright" style="position: absolute; top: 20px; right: 20px; cursor: pointer;">྾</span>
+        <p>2022.12.05-2022.12.09<br>
+          這禮拜總算到了講解「圖像處理」的階段了。不知道現在在看這個的您，還記不記得我在七年級的計劃書有提到「自走車」的部分呢？「自走車」顧名思義就是賦予它一些程式，然後他就會按照程式的指令去走。其實我坦白說，我會開始對程式有所興趣也是從這個東西開始的。那時候就覺得：哇～幾行英文字母就可以讓一台車亂亂跑，感覺真棒耶！（那時候還不知道程式碼）<br>
+          而自走車為什麼會自己走呢？沒有錯！答案就是我給他了一些指令。但是那時對程式完全不懂的我來說，天真的以為只要會一點點就可以讓他這樣
+          「ㄖㄨㄚˇㄖㄨㄚˇㄕㄜˊ(台語亂跑的意思)」。<br>沒想到，一進到程式的世界後發現：哇！跟我想像的好像有點不同呢….。所以我理應的就從頭開始學，而時至今日，不敢說我對這個領域很厲害，但是我覺得我應該已經贏了跟我同年紀的80%了(自己說XDXD)<br>
+          那我學習「電腦視覺」跟「圖像處理」與「圖型辨別」的函式庫是使用[OpenCV]。OpenCV是一個由Intel發起並研發的跨平台(跨平台意思是在不同的程式語言，不同的系統都可以用)開發性函式庫。而他可以應用到的領域涵蓋AR擴增實境、VR虛擬實境、臉部辨識、手勢辨識、動作追蹤辨識、物體辨識等等。不過剛剛講的「辨識部分」會在下一個階段來學習，現階段會學的有影像的色彩轉換、馬賽克效果、魚眼效果、掃描QRcode、即時在影像中繪圖。這些比較偏向「更改圖像的呈現」等等。那因為這系列真的比較難，所以我會用比較長的篇幅及時間來解釋(因為我學也花超多時間的….)。<br><br>
+          </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--第十五週的內容-->
+<div class="container">
+  <div class="w3-modal" id="w15">
+    <div class="w3-modal-content w3-animate-top" style="background-color: white; border-radius: 20px;">
+      <div class="w3-container" style="font-size: 20px">
+        <span onclick="w15_off();" class="w3-display-bottomright" style="position: absolute; top: 20px; right: 20px; cursor: pointer">྾</span>
+        <p>2022.12.12-2022.12.16<br>
+          這週講一下在日文中很特別的一個用法！<br>
+          【前言】<br>
+          在中文啊，如果說要將前句斷開後再接後句的話，就要使用逗號或分號之類的標點符號。而日文文法中有個東西很特別，他叫做「中止形」。中止形是用在於說，我想要將前句和後句斷開。在中文如果要斷開的話可以使用標點符號，但是有時候就會讓人搞不清楚說，現在的這個標點符號到底是要斷句勒，還是要停頓呼吸一下。不過如果使用這個「中止形」意圖就很明顯了，我強烈地表達句子進行到一半就中斷，下半句會用來承接前句。<br>
+          ＊形容詞、動詞也都可以接中止形喔！只是會有些許的變化，就像英文動詞三態一樣。<br>
+          【中止形的用法為何】<br>
+          名詞的中止形為「で」，而動詞、形容詞的中止形則為「て」，因此這個文法又被稱為「て形」。<br>
+          例如說：学生だ。２０歳だ。(學生。是20歲。)【中間用句號，兩個句子】<br>
+           学生で、２０歳だ。(學生是20歲。)  【中間用逗號，一個句子】<br>
+          由上述可知，如果斷定助動詞是「だ」，那也是只要將「だ」改變成「で」即可成為中止形。<br>
+          【連續敘述】<br>
+          在中止形裡，如果講述的主題是相同的時，那就會稱為「連續敘述」，而後面的主題就會被省略掉。<br>
+          例如說：私は学生です。私は先生ではあるません。「我是老師。不是學生。」<br>
+              私は学生で、先生ではあるません。「我是老師而不是學生。」<br>
+          上述例句，以「私」為主題，如此可以看出前後想要表達的主題相同，因此經過中止形的使用後，後句的主題「私」可省略。(有點像”我要吃飯。我要喝水”轉變為”我要吃飯也要喝水”。句子的主題是「我」所以後面就主詞省略掉了)<br>
+          【相對敘述】<br>
+          如果說句子前後主題不相同，那麼兩個主題都必須標示出來，這樣的情況稱為「相對敘述」。所謂相對敘述就是指，兩個主題各自描述，互不相同，能夠加以對照或補述。<br>＊弁護士(ben go shi)＝律師<br>
+          例如說：私は弁護士です。佐藤さんは弁護士ではありません。<br>
+              私は弁護士で、佐藤さんは弁護士ではありません。<br>
+          ＠這兩句的中文其實一樣，都是[我是律師。佐藤先生不是律師。]<br>
+          以「私」為主題，可以看出前後講的主詞並不相同，所以後面的主題不能省略，因為雖然都是在講律師的部分，但講的是兩個不同的人，故不能省略。此外，相對敘述也可稱為對比敘述，但並沒有那麼強烈的比較意味，而是偏向於單純描述。<br>
+          【總結】<br>
+          總的來說，其實中止形某些情況有點語氣轉折的用意，但又有點連接詞的感覺。<br><br>
+          </p>
+      </div>
+    </div>
+  </div>
+</div>
+<!--第十六週的內容-->
+<div class="w3-container">
+  <div class="w3-modal" id="w16">
+    <div class="w3-modal-content w3-animate-top" style="background-color: white; border-radius: 20px;">
+      <div class="w3-container" style="font-size: 20px">
+        <span onclick="w16_off();" class="w3-display-bottomright" style="position: absolute; top: 20px; right: 20px; cursor: pointer;">྾</span>
+        <p>2022.12.19-2022.12.23<br>
+          這週是聖誕節）耶～聖誕快樂🥳，雖然說對台灣人來講今天是行憲紀念日啦哈哈哈。<br>既然是聖誕週，那很多的電商購物平台都一定會祭出很多的優惠嘛。那要如何以最小的錢買到可以帶來最大利益的東西呢？對我來說所謂最大利益就是讓自己可以比較快樂或者是覺得說：「哇！這東西，超值耶。」這就跟我這週學習到的理財知識有關啦～今天的內容同樣是從「堆金積玉」這個YouTube頻道得知的！<br>
+          1.	首先，我覺得有一句話他講得非常好。「施比受更有福」其實當我們把錢拿來做慈善或幫助”真正”有需要的人時，感受到的快樂或幸福是翻倍的。因為捐助的當下你會覺得說：「恩！我是在幫助別人。」所以帶來的快樂當然也會很大囉。<br>
+          2.	另一個我覺得很棒的是，花錢投資自己的頭腦。最主要是因為自己頭腦裡面的東西任何人都偷不走，這是絕對的！而且花錢精進自己，學成後，還會有很大的成就感。就拿我自己來說好了，我在2022 七月份，有去上了線上的程式課程，再後來，我還有另外去上更深入的python課程(還滿貴的….)。但是，貴歸貴，學到的東西我覺得很有價值，因為你看嘛，我花了這個錢是為了讓自己不斷進化不斷進化，而且以後還會用得到；反之，如果今天這個錢是拿來做娛樂性的消費，那他的附加價值不是持續性的，而是單單這次而已。當然不是說娛樂不好，娛樂當然好，有時候需要讓自己休息一下放鬆一下，這是必須的。不過如果娛樂跟學習的比例失衡時，就應該要來稍微地反思一下，是否哪裡需要改善。<br>
+          3.	如果你要買的東西不是”需要”，而是”想要”，那這樣的話可以考慮做「延遲消費」。什麼是延遲消費呢？簡單來說，就是想買的當下先壓制住自己的慾望(當然這個有時候可能做不到)，等到可能一天過後再來決定要不要真的購買。這段時間你可以好好了解這個東西。對某項東西了解更深，你會更知道如何利用他，等到了解完之後再來思考自己是不是真的需要這項東西呢？還是其實也有別的東西可能性能稍微差一點，但是可以帶來的利益是相同的。其實「延遲消費」跟一個很著名的心理學研究實驗「史丹佛棉花糖實驗」有相關。這項實驗證明了等待之後換得的利益會遠比當下直接滿足衝動還要來得高。<br>
+          4.	我想分享的最後一項是[花錢購買時間]。我以前會覺得說：「蛤？！怎麼可能錢可以買得到時間嘛，時間又不是物質可以拿來做交易」，但是我錯了，其實可以”間接性”地去購買時間。譬如說，你的公司請了很多名員工，而你把本應該是自己的工作分配給了每個人。如此一來你就沒有事情啦，那這段時間如果拿去陪伴家人、去玩、做對自己健康有益的事甚至是精進自己，那這樣不是很值得嘛？畢竟健康、親情、愛情、友情、朋友、家人，這幾樣東西不論如何都是沒有辦法用錢去衡量、去買到的。<br>
+          以上這幾點也許乍看之下跟理財沒有太大的關係，但是其實大有關聯性呢。如果不好好的照顧好自己的健康，那賺再多的錢也都是沒用的，因為錢生不帶來死不帶去的，最後唯一會持續留存的，只有回憶。<br><br>
+          </p>
+      </div>
+    </div>
+  </div>
+</div>
+<!--第十七週的內容-->
+<div class="container">
+  <div class="w3-modal" id="w17">
+    <div class="w3-modal-content w3-animate-top" style="background-color: white; border-radius: 20px;">
+      <div class="w3-container" style="font-size: 20px;">
+        <span onclick="w17_off();" class="w3-display-bottomright" style="position: absolute; top: 20px; right: 20px; cursor: pointer;">྾</span>
+        <p>2022.12.26-2022.12.30<br>
+          這禮拜就要跨年了🥳，先預祝您新年快樂(雖然您在看的同時已經是年中了哈哈)。那希望2023可以比2022更進步，經濟發展更好，疫情快快減緩，科技越來越先進，人類越來越進化。當然最後，還是要希望我的學習越來越進步囉！<br>
+          其實本來上上週(12月中下旬)，我就已經開始了OpenCV系列的學習。但是意料之外的是，學習OpenCV前，竟然還有一關要過，那就是NumPy。什麼是NumPy呢？ NumPy是設計來做高階且大規模的多維陣列與矩陣運算(下禮拜會再來詳細介紹NumPy，現階段只要先知道NumPy的專長是處理高程度運算的資料，特別於數學上)。在我踏入NumPy的領域後，又發現：「哇！這裡是我的學習死角耶。」為什麼會說是「學習死角」呢？因為裡面有些東西是我根本連看都沒看過、連聽都沒聽過的。例如：多維陣列ndarray(N-Dimensional Array)。<br>
+          ndarray他的用處跟python本身的「list」是一樣的，但他的運算速度遠高於python list。ndarray是NumPy中最核心的一個物件，不過ndarray只能夠用於儲存同質型別的數字物件，也就是說，在ndarray中所有的元素都必須是相同類型的數字(例如整數或浮點數)。而剛剛有講到，NumPy的專長是在處理數學資料，所以我可以使用ndarray很容易地計算數值的平均數、標準差、中位數等等。<br>
+            總的來說，ndarray最具特色的地方在於，他是一個很高效的資料型態，可以用來儲存和處理”大量”的數據，此外，他也提供了許多方便的函式，幫助快速進行計算、分析和轉換數據。<br>
+          ＊python list可以儲存任何類型的物件。<br>
+          ＊在程式中，浮點數跟小數都可以表示帶有小數點的數值，但是是兩種不同的資料型態。<br>
+          ＊NumPy是Python的其中一個套件，並不是一個語言喔。跟爬蟲用的selenium套件屬於同一種類型。<br>
+          [以下在講解什麼是「同質型別」，多維陣列稍後會提到]<br>
+          ＊NumPy ndarray只能儲存同質型別的物件。同質型別的意思是相同的類型：譬如說，<span class="custom-text">a=np.array(["abd","bpqz","ciewu","dovmrs"])</span>。在中括號內部的英文字母在NumPy的世界裡稱為「Unicode字符」，不過在Python沒有安裝任何套件之下，他稱為「字串」，但其實指的是同一種東西。(只要有用””這樣括號括起來的都叫字串。)<br>
+          上面那行是擷取其中一部分，以下是完整的：(先放一點點就好,一次太多會頭痛😂)<br>
+          <span class="custom-text">1.import numpy as np<br>
+          2.a=np.array(["abd","bpqz","ciewu","dovmrs"])<br>
+          3.print(a.dtype)<br></span>
+          ＊一般來說不會有1.2.3，那是我為了講解故意放上去的。<br>
+          第一行代表的是我在這個code檔案中載入NumPy套件，以便我操作NumPy；後面的as是代表我簡寫了這個套件的名稱(自創的，也就是說我如果不想用[np]也可以用其他任何的名稱來簡寫)。<br>
+          第二行是代表我自創一個變數，而變數名稱是「a」；np.array(  )代表我使用NumPy(已經被我縮寫成np)這個套件裡面的「array」功能。而中括號裡面的英文字母就是我給這個array賦予的資料。另外，在陣列裡，字串的外部一定要放中括號，這是固定用法。<br>
+          第三行，print表面上看起來像「列印」的意思，但在python中，他更接近「輸出」的意思。所以這句話意味著我要輸出「a」這個變數的「dtype」(dtype是數據類型，data type的簡稱)。而最後，他就會輸出「＜U6」。其中「＜」代表有比6這個數量還要再少的字符，「U」表示著這個變數裡的資料全部都是字符(Unicode的簡寫)。<br><br>
+          </p>
+      </div>
+    </div>
+  </div>
+</div>
+<!--第十八週的內容-->
+<div class="w3-container">
+  <div class="w3-modal" id="w18">
+    <div class="w3-modal-content w3-animate-top" style="background-color: white; border-radius: 20px;">
+      <div class="w3-container" style="font-size: 20px;">
+        <span onclick="w18_off();" class="w3-display-bottomright" style="position: absolute; top: 20px; right: 20px; cursor: pointer;">྾</span>
+        <p>2022.01.02-2022.01.06<br>
+          【開年第一週，就先來個超長篇醒醒腦🤣嚇死人🤣我自己也是寫完然後在校稿的時候才發現，哎呦～怎麼那麼多啊😨😂】<br><br>
+          我上禮拜本來說「要在下禮拜(也就是這週)再來好好的介紹「NumPy」，但是在我不斷的爬文、看教學影片、問老師之後我發現，其實NumPy的主要內容就是「ndarray」(上禮拜有講到“核心物件”兩個字沒有錯，可是那時候我還不知道說”核心”在NumPy代表”主要使用”)。所以與其說是在講解NumPy，倒不如說是在細講ndarray！那上禮拜的ndarray段落有稍微介紹到這是什麼東西，而今天就要開始真正的講解囉～在這之前，我想先講一個東西，因為這次要分享的是ndarray的「基礎、入門」部分，所以只會講到不同維度的陣列。再後續，等我再學到更深入時會再進行分享！<br>
+          <br>
+          <br>
+          【一維陣列】<br>
+          <span class="custom-text">a=np.array([3,5,8])</span><br>
+          ＠根據中括號建立一維陣列<br>
+          這邊的”a”跟上次一樣，也是一個變數名稱，變數裡面儲存的資料是等號右邊的那些(然後因為”變數”這個概念在以後會很常用到，所以我在這裡講解(也許以前講過了，但是再講一次印象會更深)，以後就不再介紹囉。這邊用箱子來比喻，變數是也貼識別貼紙的紙箱，「變數名稱」就是貼在箱子封面的貼紙，而等號右邊的東西就是紙箱裡面的內容物。)<br>
+          Np.array(  )的部分上禮拜講過所以就不再講囉！<br>
+          [3,5,8]中括號(以下簡稱列表)裡面的3,5,8是代表我傳入的值是”3”,”5”,”8”，而後面輸出的時候就會顯示這三個數字給我，像這樣：[3 5 8]。<br>
+          <span class="custom-text">b=np.empty(4)</span><br>
+          ＠建立已確定資料數量但資料未指定的一維陣列<br>
+            “empty”在英文單字上看起來是空白的意思，但是在NumPy的世界裡，他更接近為「未指定」。而empty(  )這句話的意思就是說：我建立一個擁有4個資料的一維陣列但資料是隨機出現的。那想要建立幾筆資料，就在括號中隨意更改數字。所以這行的輸出就是：<span class="custom-text">[ 1.28822975e-231 -1.49457712e-154  9.88131292e-324  2.78134232e-309]</span>。當您看到這行輸出時應該跟我最初看到的時候一樣吧。「蛤？！這是什麼東西？？？未指定怎麼會是出現一堆奇怪的英文跟數字勒？？？」那其實我查了很久我也查不到答案是為什麼的，只能夠說也許這是程式自己按照記憶體的回傳嘛？其實我也不知道。而且喔！對於這行程式碼每一次的輸出都是不同的，有些時候是這種英數組合的，有時候是完全都是0的，也有時候是純英文，所以還滿奇怪的。<br>
+          <span class="custom-text">c=np.zeros(3)</span><br>
+          ＠建立資料都是0的一維陣列<br>
+          這個”zeros”就應該很明顯吧，顧名思義，顯示出有3個0的一維陣列，那括號中的數量一樣是可更改的，輸出後會是這樣：<span class="custom-text">[0. 0. 0. ]</span>。而這個函式特別的地方在於，他的預設輸出是使用浮點數。浮點數在上週有講過了，他跟小數是兄弟。<br>
+          <span class="custom-text">d=np.ones(7)</span><br>
+          ＠建立資料都是1的一維陣列	<br>
+          這個跟剛剛的”zeros”是一樣的。輸出7個都是1的資料，顯示方式也同樣會用浮點數。像這樣：<span class="custom-text">[1. 1. 1. 1. 1. 1. 1.]</span><br>
+          <span class="custom-text">e=np.arange(50)</span><br>
+          ＠建立連續資料的一維陣列	<br>
+          這個”arange”的用意在於，我想要建立一個到50為止的連續資料的一維陣列。同樣括號中的數字可以隨意更改。不過在這裡值得留意的事情是，在python的世界中，第一個數字永遠是0開頭，像我們常人來說，1是開頭嘛，再來才23456789念下去。但在python的世界中，0是開頭，再來才123456789念下去。也就是說，我總共想要50筆資料，所以他會是0開始，而49作為最後一筆資料。輸出會像這樣：<br>
+          <span class="custom-text">[ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23<br>
+           24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47<br>
+           48 49]</span><br>
+          好的，那以上呢，就是「入門」部分一維陣列的一些學習分享囉，那接下來往二維陣列邁進！<br>
+          【二維陣列】<br>
+          <span class="custom-text">f=np.array([<br>   
+              [5,9],<br>
+              [1,4],<br>
+              [8,3]<br>
+          ])</span><br>
+          ＠根據列表建立一個2x3的二維陣列<br>
+            從二維陣列開始，因為資料比較多，維度比較高，也很吃邏輯理解能力，所以比較頃向做縮排的動作，如此一來會比較好理解。<br>
+            那這邊您應該會很好奇：「一維跟二維是差在哪裡呢？還有，要怎麼分辨是幾維的陣列呢？」(因為這就是我最初的疑問＞.＜)。我先講差別的部分，二維陣列有點像「表格」的概念，而一維就是最基礎的陣列概念。簡單講就是「一維」是只有一列，「二維」則是有「列」也有「欄」(有兩個不同的層次)；再來，分辨幾維很簡單。也是利用「層次」就看得出來，像上述例子，有兩組中括號，一組是完全包住所有資料(包括列表、列表內容)，另一組則是單純包住列表內容。這樣講也許有點抽象，以表格的概念來說的話，外部的中括號就是表格最外層邊框，而內部的中括號則是各個資料的邊框。<br>
+            另外，我在＠的後面有提到「3x3」的部分，這個3x3也是跟表格那邊學來的。您想像一下，要快速計算九宮格的格子有幾個時，是不是也要列乘以欄呢。那3x3的概念也是如此。列是橫的，而橫的有3個數字；欄是直的，而欄有3筆資料，算起來就可以知道是幾乘幾的陣列，還可以知道總共有幾筆資料在這個變數中。順帶一提，ndarray這個函式所存放的資料數量一定都要是一樣的，不能夠這列是4筆資料，但下一列卻有7筆。不過如果硬要這麼做的話當然也可以，只不過輸出就不會是以ndarray的方式來顯示了，而是python原生的list。像這樣：<br>
+            <span class="custom-text">[list([5, 9, 4]) list([1, 4, 7]) list([8, 3, 1, 5])]</span><br>
+          不過，如果是按照ndarray的規則來走的話，輸出就會是這樣：<br>
+          <span class="custom-text">[[5 9 4]<br>
+           [1 4 7]<br>
+           [8 3 1]]</span><br>
+          -----------------------------------------------我是例子分隔線-----------------------------------------------------<br>
+          <span class="custom-text">g=np.empty([3,3])</span>
+          ＠建立資料未指定的3x3的二維陣列<br>
+            不管是幾維陣列，他所可以用的函式都一樣，一維有”empty”有”zeros”有”ones”，二維當然也有、即使到了三維也不會缺、甚至到了多維陣列依然存在。所以接下來我只會拿「根據列表」跟「empty」來做範例囉！畢竟一樣的東西不用玩那麼多次。<br>
+            在這個範例中，有兩個3代表有兩個層次也同時說明了他是二維陣列(因為有兩個層次的關係)，而這種的要分辨幾乘幾以及有幾筆資料很簡單，完全不需要顧慮到列或是欄的問題，只需要將中括號內的數字結合起來就可以知道了。譬如說：上面是2個3，所以3乘以3等於9，那就會有九筆資料在這個陣列裡。輸出是這樣的：<br>
+            <span class="custom-text">[[ 2.60605835e-31 -5.21211670e-31  1.30302917e-31]<br>
+           [-5.21211670e-31  1.13363538e-30 -3.51817877e-31]<br>
+           [ 1.30302917e-31 -3.51817877e-31  2.01969522e-31]]</span><br>
+          （跟剛才一樣，empty的輸出具有不確定性）<br>
+          【三維陣列】<br>
+          <span class="custom-text">i=np.array([<br>    
+              [<br>
+                  [5,4],[8,3]<br>
+              ],[<br>
+                  [4,7],[2,1]<br>
+              ]<br>
+          ])</span><br>
+          ＠根據列表建立三維陣列<br>
+            二維跟三維的差別在於，二維是類似表格「列」跟「欄」的概念，而三維則是類似「空間座標系統」的概念。空間座標系統是x,y,z嘛，簡單講就是長、寬、高！<br>
+            (因為括號越來越多，所以我用顏色來分應該比較清楚)。三維就是有三個層次，第一個層次是黃色的那層，也就是最外層；第二個層次是紫色跟紅色那層(這裡也許有疑問，沒關係，等等再來講)；而最後一層也就是第三層則是藍色的那層，不過藍色裡面雖然有資料，但沒有層次，所以藍色就是最後了。<br>
+            紫色跟紅色我明明是用不同的顏色區分開來，他們也確實是包不同的內容，那為何他們會被歸類為同一層呢？其實在程式的世界裡是「縮排」來分類的。用小數直式加法計算的概念來講好了，小數加法計算的時候不是要小數點對小數點，代表同個位數嗎。這個同理，只要是同一個縮排的都是同一層。像紫色跟紅色都是縮排四格，所以屬同一層；全部藍色都是縮排八格，屬於同一層；黃色比較特別一點，雖然沒有縮排之分，但是他是跟著小括號的，所以算是最外層。而這個三維陣列輸出後是這樣：<br>
+            <span class="custom-text">[[[5 4]<br>
+            [8 3]]<br>
+          <br>
+           [[4 7]<br>
+            [2 1]]]</span><br>
+          <br>
+          <br>
+          <span class="custom-text">k=np.empty([2,2,3])</span><br>
+          ＠建立一個資料未指定的三維陣列<br>
+            這個其實沒有什麼好講，還滿簡單的！跟二維一樣，數字乘起來就知道資料數量。輸出會是如此：<br>
+            <span class="custom-text">[[[-2.00000000e+000 -2.00000000e+000 -6.42285340e-323]<br>
+            [ 0.00000000e+000  2.12199579e-314  0.00000000e+000]]<br>
+          <br>
+           [[ 0.00000000e+000  0.00000000e+000  1.77229088e-310]<br>
+            [ 3.50977866e+064  0.00000000e+000  0.00000000e+000]]]</span><br>
+          因為2x2x3的答案是12，所以這裡總共有12筆資料分別列出來！<br>
+          【高維陣列】<br>
+          最後，大魔王出現了！！高維陣列！！！！<br>
+          <span class="custom-text">m=np.array([ <br>
+              [<br>
+                  [<br>
+                      [4,8,9],<br>
+                      [6,0,2]<br>
+                  ]<br>
+              ]<br>
+          ])</span><br>
+          ＠建立一個1x1x2x3的高維陣列<br>
+          ＊高維陣列指的是三維以上都叫高維陣列，不論四維五維六維七維都統稱高維。<br>
+            其實要說是大魔王也不全然是大魔王啦，只要搞懂了三維陣列的遊戲規則，其實四維陣列的概念也只是複製過來而已。同樣的，紅色是第一層、橘色第二層、綠色第三層、黃色第四層，而黃色裡面除了數字以外就沒有再包了，所以黃色是最後一層。<br>
+            在這個範例裡，我要特別解釋一下「幾乘幾的陣列」這個部分。在高維陣列中，過去的那個九宮格計算法已經不能用，因為太多的層次一一出現，所以我要講一個全新的方法：紅色裡面只有放橘色一個(橘色裡包的不能夠算)，所以為什麼是1x；橘色裡面只有放一個綠色(綠色裡面不能夠算)，所以為什麼是1x1；綠色裡面有放兩個黃色(黃色裡面不能夠算)，所以為什麼是1x1x2；黃色裡面有放3個數字資料，所以為什麼是1x1x2x3。這個數串的組成就是這樣。不過，計算資料數量的那個公式還是可以用的，1x1x2x3的答案是6，所以輸出就是這樣：<br>
+          <span class="custom-text">[[[[[4 8 9]<br>
+           [6 0 2]]]]]</span><br>
+          共有6筆資料顯示出來。<br>
+          <span class="custom-text">n=np.empty([3,2,2,7])</span><br>
+          ＠設計一個資料未指定的3x2x2x7的四維陣列<br>
+            3x2x2x7的答案是84，所以會有84筆未指定的資料。像這樣：<br>
+            <span class="custom-text">[[[[ 0.00000000e+000  0.00000000e+000  4.79243676e-322  4.44659081e-323<br>
+               4.44659081e-323  7.07218180e-304  2.27556554e-284]<br>
+             [ 1.50928030e-207  1.57795172e-260  2.19019342e-314  2.19019342e-314<br>
+               2.19019342e-314  6.94588327e-310  6.94588326e-310]]<br>
+          <br>
+            [[ 6.94588327e-310  0.00000000e+000  0.00000000e+000  0.00000000e+000<br>
+               0.00000000e+000  0.00000000e+000  2.28044728e-314]<br>
+             [ 2.28044757e-314  2.28044719e-314  5.30507366e-313  4.44659081e-323<br>
+               0.00000000e+000  4.44659081e-323  0.00000000e+000]]]<br>
+          <br>
+           [[[ 2.18668578e-314  2.27736836e-314  3.95252517e-323  0.00000000e+000<br>
+               3.95252517e-323  6.94588327e-310  6.94588326e-310]<br>
+             [ 6.94588327e-310 -3.43361355e+306  2.18702937e-314  2.28020142e-314<br>
+              -3.94462593e-014  2.28019538e-314  6.94588180e-310]]<br>
+          <br>
+            [[ 0.00000000e+000  0.00000000e+000  0.00000000e+000  0.00000000e+000<br>
+               0.00000000e+000  0.00000000e+000  0.00000000e+000]<br>
+             [ 0.00000000e+000  0.00000000e+000  0.00000000e+000  0.00000000e+000<br>
+               0.00000000e+000  0.00000000e+000  0.00000000e+000]]]<br>
+          <br>
+           [[[ 0.00000000e+000  0.00000000e+000  0.00000000e+000  0.00000000e+000<br>
+               0.00000000e+000  0.00000000e+000  0.00000000e+000]<br>
+             [ 0.00000000e+000  0.00000000e+000  0.00000000e+000  0.00000000e+000<br>
+               0.00000000e+000  0.00000000e+000  0.00000000e+000]]<br>
+          <br>
+            [[ 0.00000000e+000  0.00000000e+000  0.00000000e+000  0.00000000e+000<br>
+               0.00000000e+000  0.00000000e+000  0.00000000e+000]<br>
+             [ 0.00000000e+000  0.00000000e+000  0.00000000e+000  0.00000000e+000<br>
+               0.00000000e+000  0.00000000e+000  0.00000000e+000]]]]</span>
+          （嗯沒有錯，放這麼多是我故意安排的，因為這個跟接下來要講的最後一件事有關）<br>
+          【同場加映】<br>
+          如果有些時候資料非常非常非常的多，那你又不想要慢慢去算的時候，就可以用到這個函式：<br>
+          <span class="custom-text">print(n.size)</span><br>
+          “print”就是輸出的意思；其中的”n”是變數名稱(就是資料未指定的高維陣列的那個)；最後的”size”指的就是了解數量啦。所以整句話用中文串起來意思就是：「輸出”n”這個變數的資料數量給我。」（變數名稱那邊一樣是可以機動性更改的唷）<br>
+          【結語】<br>
+          這絕對是我目前開始打學習紀錄以來最長的一篇了，也是我目前邊寫邊查邊確認最多次的一篇，也是我目前學最久的一個小分枝主題，也是我目前花最長時間寫紀錄的一篇，也是我目前想最多淺顯易懂的比喻的一篇。總的來說，「多維陣列」這個東西真的不是吃素的啊……<br><br>
+          </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--第十九週的內容-->
+<div class="w3-container">
+  <div class="w3-modal" id="w19">
+    <div class="w3-modal-content w3-animate-top" style="background-color: white; border-radius: 20px;">
+      <div class="w3-container" style="font-size: 20px">
+        <span onclick="w19_off();" class="w3-display-bottomright" style="position: absolute; top: 20px; right: 20px; cursor: pointer;">྾</span>
+        <p>2022.01.09-2022.01.13<br>
+          這週來講進入日文特有的「品詞」！<br>
+          【前言】<br>
+          什麼是品詞呢？在不管是中文、英文或任何語言一定都會有一個東西叫做「詞性」，而日文的詞性就被稱為「品詞」。品詞主要有10種，因此又被稱為「十大品詞」，那十大是哪十大呢？十大品詞有「動詞」、「形容詞」、「形容動詞」、「名詞」、「副詞」、「連體詞」、「接續詞」、「感動詞」、「助動詞」、「助詞」這些。而他們之間又各有「自立語」、「附屬語」、「活用」及「無活用」等等的差別。<br>
+          【十大品詞各個的用意】<br>
+          動詞：可以簡寫成”V”，目的用於[表示動作行為以及存在表現]。其實就跟中文的動詞用意一樣。<br>
+            名詞：可以簡寫成”N”，目的用於[表示某物之代稱]。其實也跟中文名詞用意一樣。只不過接下來這個分類就不同了，在日文中，名詞又分為「普通名詞」、「固有名詞」、「代名詞」、「數量詞」與「形式名詞」。(這些以後會再講)<br>
+            形容詞與形容動詞：形容詞可簡寫成”A”；形容動詞簡寫成”Na”。他們兩個皆用於[表示性質說明以及狀態表現]，其用意其實跟中文也差不多，不過兩者差別在於「語尾變化不同」。<br>
+            副詞：這個詞跟接下來的5個詞都沒有簡寫可用。副詞用於[修飾用言]，不過，在修飾用言時稱為「連用修飾語」。<br>
+            連體詞：用於[修飾體言]，而修飾體言時稱為連體修飾語。<br>
+            接續詞：相當於中文「連接詞」，用於[承接上下文]。<br>
+            感動詞：用於[表示感嘆、感動或應答詞]。<br>
+            助動詞：主要用於[幫助動詞接續]，不過有部分接續其他品詞。<br>
+            助詞：用於[連接兩種不同的語彙或句子並幫其建立關係或添增意義。<br>
+          【用言？體言？那是什麼？】<br>
+            在副詞跟連體詞那邊的時候有講到「修飾用言、修飾體言」。那「用言」就是有活用的，就是文法上會做變化。好比英文也會有動詞三單變化，一樣的道理。日文的詞彙變化有分動詞的六大變化及形容詞的五大變化，標記方式為[簡寫]＋[第幾變化]。例如說動詞第2變化就會標記成V2，或者形容動詞第3變化就標記成Na3。而「體言」就是沒有活用、沒有任何變化的，通常是名詞。<br>
+          【範例】<br>
+          動詞：買う。中文：買<br>
+          形容詞：寒い(寒くない)。中文：寒冷(不寒冷)<br>
+          形容動詞：賑やか(賑やかではない)。中文：熱鬧(不熱鬧)<br>
+          名詞：桜。中文：櫻花<br>
+          副詞：とても。中文：非常<br>
+          連體詞：この、その。中文：這個、那個<br>
+          接續詞：そして。中文：而且<br>
+          感動詞：ほら！中文：你看！<br>
+          助動詞：遊びたい。中文：想(玩)　　[這個句子中的「たい」是助動詞，表示想要做….事情]<br>
+          助詞：先輩は食堂でご飯を食べる。中文：前輩在餐廳吃飯<br>
+          [這個句子中的「は」、「で」、「を」都是助詞，只不過各自扮演不同角色，具有不同意思。]<br><br>
+          </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--第二十週的內容-->
+<div class="w3-container">
+  <div class="w3-modal" id=w20>
+    <div class="w3-modal-content w3-animate-top" style="background-color: white; border-radius: 20px;">
+      <div class="w3-container" style="font-size: 20px">
+        <span onclick="w20_off();" class="w3-display-bottomright" style="position: absolute; top: 20px; right: 20px; cursor: pointer;">྾</span>
+        <p>2023.01.16-2023.01.20<br>
+          這週就是春節假期了(放十天，好開心呀！！)。不過，放假開心歸放假開心，該學習的還是要趕快跑，不能偷懶～<br>
+          不知道您有沒有看過[undercover billionaire]這部紀錄片呢？這部紀錄片其實有點像是「真人實境秀」的感覺。節目組把一位已經55歲的白手起家的富豪丟到一個人生地不熟的小鎮，要他僅用自己的經驗、能力、100美金、一台皮卡與一支手機，挑戰在3個月內創造一個價值百萬美金的企業。那我看完之後就在想啊：究竟創業或者所謂的「成功」、「致富」真的完全沒有運氣的成分嗎？那如果沒有運氣成份，會不會有什麼方法呢？<br>
+          今天的內容取自「堆金積玉<a href="https://www.youtube.com/watch?v=zogzp7hVEIw" target="_blank"></a>」<br>
+          而這週，我想分享的就是這類的內容：<br><br>
+          1.	追求目標，而不是錢財。我覺得追求目標遠比追求「流動的錢」還要好，因為你今天如果是達成目標了，那錢財、成功或頭銜等等「外觀性」的東西會隨之而來，你的重點是目標，錢財只是附加價值。不過反之，如果你今天是一心想著要很快就變成有錢人，那很可能就會選擇用「買樂透」的方式，當然我們都知道這件事情十賭九輸嘛，就算說假設你今天真的不小心贏了，那你肯定不會好好用這筆錢，因為天上掉下來的東西並不太會珍惜。一定會想說：「哎呀～反正花完後再買搞不好也會中啊！」殊不知接下來的都只是送錢給台彩而已。有一句話我覺得講得很好：「憑運氣賺來的錢，最終都會憑運氣虧掉。」<br><br>
+          2.	沒有才的人永遠都沒有財。我覺得不能夠只是才能而已，還要是不容易被取代的才能。譬如說你很會開車，開的很穩完全不會抖，很厲害。但是現在全自動駕駛日趨進步，你很快就會被取代掉了，反之，如果你是做那種不易被取代的工作，例如需要富有同理心的工作---心理治療師。ＡＩ只是按照那些程式碼去運作，他不會做出任何改變，你要他做多點事，那就要多寫給他程式碼。但是像老師、作家、藝術家、治療師等等這類需要創新或隨著對方的動作而改變行為的職業，是不可能能夠「預先」寫好程式碼執行的。還有一個原因為什麼不要做容易被取代的工作，因為「山底總是最擁擠。」為什麼說山底最擁擠呢，因為當你在做大部分人都在做的事情時，那只有兩種方法能夠贏其他也在做這件事的人，第一：付諸更多勞力、時間；第二：做出獨特性。拿外送員來說，現在外送員很多啊，到處滿街跑，你在搶單的同時其他人也在搶單啊，他搶到了你就沒錢拿了，那怎麼辦？只好一天跑18個小時，以此來拿到比一天跑7小時的人還要多的單。那如果發現比別人跑的時間長但拿到的單沒有比較多的話，那就應該考慮做出獨特性，有可能你對於客人比較貼心等等的，那如此一來你就會比其他人更有競爭性。<br><br>
+          3.	聚集人才。其實我在看之前馬斯克那本書(中文版，現在在很努力地讀全英文版)的時候有提到：「我不可能同時精通商業經營、財務管理、人才管理、汽車製造、火箭製造、土地開發、軟體開發、行銷等等我所需要的知識，因此我一定是把各領域的人才都拉來我身邊。」而他的同事也都說：「每次老闆走到我旁邊都會問我問題，我一開始以為他是在考核我在這方面的能力，但後來我發現他是透過問我問題而學習知識。」<br><br>
+          只有把具備不同技能的人才聚在一起，組成團隊，透過團隊與團隊之間的合作，才能夠實現目標。人永遠不可能所有事情都精通！任何人都一樣。<br>
+          以上，就是這週我想分享我學習到的知識，雖然這週看起來只有3個points而已，但內容卻不只有3個points！<br><br>
+          </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--第二十一週的內容-->
+<div class="w3-container">
+  <div class="w3-modal" id="w21">
+    <div class="w3-modal-content w3-animate-top" style="background-color: white;  border-radius: 20px;">
+      <div class="w3-container" style="font-size: 20px">
+        <span onclick="w21_off();" class="w3-display-bottomright" style="position: absolute; top: 20px; right: 20px; cursor: pointer">྾</span>
+        <p>2023.01.30-2023.02.03<br>
+          雖然我說在春節期間我還是會繼續學習繼續寫紀錄，不過呢，因為我們跟親戚一起出遊，所以我沒有足夠的時間學習＞.＜’’。因此請容許我略過一個禮拜((´･_･`))。<br><br>
+          一月初時我有寫過一篇超長的NumPy學習記錄，那目前NumPy學習部分有遇到一個障礙。就是如果依照我自己的時程的話，接下來會遠離入門，漸漸進入非基礎部分。但是就在剛要進入非基礎部分時，我赫然發現越來越多需要用到國三甚至高中的數學知識，但是我的數學程度目前只有到國二，所以接下來NumPy的計畫就是，先放著。而放著的同時來盡力加強數學，當數學有到一定程度時再繼續回來學習NumPy！還記得我學習NumPy的契機就是因為學OpenCV時有用到，那我當時好奇這到底是什麼，所以才在計畫中緊急插入這項，但現在NumPy”階段性任務”已經達成，所以又繼續回來OpenCV。<br>
+          <span class="custom-text">import cv2</span><br><br>
+        import是代表載入…套件，還記得我之前有說過python是個語言，而這個語言內有很多套件，cv2是為了「處理視覺」而開發出來的函式庫（套件）。<br>
+        <span class="custom-text">img=cv2.imread("/Users/macintosh/Dropbox/Baby Mac/python/images/1.jpg")</span><br><br>
+          跟以前一樣，前面的”img”是變數。而後面的”imread”代表「開啟圖片」。如果要做圖片編輯那首先就一定要開啟圖片，才有得編輯嘛，那後面橘色的字就代表「路徑」，我告訴電腦：去這個地方開啟這個檔名的圖片。另外，”imread”可以插入兩個參數（第二可留白），第一個參數為檔案名稱和路徑；第二個參數為「用何種模式開啟」，那如果第二個參數留白的話就預設使用「彩色模式」開啟。<br>
+          <span class="custom-text">img=cv2.imread("/Users/macintosh/Dropbox/Baby Mac/python/images/1.jpg",cv2.IMREAD_GRAYSCALE)</span><br><br>
+        這個就是第二個參數有填的情況（第二個參數也可以用數字表達，不過如果把每個數字代表什麼意思都寫出來的話這樣太浪費篇幅了，所以我這裡直接放個網址，您有興趣可以看看：<a href="https://steam.oxxostudio.tw/category/python/ai/opencv-read-image.html#a4" target="_blank">https://steam.oxxostudio.tw/category/python/ai/opencv-read-image.html#a4</a>
+        ），而那個參數代表使用「灰階模式」開啟，灰階模式就類似黑白。不過其實不然。黑白就真的單純只有「黑」跟「白」，但其實灰階影像在黑色與白色間還有許多級的顏色深度，但因為黑白的講起來比較直覺，所以這就變統稱了，不然直到我學到「灰階模式」這個資訊以前我還一直以為影像只有「黑白」跟「彩色」兩種勒……<br>
+        <span class="custom-text">cv2.imshow("hahaha",img) </span><br><br>
+        這個的意思是說：我使用「”hahaha”」這個檔名來用「img」的格式開啟並顯示圖片。剛剛的”imread”只是要告訴電腦兩個訊息，第一，我要的圖片在哪裡；第二，我要用什麼模式開啟來。而他接收到這兩個資訊後，我必須要再給他一個指令「開啟」，他才會開啟並顯示。而上面這行就是那個「開啟」的指令。<br>
+        <span class="custom-text">cv2.waitKey(0)</span><br><br>
+        這個”waitKey”(Ｋ一定要大寫)代表的意思是「等待多就才能關閉」。那如果我在括號裡面填0就代表我告訴電腦：「請你一直都不要關掉這張影像，直到我按下任何按鍵為止。」而這裡有件事情特別要注意，如果要在括號裡填數字必須要以「毫秒」為單位，什麼意思呢？也就是說如果我要他在10秒後關閉，我就要填”10000”（不過如果這十秒內按下”q”鍵就會終止計時並馬上關閉視窗）<br>
+        <span class="custom-text">cv2.destroyAllWindows()<br>
+        cv2.destroyWindow()</span><br><br>
+        如果遇到視窗無法關閉的狀況時，可以使用這兩個其中一個來關閉視窗。而這兩個的差別在於，上是關閉「所有」的視窗(括號內不需填東西)；但如果是使用下者那就代表我要關閉「一個」視窗(括號內需填我指定關閉的視窗名稱)。
+        <br>
+        <br>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--第二十二週的內容-->
+<div class="w3-container">
+  <div class="w3-modal" id="w22">
+    <div class="w3-modal-content w3-animate-top" style="background-color: white; border-radius: 20px;">
+      <div class="w3-container" style="font-size: 20px">
+        <span onclick="w22_off();" class="w3-display-bottomright" style="position: absolute; top: 20px; right: 20px; cursor: pointer;">྾</span>
+        <p>2023.02.06-2023.02.10<br>
+          這禮拜我想要講一個可能很多人都會誤解的一個日文！<br>
+          【前言】<br><br>
+          「の」應該很多人都有看過這個吧？（就連我最喜歡的「自然の顏」餅乾上面都有😂。）<br>
+          很多的翻譯都會把「の」翻譯成「的」，但其實它未必是這個意思，而且很玄的是可能老一輩的人要表達「的」的時候，也都會寫成の。（至少我身邊的長輩是這樣，我不知道是不是大部分的都這樣）<br>
+          其實這是一個日文的文法句型，叫做「修飾名詞」。<br>
+          【文法】<br><br>
+            他的句型是：「名詞」＋の＋「名詞」<br>
+          這個表示名詞修飾名詞，亦可稱為連體修飾，而其中的「體」指的就是名詞，「連體」就是連接名詞的意思。如同剛才所講的一樣，「の」常被翻譯為「的」，但不是所有句子都能這樣翻，譬如下面這兩個就不能這樣翻（當然如果要硬加也是可以啦，就比較有贅字的感覺而已！）<br>
+          1.	リンゴの皮。（蘋果皮。rin go no ka wa）<br><br>
+          2.	日本語の教科書（日文教科書。ni hon go no kyo ka sho）<br><br>
+          不過下面這個就一定要翻成「的」了。<br><br>
+          3.	私の本。（我的書。wa ta shi no hon）<br><br>
+          【名詞修飾名詞？那是什麼？】<br><br>
+            在日文中，如果有兩個名詞接在一起時，大多情況下都會用「の」來連接，例如上述第二個例子。日本語(ni hon go)是名詞；而教科書(kyo ka sho)也是名詞，因此中間用「の」是再適合不過了。不過剛剛說的是出自於文法而放「の」，接下來要講的第三個例子而是出自於文意而放「の」，第三個例子中如果去掉の那就會變成[我書]，但我們並不會這樣說話，所以才需要用の來連接。<br>
+          【名詞修飾名詞有幾種用法？】<br><br>
+            如果翻譯成「的」的話，那前面就可以放形容詞，但是[の]只能放名詞，從剛剛那三個例子就可以知道了。第一句”蘋果皮”表示皮是蘋果的，表「所屬」；第二句”日文教科書”表示書的內容是日文，表「內容」；第三句”我的書”表示書是我的，表「所有權」。
+            這裡有個用法我覺得值得一提叫「同位格」，有點類似英文的同位語，不過差別在於說，英文是用逗點來分(逗點前後指同一人)；但日文是用の來分。例如：<br>
+          1.	二年生の小島君。（二年級的小島。ni nen sei no ko shi ma kun）<br><br>
+          2.	支店長の浅野さん。（淺野支店長。shi ten cho no a sa no san）[嗯，這就是半澤直樹第一季前1-5集的東京中央銀行西大阪分行的支店長😆😆]<br><br>
+          若名詞Ａ為關係、身份、地位；名詞Ｂ為名字。這時候的[の]就是同位格，而同位格的意思就是Ａ跟Ｂ指同一人物。<br>
+          <br>
+          </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--第二十三週的內容-->
+<div class="w3-container">
+  <div class="w3-modal" id="w23">
+    <div class="w3-modal-content w3-animate-top" style="background-color: white; border-radius: 20px;">
+      <div class="w3-container" style="font-size: 20px">
+        <span onclick="w23_off();" class="w3-display-bottomright" style="position: absolute; top: 20px; right: 20px; cursor: pointer;">྾</span>
+        <p>2023.02.13-2023.02.17<br>
+          最近我突然想到一個問題，有些人可能會請信託或理財專員來幫自己理財，但那是”別人”幫你處理財務啊，我覺得畢竟錢的東西還是不要讓家人以外的人來處理比較好（除非你家的財物沒有什麼特別之處，譬如沒有什麼大金流），因為你不知道那個”別人”心正不正，他如果心正，那很好；但如果心不正呢？怎麼辦？！（雖然家人也有可能會心不正，但我想那個發生的機率應該比較小才是。）<br>
+          那今天我就想要講”一般人如何管理好自己的個人財務”：<br><br>
+        1.	做出預算。其實不只是管理個人財務需要這樣，管理任何的財務都需要這樣做。預算就像是讓你的每分錢都有用途，從而去避免注入太多錢在某個項目，而其他項目沒有預算執行。拿政府建設來說，我們都會聽到要建設什麼東西預計要花幾千億，請中央先撥多少錢下來，後續再慢慢放款。而且這樣做還有一個好處，那就是可以控制花銷。<br><br>
+        2.	利用債務。這個跟我之前講的「貸款」有異曲同工之妙，但在這裡我想講的是說，如果我今天有能力可以全額付清買下一棟房子，但我還是絕對不會這樣做，原因在於，我把錢都投進去之後，沒錯！存進去房子裡，當賣掉時還可以拿回來，但是如果我部分是用貸款，然後慢慢還，剩下的錢再拿去做投資(當然眼睛要睜大看投資標的)，那豈不是更好？用錢滾錢才是最快的方式。<br><br>
+        3.	有一天我們的身體會每況愈下，會不能夠再繼續勞動，那不能夠勞動之後難道我要靠政府的養老退休金過活嗎，每個月也許6000-10000，這樣絕對是不夠的。所以才要在還能夠勞動時多存點錢，等將來退休時使用。但這個方法有個缺點，我不管存多少，假設1000萬，那代表我沒有勞動力時能夠花得最多就1000萬，所以才會有以房養老的概念產生。年輕時買個房子，等到將來年老時出租，如此一來每個月除了有政府的養老退休金之外，還有租金能夠過活。<br><br>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--第二十四週的內容-->
+<div class="w3-container">
+  <div class="w3-modal" id="w24">
+    <div class="w3-modal-content w3-animate-top" style="background-color: white; border-radius: 20px;">
+      <div class="w3-container" style="font-size: 20px">
+        <span onclick="w24_off();" class="w3-display-bottomright" style="position: absolute; top: 20px; right: 20px; cursor: pointer;">྾</span>
+        <p>2023.02.20-2023.02.24<br>
+          先前我們講的NumPy是專門在做NumPy裡面的東西，但我從來沒講過他要怎麼跟OpenCV做一個結合，而今天就是這樣的內容。其實要說結合也不完全是結合啦，應該說是相輔相成，因為我只是利用NumPy的陣列運算來產生圖片。<br>
+            其實圖片在程式語言裡，基本上都是用三維陣列的方式表現，就長寬各多少個像素(有點邊長的概念)、每個像素裡包含的顏色資訊是什麼。這因如此，所以我才能夠用NumPy去畫出圖形。不過，在這之前，我需要先講個東西：<br><br>
+          <span class="custom-text">img=cv2.imread("/Users/babychen/Dropbox/Baby Mac/python/images/4.jpeg",2)<br>
+          <br>
+          cv2.imwrite("/Users/babychen/Dropbox/Baby Mac/python/images/6.png",img)<br>
+          <br>
+          cv2.imwrite("/Users/macintosh/Dropbox/Baby Mac/python/images/2.jpg", img, [cv2.IMWRITE_JPEG_QUALITY, 80])</span><br>
+          ＠一樣要先import cv2跟NumPy，但這之前已經講過很多次，所以這次我就不再講。<br>
+          我需要先講的是，怎麼儲存圖片。第一行代表我用灰階模式開啟這個位置的這張圖片；第二行表示的是在這個路徑這個位置新增一張[6.png]的圖片，於此同時，我也已經把這張本來是jpeg的檔案，變成了png檔，後面的img代表我要對這個變數內含的圖片做更改。第三行跟第四行是一起的。其實imwrite()的用意是「寫入並儲存圖片」，而這個函數可以有三個參數：第一個參數為檔案的路徑與名稱、第二個參數為哪個檔案要做寫入和編輯、第三個參數為新增的圖片要不要做壓縮品質的設定。而最後一行的[cv2.IMWRITE_JPEG_QUALITY, 80]<br>
+          就是要設定新增的這張圖片存檔為壓縮品質80的jpg檔。<br>
+          <span class="custom-text">img=np.zeros((500,500,3), dtype="uint8")</span><br><br>
+            而現在開始就要進入利用陣列產生圖片的部分囉！這行代表的是，快速產生形狀為500*500*3的三維NumPy陣列（這個規格是正方形）。那個[zeros]代表我創建每個項目都是0的三維陣列（那個要輸出真正的陣列才會顯示出來，現在目的是要弄圖片）。後面的dtype為固定，因為那是python專用的字符編碼。<br>
+          <span class="custom-text">img[150:350, 150:350]=[200,100,60]</span><br><br>
+            這個是要抓取這個變數中的第150行到第350行、150列到第350列（有點像抓取表格的概念），將這些行與列設定BGR(OpenCV的顏色表達方式，B代表Blue, G代表Green, R代表Red)，而哪個顏色位置的數字大，表示那個顏色會顯現（以數字最大的為基準）。例如我寫的程式碼就是說，設定這些行與列為藍色200,綠色100,紅色60，那顯示出來就會變成是深藍色；也就是說，如果我改成這樣：[0,0,20]，那顯示出來的就會是淺紅色。<br>
+          <span class="custom-text">cv2.imwrite("/Users/macintosh/Dropbox/Baby Mac/python/images/ashin2.jpg",img)</span><br><br>
+            這個跟之前一樣：新增的要放在哪個位置。<br><br>
+          <span class="custom-text">cv2.imshow("ashin1",img)</span><br><br>
+            這個也跟之前一樣：要打開這個檔案來看。<br><br>
+          </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--第二十五週的內容-->
+<div class="w3-container">
+  <div class="w3-modal" id="w25">
+    <div class="w3-modal-content w3-animate-top" style="background-color: white; border-radius: 20px;">
+      <div class="w3-container" style="font-size: 20px">
+        <span onclick="w25_off();" class="w3-dispaly-bottomright" style="position: absolute; top: 20px; right: 20px; cursor: pointer;">྾</span>
+        <p>2023.02.27-2023.03.03<br>
+          這週我講個要講日文的文法：連體修飾語！<br>
+          【句型解說】<br><br>
+          他的句型是這樣的：連體修飾語（連體形或連體詞）＋名詞。<br><br>
+          1.	この 辞書。(ko no ji sho。這個字典。)<br><br>
+          2.	走る 人。(ha shi ru hi to。奔跑的人。)<br><br>
+          前面的「この」跟「走る」都是連體修飾語；而後面的「辞書」、「人」是名詞。<br>
+          【連體修飾語是什麼？】<br><br>
+          連體修飾語可以分成「連體詞」或「連體形」兩種。如：,<br><br>
+          1.	あの店。(a no mi se。那間店。)<br<br>
+          2.	長い列車。(na gai re sha。長長的列車。)<br><br>
+          【何謂連體詞？何謂連體形】<br><br>
+            上述例子中可以發現說，連體詞就是「あの」、「その」、「この」這些等等的。（那三個翻成中文是「那個」、「這個 /較遠處的/」、「這個 /近在眼前的/」）。而連體詞的特色就是他沒有活用。其實啊，從我開始學日文到現在我發現說只要他的專有名詞是有「詞」字的，那幾乎都是沒有活用，而如果是有「形」的，幾乎都是會有活用的。<br>
+          【用言】<br><br>
+            連體形是用言修飾體言的「活用形」。我這裡解釋一下用言跟體言是什麼好了：用言是語尾有變化的，下面這三個品詞「形容動詞」、「形容詞」、「動詞」都是用言。<br><br>
+          1.[形容動詞]　静か、便利、安全。(shi tsu ka。安靜的；ben ri。便利的；an zen。安全的。)<br><br>
+          2.[形容詞]  安い、高い、懐かしい。(ya su i。低廉的；ta ka i。高的。Ka na shi i。很懷念的。)<br><br>
+          3.[動詞]　ある、いる、行く。(a ru。是；i ru。有；i ku。去。)<br><br>
+          【體言】<br><br>
+            體言是語尾沒有變化沒有活用的詞，所以像「名詞」「單位量詞(日文叫數量詞)」「代名詞」都是體言:<br><br>
+          1.	[名詞]　山、海、大地。(ya ma。山；u mi。海；dai chi。大地。<br><br>
+          2.	[数詞]　一本、一枚、一個。(I ppon。一支/或一條/；i chi mai。「枚」代表扁扁的東西；i kko。日文的「一個」就跟中文的「一個」意思一樣（當然也一樣被廣泛使用，不管什麼都可以套「一個」上去，只是唸起來怪怪而已）)<br><br>
+          3.	[代名詞]　これ、ここ、こちら。(ko re。這個；ko ko。這裡；ko chi ra。這裡。)<br><br>
+          ＊[ここ]跟[こちら]都是講「這裡」，但用法有些許不同。首先[ここ]是較口語化的說法，也就是跟家人、友人在說話時會用的，而且只能用來表示場所。例：ここは図書館です(ko ko wa to sho kan de su。這裡是圖書館。)；而
+          [こちら]是較禮貌較客氣的講法，也就是在正式的社交場合或者商業場合都一定會用這個來表示一定的禮貌與表達對對方的尊重。它可以用來代替[ここ]，但用法比[ここ]還要廣，不論是場所、方向、物品、人物、團體都可以使用。例：こちらへどぞ。(ko chi ra he dou zo。這邊請。)。總的來說，如果要正式，那用[こちら]準沒錯，但如果跟對方關係很好，用[ここ]才能顯現出來。<br><br>
+          </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--第二十六週的內容-->
+<div class="w3-container">
+  <div class="w3-modal" id="w26">
+    <div class="w3-modal-content w3-animate-top" style="background-color: white; border-radius: 20px;">
+      <div class="w3-container" style="font-size: 20px;">
+        <span onclick="w26_off();" class="w3-display-bottomright" style="position: absolute; top: 20px; right: 20px; cursor: pointer;">྾</span>
+        <p>2023.03.06-2023.03.10<br>
+          像有些時候，我會覺得說：「蛤？！在我的預期中，什麼什麼事情明明是多久多久時間可以做完，但為什麼我做完時卻大幅地超出我的預期時間？！！！」我一直對於「如何提高自己的做事情效率」這件事非常的好奇也非常的想要知道怎麼做能夠達到。有時候也許我是有點小小拖延症犯了，但有些時候我是真的很投入在學習某樣東西，但等我回過神來時，大把時間已經飛光了……所以！今天我想分享的是就「如何提高自己的工作/學習效率」：<br><br>
+          1.	把會讓自己分心的東西移開。譬如說手機的訊息通知，有些時候手機跳出來什麼很重大的新聞，那我可能就會想要稍微點開看一下，但殊不知，那就是分心的來源。所以後來，如果要很專心於某項事情上時，我都會把手機放在抽屜裡，而且我會有習慣用蕃茄鐘（就是那個做幾分鐘休幾分鐘的那個，我都用做25分，休5分）。等到休5分鐘的時候才會拿手機出來看。<br><br>
+          2.	排序待辦清單。我會寫待辦清單，就是今天預計要做的事有哪些全部寫下來，但是長此以往我發現了個問題，就是我沒有排序先做哪個後做哪個，導致說也許我把會用很久時間的排在前面，後面比較快速完成的結果都沒做到。不過到後來我就學會了有效地排序To Do List。<br><br>
+          3.	不要不懂又不問。有些時候會做很久的原因還有一個就是太執著於某個不會的點，而且如果我遇到不會的事情我就一定會打破砂鍋「查」到底。但我忽略了一件事，其實踩著別人的肩膀上去也是一個不錯的方法。<br><br>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--第二十七週的內容-->
+<div class="w3-container">
+  <div class="w3-modal" id="w27">
+    <div class="w3-modal-content w3-animate-top" style="background-color: white; border-radius: 20px;">
+      <div class="w3-container" style="font-size: 20px">
+        <span onclick="w27_off();" class="w3-display-bottomright" style="position: absolute; top: 20px; right: 20px; cursor: pointer;">྾</span>
+        <p>2023.03.13-2023.03.17<br>
+          我這幾天學到使用OpenCV「讀取並播放影片」，其中包含讀取電腦中的影片，也包含開啟電腦的鏡頭讀取影像畫面，不過這是下禮拜的內容。今天我想要講的是「字元編碼」的部分。<br><br>
+            為什麼我會接觸到字元編碼的原因是因為，之前我都一直在講UTF-8，但是我始終不知道那是什麼，甚至不知道為什麼後面是8，而不能改成其他數字。為此我去查了「UTF」是什麼東西。<br><br>
+            在查UTF之前，我學到了ASCII。ASCII的全名是America Standard Code for Information Interchange（美國標準資訊交換碼）。他是一套由電報碼發展而來並基於拉丁字母的電腦編碼系統。在電腦的世界中，所有資料的儲存及運算都要由「二進位數」來表示，例如像A-Z的52個字母（包括大小寫），除此之外，所有的符號也必須使用二進位制來表示。而具體哪個符號或字使用了哪個碼，這就是「字元編碼」。在沒有這個東西之前，電腦們如果要通信就會造成混亂，因為大家的編碼規則都亂七八糟，根本沒辦法進行溝通，因此，美國國家標準協會就制定了ASCII。<br><br>
+            縱使ASCII統一了大家的編碼規則，讓各個電腦不再打架，但他還是有一定的限制在，例如：只能顯示英文。因此，這時候UTF就誕生了！為了因應ASCII只能夠使用英文的窘境，一群工程師以ASCII為基底，開發出了Unicode字元編符。UTF的全名是Unicode Translation Format，意指把Unicode轉換成某種格式的意思。而我們目前最常使用的是UTF-8，因為它可以支援ASCII。但在比較早期，英語系的國家還是只會使用ASCII，原因我用書櫃來比喻好了。本來這麼大的書櫃可以塞下20本很單薄的書，但現在我把每本書的厚度都變成2倍，所以現在書櫃可以塞下的書就只剩10本了。雖然變厚的書本可以放入更多的知識，但對於不需要那麼多知識的電腦來說，給他太多的東西反而對他來講是累贅，只會塞爆電腦空間記憶體而已，沒有任何作用。所以為何最初Unicode沒有變成國際通用的編碼，就是因為ASCII對電腦的負擔是不這麼大的。後來，工程師們又更新了Unicode，這次他們新加入了UTF-16、UTF-32。<br><br>
+          ＊這是字元編碼：”0x48”、” 0x69”、” 0xE4 0xBD 0xA0”、” 0xE5 0xA5 0xBD”。而這四組編碼所對應的字是：「Hi,你好」。每個字(程式稱為字符)，都有一組相對應的編碼。<br><br>
+          UTF-8他是一種”變長型”的編碼，他用1-4個字節表示了一個字符。對於英文字符他使用1個字節；中文字符則使用了3個字節；而其他較少用的字符（例：表情符號、標點符號）則使用2或4個字節表示。如此一來可以節省電腦記憶體，因為面對不同的字符他可以獨自轉換字節長度，從而不用每個字都佔用一樣的空間。因此，直到現在，他還是全世界最被廣泛應用的字元編碼。<br><br>
+            UTF-16是一種”固定長度”的編碼，他使用2個或4個字節表示一個字符，對於英文字符他使用2個字節，中文則使用了4個字節。而每個字符使用的字節數目是固定的，這樣對於可以使用較少字節的字符來講，相對是比較佔空間的。但因為他不需要因應不同的字符而轉換不同的字節數目，所以在讀取時會較快速。<br><br>
+            UTF-32是一種”固定長度”的編碼，他使用了4個字節來表示一個字符。對於所有字符他都使用4個字節來表示，因此在”某些特定的應用”不會浪費空間（為什麼不會，我等下會提到）。不過，由於每個字符都使用相同的字節數目，因此他需要的儲存空間通常比UTF-8和UTF-16來得更大。不過也因為需要的儲存空間大，所以他可以很好地處理大量需要4個字節的字符集，例如Emoji。<br><br>
+          ＊某些特定的應用，例如數據庫。因為數據庫需要的是即使我資料多，也要在很短的時間裡面把我要的那項資訊帶出來。那UTF-32他都使用4個字節編碼，也就是說，他不需要因為編碼長度不同，而讓資料讀取時間變慢；除此之外，UTF-32不浪費空間的點在於，假設我上個編碼是2位字節，而現在這個是4位字節，那他們兩個差的那2個字節就變成不能用，進而產生浪費。但UTF-32不管字符為何，一概使用4個字節，這樣就不會有上述問題產生。但相對的，如果今天的字符是不需要那麼多字節表示的，那UTF-32就會比較浪費空間，這也是為什麼至今他還沒有被廣泛使用的原因。<br><br>
+          ＊最一開始的那四個UTF-8編碼，我來解釋一下：「0x48」跟「0x69」對應的字符是”H”與”i”，那因為他是英文（英文使用1個字節）所以他只有4個字元；「0xE4 0xBD 0xA0」跟「0xE5 0xA5 0xBD」對應的字符是”你”與”好”。那因為他是中文，UTF-8中，中文需要3個字節，所以他總共有12個字元。<br><br>
+          </p>
+      </div>  
+    </div>
+  </div>
+</div>
+
+<!--第二十八週的內容-->
+<div class="w3-container">
+  <div class="w3-modal" id="w28">
+    <div class="w3-modal-content w3-animate-top" style="background-color: white; border-radius: 20px;">
+      <div class="w3-container" style="font-size: 20px;">
+        <span onclick="w28_off();" class="w3-display-bottomright" style="position: absolute; top: 20px; right: 20px; cursor: pointer;">྾</span>
+        <p>2023.03.20-2023.03.24<br>
+          上週有講過說這禮拜要講解OpenCV讀取並播放影片內容的部分，那我先說一件事情，其實影片的組成就是每一秒鐘很多張照片在做變換而來的。所以意思是說如果是播放電腦攝影機拍攝到的畫面（例：視訊），那就是一直不斷地拍攝相片，一直不斷地更新相片，讓他看起來是如影片一般呈現。<br>
+          <span class="custom-text">cam=cv2.VideoCapture(0)</span><br><br>
+          前面的cam代表等號後面那一整串的變數名稱；重點在於後面的VideoCapture，這個代表要讀取攝像鏡頭（或影片）。最後面的0，0代表「使用電腦內建的鏡頭（若是外接式鏡頭就有可能是1,2之類的編號）。而括號中還可以放一種東西，叫做「路徑」，如果放路徑就代表要去讀取那個路徑的影片出來播放。<br>
+          <span class="custom-text">if not cam.isOpened():<br>
+              print("鏡頭好像沒有打開耶")<br>
+              exit</span><br><br>
+          這串看英文應該答案就揭曉了。isOpened()是OpenCV的一個函式，他最主要是確認說是否鏡頭已被開啟，那如果沒有開啟，他就會回傳print後面的那句警示。<br>
+          所以說if(如果)not(沒有)cam(上面的那個變數)isOpened(是被打開的)，那就print(輸出)後面那句訊息，最後exit(跳脫這個if判斷句)。<br>
+          <span class="custom-text">while True:<br>
+              ret,frame=cam.read()<br>
+              if not ret:<br>
+                  print("很抱歉，我沒辦法讀取到")<br>
+                  break<br>
+              friy=cv2.cvtColor(frame, 7)<br>
+              cv2.imshow("masa",friy)<br>
+              if cv2.waitKey(1)==ord('q'):<br>
+                  break</span><br><br>
+          ＊因為這都在同一個巢狀縮排裡面（所謂的巢狀就是大包小，小又再去包更小，一層一層互相牽制），所以我不好分開個別來講。<br>
+          “while True/false:”這也是個判斷句，只不過他是利用「布林值」來判斷。如果一切條件吻合，那這程式就會一直執行下去；相對地，如果條件哪裡有了出入，就會終止迴圈運作。<br>
+          “ret,frame=cam.read()”。Ret也是一個布林值，表示是否讀取到畫面，沒有同樣也會回傳false。”Frame”是一個自動生成變數，若前面已經讀取到畫面，那他就會去儲存每一幀畫面的數據。”read()”用於從攝影機鏡頭讀取畫面。總的來說，ret是用來回傳是否讀取到畫面；frame是儲存畫面；read是讀取畫面。<br>
+          “if not ret:”跟最上面的那個Opened概念一樣，也是一個if判斷句。判斷如果ret回傳的值是false，那”break”就會直接破壞迴圈的運行。<br>
+          “friy=cv2.cvtColor(frame,7)「friy」是變數名稱應該不用再多講。重點在於後面的「cvtColor」，這個需要放兩個參數，一個是對於哪個變數產生作用，第二是那個作用是哪個作用。而她的用意在於說將畫面套上顏色濾鏡。那數字7對應到的濾鏡就是灰階模式。<br>
+          “cv2.imshow(“masa”,friy)”這個是用名為「masa」的視窗開啟friy這個變數的內容。Imshow就是做開啟視窗這個動作的函式。<Br>
+          “if cv2.waitKey(1)==ord(“q”):”「ord」這是偵測鍵盤是否按下了”q”，而「waitKey」是用來偵測鍵盤事件的（後方的1代表等待一毫秒，每次都以一毫秒為單位，意指如果輸入1000那就會等待1秒。而在這1毫秒中，如果鍵盤按下了q那就會跳出迴圈）。什麼是鍵盤事件呢？鍵盤事件是指用戶按下某個按鍵時，相對應的事件就會被觸發。例如說遊戲，當這個按鍵按下去是射擊，那麼「按下去電腦接收到」這整個過程就叫做「鍵盤事件」；為什麼需要兩個等號呢？在python中1個[＝]代表「賦值運算符號」，將右邊的值賦予給右邊的變數。如果是兩個[＝＝]就代表「運算符號」，用來判斷等號左右邊是否相等<br>
+          。所以在這個判斷句中，if(如果)cv2.waitKey(1)(等待了1毫秒)==ord(“q”)(按下的按鍵為q)break(破壞迴圈)。<br><br>
+          </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--第二十九週的內容-->
+<div class="w3-container">
+  <div class="w3-modal" id="w29">
+    <div class="w3-modal-content w3-animate-top" style="background-color: white; border-radius: 20px;">
+      <div class="w3-container" style="font-size: 20px">
+        <span onclick="w29_off();" class="w3-display-bottomright" style="position: absolute; top: 20px; right: 20px; cursor: pointer;">྾</span>
+        <p>2023.03.27-2023.03.31<br>
+          今天要講解日文的文法「代名詞」！<br>
+          【代名詞的例子有哪些】<br><br>
+          1.	彼、誰、彼女、あなた。(ka re。他。Da re。誰。Ka no jyo。她。A na ta。你。)<br><br>
+          2.	この人、あの人、どの人。(ko no hi to。這個人。A no hi to。那個人。Do no hi to。哪個人。)＊這個[この][あの][どの]是連體修飾語裡面連體詞的其中幾個喔！<br><br>
+          3.	これ、あれ、どれ。(ko re。這個。A re。那個。Do re。哪個。)<br><br>
+          ＊當然這不是全部，只是我舉其中幾個例子而已。<br>
+          【什麼是代名詞？】<br><br>
+          其實日文的代名詞就跟中文英文一樣，不直接稱呼人或物的名稱，而是藉由一個名詞來代替。但不同的點在於，日文中可分為「人稱代名詞」與「指示代名詞」。[人稱代名詞]有「你、我、他、這位」等等的；而[指示代名詞]有「這個、那個、這裡、那邊」等等。<br>
+          【人稱代名詞】<br><br>
+          中文結構與日文不同，中文可能常使用「你我他」，但在日文中若使用到稱呼對方的「あなた(你)」，很多情況下是很失禮的表現，會讓對方有種被指著鼻子罵的感覺(除非第一次見面完全不知道對方叫什麼名字，這種才會用あなた。還有譬如廣告，由於沒辦法知道觀眾或讀者是誰，所以直接用無所謂)。一般來說如果是對長輩或上司（反正就是比自己位階高的人）都會直接稱呼對方的姓氏，並後面加「さん(不管男女都一樣)」（沒錯，就是台灣人常常都會寫成”桑”的那個。）例如說：成川さん(na ru ka wa san)、小林さん(ko ba ya shi san)。剛講的是對比自己位階高的人，那對平輩或晚輩則用XXくん（用於不論年紀的男生），XXちゃん(XX chan)（用於不論年紀的女生或小孩），XXたん(XX tan)（較親暱的用法）。<br>
+          而另外，如果是要自稱一律使用「私」，但特別的地方在於，較口語讀作わたし(wa ta shi)。而較鄭重的話就會講成わたくし(wa ta ku shi)，不過都是寫成「私」。再另外，有個男生限定版講法「俺。o re」與「僕。bo ku」，這個只能夠男性用，而他也是自稱的意思。但這兩個都是口語化的講法，不可用於正式場合。「僕」比較是謙遜的講法，男生與男生之間閒聊會使用；「俺」是比較豪邁的說法，也是口語化的講法，不過相較於「僕」，這個用法比較粗俗比較有大男人的感覺，因此這個只會用於很熟的熟人。<br>
+          所以大致上來說，如果是要對比自己位階高的人都會講對方的姓氏；對於平輩或晚輩會稱呼名字加稱謂。<Br>
+          【指示代名詞】<br><br>
+          <stronger>[方向代名詞]</stronger><br>
+          「こっち。Ko cchi。這邊」「そっちso cchi。那邊」是口語化說法，而「こちら。ko chi ra。這邊」、「そちら。So chi ra。那邊」、「あちら。A chi ra。那邊(遠遠於我與聽話者的位置)」為比較有禮貌的說法，兩者都是指示方向（這邊、那邊）的。<Br>
+          <stronger>[事物代名詞]</stronger><br>
+            「これ。Ko re。這個」「それ。So re。那個(較近處)」「あれ。A re。那個(較遠處)」。這個就沒有口語化與否之分，所有都可使用。另補充一個，「どれ。do re。」這是在問 哪個。<br>
+          <stronger>[場所代名詞]</stronger><br>
+            「ここ。Ko ko。這個」「そこ。So ko。那裡(較近處)」「あそこ。A so ko。那個(較遠處)」。這個也沒有口語化與否之分，所有都可使用。另補充一個，「どこ。do ko。」這是在問 哪裡。<br>
+          【他稱系列】<br><br>
+          什麼是他稱？他稱有分為近稱（こ系列）、中稱（そ系列）、遠稱（あ系列），由於「這」開頭的字都是こ，因此叫為こ系列；而「那」開頭的字都是そ，因此叫為そ系列；最後「那(較遠處)」的開頭都是あ，因此叫為あ系列。日文跟中文一樣，也都有分距離不同而有不同的稱呼，近稱是指我方的範圍，中稱是指對方的範圍，遠稱是指我與對方以外的範圍。<br><br>
+          </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--第三十週的內容-->
+<div class="w3-container">
+  <div class="w3-modal" id="w30">
+    <div class="w3-modal-content w3-animate-top" style="background-color: white; border-radius: 20px;">
+      <div class="w3-container" style="font-size: 20px">
+        <span onclick="w30_off();" class="w3-display-bottomright" style="position: absolute; top: 20px; right: 20px; cursor: pointer;">྾</span>
+        <p>2023.04.03-2023.04.07<br>
+          最近我看到一部影片，他是在講關於「你可能需要放棄的訊號」。我一開始以為：「好吧！他可能是逆向操作，標題看起來是在教導放棄，但內容其實是告訴你撐下去的方法之類的。」或者是利用放棄是一件很可惜的事來告訴觀眾不要放棄。結果！我看到前段快到中段的時候，我發現，這根本是完全百分之一千億在教「如何放棄正在追尋的目標」。天阿！！！怎麼會有人竟然在教這種東西，雖然說我知道那是YouTube，為了賺流量嘛，但這種內容實在是不太ok耶….所以！我今天就要講幾個，阻礙自己前進的想法。<br><br>
+          1.	現在去做太晚了。其實實現目標根本就沒有「太晚」這兩個字的存在，像我之前去圖書館在讀雷．克洛克（麥當勞創辦人）的自傳時有提到，他在將近50歲的時候才創辦麥當勞。結果現在！麥當勞成了全世界最有名最賺錢的速食餐廳。所以「開始」永遠不會太遲，只是有沒有想要打開那個「開始」的開關而已。<br><br>
+          2.	這件事我做不了、這絕對是不可能的。如果心中常常想著這兩句話，那就絕對永遠不可能！在想/講這兩句話的同時，你自己已經先設個蓋子給自己了，怎麼有辦法去突破呢？！本來就應該要不斷地去突破自己的極限，如果不小心太超過了，那再修回來也無妨。<br><br>
+          3.	我已經知道了，你不必再跟我說。其實這個錯誤我之前也常犯，常常都會覺得說：「我已經知道的事情你幹嘛一直跟我說勒？浪費時間。」但往往就是因為這個想法，而造成了難以挽回的局面。在想這件事的時候，自己已經先把耳朵關起來，不論別人說什麼都聽不進去。不過有時候，就是這種莫名的自信才會把自己害慘，因為事物總是一體兩面，一定會有自己沒注意但卻需要被注意的面向存在著。<br><br>
+          4.	缺乏自信和決心。雖然我上面說有自信並不是一件很好的事，但沒自信卻遠比有自信來得更差。想像一下今天要上台介紹自家的產品，但因為你缺乏自信與決心（嗯！我一定要好好地介紹這個產品的優勢），導致這個過程都顯得很詭異（更糟的事是你明明很了解自家的東西，但因為沒有對自己的自信，所以把很熟悉的東西講得很陌生），那這樣也是非常不好的一件事。<br><br>
+          </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--第三十一週的內容-->
+<div class="w3-container">
+  <div class="w3-modal" id="w31">
+    <div class="w3-modal-content w3-animate-top" style="background-color: white; border-radius: 20px;">
+      <div class="w3-container" style="font-size: 20px">
+        <span onclick="w31_off();" class="w3-display-bottomright" style="position: absolute; top: 20px; right: 20px; cursor: pointer;">྾</span>
+        <p>2023.04.10-2023.04.14<br>
+          已經知道怎麼利用電腦的攝影機來拍攝畫面，但那個是有點像直播的概念。當把那個顯示拍攝畫面的視窗關起來後，那些影像畫面將會不復存在。那麼問題就來了，要如何存檔拍攝的畫面呢？這就是今天要講的！<br>
+          <span class="custom-text">import cv2<br>
+          import numpy as np<br>
+          cam=cv2.VideoCapture(0)</span><br><br>
+          每次要用到OpenCV，一定要載入cv2的函式庫，這應該不用多講；numpy的部份這次沒有用到，但無所謂，載入了有沒有用到系統自己會分辨；VideoCapture是要跟電腦鏡頭做掛接，0代表的是內建鏡頭的編號（預設）。<br><br>
+          
+          <span class="custom-text">width=int(cam.get(cv2.CAP_PROP_FRAME_WIDTH))<br>
+          height=int(cam.get(cv2.CAP_PROP_FRAME_HEIGHT))</span><br><br>
+          [CAP_PROP_FRAMW_WIDTH]是要取得目前影像的寬度，而[CAP_PROP_FRAME_HEIGHT]是要取得目前影像的高度，這兩個都是常數。常數是一個「已經預先被定義」的數值，也就是說，這是opencv資料庫直接幫我們設定好了，現成的可以直接拿來用。int()是要把浮點數（小數）轉換成整數，因為上面那兩個常數取到的影像規格值會是浮點數，但顯示視窗的規格一定要是整數，因此如果傳遞浮點數的話，他就會出錯。<br>
+          <span class="custom-text">fourcc=cv2.VideoWriter_fourcc(*"mpv4")</span><br><br>
+          這句話的主要目的是要讓他的編碼變成是mp4型態，因為影像編碼格式有很多種（Mp4,mov,mpeg,h.264,hevc,prores等等），其中比較特別的是prores，這個是美國蘋果所開發的影像格式，他是影像重度工作者（電影製作）的必用。其實不管使用哪個格式都無所謂，只不過使用mp4或mov比較好的原因在於，因為mp4是windows系統原生開發的；mov是mac系統原生開發的，那現在全球主流的電腦系統就這兩個，所以為什麼較多人選這兩個格式。<br>
+          因此[VideoWriter_fourcc]是一個控制目前影像檔是什麼編碼格式的一個函數。為什麼需要影像編碼格式是因為，使用原始的影像檔案太大，電腦不太能負荷（也許有些頂規的可以，但那在少數），所以需要在盡量不影響影像品質的情況下，將影像以某種格式進行壓縮。<br>
+          括號中為什麼要塞個星號「＊」是因為[VideoWriter_fourcc]這個函數要求的是要4個字元，那在這個情況下我們有兩個選擇：第一，把它分離開並個別打出來”m”,”p”,”v”,”4”；第二，用星號代表已經被分離開來。這個任誰都會想要只打一個星號代表已被分離吧，誰想要一直打引號呢。<br>
+          <span class="custom-text">out=cv2.VideoWriter("/Users/macintosh/桌面/ming.mp4", fourcc, 20.0, (width,height))</span><br>
+          [VideoWriter]是一個函數，而他需要傳入四個參數：最前面那個橘色的是我這個影像想要儲存的位置（路徑）與檔名（ming.mp4）；第二個是「編碼格式」為何，那因為上一個我已經指定了要用mpv4這個格式，並且已經用了”fourcc”這個變數名稱把我的設定封裝起來，所以在這裡我只要輸入變數名稱電腦就會知道我要的格式；第三個是我要的幀率，在這裡我設定的幀率是20，也就是每秒鐘跑20張圖片形成影片。那普遍來說，幀率設定20是正常，一般影片都是幀率20，只有特殊影片才會設特別高或特別低，例如說動作影片的幀率會設可能80甚至100都有可能，因為他們需要的是看起來逼真，而一直變換動作就會顯得逼真。那會設特別低的影片譬如說像監視器畫面，因為它的原理是24小時一直在錄製，如果今天使用的幀率太高，那會非常佔用記憶體容量，監視器畫面看重的不是影像精密度，而是有沒有錄到畫面。而第四個需要傳入的參數就是影像的長寬是多少像素，那跟上面一樣，我已經設了兩個變數是代表自動抓取寬度與長度的了，所以這裡一樣直接放入變數名稱即可。<br>
+          <span class="custom-text">if not cam.isOpened():<br>
+              print("cannot detect camera")<br>
+              exit()<br>
+          while True:<br>
+              ret,frame=cam.read()<br>
+              if not ret:<br>
+                  print("without frame informatiorn")<br>
+                  break<br>
+              out.write(frame)<br>
+              cv2.imshow("ming", frame)<br>
+              if cv2.waitKey(1)== ord("r"):<br>
+                  break</span><br><br>
+          這串我上次已經講過，這次不細講，但稍微描述一下。簡單來說就是直到中間那個break前，都是在判斷是不是真的有影像的。中間的break以後就是有影像了然後用什麼方法顯示出來。<br><br>
+          </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--第三十二週的內容-->
+<div class="w3-container">
+  <div class="w3-modal" id="w32">
+    <div class="w3-modal-content w3-animate-top" style="background-color: white; border-radius: 20px;">
+      <div class="w3-container" style="font-size: 20px;">
+        <span onclick="w32_off();" class="w3-display-bottomright" style="position: absolute; top: 20px; right: 20px; cursor: pointer;">྾</span>
+        <p>2023.04.17-2023.04.21<br>
+          【前言】<br><br>
+          今天來講日文的文法！<br>
+          這週我學到的文法是「形容詞—時式」，他就跟英文一樣，也有過去式跟現在式的差別，但並沒有像英文一樣那麼複雜，等等會做個解釋。雖然說沒有像英文那麼複雜，但是日文因為日本的文化非常注重「禮貌」還有「輩份」的問題，所以他們也是有獨特的一套時態系統。<br><br>
+          【形容詞、形容動詞】<br><br>
+            不曉得您還記不記得在春節連假前我有寫過一篇在講「日文十大品詞」的，當時就有淺談到「形容動詞」，那現在我要細講。可能有些人會把這兩種搞混（包含我當時還是初學者時也是），不過我讀日文到目前為止我會用「在講人與否」來分（雖然說課本並沒有這樣說，但他也沒有說分辨的撇步，所以暫時我先這樣分，將來如果被推翻了再來分享）。在這裡用「暑。A tsu。熱的。」跟「嫌い。Ki ra i。討厭的。」來做範例。<br>
+          之前我忘記在哪裡有看過一篇教學文章是說：你只要看結尾都是い的那他就一定是形容詞。結果根本就不是！上述那兩個雖然也都是い，但前者是形容詞，後者是形容動詞，雖然說這兩者功能相同，但因應不同的詞性，文法使用上不同。因為討厭的是講人才會覺得討厭，所以是跟人的感覺動作有關，因此是形容動詞；熱的是在講東西很熱，不會拿來說，你好熱喔。（雖然有時會這樣用，但並不會大家都這樣用）。<br>
+          那剛剛說形容詞與形容動詞的分辨方式是我自己才這樣用，課本上是寫這樣的：詞語是「語幹」跟「語尾」合起來的（我不知道是不是日文才這樣，因為我沒有查到這方面的內容）。而我剛剛舉的例子都只有語幹而已，所以如果要合起來的話就會變成「暑い。A tsu i。熱的。」跟「嫌いだ。Ki ra i da。討厭的。」從剛剛的語幹加語尾中可以看到，前者是形容詞，所以加い當語尾；後者是形容動詞，所以加だ當語尾。這樣看起來那篇教學文寫的也不完全是錯誤，只是會容易混淆初學者而已。雖然說這類容易混淆的形容動詞很少，因此也不需要太過擔心就是了，只要稍微注意一下即可。不過如果要真正避免錯誤的判斷形容詞跟形容動詞，單看單字本身是無法知道的，因此我還是會去查字典。<br><br>
+          【形容詞也有過去式？！】<br><br>
+            在中文，只要加個「已經」兩個字就代表過去式，連個變化也沒有；在英文中，甚至只有動詞（內含一般動詞、be動、助動詞、連綴動詞等等）會有過去式的變化；但在日文中，形容詞也可以做為過去式使用。以下拿「暑い。A tsu i。熱的。」來做解釋。<br>
+          ＊丁寧體跟普通體都是一樣的，唯一差別在於禮貌上。<br>
+          <table>
+            <thead>
+              <tr>
+                <th>時式</th>
+                <th>句型</th>
+                <th>丁寧體</th>
+                <th>普通體</th>
+              </tr>
+            </thead>
+          	<tbody>
+          		<tr>
+                <td style="text-align: center; padding-top: 10px; line-height: 2.5em;" rowspan="2">非過去式<br>(現在/未來)</td>
+                <td style="text-align: center; padding-top: 10px; line-height: 2.5em;">肯定</td>
+                <td style="padding-top: 20px; line-height: 2.5em;">暑いです。<br>很熱。<br>a tsu i de su。<br></td>
+                <td style="padding-top: 20px; line-height: 2.5em;">暑い。<br>很熱。<br>a tsu i。<br></td>
+              </tr>
+
+              <tr>
+                <td style="text-align: center; padding-top: 10px; line-height: 2.5em;">否定</td>
+                <td style="padding-top: 20px; line-height: 2.5em;">暑くないです。<br>不熱。<br>a tsu ku na i de su。<br></td>
+                <td style="padding-top: 20px; line-height: 2.5em;">暑くない。<br>不熱。<br>a tsu ku na i。<br></td>
+              </tr>
+
+              <tr>
+                <td style="text-align: center; padding-top: 10px; line-height: 2.5em;" rowspan="2">過去式</td>
+                <td style="text-align: center; padding-top: 10px; line-height: 2.5em;">肯定</td>
+                <td style="padding-top: 20px; line-height: 2.5em;">昨日は暑かったです。<br>昨天很熱。<br>Ki no u wa a tsu ka tta de su。<br></td>
+                <td style="padding-top: 20px; line-height: 2.5em;">昨日は暑かった。<br>昨天很熱。<br>Ki no u wa a tsu ka tta。<br></td>
+              </tr>
+
+              <tr>
+                <td style="text-align: center; padding-top: 10px; line-height: 2.5em;">否定</td>
+                <td style="padding-top: 20px; line-height: 2.5em;">昨日は暑くなかったです。<br>昨天不熱。<br>Ki no u wa a tsu ku na ka tta de su。<br></td>
+                <td style="padding-top: 20px; line-height: 2.5em;">昨日は暑くなかった。<br>昨天不熱。<br>Ki no u wa a tsu ku na ka tta。<br></td>
+              </tr>
+            </tbody>
+          </table>
+          <br>
+            從上述表格中我們可以觀察到：<br>
+          1.	當形容詞為否定句時，將語尾的い去掉，改為く，再加上具否定性的ない。<br>
+          2.	當形容詞為過去式時，將語尾的い去掉，改為かった。<br>
+          3.	當形容詞為過去式否定句時，將語尾的い去掉，改為く，再加上具否定性的ない。不過要注意，此時的ない跟前面本身的形容詞是一體的，所以形容詞＋ない合起來整組都是形容詞。因此同理可證，ない的い也需去掉再加上過去式的かった。<br><br>
+          【特別注意！】<br><br>
+          形容詞否定句過去式可用「…くなかったです」，但形容詞肯定句過去式只能用「…かったです」。<br><br>
+          </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--第三十三的內容-->
+<div class="w3-container">
+  <div class="w3-modal" id="w33">
+    <div class="w3-modal-content w3-animate-top" style="background-color: white; border-radius: 20px;">
+      <div class="w3-container" style="font-size: 20px">
+        <span onclick="w33_off();" class="w3-display-bottomright" style="position: absolute; top: 20px; right: 20px; cursor: pointer;">྾</span>
+        <p>2023.04.24-2023.04.28<br>
+          最近我讀到一篇商周他是在講創業方面（不用擔心，他是正向的，他不是負面的😂）。他講了為什麼很多人會創業，但最終是失敗收場。而今天我的資料來源不是堆金積玉，而是Mark Cuban，我看了他的Wikipedia、我看了他的受採訪影片、我看了他的人物故事。<br><br>
+          而他是誰呢？他比較被廣為人知的就是他創了一間叫Broadcast.com的網路公司（Cuban都把它稱為是全球第一間影音串流平台），而這間公司在Cuban創立的1年後，被YAHOO以59億美金的天價收購了，而他失去了經營權，但獲得了股權。另外，Mark Cuban現在是一隻NBA球隊的持有者。<br><br>
+          1.	他覺得為什麼很多人創業會失敗，因為不夠好奇(curious)。他認為說要怎麼樣能夠比別人更強，就是不斷地吸收新知。他說：「當你開始創業時你不會是在一個毫無競爭的世界裡，當然除非你是非常創新的那種，不過非常創新某種程度上才是最大的競爭。那要如何抵過那些競爭，答案是好好探索你所在的產業，盡其所能地了解他。」<br><br>
+          2.	知道自己在做什麼。他覺得知道自己在做什麼很重要，如果今天想要開始做一件事情，必須要知道自己為什麼要開始做，以及自己”真正”在做什麼。就拿剛剛的競爭來說，你完全不知道你在幹嘛，你要拿什麼跟我競爭呢？！<br><br>
+          3.	學習如何學習。他說：「因為商場上是不斷地在變化的，如果你沒有盡一切可能的學習，你也許會被淘汰掉。如果有人比你懂的更多，你又沒繼續學習，你也不知道如何學習，甚至你根本不渴望學習，那你勢必出局。」<br><br>
+          </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--第三十四週的內容-->
+<div class="w3-container">
+  <div class="w3-modal" id="w34">
+    <div class="w3-modal-content w3-animate-top" style="background-color: white; border-radius: 20px">
+      <div class="w3-container" style="font-size: 20px">
+        <span onclick="w34_off();" class="w3-display-bottomright" style="position: absolute; top: 20px; right: 20px; cursor: pointer;">྾</span>
+        <p>2023.05.01-2023.05.05<br>
+          這週一樣繼續Opencv的部分。這次要講的是「影像的旋轉、翻轉與改變尺寸」，那他的目的其實就已經開宗明義告訴你了。這次總共會有4個函式，那為什麼上面只有提到三個作用，但卻有4個函式呢？<br><br>
+          <span class="custom-text">output_0=cv2.flip(img,0)<br>
+          output_1=cv2.flip(img,1)<br>
+          output_2=cv2.flip(img,-1)<br>
+          cv2.imwrite("/Users/macintosh/Dropbox/Baby Mac/python/images/1-1.jpg",output_0)<br>
+          cv2.imwrite("/Users/macintosh/Dropbox/Baby Mac/python/images/1-2.jpg",output_1)<br>
+          cv2.imwrite("/Users/macintosh/Dropbox/Baby Mac/python/images/1-3.jpg",output_2)</span><br><br>
+          ＊最前面一定都是會有一個imread來讀取圖片，但因為那個已經是老生常談，所以這次就不再放。<br>
+            Output_0,output_1,ouput_2這些都是變數名稱，這沒問題，重點在於後面。Flip()這個函式會傳入兩個參數，第一要對哪張圖片做處理（這裡放img，因為我已經把那個路徑用另一個叫img的變數包裝起來了），第二是「怎麼處理」，您會發現說後面的都是0,1,-1，0代表的是”以X軸為中心進行上下翻轉”（其實就是水平翻轉）；1代表的是”以Y軸為中心進行左右翻轉”（也就是垂直翻轉）；-1代表的是上述兩個作用同時產生反應（上下左右同時翻轉）。<br><br>
+            <span class="custom-text">output=cv2.transpose(img)<br>
+          cv2.imwrite("/Users/macintosh/Dropbox/Baby Mac/python/images/1-4.jpg",output)</span><br><br>
+            transpose()只需要傳入一個參數，就是要對哪張圖片做處理。為什麼不需要有第二個參數呢？因為他已經幫你指定好這個函式是幹嘛的了，通常來說第二個參數就是指定如何處理，那他已經指定好，就不需要你再告訴他。而這個函式的作用是「只能」處理『逆時針旋轉90度』，也就是說如果你想要處理成別的角度或是別的方向，就要用到接下來這個囉～<br><br>
+            <span class="custom-text">output_1=cv2.rotate(img, cv2.ROTATE_90_CLOCKWISE)<br>
+          output_2=cv2.rotate(img, cv2.ROTATE_90_COUNTERCLOCKWISE)<br>
+          output_3=cv2.rotate(img, cv2.ROTATE_180)<br>
+          cv2.imwrite("/Users/macintosh/Dropbox/Baby Mac/python/images/3-1.jpg",output_1)<br>
+          cv2.imwrite("/Users/macintosh/Dropbox/Baby Mac/python/images/3-2.jpg",output_2)<br>
+          cv2.imwrite("/Users/macintosh/Dropbox/Baby Mac/python/images/3-3.jpg",output_3)</span><br><br>
+          rotate()是可以不限方向性的旋轉，例如說ROTATE_90_CLOCKWISE就是將圖片順時針旋轉90度；ROTATE_90_COUNTERCLOCKWISE是將圖片以逆時針的方式旋轉90度；而ROTATE_180就是完整的旋轉180度。<br>
+          ＊所以說為什麼會有3個作用但卻有4個函式呢？原因是因為多了一個只限於逆時針旋轉90度的函式喔。<br><br>
+          <span class="custom-text">output_0=cv2.resize(img, (100,500))<br>
+          cv2.imwrite("/Users/macintosh/Dropbox/Baby Mac/python/images/ashin1-1.jpg",output_0)</span><br><br>
+            resize()就跟字面上說的一樣，「重新定義尺寸」。所以說按照上面寫的程式碼會產出的結果就是，使用一張以img作為基底的圖片，然後將他的尺寸變成長100*寬500的狹長型圖片，最後另存新檔。<br><br>
+          【很抱歉這篇有關python的學習紀錄文是自我開始寫以來最短的，他只有682個字，但因為其實這幾個函式是比較簡單的，與之前非常迂迴的概念差別相當多。因此我學習這個概念只有花一個下午，所以可以講的內容還滿少的。】<br><br>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--第三十五週的內容-->
+<div class="w3-container">
+  <div class="w3-modal" id="w35">
+    <div class="w3-modal-content w3-animate-top" style="background-color: white; border-radius: 20px">
+      <div class="w3-container" style="font-size: 20px">
+        <span onclick="w35_off();" class="w3-display-bottomright" style="position: absolute; top: 20px; right: 20px; cursor: pointer;">྾</span>
+        <p>2023.05.08-2023.05.12<br>
+          這禮拜來講解日文單字的一個差別！<br><br>
+          【前言】<br><br>
+            以往我在看日劇或日文文章的翻譯時，我有時會看到「声」跟「音」兩者同時並存。從中文看起來聲、音兩個東西是一樣的對吧，而且我丟到google翻譯，翻譯出來的結果也是一樣的，都顯示是「聲音」。於是我就特別去查了這個部分，而這就是這週要講的內容。<br><br>
+          【舉例的差異處】<br><br>
+          <strong>＜</strong>声（こえ）(ko e)<strong>＞</strong>他通常用來表示生物（人或動物）來發出的聲音，且他強調的是聽者的「聽覺感知」。譬如說：<br><br>
+          1.	子供の声が聞こえる。可以聽到孩子的聲音。Ko do mo no ko e ga ki ko e ru。<br>
+          2.	彼の声が¬大きすぎる。他的聲音太大聲了。Ka re no ko e ga oo ki su gi ru。<br>
+          ＊上面那兩個[oo]代表長音的意思。<br><br>
+          <strong>＜</strong>音（おと）(o to)<strong>＞</strong>他可以用來廣泛的涵蓋各種聲音，而不僅僅限於人聲（雖然說生物聲音大部分人都會使用「声」）。但他比較常被使用的地方在於「非生物」的聲音，例如引擎聲、雨聲、鋼琴聲、東西掉落聲之類的。例如：<br><br>
+          1.	エンジンの音がうるさい。引擎的聲音吵死了。En jin no o to ga u ru sa i。<br>
+          2.	さっきのあれは何の音ですか。剛剛那是什麼聲音？sa kki no a re wa na ni no o to de su ga。<br>
+          ＊如果像這樣[kki]，代表那個要促音，就是稍微停頓一下再念。<br>
+          ＊日文中很少會用到問號，除非是很質疑性的才會用到，因為ですか本身就已經帶有疑問性。<br><br>
+          <strong>＜</strong>音声（おんせい）(on sei)<strong>＞</strong>＊這個很少自學日文的人會注意到，因為他不常使用，但因為講到聲音了，所以就一起講。<br>
+          他是專門用來講述「人聲透過機器所發出聲音」的用詞（有點類似於中文的語音）。例如新聞主播透過電視播報新聞所發出的聲音，廣播人員廣播的聲音等等。<br><br>
+          1.	音声入力。On sei nyu ryo ku。語音輸入。<br>
+          2.	音声認識。On sei nin shi ki。語音辨識。<br>
+          3.	音声再生。On sei sai sei。語音播放。<br>
+          4.	テレビの音声。Te re bi no on sei。電視的聲音。<br><br>
+          其實第四個要用「音」也是可以，所以我感覺用是不是人聲透過機器發出聲音來去區分好像怪怪的。應該比較正確來說的話是：「音声」是用給電腦看的，而人類在講話是使用「音」跟「声」。<br><br>
+          </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--第三十六週的內容-->
+<div class="w3-container">
+  <div class="w3-modal" id="w36">
+    <div class="w3-modal-content w3-animate-top" style="background-color: white; border-radius: 20px;">
+      <div class="w3-container" style="font-size: 20px">
+        <span onclick="w36_off();" class="w3-display-bottomright" style="position: absolute; top: 20px; right: 20px; cursor: pointer;">྾</span>
+        <p>2023.05.15-2023.05.19<br>
+          最近我的手機一直收到一些推播通知，說什麼：「現在這兩檔ETF買起來絕對划算啦！！還在等什麼？！買啦哪次不買！」等等這類的訊息。當然我們都知道說，預先知道誰誰誰一定會漲會賺錢這大多情況下是騙人的，所以不需給予理會。但我發現，我到目前爲止還不知道什麼是ETF，這就是這週要講的內容。<br><br>
+        【ETF是什麼】<br><br>
+          ETF的全名是Exchange Trade Fund交易所買賣基金，所以從名字可以看到，ETF其實就是基金的一種，而所謂基金就是幫你分散投資標的，但這個標的可以是股票也可以是債券或者其他任何金融商品。不過雖然ETF跟上述的基金都叫「基金」，但組成與買賣方式卻有些許的不同。例如說台股最知名的0050ETF就是在追蹤台灣市值前50大的公司，也就是說如果你買入這檔ETF，就代表你一次投資了這50間公司、一次買進了這50間公司一部份的股票。<br><br>
+        【ETF的優點】<br><br>
+        1.	可分散風險。ETF是投資一大堆的標的，因此可以避免單一個股出了什麼狀況而導致的大起大落，進而降低波動性。<br>
+        2.	適合存股。不過要注意，並不是每一隻ETF都適合存。以剛剛的0050來講，因為他是每一季去汰弱留強，如果某間公司的市值跌出前50名了，就會自然被0050除名。意思就是說，你永遠都是抱著台灣市值最高的前50家公司。<br>
+        【ETF的缺點】<br><br>
+        1.	ETF不代表不會下跌。剛剛有說到分散風險是「降低波動性」，並不是不會下跌，因為我這週在看很多資料的時候我發現好像網路上很多人都以為說ETF是穩賺的。但其實不是，當市場產生動蕩時（例如通貨膨脹率上升、戰爭、金融海嘯、國債問題等等），當各家公司都下跌時，ETF當然也會下跌，而這個稱為「系統風險」。當一個系統性的問題出現時，他就無法夠過分散投資來降低風險。<br>
+        2.	說分散很分散，說集中很集中。雖然剛剛說了「如果某家公司跌出前50名，自然會被0050除名」、「ETF是很多公司集結起來成為一檔ETF的，因此可以分散風險」。但其實想也知道，台灣市值前50大的公司不外乎就是那幾家，台積電、聯電、聯發科、中鋼、鴻海、日月光投控、統一、中華電、大立光等等。這種大到不能倒的公司，是絕對不會跌出前50名的，他就算公司內部出了「系統性問題」導致差點就要離開前50名行列時，政府也會想辦法讓他穩住。而且上述例子其中台積電還佔了0050持股高達48將近50%，所以為什麼會說集中很集中，因為你持有了將近一半的台積電成分股啊！<br><br>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--第三十七週的內容-->
+<div class="w3-container">
+  <div class="w3-modal" id="w37">
+    <div class="w3-modal-content w3-animate-top" style="background-color: white; border-radius:20px;">
+      <div class="w3-container" style="font-size: 20px">
+        <span onclick="w37_off();" class="w3-display-bottomright" style="position: absolute; top: 20px; right: 20px; cursor: pointer;">྾</span>
+        <p>2023.05.22-2023.05.26<br>
+          這禮拜要講的是Opencv「圖像的幾何轉換」，其實聽這個名字會聽不太懂，那我學了之後我也覺得跟幾何好像又不是那麼有關係，但我也想不到更好的形容詞來講了，所以就叫幾何了！<br>
+          ＊前面一樣都要載入函式庫、一樣都要讀取路徑圖片。<br><br>
+          <span class="custom-text">M=np.float32([[2,0,100],[0,2,100]])<br>
+          output=cv2.warpAffine(img,M,(480,360))</span><br><br>
+            這段程式碼的用處在於，要把圖片平移。舉例來說，一張圖片本來是一整個畫面滿的，那這段程式碼放下去之後，就會變成整張圖片平移去左下角，無圖片之處皆用黑色填滿。而這是一個2*3的陣列（就是我之前說過的陣列，所以沒錯！這次有用到numpy）。在這之中我們使用了float32轉換資料型態，因為電腦需要計算他要平移幾個單位，而陣列不能計算，所以為了能夠計算，我們要把他的資料型態從陣列轉換為浮點數型態。<br>
+          後面的[2,0,100],[0,2,100]，其中前中括號代表處理X軸，而3個參數中，第一個參數代表了縮放因子、第二代表了剪切因子、第三代表了平移單位數量；後中括號代表處理Y軸，其中參數用意大致相同，只有縮放因子跟剪切因子的位置相反而已。那代入我們的例子，在X軸的縮放因子參數裡放入了2，代表將圖像在X軸方向放大2倍（正數為放大，反之，縮小為負數）、剪切因子為0，表示不進行任何裁減、平移數量放100，代表於X軸方向平移100單位。Y軸中括號的剪切因子為0，同樣不剪切；縮放因子為2，同樣放大2倍，平移量為100，意指在Y軸上平移100個單位。<br>
+          再往下，儲存在output變數中的值。Warpaffine表示進行平移的動作，剛剛我們做的處理都只是要告訴電腦處理平移的細項，現在輸入warpaffine的目的在於告訴電腦「確定我要進行平移囉」。Img代表要對這個路徑的這張圖片做處理；M就是那個float32的變數名稱（也就是那個處理平移的細節）；最後面的(480,360)代表這張新增的圖片寬度為480像素、高度為360像素，只要超過上述的寬高，圖片就會被裁減。<br><br>
+          <span class="custom-text">M=cv2.getRotationMatrix2D((240, 180), -45, 1)<br>
+          output=cv2.warpAffine(img,M,(480,360))</span><br>
+            getRotationMatrix2D是一個代表新的作用的函式，他代表了旋轉影像。這個函式他需要放入3個參數：最前面那個括號中的240,180表示了「以這個X軸Y軸的這個座標為中心點去做旋轉；中間的參數是決定旋轉度數幾度的，跟剛剛一樣，負數代表逆時針、正數代表順時針；最後面的1表示放大倍率，而1倍代表沒有放大。Output那裡就都一樣了，沒有更動。<br><br>
+          </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--第三十八週的內容-->
+<div class="w3-container">
+  <div class="w3-modal" id="w38">
+    <div class="w3-modal-content w3-animate-top" style="background-color: white; border-radius: 20px;">
+      <div class="w3-container" style="font-size: 20px;">
+        <span onclick="w38_off();" class="w3-display-bottomright" style="position: absolute; top: 20px; right: 20px; cursor: pointer">྾</span>
+        <p>2023.05.29-2023.06.02<br>
+        【前言】<br><br>
+          在學英文時有學到說什麼什麼什麼修飾什麼什麼什麼或者什麼詞性修飾什麼詞性，那時我聽了永遠是一頭霧水，但到後來，我終於茅塞頓開，其實他就是要加以敘述，讓講的主題更完整一點，像這樣：<br<br>
+        1.	あの青いの靴はいくらですか。那雙藍色的鞋子多少錢呢？(a no a o I no ku tsu wa I ku ra de su ka)<br><br>
+        這就是修飾用法的最好舉例，講了鞋子但沒有敘述哪雙鞋子別人怎麼會知道你在問哪雙？但如果單純講了藍色的東東但沒有講哪一個藍色的物品，那這樣的溝通並沒有用。因此這時候修飾法就派上用場了。<br><br>
+        【文法句型---形容詞修飾名詞】<br><br>
+        這個的句型是：形容詞語尾「い」＋名詞。<br><br>
+        1.	白い車。Shi ro I ku ru ma。白色的車。<br>
+        2.	つまらないトラマ。Tsu ma ra na I to ra ma。無聊的劇。<br><br>
+        從以上兩個例子可以看出來，其實就只是把形容詞跟名詞放一起而已，非常簡單。<br><br>
+        【文法句型---形容詞修飾動詞】<br><br>
+          形容詞語尾「く」＋動詞。這個句型是表示形容詞修飾動詞的用法。<br><br>
+        1.	早く起きます。Ha ya ku o ki ma su。早起。<br>
+        2.	楽しく勉強します。Ta no shi ku ben kyo u shi ma su。快樂的學習。<br><br>
+        以上兩個例句可以看出：我學習，我怎麼樣學習？快樂的學習；我起床，我怎麼樣起床？快樂的起床。<br><br>
+        【接中止形】<br><br>
+          以上講的這兩個都可以放中止形，因為他們都是形容詞的關係。那就是去「い加くて」；而名詞的中止形是加「で」這個在很之前就講過。<br><br>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--第三十九週的內容-->
+<div class="w3-container">
+  <div class="w3-modal" id="w39">
+    <div class="w3-modal-content w3-animate-top" style="background-color: white; border-radius: 20px;">
+      <div class="w3-container" style="font-size: 20px">
+        <span onclick="w39_off();" class="w3-display-bottomright" style="position: absolute; top: 20px; right: 20px; cursor: pointer;">྾</span>
+        <p>2023.06.05-2023.06.09<br>
+          【前言】<br><br>
+            上次我們講到了ETF的優缺點，那這次繼續講下去！這次我要講的是「買進、持有、賣出一檔ETF」總共會需要支出的費用。因為像股票的話是你一年的股利收入會有一個股利所得稅法來課徵，且每次的證券交易都有一個證交稅。那我就好奇啦，會不會ETF也是個另類的「避稅天堂」呢？這就是這次要講的內容。<br><br>
+          【交易前】<br><br>
+            首先，交易時當然會有一個「交易手續費」（等同於股票的證券交易稅），不過跟股票不同的是，股票的是交給政府作為稅收；而ETF是給發行那檔ETF的券商的。譬如說”元大0050”這檔的交易手續費就是交給元大證券投信，而當然付手續費的頻率的話就是有交易才有，沒有則無。<br><br>
+          【持有時】<br><br>
+            再來，持有時會分兩種：第一種是內扣費用。所謂的內扣費用指的是像管理費、保管費、買賣周轉成本、雜支，而這個是由ETF發行商取走了，並且他會直接從淨值去扣款，不需再另外繳錢。第二種是股息稅務，ETF同樣有股息，因此也同樣需要繳稅給政府，而頻率的話當然就是隔年5月在繳綜合所得稅的時候才需要繳。<br><br>
+          【賣出時】<br><br>
+            最後，賣出時有個交易手續費與交易稅，交易手續費跟買進時一樣是給券商；交易稅是給政府的。但交易稅有個特色，他會在你賣出時一併和交易手續費交給券商，而不是在隔年繳稅時付稅。
+          【ETF內扣費用？】<br><br>
+            剛剛有講到持有ETF時會有一個內扣費用，那這個內扣費用到底是什麼內扣費用？內扣費用有包含四項：管理費（這個是操作投資組合的管理成本，也可以叫做經理費）；保管費（因為錢還是由銀行在保管在處理，因此這個就是要付給銀行管理你的錢的保管費）；買賣週轉成本（上次有說過，0050這個組合的成分會一直變換，所以說這個他就是調整你的投資組合的交易成本；雜支費（這個其實就是券商把他在經營各種基金會需要消耗的雜支讓你付費而已）。<br><br>
+          </p>
+      </div>
+    </div>
+  </div> 
+</div>
+
+<!--第四十週的內容-->
+<div class="w3-container">
+  <div class="w3-modal" id="w40">
+    <div class="w3-modal-content w3-animate-top" style="background-color: white; border-radius: 20px">
+      <div class="w3-container" style="font-size: 20px">
+        <span onclick="w40_off();" class="w3-display-bottomright" style="position: absolute; top: 20px; right: 20px; cursor: pointer;">྾</span>
+        <p>2023.06.12-2023.06.16<br>
+          學校美術課有在上的人應該都知道顏色的三原色吧（笑），那在美術領域，三原色代表的是調色的部分；但在OpenCV裡他想表達「顏色的呈現」。因為電腦沒有眼睛，它顯示出顏色但他並沒辦法直接得知說是什麼顏色，因此我們設了代碼給他，比如說紅色的RGB代碼就是[255,0,0]，利用數字來告訴電腦，這到底是什麼顏色。<br><br>
+        那剛剛講的RGB其實就剛好是3個數字代表的顏色，在紅色那個通道放255（最多就255了，放256會跳錯誤，我試過），綠色跟藍色通道放0，這樣代表就是顯示紅色。同理可證如果綠色放255，就當然會是綠色囉！（那這樣如果3個通道都放255的話會不會是黑色？沒錯！！就是黑色。所以要說是調色也能夠說是調色啦。）另外，其實RGB有另一個兄弟，叫RGBA。多出來的那個”A”的目的是：設定顏色的「透明度」，顏色越透明，代表越淺；反之，顏色越不透明，則代表越深。<br><br>
+        除了放3個通道來顯示顏色以外，還有沒有什麼辦法來顯示顏色？當然有！譬如說如果要表達海軍藍的話就會寫說[#5F9EA0]。這個的顯示方法叫做「十六進位法的色碼表」，這個的好處在於說，他有很多不同情況下的顏色。舉例來說，光藍色就很多種藍了：海軍藍、天空藍、湖水藍、深藍、淺藍、午夜藍、普魯士藍等等……太多太多了。那這情況下其實RGB就做不到那麼多種藍的呈現（當然讀美術系又剛好略知程式設計的搞不好可以哈哈），所以就凸顯了十六進位法色碼表的優勢。不過他的壞處在於，因為世上數以千計的顏色在做區分，所以他的色碼一定是多到數不清，但我們又不可能去每個背起來，所以問題所在於，每次要用就要再去查一次。<br<br>
+        因此！有個更簡單的方法，其實就直接寫說他的顏色就好了，就像要表達黑色就直接寫”black”、橘色寫”orange”、深灰色寫”deepgray”。但這樣依然有個問題，就是能呈現的顏色不能到很多。也就是說，其實電腦的設計其實不是要你單獨使用哪個，而是交叉使用。如果你今天只是要單純的測試一下你的電腦顯色，那其實直接說顏色就好了；如果你今天是要調自己心目中的那個夢幻顏色，那用RGB通道會比較合適；但如果你今天的設計是很吃重顏色呈現的，那一定用色碼表才會能夠好好地將自己心中設計並想傳達的樣子表現出來。所以各有不同的使用時機，當然也各有不同的使用族群，並沒有哪個比較好或比較差，只是看你如何運用而已。<br><br>
+        今天講了到底在OpenCV裡面怎麼樣去好好地呈現顏色，那下一次的OpenCV學習分享就會開始講解怎麼樣做色彩轉換囉！<br><br>
+        </p>
+      </div>
+    </div> 
+  </div>
+</div>
+
+<!--第四十一週的內容-->
+<div class="w3-container">
+  <div class="w3-modal" id="w41">
+    <div class="w3-modal-content w3-animate-top" style="background-color: white; border-radius: 20px;">
+      <div class="w3-container" style="font-size: 20px">
+        <span onclick="w41_off();" class="w3-display-bottomright" style="position: absolute; top: 20px; right: 20px; cursor: pointer;">྾</span>
+        <p>2023.06.19-2023.06.23<br>
+          【前言】<br><br>
+            今天要來講日文的文法，「形容動詞的過去式、非過去式」！<br><br>
+          【什麼是形容動詞】<br><br>
+          形容動詞又稱為「ナ形容詞」(可記為NA)，那他跟形容詞一樣都是描述對於人或事物的狀態或性質；另外也表示改覺、情感、價值判斷等等，而形容動詞跟形容詞的差別在於”文法上的不同”。舉例來說：形容詞的語尾是い；但形容動詞的語尾是だ。不過要注意的一點是，形容動詞那個だ在日文字典上並不會顯示，所以要特別記。<br><br>
+          【形容動詞v.s形容詞】<br><br>
+            但我覺得這樣對我來說有點抽象，所以我這麼分：<br><br>
+          ＜形容詞＞<br><br>
+          1.	寒い。寒冷的。Sa mu I。<br>
+          2.	暑い。熱的。A tsu i。<br>
+          3.	つまらない。無聊的。<br>
+          ＜形容動詞＞<br><br>
+          1.	賑やか。熱鬧的。Ni gi ya ka。<br>
+          2.	簡単。簡單的。Kan tan。<br>
+          3.	静か。Shi zu ka。<br><br>
+          從上面可以看到，形容詞就是「不是人為可控制的事情」。像要冷要熱並不是我們人可以控制的，天氣要冷就冷要熱就熱，哪管你這麼多；而形容動詞則是「人可以控制的」，要不要熱鬧取決於人要不要集中在一個地方嘛、事情簡不簡單也是人為控制、嘴巴要不要閉上要不要安靜也是人在控制的。<br><br>
+          【形容動詞的時式】<br><br>
+          ＊所謂非過去式代表有可能是現在式也有可能是未來式。<br>
+          非過去式的肯定丁寧體：～です<br>
+          非過去式的肯定普通體：～だ<br>
+          非過去式的否定丁寧體：～ではありません<br>
+          非過去式的否定普通體：～ではない<br>
+          過去式的肯定丁寧體：～でした<br>
+          過去式的肯定普通體：～だった<br>
+          過去式的否定丁寧體：～ではありませんでした<br>
+          過去式的否定普通體：～ではなかった<br><br>
+          【形容動詞否定用法差別】<br><br>
+            形容動詞的否定用法有四種表現，他們的意思都相同，如下：<br><br>
+          丁寧體：ではありません=じゃありません=ではないです=じゃないです<br>
+          普通體：ではない=じゃない<br><br>
+            也就是說，通常句子越長的話越有禮貌；而「では」偏向鄭重的表現，「じゃ」偏向口語的說法。<br><br>
+          </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--第四十二週的內容-->
+<div class="w3-container">
+  <div class="w3-modal" id="w42">
+    <div class="w3-modal-content w3-animate-top" style="background-color: white; border-radius: 20px">
+      <div class="w3-container" style="font-size: 20px">
+        <span onclick="w42_off();" class="w3-display-bottomright" style="position: absolute; top: 10px; right: 20px; cursor: pointer;">྾</span>
+        <p>2023.06.26-2023.06.30<br>
+          時間，一直是自古以來許多人探討的問題。不論是功成名就的企業家或是努力往上爬的市井小民，任何人都想知道（甚至連我自己也是）到底如何在有限的時間裡再榨出更多的時間？或者未必要榨出時間，但是要如何在有限的時間裡達到更大的成果？<br><br>
+        今天跟上次Mark Cuban一樣也是人物故事，而我參考的是Ed Mylett的一場演講。Ed Mylett是一位美國企業家，所跨足的領域包含科技業、房地產、醫療和食品業等等，2022年才剛被＜成功＞雜誌評選為125名最具影響力的領導者之一。不過他可不是一出社會就創業，而是在父親的鼓勵下，成為弱勢兒童的輔導員，他說：「這段人生經歷使我體會到為人服務的重要性，也讓我感受到如果能透過分享自身經驗來影響其他人，那將會是多美好的事！This experience not just made me realized how important that help the other people, but also made me realized if I can impact anyone by my life experience, wow! That would be wonderful.」今天我會藉由我看到的他的YouTube頻道、採訪、演講、等等公眾場合的演說來濃縮一下我的想法。<br><br>
+        「我覺得自己已經落後了，但我又不是一個特別有背景特別有才華特別有能力的人，而且我也沒有成功的紀錄，那我到底要怎麼贏？」我覺得要去做別人不敢做的事！而且要糾正、扭轉自己對於時間的概念。他曾經有說到：「這個世界上最荒謬最過時的想法就是一天仍然有24個小時。The most ridiculous and antiquated concept is still have 24 hours per-day」。他解釋道，”24小時”是建立在日出而作日落而息以及想要傳遞訊息你必須要寫下來包成信件給馬車運送，等對方看到你的訊息時可能已經半年過了的那種時代，但現在不同了。妳想要傳遞訊息你只需要打開Gmail，打下你想要說的文字或傳的文件，按下傳送；彈指之間資訊就可以傳遞到對方那邊，因此其實計算時間的方式跟以前一樣的話那是很奇怪的，因為你做事情所需的時間大幅被縮減了。所以我覺得我應該要做的事是，想像我們一天只有12小時。我知道這個想法很怪異哈哈，但這種概念有點像是…感覺後面有隻大象在追你的感覺🤣，如此一來你就會有一種莫名的壓力（我如果現在不跑，我很快就會被吃掉；我如果不趕快做事，我的時間很快就會耗盡。）<br><br>
+        如果珍惜時間，同樣的他也會珍惜你，這時世界給你的回饋其實會是不同的。 <br><br>
+        <strong><span style="text-align: center">【珍貴的東西，是有價值的；你珍惜它，相對他也會珍惜你。】</span></strong><br><br>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--第四十三週的內容(回顧篇 上)-->
+<div class="w3-container">
+  <div class="w3-modal" id="w43">
+    <div class="w3-modal-content w3-animate-top" style="background-color: white; border-radius: 20px;">
+      <div class="w3-container" style="font-size: 20px">
+        <span onclick="w43_off();" class="w3-display-bottomright" style="position: absolute; top: 20px; right: 20px; cursor: pointer">྾</span>
+        <p>2023.07.03-2023.07.07<br>
+          不知不覺，這學期已經正式畫下了句點。暑假期間，我當然還是會繼續學習我該學習的，做我該做的事，仍然朝著目標前進，這種事情萬年不變。不過有件事讓我考慮很久相當的苦惱，就是到底要不要把「每週寫紀錄」這件事情在這兩個月繼續下去。後來在我進行深思熟慮後，我決定在暑假期間把紀錄繼續寫下去！<br><br>
+          我考慮的點有幾個，第一，「每週紀錄」已經變成一種我的習慣，因為其實我本來並沒有寫日記或寫任何紀錄的習慣（在2021年大概前3個月左右我有嘗試過，但後來種種因素暫時停掉了）。那透過不斷地與您分享我的學習歷程，這似乎也是一種寫日記的概念，所以好吧，算是一舉兩得囉。一方面我可以用我獨到的方式來分享學習歷程以及交每學年末的成果報告，另一方面也是培養我的「寫週記」習慣。也許幾年後我已經不在非學校型態實驗教育，也沒有寫日記或週記的必要了（當然我希望可以的話讓這種習慣持續下去），但那時的自己如果回頭看當年的一些紀錄的話，至少可以讓自己知道，其實在國中的3年並沒有白過！再另一方面，如果彼時的自己突然懶散了，那也可以用來激勵自己說：當年的自己是如何努力是如何讓自己的頭腦爬到這個位置的，如果沒辦法延續下去，情何以堪？<br>
+          第二，我發現我的寫作能力越來越進步。如果您是在短時間內從2022年9月1號那天開始看到今天這裡，那或許您會發現，我的文筆越來越好、標點符號的擺放位置越來越得當、講述的內容越來越詳盡、換行的時機越來越適宜、換行的意義越來越鮮明。可能文章越來越長了，但那是為了從不同的面向來解釋一件事情。我認為能夠讓對方從完全不懂到了解40%是不容易的。那如果為了讓對方理解，內容再繁複、文章再長、講解再多都是可原諒的。更何況是我是用文字來試圖讓您知悉我這一整個學年在幹嘛，我想我必須要確保這些文字是易讀的；我必須要在打字期間揣摩您在看這段文字時可能會有什麼疑問並且去解答；而且我不只要讓文字易讀，我還要用盡可能精簡的文字去盡可能表達最深的意思，我想這些其實都是不容易的。<br>
+          第三，我寒假有寫，所以暑假也寫比較好～（這樣比較公平哈哈哈哈哈🤣🤣<br>
+        <br>
+        ＊未完待續＊<br><br>
+        </p>
+      </div>
+    </div> 
+  </div>
+</div>
+
+<!--第四十四週的內容(回顧篇 下)-->
+<div class="w3-container" >
+  <div class="w3-modal" id="w44">
+    <div class="w3-modal-content w3-animate-top" style="background-color: white; border-radius: 20px">
+      <div class="w3-container" style="font-size: 20px;">
+        <span onclick="w44_off();" class="w3-display-bottomright" style="position: absolute; top: 20px; right: 20px; cursor: pointer;">྾</span>
+        <p>2023.07.10-2023.07.14<br>
+          ＊接續前篇＊<br><br>
+            而其實回顧國中生活的二年級，我覺得這段時光我是吸收最多的時光，當然並不是說七年級的時候都在混，而是說…我不知道您有沒有看過前台北市長柯文哲的這部影片<a href="https://www.youtube.com/watch?v=L5L2Stjp5H4" target="_blank">https://www.youtube.com/watch?v=L5L2Stjp5H4</a>。裡面有一個場景是同為民眾黨的議員在問柯文哲給新市長蔣萬安的施政分數幾分，那他就回答：「其實剛上任這樣去做一個評分不是很公平啦，像我2014年剛上任也是有1,2年是亂做的啊，總是要給點時間熟悉一下了解一下生態吧。」<br><br>
+            七年級我剛開始在非學體制內時我也是無所適從，也是一步一步去調整自己學習的狀態，那時的我甚至連什麼事情該怎麼排程都完全沒有想法也完全不知道，是後來一步一步慢慢找到自己的節奏、找到適合自己的方法才逐漸上軌道的。所以，國一時並不是在混，而是還在探索罷了。<br><br>
+          自學走到現在我覺得能夠有這樣子的一個成長這都要感謝我的家人還有自己的毅力跟意志力還有克制力！後來，我知道如何學習是適合我時，吸收也確實比以前更具效率了！套用一段Mark Cuban說的話：「『學習的能力每個人都有並且也都一樣，但為什麼你或世界上的有些人依然學不起來？是因為你或他們用錯了方法。』如果你在聽到我這句話時，就知道你學某樣東西學不太起來，那恭喜你，你還有機會！去『學習如何學習』吧；如果聽到了這句話的你並不感覺怎樣，但身旁的人都建議你去做點什麼來提升自己，那我很抱歉，你必須要趕緊調整心態了，要不然你很快就會被幹掉；如果你自己聽到這番話時非但不覺得怎樣甚至還覺得我在練肖話，身邊人的建言你也一概不聽，那我很遺憾，你可以準備去死了，因為這代表你沒有進步空間，而沒有進步空間的人是永遠只聽自己想聽的而已，當然也不會做任何改進。」<br><br>
+            那說我這學年到底學了什麼，我現在就來做個統整：<br><br>
+          程式部分我學習了OpenCV,selenium,NumPy,UTF（字元編碼），乍看之下沒有很多，但花最多時間與精力的是OpenCV（您從文章的字數與文章的數量應該看得出來呵呵），畢竟OpenCV涵蓋了不少東西呢。另外，目前寫的紀錄以來最讓我印象深刻的就是<a href="#w18">「第十八週的python紀錄」</a>這篇了，相信您如果仔細看過您應該也會嚇一跳的～<br>
+          日文部分目前已經是N5單字90%掃光，N5文法掃掉一半了，這個成果算是中規中矩、可圈可點啦。（雖然我自己的期望是更高的……<br>
+          那股市方面我到後來其實已經有點轉型成比較偏向理財或人生概念提升的那種題材，因為我發現只講股市，範圍太狹窄了，這樣反而會限縮我學習的空間。不過我並沒有就把股市丟著喔！我還是有學習ETF之類的金融商品知識。<br>
+            好啦！那麼這學期的兩篇回顧就到這邊結束了。不過我講一下，下禮拜的紀錄內容非常精彩，這件事絕對是您想不到我會去做的，甚至搞不好這件事您永遠都不會去做（除非被電到（笑））。<br><br>
+          </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- End page content -->
+    
+    <script>
+    function w1_on() {
+      document.getElementById("w1").style.display = "block";
+    }
+    function w1_off() {
+      document.getElementById("w1").style.display = "none";
+    }
+    function w2_on() {
+      document.getElementById("w2").style.display = "block";
+    }
+    function w2_off() {
+      document.getElementById("w2").style.display = "none";
+    }
+    function w3_on(){
+      document.getElementById("w3").style.display = "block";
+    }
+    function w3_off() {
+      document.getElementById("w3").style.display = "none";
+    }
+    function w4_on() {
+      document.getElementById("w4").style.display = "block";
+    }
+    function w4_off() {
+      document.getElementById("w4").style.display = "none";
+    }
+    function w5_on() {
+      document.getElementById("w5").style.display = "block";
+    }
+    function w5_off() {
+      document.getElementById("w5").style.display = "none";
+    }
+    function w6_on() {
+      document.getElementById("w6").style.display = "block";
+    }
+    function w6_off() {
+      document.getElementById("w6").style.display = "none";
+    }
+    function w7_on() {
+      document.getElementById("w7").style.display = "block";
+    }
+    function w7_off() {
+      document.getElementById("w7").style.display = "none";
+    }
+    function w8_on() {
+      document.getElementById("w8").style.display = "block";
+    }
+    function w8_off() {
+      document.getElementById("w8").style.display = "none";
+    }
+    function w9_on() {
+      document.getElementById("w9").style.display = "block";
+    }
+    function w9_off() {
+      document.getElementById("w9").style.display = "none";
+    }
+    function w10_on() {
+      document.getElementById("w10").style.display = "block";
+    }
+    function w10_off() {
+      document.getElementById("w10").style.display = "none";
+    }
+    function w11_on() {
+      document.getElementById("w11").style.display = "block";
+    } 
+    function w11_off() {
+      document.getElementById("w11").style.display = "none";
+    }
+    function w12_on() {
+      document.getElementById("w12").style.display = "block";
+    }
+    function w12_off() {
+      document.getElementById("w12").style.display = "none";
+    }
+    function w13_on() {
+      document.getElementById("w13").style.display = "block";
+    }
+    function w13_off() {
+      document.getElementById("w13").style.display = "none";
+    }
+    function w14_on() {
+      document.getElementById("w14").style.display = "block";
+    }
+    function w14_off() {
+      document.getElementById("w14").style.display = "none";
+    }
+    function w15_on() {
+      document.getElementById("w15").style.display = "block";
+    }
+    function w15_off() {
+      document.getElementById("w15").style.display = "none";
+    }
+    function w16_on() {
+      document.getElementById("w16").style.display = "block";
+    }
+    function w16_off() {
+      document.getElementById("w16").style.display = "none";
+    }
+    function w17_on() {
+      document.getElementById("w17").style.display = "block";
+    }
+    function w17_off() {
+      document.getElementById("w17").style.display = "none";
+    }
+    function w18_on() {
+      document.getElementById("w18").style.display = "block";
+    }
+    function w18_off() {
+      document.getElementById("w18").style.display = "none";
+    }
+    function w19_on() {
+      document.getElementById("w19").style.display = "block";
+    }
+    function w19_off() {
+      document.getElementById("w19").style.display = "none";
+    }
+    function w20_on() {
+      document.getElementById("w20").style.display = "block";
+    }
+    function w20_off() {
+      document.getElementById("w20").style.display = "none";
+    }
+    function w21_on() {
+      document.getElementById("w21").style.display = "block";
+    }
+    function w21_off() {
+      document.getElementById("w21").style.display = "none";
+    }
+    function w22_on() {
+      document.getElementById("w22").style.display = "block";
+    }
+    function w22_off() {
+      document.getElementById("w22").style.display = "none";
+    }
+    function w23_on() {
+      document.getElementById("w23").style.display = "block";
+    }
+    function w23_off() {
+      document.getElementById("w23").style.display = "none";
+    }
+    function w24_on() {
+      document.getElementById("w24").style.display = "block";
+    }
+    function w24_off() {
+      document.getElementById("w24").style.display = "none";
+    }
+    function w25_on() {
+      document.getElementById("w25").style.display = "block";
+    }
+    function w25_off() {
+      document.getElementById("w25").style.display = "none";
+    }
+    function w26_on() {
+      document.getElementById("w26").style.display = "block";
+    }
+    function w26_off() {
+      document.getElementById("w26").style.display = "none";
+    }
+    function w27_on(){
+      document.getElementById("w27").style.display = "block";
+    }
+    function w27_off() {
+      document.getElementById("w27").style.display = "none";
+    }
+    function w28_on() {
+      document.getElementById("w28").style.display = "block";
+    }
+    function w28_off() {
+      document.getElementById("w28").style.display = "none";
+    }
+    function w29_on() {
+      document.getElementById("w29").style.display = "block";
+    }
+    function w29_off() {
+      document.getElementById("w29").style.display = "none";
+    }
+    function w30_on() {
+      document.getElementById("w30").style.display = "block";
+    }
+    function w30_off() {
+      document.getElementById("w30").style.display = "none";
+    }
+    function w31_on() {
+      document.getElementById("w31").style.display = "block";
+    }
+    function w31_off() {
+      document.getElementById("w31").style.display = "none";
+    }
+    function w32_on() {
+      document.getElementById("w32").style.display = "block";
+    }
+    function w32_off() {
+      document.getElementById("w32").style.display = "none";
+    }
+    function w33_on() {
+      document.getElementById("w33").style.display = "block";
+    }
+    function w33_off() {
+      document.getElementById("w33").style.display = "none";
+    }
+    function w34_on() {
+      document.getElementById("w34").style.display = "block";
+    }
+    function w34_off() {
+      document.getElementById("w34").style.display = "none";
+    }
+    function w35_on() {
+      document.getElementById("w35").style.display = "block";
+    } 
+    function w35_off() {
+      document.getElementById("w35").style.display = "none";
+    }
+    function w36_on() {
+      document.getElementById("w36").style.display = "block";
+    } 
+    function w36_off() {
+      document.getElementById("w36").style.display = "none";
+    }
+    function w37_on() {
+      document.getElementById("w37").style.display = "block";
+    }
+    function w37_off() {
+      document.getElementById("w37").style.display = "none";
+    }
+    function w38_on() {
+      document.getElementById("w38").style.display = "block";
+    }
+    function w38_off() {
+      document.getElementById("w38").style.display = "none";
+    }
+    function w39_on() {
+      document.getElementById("w39").style.display = "block";
+    }
+    function w39_off() {
+      document.getElementById("w39").style.display = "none";
+    }
+    function w40_on() {
+      document.getElementById("w40").style.display = "block";
+    }
+    function w40_off() {
+      document.getElementById("w40").style.display = "none";
+    }
+    function w41_on() {
+      document.getElementById("w41").style.display = "block";
+    }
+    function w41_off() {
+      document.getElementById("w41").style.display = "none";
+    }
+    function w42_on() {
+      document.getElementById("w42").style.display = "block";
+    }
+    function w42_off() {
+      document.getElementById("w42").style.display = "none";
+    }
+    function w43_on() {
+      document.getElementById("w43").style.display = "block";
+    }
+    function w43_off() {
+      document.getElementById("w43").style.display = "none";
+    }
+    function w44_on() {
+      document.getElementById("w44").style.display = "block";
+    }
+    function w44_off() {
+      document.getElementById("w44").style.display = "none";
+    }
+    function record_continue() {
+      /*var recordElement = document.querySelector(".record");
+      recordElement.classList.toggle("hide");   7/28 5:23am想要以往上滑方式消失，但未成功*/
+      document.getElementById("sidebar").style.display = "none";
+    }
+    function introduce_open() {
+      document.getElementById("introduce").style.display = "block";
+    }
+    function introduce_close() {
+      document.getElementById("introduce").style.display = "none";
+    }
+    function why_website_open() {
+      document.getElementById("why_website").style.display = "block";
+    }
+    function why_website_close() {
+      document.getElementById("why_website").style.display = "none";
+    }
+    function send_mail() {
+      document.getElementById("sidebar").style.display = "block";
+    }
+    function sidebar_open() {
+      document.getElementById("sidebar").style.display = "block";
+    }
+    function sidebar_openorclose() {
+      var sidebar = document.getElementById("sidebar");
+      if(sidebar.style.display === "block") {
+        record_continue();
+        sidebar.style.display = "none";
+      } else {
+        sidebar_open();
+        sidebar.style.display = "block";
+      }
+    }  
+    function why_homeschool_open() {
+      document.getElementById("why_homeschool").style.display = "block";
+    }
+    function why_homeschool_close() {
+      document.getElementById("why_homeschool").style.display = "none";
+    }
+    function about_website_open() {
+      document.getElementById("about_website").style.display = "block";
+    }
+    function about_website_close() {
+      document.getElementById("about_website").style.display = "none";
+    }
+    /*function hidedivifclickoutside(event) {
+      var container = document.getElementById("w44");
+      var modalContent = container.querySelector(".w3-modal-content");
+      if (!modalContent.contains(event.target)) {
+        div.style.display = "none";
+      }
+    }容器的材料：id="w44_click_space_close" onclick="hidedivifclickoutside(event)
+    7/28 4:57am嘗試要做按任意處關閉視窗，失敗收場*/
+    function closeSidebar(){
+      document.getElementById("mySidebar").style.display = "none";
+      document.getElementById("myOverlay").style.display = "none";
+    } 
+    function closSidebar(){
+      document.getElementById("mySidebar").style.display = "block";
+      document.getElementById("myOverlay").style.display = "block";
+    } 
+    function w3_close() {
+      document.getElementById("mysidebar").style.display = "none";/*display:none代表設定平常不要顯示*/
+    }
+    function w3_add() {
+      document.getElementById("mySidebar").style.display = "block";/*display:block代表當滑鼠移至該地方時設定連結以一個區塊顯示*/
+    }
+    function showdialog() {
+      document.getElementById('id01').style.display="block"
+    }
+    function closedialog() {
+      document.getElementById('id01').style.display='none'
+    } 
+
+    </script>
+   
+    </body>
+    </html>
+
+
+
+
+
+
+
