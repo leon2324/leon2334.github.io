@@ -12,9 +12,13 @@ body {
   font-family: "Karma", sans-serif;
   background-color:	#E6E6FA;
   }
-.w3-bar-block .w3-bar-item {
+.w3-bar-block
+.w3-bar-item {
   padding:30px
   }
+h2 {
+  flex-basis: 100%;
+}
 .arrangement {
   display: flex;
   flex-direction: row;
@@ -73,185 +77,115 @@ th ,td {
 }
 
 .sidebar {
-  width: 1800px;
-  height: 250px;
+  position: fixed;
+  justify-content: space-evenly;
+  /*把按鈕都先放到sidebar中間*/
+  text-align: center;
+  flex-direction: row;
+  width: 90%;
+  height: 40%;
   background-color:	#808080;
   border-radius: 70px;
-  position: fixed;
-  bottom: 100px;
+  flex-wrap: nowrap;
+  bottom: 3%;
   left: 50%;
   transform: translateX(-50%);
-  
+  font-size: 40px;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  justify-items: center;
 }
-.record.sidebar_button_1 {
-  width: 100px;
-  height: 100px;
-  border-radius: 360px;
-  top: 35px;
-  left: 110px;
-  position: absolute;
+
+.sidebar_button_all {
+  text-align: center;
+  display: inline-block;
+  width: 70px;
+  height: 70px;
+  border-radius: 20%;/*border原本設 360px 但是其實寫 50% 就是圓角了，那個 px 不是度數*/
+  cursor: pointer;
+  font-size: 30px;
+  align-items:center;
+  transform: translateY(130%);/*位置往下偏移130％*/
+  vertical-align: middle;
+  margin: 0 10px;
+}
+
+.record_sidebar_button_1 {
   background-color:	#FF69B4;
   border: 4px solid	#4B0080;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 40px;
-  cursor: pointer;
+}
 
+.introduce_sidebar_button_2 {
+  background-color:	#1E90FF;
+  border: 4px solid #00477D;
+}
+
+.why_website_sidebar_button_3 {
+  background-color:	#90EE90;
+  border: 4px solid	#32CD32;
+}
+
+.mailto_sidebar_button_4 {
+  background-color:	#B399FF;
+  border: 4px solid	#6640FF;
+}
+
+.why_homeschool_sidebar_button_5 {
+  background-color:	#96e6e6;
+  border: 4px solid	#057d77;
+}
+
+.about_website_sidebar_button_6 {
+  background-color:	#566ced;
+  border: 4px solid	#0D33FF;
+}
+
+.sidebar_button_all::after {
+  display: inline-block;
+  font-family: "DFkai-SB";
+  content: "";
+  position: fixed;
+  top: 100%;
+  left: 60%;
+  transform: translate(-50%, 70%);
+  text-align: center;
+  font-size: 2vw;
+  white-space: nowrap;
+  font-weight: bold;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
 .sidebar_button_1_1:hover::after {
-  font-family: "DFkai-SB";
-  content: "來看看看我的精彩記錄吧";
-  top: 130px;
-  left: 800px;
-  transform: translateX(-50%);
-  position: absolute;
-  text-align: center;
-  font-size: 40px;
+  content: "來看看我的精彩記錄吧";
   color: 	#F08080;
-  white-space: nowrap;
-  font-weight: bold;
+  opacity: 1;
+  left: 90%;
 }
 
-.introduce.sidebar_button_2 {
-  width: 100px;
-  height: 100px;
-  border-radius: 360px;
-  top: 35px;
-  left: 410px;
-  position: absolute;
-  background-color:	#1E90FF;
-  border: 4px solid #00477D;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 50px;
-  cursor: pointer;
-}
 .sidebar_button_2_1:hover::after {
-  font-family: "DFkai-SB";
   content: "自我介紹";
-  top: 130px;
-  left: 550px;
-  transform: translateX(-50%);
-  position: absolute;
-  text-align: center;
-  font-size: 40px;
   color:	#7FFFD4;
-  white-space: nowrap;
-  font-weight: bold;
+  opacity: 1;
 }
-.why_website.sidebar_button_3 {
-  width: 100px;
-  height: 100px;
-  border-radius: 360px;
-  top: 35px;
-  left: 710px;
-  position: absolute;
-  background-color:	#90EE90;
-  border: 4px solid	#32CD32;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 50px;
-  cursor: pointer;
-}
+
 .sidebar_button_3_1:hover::after {
-  font-family: "DFkai-SB";
   content: "為什麼要設計這個網站";
-  top: 130px;
-  left: 200px;
-  transform: translateX(-50%);
-  position: absolute;
-  text-align: center;
-  font-size: 40px;
   color:	#0fca2e;
-  white-space: nowrap;
-  font-weight: bold;
+  opacity: 1;
 }
-.mailto.sidebar_button_4 {
-  width: 100px;
-  height: 100px;
-  border-radius: 360px;
-  top: 35px;
-  left: 1010px;
-  position: absolute;
-  background-color:	#B399FF;
-  border: 4px solid	#6640FF;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 50px;
-}
-.sidebar_button_4_1:hover::after {
-  font-family: "DFkai-SB";
-  content: "委員們如果有任何建議（不論非學方面或網頁方面）或有什麼想告訴我的都可以寄Email跟我說喔！";
-  top: 130px;
-  left: -100px;
-  transform: translateX(-50%);
-  position: absolute;
-  text-align: center;
-  font-size: 30px;
-  color: #b0a7e4;
-  white-space: nowrap;
-  font-weight: bold;
-}
-.why_homeschool.sidebar_button_5 {
-  width: 100px;
-  height: 100px;
-  border-radius: 360px;
-  top: 35px;
-  left: 1310px;
-  position: absolute;
-  background-color:	#96e6e6;
-  border: 4px solid	#057d77;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 50px;
-  cursor: pointer;
-}
+
 .sidebar_button_5_1:hover::after {
-  font-family: "DFkai-SB";
   content: "為什麼會想要自學";
-  top: 130px;
-  left: -350px;
-  transform: translateX(-50%);
-  position: absolute;
-  text-align: center;
-  font-size: 40px;
   color: #ed90ba;
-  white-space: nowrap;
-  font-weight: bold;
+  opacity: 1;
 }
-.about_website.sidebar_button_6 {
-  width: 100px;
-  height: 100px;
-  border-radius: 360px;
-  top: 35px;
-  left: 1610px;
-  position: absolute;
-  background-color:	#566ced;
-  border: 4px solid	#0D33FF;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 50px;
-  cursor: pointer;
-}
+
 .sidebar_button_6_1:hover::after {
-  font-family: "DFkai-SB";
   content: "架設網站的心路歷程";
-  top: 130px;
-  left: -650px;
-  transform: translateX(-50%);
-  position: absolute;
-  text-align: center;
-  font-size: 40px;
   color:	#87CEEB;
-  white-space: nowrap;
-  font-weight: bold;
+  opacity: 1;
 }
 
 
@@ -267,20 +201,16 @@ th ,td {
 
 
 <div class="sidebar w3-animate-bottom" style="display: none;" id="sidebar" >
-  <div class="record sidebar_button_1 sidebar_button_1_1" onclick="record_continue()">⇪</div>
-  <div class="introduce sidebar_button_2 sidebar_button_2_1" onclick="introduce_open()">𓀞</div>
-  <div class="why_website sidebar_button_3 sidebar_button_3_1" onclick="why_website_open()">✎</div>
-  <a href="mailto:leonchen012@gmail.com" onclick="send_mail()"
-    class="mailto sidebar_button_4 sidebar_button_4_1">✉</a>
-  <div class="why_homeschool sidebar_button_5 sidebar_button_5_1" onclick="why_homeschool_open()">𓍝</div>
-  <div class="about_website sidebar_button_6 sidebar_button_6_1" onclick="about_website_open()">☄</div>
-
+  <div class="record_sidebar_button_1 sidebar_button_1_1 sidebar_button_all" onclick="record_continue()">⇪</div>
+  <div class="introduce_sidebar_button_2 sidebar_button_2_1 sidebar_button_all" onclick="introduce_open()">𓀞</div>
+  <div class="why_website_sidebar_button_3 sidebar_button_3_1 sidebar_button_all" onclick="why_website_open()">✎</div>
+  <div class="why_homeschool_sidebar_button_5 sidebar_button_5_1 sidebar_button_all" onclick="why_homeschool_open()">𓍝</div>
+  <div class="about_website_sidebar_button_6 sidebar_button_6_1 sidebar_button_all" onclick="about_website_open()">☄</div>
 </div>
 
 
 <!--增加每週的紀錄鍵-->
 <form>
-<div id="myOverlay" onclick="closSidebar()"></div>  
   <div class="w3-container">
     <div id="id01" class="w3-modal">
       <div class="w3-modal-content w3-animate-top" style="background-color:#F5FFFA; border-radius: 17px">
@@ -401,8 +331,13 @@ th ,td {
 </div>
       
 <!-- 頁面內容的排列 -->
+
+
 <div class="w3-main w3-content w3-padding arrangement" style="max-width:2400px;margin-top:70px ;font-size:22px; ">
 
+  <!--國中二年級的分界線-->
+    <h2>國中二年級</h2>
+  <hr>
   <!-- 第一週的大門-->
   <div class="w3-row-padding w3-padding w3-center arrangement " >
     <div class="w3-button w3-padding w3-hover-none button_1:hover" onclick="w1_on()">第一週(2022/8/30-2022/9/6)</div>
@@ -594,6 +529,7 @@ th ,td {
   <div class="w3-row-padding w3-padding w3-center arrangement" >
     <div class="w3-button w3-padding w3-hover-none button_1:hover" onclick="w46_on()">腳踏車環島篇{下}(2023/07/24-2023/07/28)</div>
   </div>
+  <h2>國中三年級</h2>
   <!--第四十七週的大門-->
   <div class="w3-row-padding w3-padding w3-center arrangement" >
     <div class="w3-button w3-padding w3-hover-none button_1:hover" onclick="w47_on()">第一週(2023/07/31-2023/08/04)</div>
@@ -765,32 +701,643 @@ th ,td {
   
   
 
-
-
-
-
-
-  <!-- Second Photo Grid-->
-  <div class="w3-row-padding w3-padding-16 w3-center">
-
-  </div>
-</div>
-<!-- Pagination
-<div class="w3-center w3-padding-32">
-  <div class="w3-bar">
-    <a href="#" class="w3-bar-item w3-button w3-hover-black">«</a>
-    <a href="#" class="w3-bar-item w3-black w3-button">1</a>
-    <a href="#" class="w3-bar-item w3-button w3-hover-black">2</a>
-    <a href="#" class="w3-bar-item w3-button w3-hover-black">3</a>
-    <a href="#" class="w3-bar-item w3-button w3-hover-black">4</a>
-    <a href="#" class="w3-bar-item w3-button w3-hover-black">»</a>
-  </div>
-</div> -->
-      
-  <hr id="about">
+<!-- End page content -->
     
-  <!-- About Section -->
+    <script>
 
+    function record_continue() {
+      /*var recordElement = document.querySelector(".record");
+      recordElement.classList.toggle("hide");   2023/7/28 5:23am想要以往上滑方式消失，但未成功*/
+      document.getElementById("sidebar").style.display = "none";
+    }
+
+    function introduce_open() {
+      document.getElementById("introduce").style.display = "block";
+    }
+
+    function introduce_close() {
+      document.getElementById("introduce").style.display = "none";
+    }
+
+    function why_website_open() {
+      document.getElementById("why_website").style.display = "block";
+    }
+
+    function why_website_close() {
+      document.getElementById("why_website").style.display = "none";
+    }
+
+    function send_mail() {
+      document.getElementById("sidebar").style.display = "block";
+    }
+
+    function why_homeschool_open() {
+      document.getElementById("why_homeschool").style.display = "block";
+    }
+
+    function why_homeschool_close() {
+      document.getElementById("why_homeschool").style.display = "none";
+    }
+
+    function about_website_open() {
+      document.getElementById("about_website").style.display = "block";
+    }
+
+    function about_website_close() {
+      document.getElementById("about_website").style.display = "none";
+    }
+
+    function sidebar_open() {
+      document.getElementById("sidebar").style.display = "block";
+    }
+
+    function sidebar_openorclose() {
+      var sidebar = document.getElementById("sidebar");
+      if(sidebar.style.display === "none") {
+        sidebar_open();
+        sidebar.style.display = "grid";
+      } else {
+        record_continue();
+        sidebar.style.display = "none";
+      }
+    }
+
+    
+
+    /*function hidedivifclickoutside(event) {
+      var container = document.getElementById("w44");
+      var modalContent = container.querySelector(".w3-modal-content");
+      if (!modalContent.contains(event.target)) {
+        div.style.display = "none";
+      }
+    }容器的材料：id="w44_click_space_close" onclick="hidedivifclickoutside(event)
+    2023/7/28 4:57am嘗試要做按任意處關閉視窗，失敗收場*/
+    
+    /*function w3_close() {
+      document.getElementById("mysidebar").style.display = "none";#display:none代表設定平常不要顯示
+    }
+    function w3_add() {
+      document.getElementById("mySidebar").style.display = "block";#display:block代表當滑鼠移至該地方時設定連結以一個區塊顯示*
+    }*/
+    function showdialog() {
+      document.getElementById('id01').style.display="block"
+    }
+    function closedialog() {
+      document.getElementById('id01').style.display='none'
+    } 
+
+
+
+
+
+
+
+
+
+    function w1_on() {
+      document.getElementById("w1").style.display = "block";
+    }
+    function w1_off() {
+      document.getElementById("w1").style.display = "none";
+    }
+    function w2_on() {
+      document.getElementById("w2").style.display = "block";
+    }
+    function w2_off() {
+      document.getElementById("w2").style.display = "none";
+    }
+    function w3_on(){
+      document.getElementById("w3").style.display = "block";
+    }
+    function w3_off() {
+      document.getElementById("w3").style.display = "none";
+    }
+    function w4_on() {
+      document.getElementById("w4").style.display = "block";
+    }
+    function w4_off() {
+      document.getElementById("w4").style.display = "none";
+    }
+    function w5_on() {
+      document.getElementById("w5").style.display = "block";
+    }
+    function w5_off() {
+      document.getElementById("w5").style.display = "none";
+    }
+    function w6_on() {
+      document.getElementById("w6").style.display = "block";
+    }
+    function w6_off() {
+      document.getElementById("w6").style.display = "none";
+    }
+    function w7_on() {
+      document.getElementById("w7").style.display = "block";
+    }
+    function w7_off() {
+      document.getElementById("w7").style.display = "none";
+    }
+    function w8_on() {
+      document.getElementById("w8").style.display = "block";
+    }
+    function w8_off() {
+      document.getElementById("w8").style.display = "none";
+    }
+    function w9_on() {
+      document.getElementById("w9").style.display = "block";
+    }
+    function w9_off() {
+      document.getElementById("w9").style.display = "none";
+    }
+    function w10_on() {
+      document.getElementById("w10").style.display = "block";
+    }
+    function w10_off() {
+      document.getElementById("w10").style.display = "none";
+    }
+    function w11_on() {
+      document.getElementById("w11").style.display = "block";
+    } 
+    function w11_off() {
+      document.getElementById("w11").style.display = "none";
+    }
+    function w12_on() {
+      document.getElementById("w12").style.display = "block";
+    }
+    function w12_off() {
+      document.getElementById("w12").style.display = "none";
+    }
+    function w13_on() {
+      document.getElementById("w13").style.display = "block";
+    }
+    function w13_off() {
+      document.getElementById("w13").style.display = "none";
+    }
+    function w14_on() {
+      document.getElementById("w14").style.display = "block";
+    }
+    function w14_off() {
+      document.getElementById("w14").style.display = "none";
+    }
+    function w15_on() {
+      document.getElementById("w15").style.display = "block";
+    }
+    function w15_off() {
+      document.getElementById("w15").style.display = "none";
+    }
+    function w16_on() {
+      document.getElementById("w16").style.display = "block";
+    }
+    function w16_off() {
+      document.getElementById("w16").style.display = "none";
+    }
+    function w17_on() {
+      document.getElementById("w17").style.display = "block";
+    }
+    function w17_off() {
+      document.getElementById("w17").style.display = "none";
+    }
+    function w18_on() {
+      document.getElementById("w18").style.display = "block";
+    }
+    function w18_off() {
+      document.getElementById("w18").style.display = "none";
+    }
+    function w19_on() {
+      document.getElementById("w19").style.display = "block";
+    }
+    function w19_off() {
+      document.getElementById("w19").style.display = "none";
+    }
+    function w20_on() {
+      document.getElementById("w20").style.display = "block";
+    }
+    function w20_off() {
+      document.getElementById("w20").style.display = "none";
+    }
+    function w21_on() {
+      document.getElementById("w21").style.display = "block";
+    }
+    function w21_off() {
+      document.getElementById("w21").style.display = "none";
+    }
+    function w22_on() {
+      document.getElementById("w22").style.display = "block";
+    }
+    function w22_off() {
+      document.getElementById("w22").style.display = "none";
+    }
+    function w23_on() {
+      document.getElementById("w23").style.display = "block";
+    }
+    function w23_off() {
+      document.getElementById("w23").style.display = "none";
+    }
+    function w24_on() {
+      document.getElementById("w24").style.display = "block";
+    }
+    function w24_off() {
+      document.getElementById("w24").style.display = "none";
+    }
+    function w25_on() {
+      document.getElementById("w25").style.display = "block";
+    }
+    function w25_off() {
+      document.getElementById("w25").style.display = "none";
+    }
+    function w26_on() {
+      document.getElementById("w26").style.display = "block";
+    }
+    function w26_off() {
+      document.getElementById("w26").style.display = "none";
+    }
+    function w27_on(){
+      document.getElementById("w27").style.display = "block";
+    }
+    function w27_off() {
+      document.getElementById("w27").style.display = "none";
+    }
+    function w28_on() {
+      document.getElementById("w28").style.display = "block";
+    }
+    function w28_off() {
+      document.getElementById("w28").style.display = "none";
+    }
+    function w29_on() {
+      document.getElementById("w29").style.display = "block";
+    }
+    function w29_off() {
+      document.getElementById("w29").style.display = "none";
+    }
+    function w30_on() {
+      document.getElementById("w30").style.display = "block";
+    }
+    function w30_off() {
+      document.getElementById("w30").style.display = "none";
+    }
+    function w31_on() {
+      document.getElementById("w31").style.display = "block";
+    }
+    function w31_off() {
+      document.getElementById("w31").style.display = "none";
+    }
+    function w32_on() {
+      document.getElementById("w32").style.display = "block";
+    }
+    function w32_off() {
+      document.getElementById("w32").style.display = "none";
+    }
+    function w33_on() {
+      document.getElementById("w33").style.display = "block";
+    }
+    function w33_off() {
+      document.getElementById("w33").style.display = "none";
+    }
+    function w34_on() {
+      document.getElementById("w34").style.display = "block";
+    }
+    function w34_off() {
+      document.getElementById("w34").style.display = "none";
+    }
+    function w35_on() {
+      document.getElementById("w35").style.display = "block";
+    } 
+    function w35_off() {
+      document.getElementById("w35").style.display = "none";
+    }
+    function w36_on() {
+      document.getElementById("w36").style.display = "block";
+    } 
+    function w36_off() {
+      document.getElementById("w36").style.display = "none";
+    }
+    function w37_on() {
+      document.getElementById("w37").style.display = "block";
+    }
+    function w37_off() {
+      document.getElementById("w37").style.display = "none";
+    }
+    function w38_on() {
+      document.getElementById("w38").style.display = "block";
+    }
+    function w38_off() {
+      document.getElementById("w38").style.display = "none";
+    }
+    function w39_on() {
+      document.getElementById("w39").style.display = "block";
+    }
+    function w39_off() {
+      document.getElementById("w39").style.display = "none";
+    }
+    function w40_on() {
+      document.getElementById("w40").style.display = "block";
+    }
+    function w40_off() {
+      document.getElementById("w40").style.display = "none";
+    }
+    function w41_on() {
+      document.getElementById("w41").style.display = "block";
+    }
+    function w41_off() {
+      document.getElementById("w41").style.display = "none";
+    }
+    function w42_on() {
+      document.getElementById("w42").style.display = "block";
+    }
+    function w42_off() {
+      document.getElementById("w42").style.display = "none";
+    }
+    function w43_on() {
+      document.getElementById("w43").style.display = "block";
+    }
+    function w43_off() {
+      document.getElementById("w43").style.display = "none";
+    }
+    function w44_on() {
+      document.getElementById("w44").style.display = "block";
+    }
+    function w44_off() {
+      document.getElementById("w44").style.display = "none";
+    }
+    function w45_on() {
+      document.getElementById("w45").style.display = "block";
+    }
+    function w45_off() {
+      document.getElementById("w45").style.display = "none";
+    }
+    function w46_on() {
+      document.getElementById("w46").style.display = "block";
+    }
+    function w46_off() {
+      document.getElementById("w46").style.display = "none";
+    }
+    function w47_on() {
+      document.getElementById("w47").style.display = "block";
+    }
+    function w47_off() {
+      document.getElementById("w47").style.display = "none";
+    }
+    function w48_on() {
+      document.getElementById("w48").style.display = "block";
+    }
+    function w48_off() {
+      document.getElementById("w48").style.display = "none";
+    }
+    function w49_on() {
+      document.getElementById("w49").style.display = "block";
+    }
+    function w49_off() {
+      document.getElementById("w49").style.display = "none";
+    }
+    function w50_on() {
+      document.getElementById("w50").style.display = "block";
+    }
+    function w50_off() {
+      document.getElementById("w50").style.display = "none";
+    }
+    function w51_on() {
+      document.getElementById("w51").style.display = "block";
+    }
+    function w51_off() {
+      document.getElementById("w51").style.display = "none";
+    }
+    function w52_on() {
+      document.getElementById("w52").style.display = "block";
+    }
+    function w52_off() {
+      document.getElementById("w52").style.display = "none";
+    }
+    function w53_on() {
+      document.getElementById("w53").style.display = "block";
+    }
+    function w53_off() {
+      document.getElementById("w53").style.display = "none";
+    }
+    function w54_on() {
+      document.getElementById("w54").style.display = "block";
+    }
+    function w54_off() {
+      document.getElementById("w54").style.display = "none";
+    }
+    function w55_on() {
+      document.getElementById("w55").style.display = "block";
+    }
+    function w55_off() {
+      document.getElementById("w55").style.display = "none";
+    }
+    function w56_on() {
+      document.getElementById("w56").style.display = "block";
+    }
+    function w56_off() {
+      document.getElementById("w56").style.display = "none";
+    }
+    function w57_on() {
+      document.getElementById("w57").style.display = "block";
+    }
+    function w57_off() {
+      document.getElementById("w57").style.display = "none";
+    }
+    function w58_on() {
+      document.getElementById("w58").style.display = "block";
+    }
+    function w58_off() {
+      document.getElementById("w58").style.display = "none";
+    }
+    function w59_on() {
+      document.getElementById("w59").style.display = "block";
+    }
+    function w59_off() {
+      document.getElementById("w59").style.display = "none";
+    }
+    function w60_on() {
+      document.getElementById("w60").style.display = "block";
+    }
+    function w60_off() {
+      document.getElementById("w60").style.display = "none";
+    }
+    function w61_on() {
+      document.getElementById("w61").style.display = "block";
+    }
+    function w61_off() {
+      document.getElementById("w61").style.display = "none";
+    }
+    function w61_on() {
+      document.getElementById("w61").style.display = "block";
+    }
+    function w61_off() {
+      document.getElementById("w61").style.display = "none";
+    }
+    function w62_on() {
+      document.getElementById("w62").style.display = "block";
+    }
+    function w62_off() {
+      document.getElementById("w62").style.display = "none";
+    }
+    function w63_on() {
+      document.getElementById("w63").style.display = "block";
+    }
+    function w63_off() {
+      document.getElementById("w63").style.display = "none";
+    }
+    function w64_on() {
+      document.getElementById("w64").style.display = "block";
+    }
+    function w64_off() {
+      document.getElementById("w64").style.display = "none";
+    }
+    function w65_on() {
+      document.getElementById("w65").style.display = "block";
+    }
+    function w65_off() {
+      document.getElementById("w65").style.display = "none";
+    }
+    function w66_on() {
+      document.getElementById("w66").style.display = "block";
+    }
+    function w66_off() {
+      document.getElementById("w66").style.display = "none";
+    }
+    function w67_on() {
+      document.getElementById("w67").style.display = "block";
+    }
+    function w67_off() {
+      document.getElementById("w67").style.display = "none";
+    }
+    function w68_on() {
+      document.getElementById("w68").style.display = "block";
+    }
+    function w68_off() {
+      document.getElementById("w68").style.display = "none";
+    }
+    function w69_on() {
+      document.getElementById("w69").style.display = "block";
+    }
+    function w69_off() {
+      document.getElementById("w69").style.display = "none";
+    }
+    function w70_on() {
+      document.getElementById("w70").style.display = "block";
+    }
+    function w70_off() {
+      document.getElementById("w70").style.display = "none";
+    }
+    function w71_on() {
+      document.getElementById("w71").style.display = "block";
+    }
+    function w71_off() {
+      document.getElementById("w71").style.display = "none";
+    }
+    function w72_on() {
+      document.getElementById("w72").style.display = "block";
+    }
+    function w72_off() {
+      document.getElementById("w72").style.display = "none";
+    }
+    function w73_on() {
+      document.getElementById("w73").style.display = "block";
+    }
+    function w73_off() {
+      document.getElementById("w73").style.display = "none";
+    }
+    function w74_on() {
+      document.getElementById("w74").style.display = "block";
+    }
+    function w74_off() {
+      document.getElementById("w74").style.display = "none";
+    }
+    function w75_on() {
+      document.getElementById("w75").style.display = "block";
+    }
+    function w75_off() {
+      document.getElementById("w75").style.display = "none";
+    }
+    function w76_on() {
+      document.getElementById("w76").style.display = "block";
+    }
+    function w76_off() {
+      document.getElementById("w76").style.display = "none";
+    }
+    function w77_on() {
+      document.getElementById("w77").style.display = "block";
+    }
+    function w77_off() {
+      document.getElementById("w77").style.display = "none";
+    }
+    function w78_on() {
+      document.getElementById("w78").style.display = "block";
+    }
+    function w78_off() {
+      document.getElementById("w78").style.display = "none";
+    }
+    function w79_on() {
+      document.getElementById("w79").style.display = "block";
+    }
+    function w79_off() {
+      document.getElementById("w79").style.display = "none";
+    }
+    function w80_on() {
+      document.getElementById("w80").style.display = "block";
+    }
+    function w80_off() {
+      document.getElementById("w80").style.display = "none";
+    }
+    function w81_on() {
+      document.getElementById("w81").style.display = "block";
+    }
+    function w81_off() {
+      document.getElementById("w81").style.display = "none";
+    }
+    function w82_on() {
+      document.getElementById("w82").style.display = "block";
+    }
+    function w82_off() {
+      document.getElementById("w82").style.display = "none";
+    }
+    function w83_on() {
+      document.getElementById("w83").style.display = "block";
+    }
+    function w83_off() {
+      document.getElementById("w83").style.display = "none";
+    }
+    function w84_on() {
+      document.getElementById("w84").style.display = "block";
+    }
+    function w84_off() {
+      document.getElementById("w84").style.display = "none";
+    }
+    function w85_on() {
+      document.getElementById("w85").style.display = "block";
+    }
+    function w85_off() {
+      document.getElementById("w85").style.display = "none";
+    }
+    function w86_on() {
+      document.getElementById("w86").style.display = "block";
+    }
+    function w86_off() {
+      document.getElementById("w86").style.display = "none";
+    }
+    function w87_on() {
+      document.getElementById("w87").style.display = "block";
+    }
+    function w87_off() {
+      document.getElementById("w87").style.display = "none";
+    }
+    function w88_on() {
+      document.getElementById("w88").style.display = "block";
+    }
+    function w88_off() {
+      document.getElementById("w88").style.display = "none";
+    }
+
+
+    </script>
+
+
+
+
+  
+
+      
   <hr>
   
 <!--第一週的內容-->
@@ -3397,633 +3944,6 @@ th ,td {
         </div>
 </div>
 
-
-
-<!-- End page content -->
-    
-    <script>
-    function w1_on() {
-      document.getElementById("w1").style.display = "block";
-    }
-    function w1_off() {
-      document.getElementById("w1").style.display = "none";
-    }
-    function w2_on() {
-      document.getElementById("w2").style.display = "block";
-    }
-    function w2_off() {
-      document.getElementById("w2").style.display = "none";
-    }
-    function w3_on(){
-      document.getElementById("w3").style.display = "block";
-    }
-    function w3_off() {
-      document.getElementById("w3").style.display = "none";
-    }
-    function w4_on() {
-      document.getElementById("w4").style.display = "block";
-    }
-    function w4_off() {
-      document.getElementById("w4").style.display = "none";
-    }
-    function w5_on() {
-      document.getElementById("w5").style.display = "block";
-    }
-    function w5_off() {
-      document.getElementById("w5").style.display = "none";
-    }
-    function w6_on() {
-      document.getElementById("w6").style.display = "block";
-    }
-    function w6_off() {
-      document.getElementById("w6").style.display = "none";
-    }
-    function w7_on() {
-      document.getElementById("w7").style.display = "block";
-    }
-    function w7_off() {
-      document.getElementById("w7").style.display = "none";
-    }
-    function w8_on() {
-      document.getElementById("w8").style.display = "block";
-    }
-    function w8_off() {
-      document.getElementById("w8").style.display = "none";
-    }
-    function w9_on() {
-      document.getElementById("w9").style.display = "block";
-    }
-    function w9_off() {
-      document.getElementById("w9").style.display = "none";
-    }
-    function w10_on() {
-      document.getElementById("w10").style.display = "block";
-    }
-    function w10_off() {
-      document.getElementById("w10").style.display = "none";
-    }
-    function w11_on() {
-      document.getElementById("w11").style.display = "block";
-    } 
-    function w11_off() {
-      document.getElementById("w11").style.display = "none";
-    }
-    function w12_on() {
-      document.getElementById("w12").style.display = "block";
-    }
-    function w12_off() {
-      document.getElementById("w12").style.display = "none";
-    }
-    function w13_on() {
-      document.getElementById("w13").style.display = "block";
-    }
-    function w13_off() {
-      document.getElementById("w13").style.display = "none";
-    }
-    function w14_on() {
-      document.getElementById("w14").style.display = "block";
-    }
-    function w14_off() {
-      document.getElementById("w14").style.display = "none";
-    }
-    function w15_on() {
-      document.getElementById("w15").style.display = "block";
-    }
-    function w15_off() {
-      document.getElementById("w15").style.display = "none";
-    }
-    function w16_on() {
-      document.getElementById("w16").style.display = "block";
-    }
-    function w16_off() {
-      document.getElementById("w16").style.display = "none";
-    }
-    function w17_on() {
-      document.getElementById("w17").style.display = "block";
-    }
-    function w17_off() {
-      document.getElementById("w17").style.display = "none";
-    }
-    function w18_on() {
-      document.getElementById("w18").style.display = "block";
-    }
-    function w18_off() {
-      document.getElementById("w18").style.display = "none";
-    }
-    function w19_on() {
-      document.getElementById("w19").style.display = "block";
-    }
-    function w19_off() {
-      document.getElementById("w19").style.display = "none";
-    }
-    function w20_on() {
-      document.getElementById("w20").style.display = "block";
-    }
-    function w20_off() {
-      document.getElementById("w20").style.display = "none";
-    }
-    function w21_on() {
-      document.getElementById("w21").style.display = "block";
-    }
-    function w21_off() {
-      document.getElementById("w21").style.display = "none";
-    }
-    function w22_on() {
-      document.getElementById("w22").style.display = "block";
-    }
-    function w22_off() {
-      document.getElementById("w22").style.display = "none";
-    }
-    function w23_on() {
-      document.getElementById("w23").style.display = "block";
-    }
-    function w23_off() {
-      document.getElementById("w23").style.display = "none";
-    }
-    function w24_on() {
-      document.getElementById("w24").style.display = "block";
-    }
-    function w24_off() {
-      document.getElementById("w24").style.display = "none";
-    }
-    function w25_on() {
-      document.getElementById("w25").style.display = "block";
-    }
-    function w25_off() {
-      document.getElementById("w25").style.display = "none";
-    }
-    function w26_on() {
-      document.getElementById("w26").style.display = "block";
-    }
-    function w26_off() {
-      document.getElementById("w26").style.display = "none";
-    }
-    function w27_on(){
-      document.getElementById("w27").style.display = "block";
-    }
-    function w27_off() {
-      document.getElementById("w27").style.display = "none";
-    }
-    function w28_on() {
-      document.getElementById("w28").style.display = "block";
-    }
-    function w28_off() {
-      document.getElementById("w28").style.display = "none";
-    }
-    function w29_on() {
-      document.getElementById("w29").style.display = "block";
-    }
-    function w29_off() {
-      document.getElementById("w29").style.display = "none";
-    }
-    function w30_on() {
-      document.getElementById("w30").style.display = "block";
-    }
-    function w30_off() {
-      document.getElementById("w30").style.display = "none";
-    }
-    function w31_on() {
-      document.getElementById("w31").style.display = "block";
-    }
-    function w31_off() {
-      document.getElementById("w31").style.display = "none";
-    }
-    function w32_on() {
-      document.getElementById("w32").style.display = "block";
-    }
-    function w32_off() {
-      document.getElementById("w32").style.display = "none";
-    }
-    function w33_on() {
-      document.getElementById("w33").style.display = "block";
-    }
-    function w33_off() {
-      document.getElementById("w33").style.display = "none";
-    }
-    function w34_on() {
-      document.getElementById("w34").style.display = "block";
-    }
-    function w34_off() {
-      document.getElementById("w34").style.display = "none";
-    }
-    function w35_on() {
-      document.getElementById("w35").style.display = "block";
-    } 
-    function w35_off() {
-      document.getElementById("w35").style.display = "none";
-    }
-    function w36_on() {
-      document.getElementById("w36").style.display = "block";
-    } 
-    function w36_off() {
-      document.getElementById("w36").style.display = "none";
-    }
-    function w37_on() {
-      document.getElementById("w37").style.display = "block";
-    }
-    function w37_off() {
-      document.getElementById("w37").style.display = "none";
-    }
-    function w38_on() {
-      document.getElementById("w38").style.display = "block";
-    }
-    function w38_off() {
-      document.getElementById("w38").style.display = "none";
-    }
-    function w39_on() {
-      document.getElementById("w39").style.display = "block";
-    }
-    function w39_off() {
-      document.getElementById("w39").style.display = "none";
-    }
-    function w40_on() {
-      document.getElementById("w40").style.display = "block";
-    }
-    function w40_off() {
-      document.getElementById("w40").style.display = "none";
-    }
-    function w41_on() {
-      document.getElementById("w41").style.display = "block";
-    }
-    function w41_off() {
-      document.getElementById("w41").style.display = "none";
-    }
-    function w42_on() {
-      document.getElementById("w42").style.display = "block";
-    }
-    function w42_off() {
-      document.getElementById("w42").style.display = "none";
-    }
-    function w43_on() {
-      document.getElementById("w43").style.display = "block";
-    }
-    function w43_off() {
-      document.getElementById("w43").style.display = "none";
-    }
-    function w44_on() {
-      document.getElementById("w44").style.display = "block";
-    }
-    function w44_off() {
-      document.getElementById("w44").style.display = "none";
-    }
-    function w45_on() {
-      document.getElementById("w45").style.display = "block";
-    }
-    function w45_off() {
-      document.getElementById("w45").style.display = "none";
-    }
-    function w46_on() {
-      document.getElementById("w46").style.display = "block";
-    }
-    function w46_off() {
-      document.getElementById("w46").style.display = "none";
-    }
-    function w47_on() {
-      document.getElementById("w47").style.display = "block";
-    }
-    function w47_off() {
-      document.getElementById("w47").style.display = "none";
-    }
-    function w48_on() {
-      document.getElementById("w48").style.display = "block";
-    }
-    function w48_off() {
-      document.getElementById("w48").style.display = "none";
-    }
-    function w49_on() {
-      document.getElementById("w49").style.display = "block";
-    }
-    function w49_off() {
-      document.getElementById("w49").style.display = "none";
-    }
-    function w50_on() {
-      document.getElementById("w50").style.display = "block";
-    }
-    function w50_off() {
-      document.getElementById("w50").style.display = "none";
-    }
-    function w51_on() {
-      document.getElementById("w51").style.display = "block";
-    }
-    function w51_off() {
-      document.getElementById("w51").style.display = "none";
-    }
-    function w52_on() {
-      document.getElementById("w52").style.display = "block";
-    }
-    function w52_off() {
-      document.getElementById("w52").style.display = "none";
-    }
-    function w53_on() {
-      document.getElementById("w53").style.display = "block";
-    }
-    function w53_off() {
-      document.getElementById("w53").style.display = "none";
-    }
-    function w54_on() {
-      document.getElementById("w54").style.display = "block";
-    }
-    function w54_off() {
-      document.getElementById("w54").style.display = "none";
-    }
-    function w55_on() {
-      document.getElementById("w55").style.display = "block";
-    }
-    function w55_off() {
-      document.getElementById("w55").style.display = "none";
-    }
-    function w56_on() {
-      document.getElementById("w56").style.display = "block";
-    }
-    function w56_off() {
-      document.getElementById("w56").style.display = "none";
-    }
-    function w57_on() {
-      document.getElementById("w57").style.display = "block";
-    }
-    function w57_off() {
-      document.getElementById("w57").style.display = "none";
-    }
-    function w58_on() {
-      document.getElementById("w58").style.display = "block";
-    }
-    function w58_off() {
-      document.getElementById("w58").style.display = "none";
-    }
-    function w59_on() {
-      document.getElementById("w59").style.display = "block";
-    }
-    function w59_off() {
-      document.getElementById("w59").style.display = "none";
-    }
-    function w60_on() {
-      document.getElementById("w60").style.display = "block";
-    }
-    function w60_off() {
-      document.getElementById("w60").style.display = "none";
-    }
-    function w61_on() {
-      document.getElementById("w61").style.display = "block";
-    }
-    function w61_off() {
-      document.getElementById("w61").style.display = "none";
-    }
-    function w61_on() {
-      document.getElementById("w61").style.display = "block";
-    }
-    function w61_off() {
-      document.getElementById("w61").style.display = "none";
-    }
-    function w62_on() {
-      document.getElementById("w62").style.display = "block";
-    }
-    function w62_off() {
-      document.getElementById("w62").style.display = "none";
-    }
-    function w63_on() {
-      document.getElementById("w63").style.display = "block";
-    }
-    function w63_off() {
-      document.getElementById("w63").style.display = "none";
-    }
-    function w64_on() {
-      document.getElementById("w64").style.display = "block";
-    }
-    function w64_off() {
-      document.getElementById("w64").style.display = "none";
-    }
-    function w65_on() {
-      document.getElementById("w65").style.display = "block";
-    }
-    function w65_off() {
-      document.getElementById("w65").style.display = "none";
-    }
-    function w66_on() {
-      document.getElementById("w66").style.display = "block";
-    }
-    function w66_off() {
-      document.getElementById("w66").style.display = "none";
-    }
-    function w67_on() {
-      document.getElementById("w67").style.display = "block";
-    }
-    function w67_off() {
-      document.getElementById("w67").style.display = "none";
-    }
-    function w68_on() {
-      document.getElementById("w68").style.display = "block";
-    }
-    function w68_off() {
-      document.getElementById("w68").style.display = "none";
-    }
-    function w69_on() {
-      document.getElementById("w69").style.display = "block";
-    }
-    function w69_off() {
-      document.getElementById("w69").style.display = "none";
-    }
-    function w70_on() {
-      document.getElementById("w70").style.display = "block";
-    }
-    function w70_off() {
-      document.getElementById("w70").style.display = "none";
-    }
-    function w71_on() {
-      document.getElementById("w71").style.display = "block";
-    }
-    function w71_off() {
-      document.getElementById("w71").style.display = "none";
-    }
-    function w72_on() {
-      document.getElementById("w72").style.display = "block";
-    }
-    function w72_off() {
-      document.getElementById("w72").style.display = "none";
-    }
-    function w73_on() {
-      document.getElementById("w73").style.display = "block";
-    }
-    function w73_off() {
-      document.getElementById("w73").style.display = "none";
-    }
-    function w74_on() {
-      document.getElementById("w74").style.display = "block";
-    }
-    function w74_off() {
-      document.getElementById("w74").style.display = "none";
-    }
-    function w75_on() {
-      document.getElementById("w75").style.display = "block";
-    }
-    function w75_off() {
-      document.getElementById("w75").style.display = "none";
-    }
-    function w76_on() {
-      document.getElementById("w76").style.display = "block";
-    }
-    function w76_off() {
-      document.getElementById("w76").style.display = "none";
-    }
-    function w77_on() {
-      document.getElementById("w77").style.display = "block";
-    }
-    function w77_off() {
-      document.getElementById("w77").style.display = "none";
-    }
-    function w78_on() {
-      document.getElementById("w78").style.display = "block";
-    }
-    function w78_off() {
-      document.getElementById("w78").style.display = "none";
-    }
-    function w79_on() {
-      document.getElementById("w79").style.display = "block";
-    }
-    function w79_off() {
-      document.getElementById("w79").style.display = "none";
-    }
-    function w80_on() {
-      document.getElementById("w80").style.display = "block";
-    }
-    function w80_off() {
-      document.getElementById("w80").style.display = "none";
-    }
-    function w81_on() {
-      document.getElementById("w81").style.display = "block";
-    }
-    function w81_off() {
-      document.getElementById("w81").style.display = "none";
-    }
-    function w82_on() {
-      document.getElementById("w82").style.display = "block";
-    }
-    function w82_off() {
-      document.getElementById("w82").style.display = "none";
-    }
-    function w83_on() {
-      document.getElementById("w83").style.display = "block";
-    }
-    function w83_off() {
-      document.getElementById("w83").style.display = "none";
-    }
-    function w84_on() {
-      document.getElementById("w84").style.display = "block";
-    }
-    function w84_off() {
-      document.getElementById("w84").style.display = "none";
-    }
-    function w85_on() {
-      document.getElementById("w85").style.display = "block";
-    }
-    function w85_off() {
-      document.getElementById("w85").style.display = "none";
-    }
-    function w86_on() {
-      document.getElementById("w86").style.display = "block";
-    }
-    function w86_off() {
-      document.getElementById("w86").style.display = "none";
-    }
-    function w87_on() {
-      document.getElementById("w87").style.display = "block";
-    }
-    function w87_off() {
-      document.getElementById("w87").style.display = "none";
-    }
-    function w88_on() {
-      document.getElementById("w88").style.display = "block";
-    }
-    function w88_off() {
-      document.getElementById("w88").style.display = "none";
-    }
-
-
-
-
-
-
-    function record_continue() {
-      /*var recordElement = document.querySelector(".record");
-      recordElement.classList.toggle("hide");   7/28 5:23am想要以往上滑方式消失，但未成功*/
-      document.getElementById("sidebar").style.display = "none";
-    }
-    function introduce_open() {
-      document.getElementById("introduce").style.display = "block";
-    }
-    function introduce_close() {
-      document.getElementById("introduce").style.display = "none";
-    }
-    function why_website_open() {
-      document.getElementById("why_website").style.display = "block";
-    }
-    function why_website_close() {
-      document.getElementById("why_website").style.display = "none";
-    }
-    function send_mail() {
-      document.getElementById("sidebar").style.display = "block";
-    }
-    function sidebar_open() {
-      document.getElementById("sidebar").style.display = "block";
-    }
-    function sidebar_openorclose() {
-      var sidebar = document.getElementById("sidebar");
-      if(sidebar.style.display === "block") {
-        record_continue();
-        sidebar.style.display = "none";
-      } else {
-        sidebar_open();
-        sidebar.style.display = "block";
-      }
-    }  
-    function why_homeschool_open() {
-      document.getElementById("why_homeschool").style.display = "block";
-    }
-    function why_homeschool_close() {
-      document.getElementById("why_homeschool").style.display = "none";
-    }
-    function about_website_open() {
-      document.getElementById("about_website").style.display = "block";
-    }
-    function about_website_close() {
-      document.getElementById("about_website").style.display = "none";
-    }
-    /*function hidedivifclickoutside(event) {
-      var container = document.getElementById("w44");
-      var modalContent = container.querySelector(".w3-modal-content");
-      if (!modalContent.contains(event.target)) {
-        div.style.display = "none";
-      }
-    }容器的材料：id="w44_click_space_close" onclick="hidedivifclickoutside(event)
-    7/28 4:57am嘗試要做按任意處關閉視窗，失敗收場*/
-    function closeSidebar(){
-      document.getElementById("mySidebar").style.display = "none";
-      document.getElementById("myOverlay").style.display = "none";
-    } 
-    function closSidebar(){
-      document.getElementById("mySidebar").style.display = "block";
-      document.getElementById("myOverlay").style.display = "block";
-    } 
-    function w3_close() {
-      document.getElementById("mysidebar").style.display = "none";/*display:none代表設定平常不要顯示*/
-    }
-    function w3_add() {
-      document.getElementById("mySidebar").style.display = "block";/*display:block代表當滑鼠移至該地方時設定連結以一個區塊顯示*/
-    }
-    function showdialog() {
-      document.getElementById('id01').style.display="block"
-    }
-    function closedialog() {
-      document.getElementById('id01').style.display='none'
-    } 
-
-    </script>
    
     </body>
     </html>
-
-
-
-
-
-
-
