@@ -149,24 +149,43 @@
       margin-bottom: 14px;
     }
 
-    /* 格言卡 */
+    /* === 高級極簡風格言銘牌 (Editorial Pull-Quote Plaque) === */
     .portal-motto {
-      background: linear-gradient(135deg, rgba(255, 248, 238, 0.85) 0%, rgba(255, 255, 255, 0.95) 100%);
-      border-left: 4.5px solid #f59e0b;
-      border-radius: var(--radius-sm);
-      padding: 12px 18px;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 249, 0.9) 100%);
+      border: 1px solid rgba(1, 68, 110, 0.12);
+      border-radius: var(--radius-md);
+      padding: 14px 22px;
+      position: relative;
+      box-shadow: 0 2px 10px rgba(1, 68, 110, 0.03);
+    }
+    .portal-quote-watermark {
+      position: absolute;
+      top: -2px;
+      left: 12px;
+      font-family: Georgia, serif;
+      font-size: 40px;
+      line-height: 1;
+      color: #c28e3a;
+      opacity: 0.35;
+      pointer-events: none;
     }
     .portal-motto-quote {
       font-family: "Noto Serif TC", "Karma", serif;
       font-size: 17.5px;
       font-weight: 700;
       color: var(--navy-dark);
-      line-height: 1.4;
+      line-height: 1.45;
+      position: relative;
+      z-index: 1;
+      letter-spacing: 0.5px;
+      padding-left: 18px;
     }
     .portal-motto-credit {
       font-size: 12px;
-      color: #78909c;
+      color: #64748b;
       margin-top: 4px;
+      padding-left: 18px;
+      font-weight: 500;
     }
 
     /* 右側指標數據徽章 */
@@ -224,16 +243,16 @@
       box-shadow: var(--shadow-lg);
     }
 
-    /* 大學特選卡 (金色標題點綴) */
+    /* 大學特選卡 (劍橋綠與典雅金銅點綴) */
     .card-tag-row {
       display: flex;
       align-items: center;
       gap: 8px;
       margin-bottom: 12px;
     }
-    .tag-college-gold {
-      background: #b45309;
-      color: #fff;
+    .tag-college-green {
+      background: #1A3D2F;
+      color: #FBF4E8;
       font-size: 11px;
       font-weight: 800;
       padding: 3px 10px;
@@ -292,8 +311,8 @@
 
     /* 進入按鈕 */
     .btn-gateway-college {
-      background: var(--navy-primary);
-      color: #ffd54f;
+      background: #1A3D2F;
+      color: #FBF4E8;
       text-decoration: none;
       font-size: 15.5px;
       font-weight: 800;
@@ -303,14 +322,14 @@
       align-items: center;
       justify-content: center;
       gap: 8px;
-      box-shadow: 0 4px 14px rgba(1, 68, 110, 0.2);
+      box-shadow: 0 4px 14px rgba(26, 61, 47, 0.25);
       transition: all 0.2s ease;
     }
     .btn-gateway-college:hover {
-      background: var(--navy-dark);
+      background: #0D261C;
       color: #ffffff;
       transform: translateY(-2px);
-      box-shadow: 0 6px 18px rgba(1, 68, 110, 0.3);
+      box-shadow: 0 6px 18px rgba(26, 61, 47, 0.35);
     }
 
     .btn-gateway-homeschool {
@@ -379,7 +398,7 @@
       <span class="portal-nav-tag">2.0 入口大廳</span>
     </a>
     <div class="portal-nav-links">
-      <a href="college.html" class="portal-nav-pill" style="font-weight: 800; color: #b45309; border-color: #f59e0b;">🎓 大學特殊選才專頁</a>
+      <a href="college.html" class="portal-nav-pill" style="font-weight: 800; color: #1A3D2F; border-color: #1A3D2F; background: #e8f0ec;">🎓 大學特殊選才專頁</a>
       <a href="homeschool.html" class="portal-nav-pill">📜 五年自學備查庫 (173篇)</a>
     </div>
   </header>
@@ -399,8 +418,9 @@
         </h1>
         <p class="hero-bio">五年非學校型態自學 ｜ 認知心理學理論 ✕ 軟體工程實踐 ✕ 田野伴讀關懷</p>
 
-        <!-- 格言卡 -->
+        <!-- 高級極簡風格言銘牌 -->
         <div class="portal-motto">
+          <div class="portal-quote-watermark">“</div>
           <div class="portal-motto-quote">「心理學若不解決現實困境，便失去公共重量。」</div>
           <div class="portal-motto-credit">— 陳禮煬 ｜ 將認知架構轉化為工程解方與田野陪伴的五年實踐哲學</div>
         </div>
@@ -433,8 +453,8 @@
       <!-- Card A: 大學特殊選才審查專區 -->
       <article class="gateway-bento-card">
         <div class="card-tag-row">
-          <span class="tag-college-gold">🎓 2026 大學特殊選才</span>
-          <span style="font-size: 12px; font-weight: 700; color: #b45309;">評審委員專用導覽</span>
+          <span class="tag-college-green">🎓 2026 大學特殊選才</span>
+          <span style="font-size: 12px; font-weight: 700; color: #1A3D2F;">評審委員專用導覽</span>
         </div>
         <h2 class="gateway-title">大學特殊選才審查專區</h2>
         <p class="gateway-desc">聚焦認知心理學理論、全端軟體工程與田野伴讀之跨領域深度整合成果</p>
