@@ -901,11 +901,22 @@
       box-shadow: 0 2px 6px rgba(0,0,0,0.02);
       display: flex;
       flex-direction: column;
-      transition: transform 0.2s ease;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
     }
     .paper-bento-box:hover {
-      transform: translateY(-2px);
-      border-color: #b7cbbf;
+      transform: translateY(-4px);
+      box-shadow: 0 10px 24px rgba(26, 61, 47, 0.1);
+      border-color: var(--green-primary);
+    }
+    .paper-action-hint {
+      font-size: 11.5px;
+      font-weight: 700;
+      color: var(--green-primary);
+      margin-top: 10px;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
     }
     .paper-field-tag {
       font-size: 11px;
@@ -1050,18 +1061,23 @@
       cursor: pointer;
       opacity: 0.85;
     }
-    .lightbox-close:hover { opacity: 1; }
     .lightbox-body {
-      padding: 16px;
+      padding: 24px 16px;
       overflow-y: auto;
       text-align: center;
-      background: #0f172a;
+      background: #1e293b;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
     .lightbox-body img {
       max-width: 100%;
       max-height: 80vh;
       object-fit: contain;
-      border-radius: 4px;
+      border-radius: 6px;
+      background: #ffffff;
+      box-shadow: 0 12px 36px rgba(0,0,0,0.45);
+      border: 1px solid rgba(255,255,255,0.1);
     }
     .lightbox-bottom {
       padding: 10px 20px;
@@ -1616,60 +1632,79 @@
       </div>
     </section>
 
-    <!-- 5. 四篇正式學術小論文與專題論著 Bento -->
+    <!-- 5. 跨領域探究論著與專題論文 Bento (國立臺灣師範大學 特殊選才送審 模組A) -->
     <section id="papers" class="bento-section">
       <div class="bento-section-header">
         <h2 class="bento-section-title">
-          <span>📝 四篇正式學術小論文與專題論著</span>
+          <span>📝 跨領域探究論著與專題論著（模組 A）</span>
         </h2>
-        <span class="bento-section-badge">完整收錄於送審論文集</span>
+        <span class="bento-section-badge">國立臺灣師範大學 特殊選才送審正式清冊</span>
       </div>
 
       <div class="papers-bento-grid">
-        <!-- Paper 1 -->
-        <div class="paper-bento-box">
-          <span class="paper-field-tag">社會心理學 · 青少年發展</span>
-          <h4 class="paper-heading">《同儕從眾壓力對青少年自我效能感之影響——以 Asch 實驗為理論基礎》</h4>
+        <!-- Paper 1: 社會結構批判 -->
+        <div class="paper-bento-box" onclick="openModal('paperModalDebt')">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+            <span class="paper-field-tag">專題論著一 · 社會結構批判</span>
+            <span style="font-size: 11px; font-weight: 700; color: #2e7d32; background: #e8f5e9; padding: 2px 8px; border-radius: 10px;">台師大送審作品</span>
+          </div>
+          <h4 class="paper-heading">《四貸同堂與狂熱背後的K型撕裂》</h4>
           <p class="paper-snippet">
-            以古典 Asch 從眾範式為核心，探討中學生在同儕團體規範約束下對自我認知效能的折損效應。論文進一步結合非學校型態自學者經驗，論證自主學習如何透過脫離無效從眾壓力，重構學習內在動機與自我調節能力。
+            立足巴菲特指標與 FOMO 社會心理，深入剖析當代資產通膨與極限信貸下青年世代的階層複製，反思資本體制如何將生存風險個人化。探討青年在面對高槓桿資產狂熱時之認知扭曲、系統性焦慮與世代財富斷層。
           </p>
-          <div class="paper-author-line">理論架構：Solomon Asch 從眾範式 / Bandura 自我效能理論</div>
+          <div class="paper-author-line">理論與視角：巴菲特指標 · FOMO 社會心理 · 總體經濟與資產通膨 · 青年信貸困境</div>
+          <div class="paper-action-hint">🔍 點擊檢視專題論著與深度剖析 ➔</div>
         </div>
 
-        <!-- Paper 2 -->
-        <div class="paper-bento-box">
-          <span class="paper-field-tag">認知心理學 · 人機交互 (HCI)</span>
-          <h4 class="paper-heading">《由 Baddeley 工作記憶模型看法律條文呈現方式對理解效率之影響——《緒言》App 介面設計實驗》</h4>
+        <!-- Paper 2: 大腦認知模型 -->
+        <div class="paper-bento-box" onclick="openModal('paperModalMemory')">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+            <span class="paper-field-tag">專題論著二 · 大腦認知模型</span>
+            <span style="font-size: 11px; font-weight: 700; color: #2e7d32; background: #e8f5e9; padding: 2px 8px; border-radius: 10px;">台師大送審作品</span>
+          </div>
+          <h4 class="paper-heading">《Atkinson-Shiffrin多重儲存模型在公共資訊降載之應用》</h4>
           <p class="paper-snippet">
-            結合 HCI 實驗設計，招募受試者進行法律條文閱讀與回憶測試。量化數據實證：採用雙重編碼空間排版與 Bento 模組切分，能使讀者在無效認知負荷指標上降低 38%，並顯著提升法律專有名詞之長時記憶提取精準度。
+            研析感官記憶至長期記憶之編碼瓶頸，結合 George Miller 7±2 認知承載限制。推導生活法律工具如何透過空間視覺分塊（Chunking）、雙重編碼與漸進式揭露降低工作記憶耗損，轉化為人本軟體介面準則。
           </p>
-          <div class="paper-author-line">理論架構：Baddeley 工作記憶 / Paivio 雙重編碼 / Sweller 認知負荷</div>
+          <div class="paper-author-line">理論架構：Atkinson-Shiffrin 多重儲存模型 · 感覺/工作/長期記憶 · 雙重編碼 · 資訊降載</div>
+          <div class="paper-action-hint">🔍 點擊檢視專題論著與介面實踐 ➔</div>
         </div>
 
-        <!-- Paper 3 -->
-        <div class="paper-bento-box">
-          <span class="paper-field-tag">比較法學 · 司法數位轉型</span>
-          <h4 class="paper-heading">《日本2026年民事訴訟全盤IT化歷程對台灣司改之啟示——比較法視角》</h4>
+        <!-- Paper 3: 國際文獻解碼 -->
+        <div class="paper-bento-box" onclick="openModal('paperModalJapan')">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+            <span class="paper-field-tag">國際文獻筆記 · 東亞制度比較</span>
+            <span style="font-size: 11px; font-weight: 700; color: #0277bd; background: #e1f5fe; padding: 2px 8px; border-radius: 10px;">JLPT N1 一手研讀</span>
+          </div>
+          <h4 class="paper-heading">《東亞終身學習與司法IT化政策解碼：日本白皮書與最高裁判所公報研析》</h4>
           <p class="paper-snippet">
-            運用 JLPT N1 日語研究能力，直接研讀日本法務省、最高裁判所第一手公報與判例。深入分析日本「民事訴訟法改正案」e-Filing、e-Courtroom、e-Case Management 三階段改革進程，探討其對我國電子訴訟制度與弱勢訴訟權之借鏡價值。
+            運用 JLPT N1 一手日語文獻解讀實力，精讀日本文部科學省少子高齡化終身學習白皮書、裁判手續 IT 化政策專論，並獨立全譯日本首相石破茂 9,861 字施政方針演說。深入剖析東亞人口轉型下之高齡學習支持網絡與數位司法弱勢近用權。
           </p>
-          <div class="paper-author-line">一手文獻：日本法務省民事局公報 / 最高裁判所司法研究報告</div>
+          <div class="paper-author-line">一手文獻：日本文部科學省終身學習白皮書 · 最高裁判所司法研究報告 · 首相石破茂施政演說</div>
+          <div class="paper-action-hint">🔍 點擊檢視一手日語文獻解碼 ➔</div>
         </div>
 
-        <!-- Paper 4 -->
-        <div class="paper-bento-box">
-          <span class="paper-field-tag">神經心理學 · 特殊教育臨床</span>
-          <h4 class="paper-heading">《以愛荷華賭博任務 (SGT) 探討衝動控制與決策歷程——兼論青少年 ADHD 行為介入策略》</h4>
+        <!-- Paper 4: 軟體工程實踐哲學 -->
+        <div class="paper-bento-box" onclick="openModal('vibeCodingModal')">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+            <span class="paper-field-tag">軟體工程實踐 · 系統工程哲學</span>
+            <span style="font-size: 11px; font-weight: 700; color: #4527a0; background: #ede7f6; padding: 2px 8px; border-radius: 10px;">MAIC 開發哲學</span>
+          </div>
+          <h4 class="paper-heading">《從 Vibe Coding 到系統工程：自學者的 AI 協同開發實踐哲學》</h4>
           <p class="paper-snippet">
-            從 Antonio Damasio 之體細胞標記假說 (Somatic Marker Hypothesis) 出發，分析腹內側前額葉皮質 (vmPFC) 功能與衝動控制之關聯。並將神經心理學決策模型具體轉化為社區過動學童伴讀現場之「15分鐘微進度條」注意力錨定介入工具。
+            在生成式 AI 爆發的時代，自學者的角色不再是背誦語法細節的打字工，而是具備系統架構觀的「認知指揮官」。論述自學者如何將直覺感知與問題痛點（Vibe）轉化為嚴謹的 Domain-Driven Design 領域模型，以 Clean Architecture 約束 AI 生成程式碼。
           </p>
-          <div class="paper-author-line">理論架構：Iowa Gambling Task / Damasio 體細胞標記假說</div>
+          <div class="paper-author-line">技術架構：Flutter Clean Architecture · DDD 領域驅動 · SQLite 本地端加密 · 認知指揮官</div>
+          <div class="paper-action-hint">🔍 點擊檢視特稿全文 ➔</div>
         </div>
       </div>
 
-      <!-- Vibe Coding 專案特稿 Bento -->
-      <div class="vibe-bento-card">
-        <span class="vibe-tag-pill">SPECIAL MONOGRAPH · 軟體工程實踐哲學</span>
+      <!-- Vibe Coding 專案特稿 Bento 橫幅卡片 -->
+      <div class="vibe-bento-card" onclick="openModal('vibeCodingModal')">
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;">
+          <span class="vibe-tag-pill">SPECIAL MONOGRAPH · 軟體工程實踐哲學</span>
+          <span style="font-size: 12px; font-weight: 700; color: var(--green-primary);">📖 點擊閱讀特稿完整論述 ➔</span>
+        </div>
         <h4 class="vibe-headline">《從 Vibe Coding 到系統工程：自學者的 AI 協同開發實踐哲學》</h4>
         <p class="vibe-body-text">
           在大型語言模型與生成式 AI 爆發的時代，自學者的角色不再是背誦語法細節的打字工，而是具備系統架構觀的「認知指揮官」。本文論述自學者如何將直覺感知與問題痛點（Vibe）轉化為嚴謹的 Domain-Driven Design 領域模型，以 Clean Architecture 規範約束 AI 生成程式碼，達成軟體工程上的高內聚、低耦合與可驗證性。
@@ -2141,65 +2176,168 @@ class CaseLibraryPage extends StatelessWidget {
     </div>
   </div>
 
-<div class="custom-modal-overlay" id="researchPapersModal">
-    <div class="custom-modal-content" style="background-color: #ffffff; max-width: 900px;">
-      <button class="modal-close-btn" onclick="closeModal('researchPapersModal')">✕</button>
-      <div class="modal-body-scroll">
-        
-<div style="text-align: left;">
-  <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; border-bottom: 2px solid rgba(1, 68, 110, 0.12); padding-bottom: 12px; flex-wrap: wrap; gap: 8px;">
-    <div>
-      <h2 style="color: #01446e; font-size: 22px; font-weight: 800; margin: 0; font-family: 'Karma', serif;">🧠 跨領域學術探究與思辨文集（Research & Critical Essays）</h2>
-      <p style="font-size: 13.5px; color: #546e7a; margin-top: 4px;">收錄高醫大心理學旁聽探究、社會學思辨與法律科技深度分析</p>
-    </div>
-    <span style="background: #e8f5e9; color: #2e7d32; padding: 4px 14px; border-radius: 20px; font-weight: 800; font-size: 13px; border: 1px solid #c8e6c9;">📚 跨域探究成果</span>
-  </div>
+<!-- Modal: 專題論著一《四貸同堂與狂熱背後的K型撕裂》 -->
+<div class="custom-modal-overlay" id="paperModalDebt">
+  <div class="custom-modal-content" style="background-color: #ffffff; max-width: 900px;">
+    <button class="modal-close-btn" onclick="closeModal('paperModalDebt')">✕</button>
+    <div class="modal-body-scroll">
+      <div style="text-align: left;">
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; border-bottom: 2px solid rgba(26, 61, 47, 0.12); padding-bottom: 12px; flex-wrap: wrap; gap: 8px;">
+          <div>
+            <span style="font-size: 11px; font-weight: 800; background: #1A3D2F; color: #fff; padding: 3px 12px; border-radius: 20px; display: inline-block; margin-bottom: 6px;">台師大特殊選才 · 模組 A 專題論著一</span>
+            <h2 style="color: #1A3D2F; font-size: 22px; font-weight: 800; margin: 0; font-family: 'Karma', serif;">《四貸同堂與狂熱背後的K型撕裂》</h2>
+            <p style="font-size: 13.5px; color: #4a6356; margin-top: 4px;">社會結構批判 ✕ 總體經濟與 FOMO 心理 ✕ 青年世代生存困境 ｜ 撰寫者：陳禮煬</p>
+          </div>
+          <span style="background: #e8f5e9; color: #2e7d32; padding: 4px 14px; border-radius: 20px; font-weight: 800; font-size: 13px; border: 1px solid #c8e6c9;">🏛️ 社會結構批判</span>
+        </div>
 
-  <div style="display: flex; flex-direction: column; gap: 20px; line-height: 1.8; color: #37474f;">
-    <!-- Paper 1 -->
-    <div style="background: #f8fafc; border: 1.5px solid #e2e8f0; border-radius: 14px; padding: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.02);">
-      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; flex-wrap: wrap; gap: 6px;">
-        <h3 style="color: #01446e; font-size: 18px; font-weight: 800; margin: 0;">一、從眾效應（Conformity）與非學校型態自學生之自我效能建立</h3>
-        <span style="background: #e1f5fe; color: #0277bd; padding: 2px 10px; border-radius: 12px; font-size: 12px; font-weight: 700;">社會心理學探究</span>
-      </div>
-      <p style="font-size: 13px; color: #78909c; margin-bottom: 12px;">指導課程：高雄醫學大學《社會心理學》旁聽 ｜ 研究者：陳禮煬</p>
-      <div style="font-size: 14.5px; color: #455a64; line-height: 1.75;">
-        <p><strong>【核心摘要】</strong> 本研究立足於 Solomon Asch 的經典線段實驗，深入剖析人類在群體壓力下產生「規範性社會影響」與「資訊性社會影響」的心理機制。進一步結合 Albert Bandura 的「自我效能（Self-Efficacy）」理論，探討非學校型態實驗教育（自學）學生如何在脫離體制內同儕框架後，克服 FOMO（錯失恐懼）心理，建立起內在自我歸因與自主學習動力。</p>
-        <p style="margin-top: 8px;"><strong>【研究結論】</strong> 真正的自律並非孤立，而是源自於清晰的自我效能感。自學生透過設定明確的階梯式目標（如 N3➔N2➔N1 連續檢定、獨立全端專案開發），能有效轉化少數人路徑上的焦慮，轉化為無可替代的個人核心競爭力。</p>
-      </div>
-    </div>
+        <div style="display: flex; flex-direction: column; gap: 18px; line-height: 1.8; color: #37474f;">
+          <!-- 探究摘要 -->
+          <div style="background: #f4f8f6; border-left: 4px solid #1A3D2F; padding: 14px 18px; border-radius: 0 12px 12px 0; font-size: 14px; color: #1A3D2F;">
+            <strong>【送審官方摘要】</strong> 立足巴菲特指標與 FOMO 社會心理，剖析當代資產通膨與極限信貸下青年世代的階層複製，反思體制如何將生存風險個人化。
+          </div>
 
-    <!-- Paper 2 -->
-    <div style="background: #f8fafc; border: 1.5px solid #e2e8f0; border-radius: 14px; padding: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.02);">
-      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; flex-wrap: wrap; gap: 6px;">
-        <h3 style="color: #01446e; font-size: 18px; font-weight: 800; margin: 0;">二、Atkinson-Shiffrin 記憶儲存模型在法律數位介面設計之跨域應用</h3>
-        <span style="background: #ede7f6; color: #4527a0; padding: 2px 10px; border-radius: 12px; font-size: 12px; font-weight: 700;">認知心理學 ✕ HCI</span>
-      </div>
-      <p style="font-size: 13px; color: #78909c; margin-bottom: 12px;">指導課程：高雄醫學大學《普通心理學》旁聽 ｜ 應用專案：《緒言 Preamble》App</p>
-      <div style="font-size: 14.5px; color: #455a64; line-height: 1.75;">
-        <p><strong>【核心摘要】</strong> 探討人類認知系統中「感覺記憶（Sensory Memory）」、「工作記憶（Working Memory）」與「長期記憶（Long-term Memory）」的訊息處理流程。將 George Miller 的神奇數字 7±2 認知承載限制，轉化為《緒言》App 的 UI/UX 設計準則。</p>
-        <p style="margin-top: 8px;"><strong>【實作成果】</strong> 在法律查詢與案件閱讀介面中，摒棄傳統資料庫密密麻麻的文字條列，改採卡片化資訊分塊（Chunking）、漸進式資訊揭露（Progressive Disclosure）與視覺化關聯標籤，將使用者在處理艱深法條時的工作記憶認知負荷降低 40% 以上。</p>
-      </div>
-    </div>
+          <!-- 第一部分 -->
+          <div style="background: #ffffff; border: 1.5px solid #e5ede8; border-radius: 14px; padding: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.02);">
+            <h3 style="color: #1A3D2F; font-size: 17px; font-weight: 800; margin-bottom: 8px;">一、指標過熱與狂熱追價背後的世代集體焦慮</h3>
+            <p style="font-size: 14px; line-height: 1.75; color: #455a64;">
+              本研究源於自學期間對宏觀總體經濟的持續追蹤。當巴菲特指標（股市總市值 / GDP）與技術乖離率攀升至歷史罕見高位時，市場輿論卻陷入「這次不一樣」的盲目樂觀。青年世代在實質薪資停滯與資產價格狂飆的雙重擠壓下，普遍產生強烈的「FOMO（錯失恐懼，Fear Of Missing Out）」心理，深怕「現在不跟上，一輩子被拋下」，被迫以極限槓桿投入投機市場。
+            </p>
+          </div>
 
-    <!-- Paper 3 -->
-    <div style="background: #f8fafc; border: 1.5px solid #e2e8f0; border-radius: 14px; padding: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.02);">
-      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; flex-wrap: wrap; gap: 6px;">
-        <h3 style="color: #01446e; font-size: 18px; font-weight: 800; margin: 0;">三、日本 2026 改正民事訴訟法全流程數位化對台灣司法近用權之啟示</h3>
-        <span style="background: #fff3e0; color: #e65100; padding: 2px 10px; border-radius: 12px; font-size: 12px; font-weight: 700;">法律科技與比較法學</span>
-      </div>
-      <p style="font-size: 13px; color: #78909c; margin-bottom: 12px;">時事精讀：日本法務省裁判 IT 化法案 ｜ 撰寫者：陳禮煬</p>
-      <div style="font-size: 14.5px; color: #455a64; line-height: 1.75;">
-        <p><strong>【核心摘要】</strong> 深度追蹤日本 2026 年正式施行的改正民事訴訟法「三階段裁判 IT 化」（線上提訴、卷證電子化檢閱、擴大遠距口頭辯論），對比台灣現行民事訴訟線上起訴與電子卷證系統的發展現況與瓶頸。</p>
-        <p style="margin-top: 8px;"><strong>【政策省思】</strong> 司法數位化不僅是把紙本文件轉為 PDF，更關乎高齡社會與弱勢族群的「數位人權」與「司法近用權（Access to Justice）」。法律科技軟體必須在資訊安全、法律效力與高包容性介面之間取得最佳平衡。</p>
+          <!-- 第二部分 -->
+          <div style="background: #ffffff; border: 1.5px solid #e5ede8; border-radius: 14px; padding: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.02);">
+            <h3 style="color: #1A3D2F; font-size: 17px; font-weight: 800; margin-bottom: 8px;">二、「四貸同堂」：金融化擴張如何將系統風險轉嫁個體</h3>
+            <p style="font-size: 14px; line-height: 1.75; color: #455a64;">
+              論文深入剖析當前青年面臨的「四貸同堂」（學貸、青安 40 年房貸、信貸、消費型車貸）現象。金融體制透過放寬還款期限與寬限期，表面上降低了「當期進入門檻」，實質上是將整個生命週期的未來現金流提前鎖死在負債鏈條中。一旦總體經濟迎來下行週期或資產泡沫破裂，無產青年將承擔最劇烈的財富縮水，造成財富分配的「K 型極化撕裂」。
+            </p>
+          </div>
+
+          <!-- 第三部分 -->
+          <div style="background: #ffffff; border: 1.5px solid #e5ede8; border-radius: 14px; padding: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.02);">
+            <h3 style="color: #1A3D2F; font-size: 17px; font-weight: 800; margin-bottom: 8px;">三、從社會學反思到自主學習者的文教行動</h3>
+            <p style="font-size: 14px; line-height: 1.75; color: #455a64;">
+              社會學家 Ulrich Beck 曾提出「風險社會」概念，現代體制往往將結構性失敗歸咎為「個人努力不足」。作為一名非學校型態自學者，我體會到脫離同儕盲從框架、建立獨立思辨力的可貴。我們不僅需要批判體制，更需要透過「社會教育」與「公共賦權工具」，為青年提供透明、客觀的財務認知與心理支持網絡，讓年輕人不致在資產狂潮中喪失對自我人生的主體掌控。
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </div>
 
+<!-- Modal: 專題論著二《Atkinson-Shiffrin多重儲存模型在公共資訊降載之應用》 -->
+<div class="custom-modal-overlay" id="paperModalMemory">
+  <div class="custom-modal-content" style="background-color: #ffffff; max-width: 900px;">
+    <button class="modal-close-btn" onclick="closeModal('paperModalMemory')">✕</button>
+    <div class="modal-body-scroll">
+      <div style="text-align: left;">
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; border-bottom: 2px solid rgba(26, 61, 47, 0.12); padding-bottom: 12px; flex-wrap: wrap; gap: 8px;">
+          <div>
+            <span style="font-size: 11px; font-weight: 800; background: #1A3D2F; color: #fff; padding: 3px 12px; border-radius: 20px; display: inline-block; margin-bottom: 6px;">台師大特殊選才 · 模組 A 專題論著二</span>
+            <h2 style="color: #1A3D2F; font-size: 22px; font-weight: 800; margin: 0; font-family: 'Karma', serif;">《Atkinson-Shiffrin多重儲存模型在公共資訊降載之應用》</h2>
+            <p style="font-size: 13.5px; color: #4a6356; margin-top: 4px;">認知心理學 ✕ 人機互動 (HCI) ✕ 法律科技實踐 ｜ 撰寫者：陳禮煬</p>
+          </div>
+          <span style="background: #ede7f6; color: #4527a0; padding: 4px 14px; border-radius: 20px; font-weight: 800; font-size: 13px; border: 1px solid #d1c4e9;">🧠 認知工程實踐</span>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 18px; line-height: 1.8; color: #37474f;">
+          <!-- 探究摘要 -->
+          <div style="background: #f4f8f6; border-left: 4px solid #1A3D2F; padding: 14px 18px; border-radius: 0 12px 12px 0; font-size: 14px; color: #1A3D2F;">
+            <strong>【送審官方摘要】</strong> 研析感官記憶至長期記憶之編碼瓶頸，推導生活法律工具如何透過視覺分塊降低工作記憶耗損，轉化為人本軟體介面準則。
+          </div>
+
+          <!-- 第一部分 -->
+          <div style="background: #ffffff; border: 1.5px solid #e5ede8; border-radius: 14px; padding: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.02);">
+            <h3 style="color: #1A3D2F; font-size: 17px; font-weight: 800; margin-bottom: 8px;">一、理論架構：大腦記憶的三重儲存與瓶頸節點</h3>
+            <p style="font-size: 14px; line-height: 1.75; color: #455a64;">
+              立足於 Atkinson 與 Shiffrin 經典的「多重儲存模型（Multi-store Model）」，人類訊息處理流程由三個核心區塊構成：
+            </p>
+            <ul style="margin: 8px 0 8px 20px; font-size: 13.5px; color: #546e7a; line-height: 1.7;">
+              <li><strong>感覺記憶（Sensory Memory）</strong>：容量巨大但留存僅 0.25 至 3 秒，唯有被注意力選取的訊號方能轉入工作記憶。</li>
+              <li><strong>工作記憶（Working Memory）</strong>：扮演大腦的「RAM」，受限於 George Miller 的「7±2」或當代 Sweller 認知負荷理論，極易被密集冗長的文字淹沒。</li>
+              <li><strong>長期記憶（Long-term Memory）</strong>：大腦的永久硬碟，必須依賴「精緻化複誦」與雙重編碼（Dual-coding）方能順利索引與長久提取。</li>
+            </ul>
+          </div>
+
+          <!-- 第二部分 -->
+          <div style="background: #ffffff; border: 1.5px solid #e5ede8; border-radius: 14px; padding: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.02);">
+            <h3 style="color: #1A3D2F; font-size: 17px; font-weight: 800; margin-bottom: 8px;">二、現實痛點：公共法律資訊的「外在認知超載」</h3>
+            <p style="font-size: 14px; line-height: 1.75; color: #455a64;">
+              傳統官方司法院資料庫與法律條文充斥晦澀古字、長達百字無標點的法條句型以及高度巢狀的除外規定。這種排版在認知心理學上製造了極高的「外在認知負荷（Extraneous Cognitive Load）」，使一般民眾在工作記憶階段就遭遇瓶頸而放棄理解，造成普遍的「法律近用無力感」。
+            </p>
+          </div>
+
+          <!-- 第三部分 -->
+          <div style="background: #ffffff; border: 1.5px solid #e5ede8; border-radius: 14px; padding: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.02);">
+            <h3 style="color: #1A3D2F; font-size: 17px; font-weight: 800; margin-bottom: 8px;">三、工程實踐：《緒言 Preamble》App 的 HCI 降載準則</h3>
+            <p style="font-size: 14px; line-height: 1.75; color: #455a64;">
+              我將高醫大課堂所學的記憶模型深度轉化為《緒言 Preamble》App 的介面架構：
+            </p>
+            <ul style="margin: 8px 0 8px 20px; font-size: 13.5px; color: #546e7a; line-height: 1.7;">
+              <li><strong>Bento Grid 模組分塊（Chunking）</strong>：將法條要件、抗辯時效、存證信函範本切割為獨立視覺區塊，符合 7±2 記憶承載限制。</li>
+              <li><strong>Paivio 雙重編碼空間排版</strong>：文字要點搭配視覺化因果圖解，同時刺激大腦視覺與語音迴路，提取效率提升 38%。</li>
+              <li><strong>漸進式揭露（Progressive Disclosure）</strong>：優先呈現「民眾最關心的結論與下一步行動」，複雜法理則依點擊展開，消除無效認知焦慮。</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   </div>
+</div>
+
+<!-- Modal: 國際文獻筆記《東亞終身學習與司法IT化政策解碼》 -->
+<div class="custom-modal-overlay" id="paperModalJapan">
+  <div class="custom-modal-content" style="background-color: #ffffff; max-width: 900px;">
+    <button class="modal-close-btn" onclick="closeModal('paperModalJapan')">✕</button>
+    <div class="modal-body-scroll">
+      <div style="text-align: left;">
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; border-bottom: 2px solid rgba(26, 61, 47, 0.12); padding-bottom: 12px; flex-wrap: wrap; gap: 8px;">
+          <div>
+            <span style="font-size: 11px; font-weight: 800; background: #1A3D2F; color: #fff; padding: 3px 12px; border-radius: 20px; display: inline-block; margin-bottom: 6px;">台師大特殊選才 · 模組 A 國際文獻解碼</span>
+            <h2 style="color: #1A3D2F; font-size: 22px; font-weight: 800; margin: 0; font-family: 'Karma', serif;">《東亞終身學習與司法IT化政策解碼》</h2>
+            <p style="font-size: 13.5px; color: #4a6356; margin-top: 4px;">JLPT N1 一手文獻研讀 ✕ 東亞比較文教視野 ✕ 司法弱勢近用權 ｜ 研析者：陳禮煬</p>
+          </div>
+          <span style="background: #fff3e0; color: #e65100; padding: 4px 14px; border-radius: 20px; font-weight: 800; font-size: 13px; border: 1px solid #ffe0b2;">🇯🇵 一手文獻解讀</span>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 18px; line-height: 1.8; color: #37474f;">
+          <!-- 探究摘要 -->
+          <div style="background: #f4f8f6; border-left: 4px solid #1A3D2F; padding: 14px 18px; border-radius: 0 12px 12px 0; font-size: 14px; color: #1A3D2F;">
+            <strong>【送審官方摘要】</strong> 精讀日本文部科學省少子高齡化終身學習白皮書、裁判手續IT化政策專論，累積東亞比較文教視野與弱勢訴訟權之借鏡價值。
+          </div>
+
+          <!-- 第一部分 -->
+          <div style="background: #ffffff; border: 1.5px solid #e5ede8; border-radius: 14px; padding: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.02);">
+            <h3 style="color: #1A3D2F; font-size: 17px; font-weight: 800; margin-bottom: 8px;">一、自主研讀能力：以 JLPT N1 解碼一手日語政策公報</h3>
+            <p style="font-size: 14px; line-height: 1.75; color: #455a64;">
+              自學零起步一年內突破日本語能力試驗（JLPT）最高級 N1 合格，使我不必依賴二手翻譯，得以直接研讀日本中央省廳的第一手政策白皮書。這項能力讓我在探討社會教育與司法改革議題時，具備扎實的東亞比較制度視野。
+            </p>
+          </div>
+
+          <!-- 第二部分 -->
+          <div style="background: #ffffff; border: 1.5px solid #e5ede8; border-radius: 14px; padding: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.02);">
+            <h3 style="color: #1A3D2F; font-size: 17px; font-weight: 800; margin-bottom: 8px;">二、文部科學省白皮書：超少子高齡化下的終身共學網絡</h3>
+            <p style="font-size: 14px; line-height: 1.75; color: #455a64;">
+              精讀日本文部科學省《終身學習振興白皮書》中關於高齡社會「地域共生教育」之論述。日本在面對急遽人口萎縮時，積極轉型公民館與地方文化中心，將傳統「學校教育」擴充為「全齡學習與互助支持平台」。這為我國即將邁入超高齡社會的社區文教與非學校型態學習推廣，提供了極具價值的實務借鏡。
+            </p>
+          </div>
+
+          <!-- 第三部分 -->
+          <div style="background: #ffffff; border: 1.5px solid #e5ede8; border-radius: 14px; padding: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.02);">
+            <h3 style="color: #1A3D2F; font-size: 17px; font-weight: 800; margin-bottom: 8px;">三、司法全盤 IT 化三階段與數位弱勢近用權反思</h3>
+            <p style="font-size: 14px; line-height: 1.75; color: #455a64;">
+              深度追蹤日本 2026 年正式施行的改正民事訴訟法「三階段裁判 IT 化」（e-Filing 線上提訴、e-Courtroom 遠距口頭辯論、e-Case Management 電子卷證檢閱），並獨立全譯日本首相石破茂 9,861 字施政方針演說中有關基層民生改革之段落。
+            </p>
+            <p style="margin-top: 8px; font-size: 14px; line-height: 1.75; color: #455a64;">
+              <strong>【批判省思】</strong> 司法數位轉型絕不只是單純把紙本作業轉為線上系統。面對數位落差與高齡弱勢，軟體系統必須具備極致的易用性（Usability）與無障礙支援（a11y），確保科技進步是賦權民眾，而非築起更高的制度門檻。
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <div class="custom-modal-overlay" id="vibeCodingModal">
     <div class="custom-modal-content" style="background-color: #ffffff; max-width: 900px;">
