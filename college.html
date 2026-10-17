@@ -1088,23 +1088,6 @@
       text-align: center;
     }
 
-    /* === 響應式微調 === */
-    @media (max-width: 1024px) {
-      .hero-banner-card {
-        grid-template-columns: 1fr;
-        text-align: center;
-      }
-      .hero-avatar { margin: 0 auto; }
-      .metrics-horizontal-grid { grid-template-columns: repeat(2, 1fr); }
-      .flagship-grid { grid-template-columns: 1fr; }
-      .recommenders-grid { grid-template-columns: 1fr; }
-      .notes-trio-grid { grid-template-columns: 1fr; }
-      .loop-grid { grid-template-columns: repeat(2, 1fr); }
-      .pillars-grid { grid-template-columns: 1fr; }
-      .papers-bento-grid { grid-template-columns: 1fr; }
-      .nomination-banner-bento { grid-template-columns: 1fr; }
-    }
-      
     /* === 學術論文閱讀器專屬排版 (比照自學面向沉浸體驗) === */
     .modal-prose {
       margin-bottom: 14px;
@@ -1193,7 +1176,13 @@
     .paper-ref-item {
       margin-bottom: 10px;
     }
-    .paper-action-bar {
+        .action-bar-tags, .action-bar-actions {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+.paper-action-bar {
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -1377,6 +1366,359 @@
       border-radius: 16px;
       padding: 18px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+    }
+
+
+    /* =======================================================
+       === 全站響應式極致適配 (Responsive Master Suite) ===
+       ======================================================= */
+
+    /* 1. 平板與小筆電 (<= 1024px) */
+    @media (max-width: 1024px) {
+      .hero-banner-card { grid-template-columns: 1fr; text-align: center; }
+      .hero-avatar { margin: 0 auto; }
+      .metrics-horizontal-grid { grid-template-columns: repeat(2, 1fr); }
+      .flagship-grid { grid-template-columns: 1fr; }
+      .recommenders-grid { grid-template-columns: 1fr; }
+      .notes-trio-grid { grid-template-columns: 1fr; }
+      .loop-grid { grid-template-columns: repeat(2, 1fr); }
+      .pillars-grid { grid-template-columns: 1fr; }
+      .papers-bento-grid { grid-template-columns: 1fr; }
+      .nomination-banner-bento { grid-template-columns: 1fr; }
+    }
+
+    /* 2. 手機版專屬極致適配 (Mobile Screen <= 768px / iPhone & Android) */
+    @media (max-width: 768px) {
+      /* === 頂部雙層導覽列優化：不換行擠壓，原生效感水平滑動 === */
+      .nav-achieve-bar {
+        padding: 6px 10px !important;
+        justify-content: flex-start !important;
+        position: relative !important;
+        overflow-x: auto !important;
+        white-space: nowrap !important;
+        scrollbar-width: none !important;
+        -webkit-overflow-scrolling: touch !important;
+      }
+      .nav-achieve-bar::-webkit-scrollbar { display: none !important; }
+      .achieve-items {
+        display: flex !important;
+        align-items: center !important;
+        gap: 6px !important;
+        flex-wrap: nowrap !important;
+        padding-right: 85px !important;
+      }
+      .achieve-items span.sep { display: none !important; }
+      .achieve-pill-btn {
+        font-size: 11px !important;
+        padding: 3px 8px !important;
+        flex-shrink: 0 !important;
+      }
+      .achieve-date {
+        position: sticky !important;
+        right: 0 !important;
+        background: rgba(239, 244, 241, 0.95) !important;
+        backdrop-filter: blur(8px) !important;
+        padding: 2px 8px !important;
+        border-radius: 8px !important;
+        font-size: 11px !important;
+        box-shadow: -6px 0 10px rgba(239, 244, 241, 0.95) !important;
+        z-index: 2 !important;
+        margin-left: auto !important;
+      }
+
+      /* 主導覽列：品牌與自學庫按鈕在首行，次行水平滑動膠囊 */
+      .nav-main-bar {
+        display: grid !important;
+        grid-template-areas:
+          "brand switch"
+          "capsule capsule" !important;
+        grid-template-columns: 1fr auto !important;
+        padding: 8px 12px !important;
+        gap: 8px !important;
+        align-items: center !important;
+      }
+      .nav-brand-script {
+        grid-area: brand !important;
+        font-size: 23px !important;
+        line-height: 1 !important;
+        white-space: nowrap !important;
+      }
+      .nav-switch-btns {
+        grid-area: switch !important;
+        justify-self: end !important;
+      }
+      .spotlight-trigger-btn {
+        padding: 4px 10px !important;
+        font-size: 11.5px !important;
+        gap: 5px !important;
+      }
+      .spotlight-trigger-btn .site-switch-tag { display: none !important; }
+      .nav-center-capsule {
+        grid-area: capsule !important;
+        width: 100% !important;
+        overflow-x: auto !important;
+        white-space: nowrap !important;
+        display: flex !important;
+        gap: 6px !important;
+        padding: 4px 6px !important;
+        border-radius: 20px !important;
+        background: rgba(255, 255, 255, 0.75) !important;
+        scrollbar-width: none !important;
+        -webkit-overflow-scrolling: touch !important;
+        box-sizing: border-box !important;
+      }
+      .nav-center-capsule::-webkit-scrollbar { display: none !important; }
+      .nav-tab-btn {
+        padding: 5px 12px !important;
+        font-size: 12.5px !important;
+        flex-shrink: 0 !important;
+      }
+
+      /* === 主版面與容器間距 === */
+      .main-container {
+        padding: 12px 10px !important;
+        box-sizing: border-box !important;
+      }
+      .bento-section { margin-bottom: 22px !important; }
+      .bento-section-header {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 6px !important;
+        margin-bottom: 12px !important;
+      }
+      .bento-section-title {
+        font-size: 19px !important;
+        line-height: 1.4 !important;
+      }
+      .bento-section-badge {
+        font-size: 11px !important;
+        padding: 2px 8px !important;
+      }
+
+      /* === Hero 個人核心卡 === */
+      .hero-banner-card {
+        padding: 18px 12px !important;
+        border-radius: 16px !important;
+        gap: 12px !important;
+      }
+      .hero-avatar { width: 92px !important; height: 92px !important; }
+      .hero-name { font-size: 24px !important; }
+      .hero-title-en { font-size: 15px !important; }
+      .hero-tagline { font-size: 13px !important; line-height: 1.5 !important; }
+      .hero-quote {
+        padding: 12px 12px !important;
+        font-size: 13px !important;
+        margin-top: 10px !important;
+      }
+
+      /* === 四大關鍵指標 (維持 2x2 雙欄精準排列) === */
+      .metrics-horizontal-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 8px !important;
+      }
+      .metric-bento-card {
+        padding: 12px 10px !important;
+        border-radius: 14px !important;
+      }
+      .metric-value { font-size: 22px !important; line-height: 1.1 !important; }
+      .metric-label { font-size: 11px !important; margin-bottom: 2px !important; }
+      .metric-desc { font-size: 11px !important; line-height: 1.35 !important; }
+
+      /* === 認知行動迴圈 (4步驟單欄滿寬) === */
+      .loop-grid { grid-template-columns: 1fr !important; gap: 8px !important; }
+      .loop-step-card { padding: 12px 12px !important; border-radius: 12px !important; }
+
+      /* === 雙旗艦專案 === */
+      .flagship-grid { grid-template-columns: 1fr !important; gap: 14px !important; }
+      .flagship-card { padding: 16px 12px !important; border-radius: 16px !important; }
+      .flagship-heading { font-size: 18px !important; }
+      .flagship-desc { font-size: 13.5px !important; line-height: 1.65 !important; }
+
+      /* === 專家推薦函 === */
+      .recommenders-grid { grid-template-columns: 1fr !important; gap: 14px !important; }
+      .rec-card { padding: 16px 12px !important; border-radius: 16px !important; }
+
+      /* === 高醫大筆記 === */
+      .notes-trio-grid { grid-template-columns: 1fr !important; gap: 12px !important; }
+      .note-trio-card { padding: 14px 12px !important; border-radius: 14px !important; }
+
+      /* === 四大論文矩陣 & Vibe Coding 特稿 === */
+      .papers-bento-grid { grid-template-columns: 1fr !important; gap: 14px !important; }
+      .paper-bento-box { padding: 16px 12px !important; border-radius: 16px !important; }
+      .paper-heading { font-size: 17.5px !important; line-height: 1.4 !important; }
+      .paper-snippet { font-size: 13.5px !important; line-height: 1.65 !important; }
+      .vibe-bento-card { padding: 16px 12px !important; border-radius: 16px !important; }
+      .vibe-headline { font-size: 17.5px !important; line-height: 1.4 !important; }
+      .vibe-body-text { font-size: 13.5px !important; line-height: 1.65 !important; }
+
+      /* === 沉浸式彈窗（Full-Coverage Mobile Sheet 模式，嚴防水平外溢） === */
+      .custom-modal-overlay {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        padding: 8px !important;
+        align-items: center !important;
+        justify-content: center !important;
+        box-sizing: border-box !important;
+        overflow-y: auto !important;
+        overflow-x: hidden !important;
+        display: none !important;
+      }
+      .custom-modal-overlay.active {
+        display: flex !important;
+      }
+      .custom-modal-content {
+        max-width: 100% !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        max-height: 94vh !important;
+        border-radius: 16px !important;
+        box-sizing: border-box !important;
+        overflow: hidden !important;
+        margin: auto !important;
+        position: relative !important;
+        display: flex !important;
+        flex-direction: column !important;
+        box-shadow: 0 12px 36px rgba(0,0,0,0.35) !important;
+      }
+      .modal-close-btn {
+        top: 8px !important;
+        right: 8px !important;
+        width: 32px !important;
+        height: 32px !important;
+        font-size: 15px !important;
+        z-index: 50 !important;
+        background: #EFF4F1 !important;
+        border: 1px solid #D6E4DC !important;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.15) !important;
+      }
+      .paper-action-bar {
+        padding: 10px 44px 10px 12px !important;
+        flex-direction: column !important;
+        flex-wrap: nowrap !important;
+        flex-shrink: 0 !important;
+        flex-grow: 0 !important;
+        align-items: stretch !important;
+        gap: 8px !important;
+        box-sizing: border-box !important;
+        overflow: hidden !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        height: auto !important;
+      }
+      .action-bar-tags, .action-bar-actions, .paper-action-bar > div {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        display: flex !important;
+        flex-wrap: wrap !important;
+        flex-direction: row !important;
+        gap: 6px !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        box-sizing: border-box !important;
+      }
+      .action-bar-tags span,
+      .paper-action-bar span, 
+      .paper-action-bar button, 
+      .paper-action-bar a {
+        font-size: 11px !important;
+        line-height: 1.4 !important;
+        padding: 3px 8px !important;
+        white-space: normal !important;
+        word-break: break-word !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+      }
+      .paper-btn-print { padding: 4px 10px !important; font-size: 11px !important; }
+      .paper-cross-link { padding: 4px 10px !important; font-size: 11px !important; }
+
+      .modal-body-scroll {
+        padding: 16px 14px !important;
+        font-size: 14.5px !important;
+        line-height: 1.8 !important;
+        box-sizing: border-box !important;
+        overflow-y: auto !important;
+        overflow-x: hidden !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        -webkit-overflow-scrolling: touch !important;
+      }
+      .modal-body-scroll h1 {
+        font-size: 17.5px !important;
+        line-height: 1.4 !important;
+        word-break: break-word !important;
+      }
+      .modal-body-scroll h2,
+      .modal-subheading {
+        font-size: 15.5px !important;
+        margin: 18px 0 8px !important;
+        word-break: break-word !important;
+      }
+      .modal-section-h3 {
+        font-size: 14px !important;
+        margin: 12px 0 6px !important;
+        word-break: break-word !important;
+      }
+      .modal-indented { text-indent: 1.8em !important; }
+      .paper-abstract-box {
+        padding: 12px 12px !important;
+        font-size: 13px !important;
+        line-height: 1.7 !important;
+        word-break: break-word !important;
+        box-sizing: border-box !important;
+      }
+      .paper-theory-card {
+        padding: 12px 12px !important;
+        box-sizing: border-box !important;
+      }
+      .paper-formula-callout {
+        padding: 10px 12px !important;
+        font-size: 11.5px !important;
+        word-break: break-all !important;
+        white-space: pre-wrap !important;
+        box-sizing: border-box !important;
+      }
+
+      /* 表格橫向平滑滾動容器 */
+      .paper-table-wrapper {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        display: block !important;
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+        margin: 12px 0 !important;
+        box-sizing: border-box !important;
+      }
+      .paper-data-table {
+        min-width: 480px !important;
+        width: 100% !important;
+        margin: 0 !important;
+      }
+      .paper-ref-list {
+        padding-left: 1.5em !important;
+        text-indent: -1.5em !important;
+        font-size: 12px !important;
+        line-height: 1.65 !important;
+        word-break: break-word !important;
+      }
+
+      /* Lightbox 手機適配 */
+      .lightbox-content { max-width: 96vw !important; max-height: 90vh !important; }
+      .lightbox-body { padding: 8px !important; }
+      .lightbox-body img { max-height: 72vh !important; max-width: 100% !important; }
+    }
+
+    /* 3. 超窄螢幕微調 (iPhone SE / 375px 以下) */
+    @media (max-width: 375px) {
+      .hero-name { font-size: 22px !important; }
+      .metric-value { font-size: 20px !important; }
+      .nav-brand-script { font-size: 21px !important; }
     }
 
 </style>
@@ -2027,7 +2369,7 @@
         <td style="text-align: center; padding: 10px 6px; border: 1px solid #d4ebf7; font-weight: 800; color: #007700; font-size: 15px;">95, A, 4.0</td>
       </tr>
     </tbody>
-  </table>
+  </table></div>
 
   <!-- 指導老師綜合推薦寄語區塊 -->
   <div style="margin-top: 24px; padding-top: 18px; border-top: 2px dashed #bce2f5;">
@@ -2354,11 +2696,11 @@ class CaseLibraryPage extends StatelessWidget {
     
     <!-- 頂部操作與導覽列 -->
     <div class="paper-action-bar">
-      <div style="display: flex; align-items: center; gap: 8px;">
+      <div class="action-bar-tags">
         <span style="font-size: 11px; font-weight: 800; background: #1A3D2F; color: #fff; padding: 3px 12px; border-radius: 20px;">國立臺灣師範大學 特殊選才 · 模組 A 專題論著一</span>
         <span style="font-size: 11px; font-weight: 700; color: #2e7d32; background: #e8f5e9; padding: 2px 8px; border-radius: 10px;">正式送審論文 · NTNU-MOD-A01</span>
       </div>
-      <div style="display: flex; align-items: center; gap: 10px;">
+      <div class="action-bar-actions">
         <button class="paper-btn-print" onclick="window.print()">🖨️ 列印 / 另存論文 PDF</button>
         <a href="homeschool.html" target="_blank" class="paper-cross-link">🏛️ 五年間自學成果庫 (173篇) ➔</a>
       </div>
@@ -2431,7 +2773,7 @@ class CaseLibraryPage extends StatelessWidget {
           在傳統社會結構中，「四代同堂」象徵著家族繁衍與世代共處的溫馨福分；而在 2020 年代中期的台灣社會，此一詞彙已異化為「四貸同堂」之殘酷諧音——意指當代青年在踏入社會初期，即同時被四重沈重之金融負債枷鎖所綑綁：
         </p>
 
-        <table class="paper-data-table">
+        <div class="paper-table-wrapper"><table class="paper-data-table">
           <thead>
             <tr>
               <th style="width: 20%;">負債型態</th>
@@ -2461,7 +2803,7 @@ class CaseLibraryPage extends StatelessWidget {
               <td>為維持社群光鮮生活形態與通勤需求，背負隱含實質高年利率（IRR）之遞延消費債務。</td>
             </tr>
           </tbody>
-        </table>
+        </table></div>
 
         <p class="modal-prose modal-indented">
           金融機構與政策補貼透過拉長還款年限與寬限期，表面上「體貼青年、降低進場門檻」，其核心邏輯本質上是一場「向未來世代透支生命剩餘價值」的金融掠奪。青年為了維持每月剛性還款，不敢轉職、不敢創新、不敢生育，人生被嚴密地編織進銀行資產負債表的生息資產端，喪失了作為獨立個體的主體生命可能性。
@@ -2537,11 +2879,11 @@ class CaseLibraryPage extends StatelessWidget {
     
     <!-- 頂部操作與導覽列 -->
     <div class="paper-action-bar">
-      <div style="display: flex; align-items: center; gap: 8px;">
+      <div class="action-bar-tags">
         <span style="font-size: 11px; font-weight: 800; background: #1A3D2F; color: #fff; padding: 3px 12px; border-radius: 20px;">國立臺灣師範大學 特殊選才 · 模組 A 專題論著二</span>
         <span style="font-size: 11px; font-weight: 700; color: #4527a0; background: #ede7f6; padding: 2px 8px; border-radius: 10px;">2026 MAIC 大賽開發實作 · NTNU-MOD-A02</span>
       </div>
-      <div style="display: flex; align-items: center; gap: 10px;">
+      <div class="action-bar-actions">
         <button class="paper-btn-print" onclick="window.print()">🖨️ 列印 / 另存論文 PDF</button>
         <a href="#projects" onclick="closeModal('paperModalMemory')" class="paper-cross-link">⚖️ 檢視《緒言》旗艦專案 ➔</a>
       </div>
@@ -2662,7 +3004,7 @@ class CaseLibraryPage extends StatelessWidget {
           為驗證上述認知工程之實效，研究者招募 12 位無法律背景之同儕受試者（年齡 16-18 歲），進行隨機對照組實驗。受試者分別閱讀傳統官方純文字法條版面（對照組 A）與《緒言》雙重編碼資訊卡（實驗組 B），並進行情境是非判斷與 48 小時後之要件回想測驗：
         </p>
 
-        <table class="paper-data-table">
+        <div class="paper-table-wrapper"><table class="paper-data-table">
           <thead>
             <tr>
               <th style="width: 25%;">評估指標</th>
@@ -2691,7 +3033,7 @@ class CaseLibraryPage extends StatelessWidget {
               <td><strong>長期記憶固化提升 143.8%</strong></td>
             </tr>
           </tbody>
-        </table>
+        </table></div>
 
         <p class="modal-prose modal-indented">
           實證數據具體佐證：經由雙重編碼與結構化組塊，大腦工作記憶在接收法律資訊時之瓶頸被大幅疏解；空間圖像與白話範例更成功轉化為長期記憶之穩固「提取線索（Retrieval Cues）」，使非法律專業者能在生活情境中敏捷提取法定權利。
@@ -2737,11 +3079,11 @@ class CaseLibraryPage extends StatelessWidget {
     
     <!-- 頂部操作與導覽列 -->
     <div class="paper-action-bar">
-      <div style="display: flex; align-items: center; gap: 8px;">
+      <div class="action-bar-tags">
         <span style="font-size: 11px; font-weight: 800; background: #1A3D2F; color: #fff; padding: 3px 12px; border-radius: 20px;">國立臺灣師範大學 特殊選才 · 模組 A 國際文獻解碼</span>
         <span style="font-size: 11px; font-weight: 700; color: #0277bd; background: #e1f5fe; padding: 2px 8px; border-radius: 10px;">JLPT N1 一手研讀 · NTNU-MOD-A03</span>
       </div>
-      <div style="display: flex; align-items: center; gap: 10px;">
+      <div class="action-bar-actions">
         <button class="paper-btn-print" onclick="window.print()">🖨️ 列印 / 另存論文 PDF</button>
         <button class="paper-cross-link" onclick="closeModal('paperModalJapan'); openModal('n1CertModal');">🇯🇵 檢視 JLPT N1 證書 ➔</button>
       </div>
@@ -2791,7 +3133,7 @@ class CaseLibraryPage extends StatelessWidget {
           日本司法當局為兼顧法庭審理之審慎性與科技轉型之穩定性，採取了「謀定而後動、分階段穩健推行」之三部曲路徑：
         </p>
 
-        <table class="paper-data-table">
+        <div class="paper-table-wrapper"><table class="paper-data-table">
           <thead>
             <tr>
               <th style="width: 18%;">改革階段</th>
@@ -2816,7 +3158,7 @@ class CaseLibraryPage extends StatelessWidget {
               <td>裁判卷宗全面實現「電子卷證（電子訴訟記録）」。當事人與代理人獲得專屬安全金鑰後，可 24 小時隨時於線上查閱（閲覧）與下載全案紀錄。實體法院傳統巨大的紙本卷宗檔案庫正式走入歷史。</td>
             </tr>
           </tbody>
-        </table>
+        </table></div>
 
         <h2 class="modal-subheading">三、一手政策公報深度研析：法務省法制審議會之制度考量</h2>
         <p class="modal-prose modal-indented">
@@ -2893,11 +3235,11 @@ class CaseLibraryPage extends StatelessWidget {
     
     <!-- 頂部操作與導覽列 -->
     <div class="paper-action-bar">
-      <div style="display: flex; align-items: center; gap: 8px;">
+      <div class="action-bar-tags">
         <span style="font-size: 11px; font-weight: 800; background: #1A3D2F; color: #fff; padding: 3px 12px; border-radius: 20px;">國立臺灣師範大學 特殊選才 · 模組 A 專題論著四</span>
         <span style="font-size: 11px; font-weight: 700; color: #4527a0; background: #ede7f6; padding: 2px 8px; border-radius: 10px;">高醫大心理學實驗室先修 · NTNU-MOD-A04</span>
       </div>
-      <div style="display: flex; align-items: center; gap: 10px;">
+      <div class="action-bar-actions">
         <button class="paper-btn-print" onclick="window.print()">🖨️ 列印 / 另存論文 PDF</button>
         <a href="#notes" onclick="closeModal('paperModalSGT')" class="paper-cross-link">🧠 檢視高醫大筆記區塊 ➔</a>
       </div>
@@ -2996,7 +3338,7 @@ class CaseLibraryPage extends StatelessWidget {
           經過連續 6 週、每週兩次的系統性田野行為介入，研究者詳實記錄各階段之行為觀測指標，成效極為顯著：
         </p>
 
-        <table class="paper-data-table">
+        <div class="paper-table-wrapper"><table class="paper-data-table">
           <thead>
             <tr>
               <th style="width: 25%;">行為觀測指標</th>
@@ -3025,7 +3367,7 @@ class CaseLibraryPage extends StatelessWidget {
               <td><strong>建立良性自律回饋迴路</strong></td>
             </tr>
           </tbody>
-        </table>
+        </table></div>
 
         <p class="modal-prose modal-indented">
           這項田野實踐讓研究者體認到一項至關重要的特殊教育哲學：<strong>過動與自閉特質兒少在課堂中的分心、焦躁與衝動，絕非品德不良或刻意作對，而是其神經生理系統中前額葉體細胞標記機制的天然差異。</strong>如果教育者僅會使用道德說教或懲罰恐嚇，只是在徒增其神經系統的挫折壓力；唯有理解大腦運作規律，以科學化、視覺化的「外在認知鷹架」彌補內在機制的暫時不足，才能真正賦權孩子找回自信與學習樂趣。
