@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Dancing+Script:wght@600;700&family=Karma:wght@400;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Noto+Sans+TC:wght@400;500;700;900&display=swap">
   <style>
     :root {
+      --site-banner-h: 49px;
       --bg-canvas: #E6E6FA;
       --navy-primary: #01446e;
       --navy-dark: #002b47;
@@ -39,22 +40,24 @@
       line-height: 1.6;
     }
 
-    /* 頂部導航大包覆層 (包含純淨微縮成果條 ＋ 書寫體導覽列) */
+    /* 頂部核心置頂導航列 (滑動時優雅緊接於黑條下方，維持舒適留白) */
     .top-dual-navbar {
       position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(230, 230, 250, 0.88);
+      top: var(--site-banner-h, 49px);
+      z-index: 1000;
+      background: rgba(230, 230, 250, 0.92);
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
       border-bottom: 1px solid rgba(255, 255, 255, 0.7);
       box-shadow: 0 4px 16px rgba(1, 68, 110, 0.06);
     }
 
-    /* 純淨微縮成果條：居中對齊，右上角標註 2027.08 完結 */
+    /* 純淨微縮成果條：隨頁面滾動自然收合 */
     .nav-achieve-bar {
-      background: rgba(1, 68, 110, 0.06);
-      padding: 6px 32px;
+      background: rgba(230, 230, 250, 0.88);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      padding: 7px 32px;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -123,7 +126,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 10px 32px;
+      padding: 16px 32px 14px 32px;
       gap: 16px;
     }
 
@@ -134,6 +137,7 @@
       font-weight: 700;
       line-height: 1.1;
       letter-spacing: 0.5px;
+      margin-top: 2px;
       display: flex;
       align-items: center;
       gap: 8px;
@@ -1172,6 +1176,12 @@
     .GradeApply_tbody { background-color: #f7fbfe; }
 
     @media (max-width: 768px) {
+      :root {
+        --site-banner-h: 75px;
+      }
+      .nav-main-bar {
+        padding: 12px 18px 10px 18px;
+      }
       .nav-achieve-bar { flex-direction: column; gap: 6px; text-align: center; }
       .achieve-date { position: static; }
       .nav-center-capsule { display: none; }
@@ -1289,32 +1299,33 @@
   </div>
 
 
-  <!-- 頂部導航大包覆層 (包含純淨微縮成果條 ＋ 書寫體導覽列) -->
-  <header class="top-dual-navbar">
-    <div class="nav-achieve-bar">
-      <div class="achieve-items">
-        <span>✍ 189,055 字紀實</span>
-        <span class="sep">•</span>
-        <span>📅 173 篇每週紀錄</span>
-        <span class="sep">•</span>
-        <button class="achieve-pill-btn" onclick="openModal('n1CertModal')" title="點擊檢視 JLPT N1 證書與歷程照片">
-          <span>🇯🇵 JLPT N1 合格</span>
-          <span class="pill-cam">📷</span>
-        </button>
-        <span class="sep">•</span>
-        <button class="achieve-pill-btn" onclick="openModal('toeicCertModal')" title="點擊檢視 TOEIC 多益成績、考場座位表與紀錄照片">
-          <span>🇺🇸 TOEIC 795</span>
-          <span class="pill-cam">📷</span>
-        </button>
-        <span class="sep">•</span>
-        <button class="achieve-pill-btn" onclick="openModal('preambleAppModal')" title="點擊檢視《緒言 Preamble》App 開發手冊與架構">
-          <span>🏆 緒言 Preamble (MAIC)</span>
-          <span class="pill-cam">📱</span>
-        </button>
-      </div>
-      <span class="achieve-date">2027.08 完結</span>
+  <!-- 純淨微縮成果條 (隨頁面滾動自然收合) -->
+  <div class="nav-achieve-bar">
+    <div class="achieve-items">
+      <span>✍ 189,055 字紀實</span>
+      <span class="sep">•</span>
+      <span>📅 173 篇每週紀錄</span>
+      <span class="sep">•</span>
+      <button class="achieve-pill-btn" onclick="openModal('n1CertModal')" title="點擊檢視 JLPT N1 證書與歷程照片">
+        <span>🇯🇵 JLPT N1 合格</span>
+        <span class="pill-cam">📷</span>
+      </button>
+      <span class="sep">•</span>
+      <button class="achieve-pill-btn" onclick="openModal('toeicCertModal')" title="點擊檢視 TOEIC 多益成績、考場座位表與紀錄照片">
+        <span>🇺🇸 TOEIC 795</span>
+        <span class="pill-cam">📷</span>
+      </button>
+      <span class="sep">•</span>
+      <button class="achieve-pill-btn" onclick="openModal('preambleAppModal')" title="點擊檢視《緒言 Preamble》App 開發手冊與架構">
+        <span>🏆 緒言 Preamble (MAIC)</span>
+        <span class="pill-cam">📱</span>
+      </button>
     </div>
+    <span class="achieve-date">2027.08 完結</span>
+  </div>
 
+  <!-- 頂部核心置頂導航列 (滑動時優雅緊接於黑條下方) -->
+  <header class="top-dual-navbar">
     <div class="nav-main-bar">
       <div class="nav-brand-script">
         <span>Leon's Homeschooling Hub</span>
@@ -8032,11 +8043,24 @@ const Color main = Color.fromARGB(255, 155, 138, 122);</span></div>
       closeSpotlight();
     }
 
+    // 動態同步頂部跨頁切換橫幅高度
+    function updateBannerHeight() {
+      const banner = document.querySelector('.site-switch-banner');
+      if (banner) {
+        document.documentElement.style.setProperty('--site-banner-h', (banner.offsetHeight - 1) + 'px');
+      }
+    }
+    window.addEventListener('resize', updateBannerHeight);
+    window.addEventListener('DOMContentLoaded', updateBannerHeight);
+    updateBannerHeight();
+
     // 平滑滾動至學年區塊
     function scrollToSection(sectionId) {
       const target = document.getElementById(sectionId);
       if (target) {
-        const offset = target.getBoundingClientRect().top + window.pageYOffset - 95;
+        const bannerH = document.querySelector('.site-switch-banner')?.offsetHeight || 50;
+        const navH = document.querySelector('.top-dual-navbar')?.offsetHeight || 60;
+        const offset = target.getBoundingClientRect().top + window.pageYOffset - bannerH - navH - 12;
         window.scrollTo({ top: offset, behavior: "smooth" });
       }
     }
