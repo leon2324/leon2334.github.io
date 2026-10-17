@@ -1373,6 +1373,176 @@
        === 全站響應式極致適配 (Responsive Master Suite) ===
        ======================================================= */
 
+    /* === 手機抽屜式選單 (Mobile Drawer Menu) === */
+    .mobile-drawer-btn {
+      display: none;
+    }
+    .mobile-drawer-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(15, 38, 28, 0.55);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      z-index: 55000;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      justify-content: flex-end;
+    }
+    .mobile-drawer-overlay.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .mobile-drawer-panel {
+      width: 310px;
+      max-width: 86vw;
+      height: 100%;
+      background: #FAFDFB;
+      box-shadow: -10px 0 35px rgba(0, 0, 0, 0.25);
+      transform: translateX(100%);
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      flex-direction: column;
+      padding: 22px 18px;
+      box-sizing: border-box;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      border-left: 1px solid rgba(26, 61, 47, 0.1);
+    }
+    .mobile-drawer-overlay.active .mobile-drawer-panel {
+      transform: translateX(0);
+    }
+    .drawer-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 14px;
+      border-bottom: 1.5px solid #E2ECE6;
+      margin-bottom: 16px;
+    }
+    .drawer-brand {
+      font-family: 'Caveat', 'Dancing Script', cursive;
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--green-primary);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .drawer-close-btn {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: #EFF4F1;
+      border: 1px solid #D6E4DC;
+      color: #4B6358;
+      font-size: 15px;
+      font-weight: bold;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s ease;
+    }
+    .drawer-close-btn:hover {
+      background: #D6E4DC;
+      color: #1A3D2F;
+    }
+    .drawer-section {
+      margin-bottom: 18px;
+    }
+    .drawer-section-label {
+      font-size: 11px;
+      font-weight: 800;
+      color: var(--text-subtle);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+      padding-left: 2px;
+    }
+    .drawer-action-btn {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 11px 14px;
+      border-radius: 12px;
+      font-size: 13px;
+      font-weight: 700;
+      text-decoration: none;
+      margin-bottom: 8px;
+      transition: all 0.2s ease;
+      box-sizing: border-box;
+    }
+    .drawer-action-btn.primary-action {
+      background: #1A3D2F;
+      color: #ffffff;
+      box-shadow: 0 3px 10px rgba(26, 61, 47, 0.2);
+    }
+    .drawer-action-btn.secondary-action {
+      background: #ffffff;
+      color: var(--green-primary);
+      border: 1.5px solid #D6E4DC;
+    }
+    .drawer-arrow {
+      font-size: 13px;
+      opacity: 0.8;
+    }
+    .drawer-nav-links {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .drawer-link {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 12px;
+      border-radius: 10px;
+      color: var(--text-main);
+      text-decoration: none;
+      font-size: 13.5px;
+      font-weight: 600;
+      transition: all 0.15s ease;
+    }
+    .drawer-link:hover, .drawer-link:active {
+      background: rgba(26, 61, 47, 0.08);
+      color: var(--green-primary);
+    }
+    .drawer-link.active {
+      background: #E8F2EC;
+      color: var(--green-primary);
+      font-weight: 700;
+    }
+    .drawer-link-icon {
+      font-size: 15px;
+      width: 20px;
+      text-align: center;
+    }
+    .drawer-footer-section {
+      margin-top: auto;
+      padding-top: 14px;
+      border-top: 1px dashed #D6E4DC;
+    }
+    .drawer-pills-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .drawer-pill-item {
+      font-size: 11px;
+      padding: 4px 8px;
+      background: #ffffff;
+      border: 1px solid #D6E4DC;
+      border-radius: 14px;
+      color: var(--green-dark);
+      cursor: pointer;
+      font-weight: 600;
+    }
+
     /* 1. 平板與小筆電 (<= 1024px) */
     @media (max-width: 1024px) {
       .hero-banner-card { grid-template-columns: 1fr; text-align: center; }
@@ -1426,52 +1596,47 @@
         margin-left: auto !important;
       }
 
-      /* 主導覽列：品牌與自學庫按鈕在首行，次行水平滑動膠囊 */
+      /* 主導覽列：首行極簡（品牌名在左，漢堡按鈕在右），徹底消除橫向外溢 */
       .nav-main-bar {
-        display: grid !important;
-        grid-template-areas:
-          "brand switch"
-          "capsule capsule" !important;
-        grid-template-columns: 1fr auto !important;
-        padding: 8px 12px !important;
-        gap: 8px !important;
+        display: flex !important;
+        justify-content: space-between !important;
         align-items: center !important;
+        padding: 10px 14px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        gap: 8px !important;
       }
       .nav-brand-script {
-        grid-area: brand !important;
-        font-size: 23px !important;
-        line-height: 1 !important;
+        font-size: 22px !important;
+        line-height: 1.1 !important;
         white-space: nowrap !important;
+        flex-shrink: 0 !important;
       }
       .nav-switch-btns {
-        grid-area: switch !important;
-        justify-self: end !important;
+        display: none !important; /* 手機端收納進抽屜選單 */
       }
-      .spotlight-trigger-btn {
-        padding: 4px 10px !important;
-        font-size: 11.5px !important;
-        gap: 5px !important;
-      }
-      .spotlight-trigger-btn .site-switch-tag { display: none !important; }
       .nav-center-capsule {
-        grid-area: capsule !important;
-        width: 100% !important;
-        overflow-x: auto !important;
-        white-space: nowrap !important;
-        display: flex !important;
-        gap: 6px !important;
-        padding: 4px 6px !important;
-        border-radius: 20px !important;
-        background: rgba(255, 255, 255, 0.75) !important;
-        scrollbar-width: none !important;
-        -webkit-overflow-scrolling: touch !important;
-        box-sizing: border-box !important;
+        display: none !important; /* 手機端收納進抽屜選單 */
       }
-      .nav-center-capsule::-webkit-scrollbar { display: none !important; }
-      .nav-tab-btn {
-        padding: 5px 12px !important;
-        font-size: 12.5px !important;
+      .mobile-drawer-btn {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 38px !important;
+        height: 38px !important;
+        border-radius: 12px !important;
+        background: #ffffff !important;
+        border: 1.5px solid #D6E4DC !important;
+        color: var(--green-primary) !important;
+        font-size: 19px !important;
+        cursor: pointer !important;
+        box-shadow: 0 2px 8px rgba(26, 61, 47, 0.08) !important;
+        transition: all 0.2s ease !important;
         flex-shrink: 0 !important;
+      }
+      .mobile-drawer-btn:active {
+        transform: scale(0.95) !important;
+        background: #EFF4F1 !important;
       }
 
       /* === 主版面與容器間距 === */
@@ -1479,7 +1644,10 @@
         padding: 12px 10px !important;
         box-sizing: border-box !important;
       }
-      .bento-section { margin-bottom: 22px !important; }
+      .bento-section {
+        margin-bottom: 22px !important;
+        scroll-margin-top: 105px !important; /* 確保錨點滾動時標題絕不被頂部吸頂導覽列遮擋 */
+      }
       .bento-section-header {
         flex-direction: column !important;
         align-items: flex-start !important;
@@ -1487,8 +1655,13 @@
         margin-bottom: 12px !important;
       }
       .bento-section-title {
-        font-size: 19px !important;
-        line-height: 1.4 !important;
+        font-size: 18.5px !important;
+        line-height: 1.45 !important;
+        display: block !important;
+        word-break: break-word !important;
+      }
+      .bento-section-title span {
+        display: inline !important;
       }
       .bento-section-badge {
         font-size: 11px !important;
@@ -1538,9 +1711,46 @@
       .recommenders-grid { grid-template-columns: 1fr !important; gap: 14px !important; }
       .rec-card { padding: 16px 12px !important; border-radius: 16px !important; }
 
-      /* === 高醫大筆記 === */
+      /* === 高醫大筆記 (精簡浮層，露出 iPad 手稿本體) === */
+      .shelf-bento-container {
+        padding: 14px 10px !important;
+        border-radius: 16px !important;
+      }
+      .ipad-shelf-panorama {
+        margin-bottom: 14px !important;
+        border-radius: 12px !important;
+      }
+      .ipad-shelf-panorama img {
+        width: 100% !important;
+        height: auto !important;
+        max-height: none !important;
+        display: block !important;
+      }
+      .ipad-shelf-overlay {
+        padding: 8px 10px !important;
+        background: linear-gradient(to top, rgba(15, 23, 42, 0.85) 0%, rgba(15, 23, 42, 0.2) 75%, transparent 100%) !important;
+        display: flex !important;
+        justify-content: flex-end !important;
+        align-items: center !important;
+      }
+      .ipad-shelf-overlay > div,
+      .ipad-shelf-overlay h4,
+      .ipad-shelf-overlay p {
+        display: none !important; /* 依 grill-me 共識：精簡浮層，避免遮擋白板手稿筆記本體 */
+      }
+      .ipad-shelf-overlay span {
+        font-size: 11.5px !important;
+        font-weight: 700 !important;
+        color: #ffd54f !important;
+        background: rgba(26, 61, 47, 0.88) !important;
+        backdrop-filter: blur(6px) !important;
+        padding: 4px 10px !important;
+        border-radius: 16px !important;
+        border: 1px solid rgba(255, 213, 79, 0.35) !important;
+      }
       .notes-trio-grid { grid-template-columns: 1fr !important; gap: 12px !important; }
-      .note-trio-card { padding: 14px 12px !important; border-radius: 14px !important; }
+      .note-trio-card { padding: 12px 10px !important; border-radius: 14px !important; }
+      .note-trio-card img { max-height: 240px !important; padding: 4px !important; border-radius: 8px !important; }
 
       /* === 四大論文矩陣 & Vibe Coding 特稿 === */
       .papers-bento-grid { grid-template-columns: 1fr !important; gap: 14px !important; }
@@ -1775,8 +1985,88 @@
         </a>
         <a href="index.html" class="btn-portal-home">🏠 大廳</a>
       </div>
+
+      <!-- 手機專屬漢堡抽屜按鈕 -->
+      <button type="button" class="mobile-drawer-btn" onclick="toggleDrawer()" aria-label="開啟選單導覽">
+        <span>☰</span>
+      </button>
     </div>
   </header>
+
+  <!-- 手機專屬側邊滑出抽屜選單 (Mobile Drawer Menu) -->
+  <div class="mobile-drawer-overlay" id="mobileDrawerOverlay" onclick="closeDrawer(event)">
+    <nav class="mobile-drawer-panel" onclick="event.stopPropagation()">
+      <div class="drawer-header">
+        <div class="drawer-brand">
+          <span>Leon's Hub</span>
+          <span class="brand-sparkle">✨</span>
+        </div>
+        <button type="button" class="drawer-close-btn" onclick="closeDrawer()" aria-label="關閉選單">✕</button>
+      </div>
+
+      <!-- 快速通往自學庫與首頁大廳 -->
+      <div class="drawer-section">
+        <div class="drawer-section-label">📌 核心系統切換</div>
+        <a href="homeschool.html" class="drawer-action-btn primary-action">
+          <span>📜 五年自學備查庫 (173篇)</span>
+          <span class="drawer-arrow">➔</span>
+        </a>
+        <a href="index.html" class="drawer-action-btn secondary-action">
+          <span>🏠 回首頁大廳</span>
+          <span class="drawer-arrow">➔</span>
+        </a>
+      </div>
+
+      <!-- 章節錨點導覽 -->
+      <div class="drawer-section">
+        <div class="drawer-section-label">🧭 審查章節快速導覽</div>
+        <div class="drawer-nav-links">
+          <a href="#summary" class="drawer-link active" onclick="handleDrawerNav(this)">
+            <span class="drawer-link-icon">★</span>
+            <span class="drawer-link-text">執行摘要 (Summary)</span>
+          </a>
+          <a href="#flagships" class="drawer-link" onclick="handleDrawerNav(this)">
+            <span class="drawer-link-icon">⚖️</span>
+            <span class="drawer-link-text">雙旗艦專案 (緒言 ✕ 少年家事法)</span>
+          </a>
+          <a href="#endorsements" class="drawer-link" onclick="handleDrawerNav(this)">
+            <span class="drawer-link-icon">📜</span>
+            <span class="drawer-link-text">專家推薦函 (林錦宏主任 ✕ 賴亭謖老師)</span>
+          </a>
+          <a href="#kmu-notes" class="drawer-link" onclick="handleDrawerNav(this)">
+            <span class="drawer-link-icon">📚</span>
+            <span class="drawer-link-text">高醫大筆記大書架 (iPad 數位手稿)</span>
+          </a>
+          <a href="#papers" class="drawer-link" onclick="handleDrawerNav(this)">
+            <span class="drawer-link-icon">🏛️</span>
+            <span class="drawer-link-text">四大核心學術論文矩陣 (模組 A)</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- 送審重要成果微徽章 -->
+      <div class="drawer-section drawer-footer-section">
+        <div class="drawer-section-label">🎓 送審評定與榮譽</div>
+        <div class="drawer-pills-grid">
+          <button type="button" class="drawer-pill-item" onclick="closeDrawer(); openModal('gradeModal');">
+            <span>🎓 GPA 4.0 全科滿分</span>
+          </button>
+          <button type="button" class="drawer-pill-item" onclick="closeDrawer(); openModal('n1CertModal');">
+            <span>🇯🇵 JLPT N1 合格</span>
+          </button>
+          <button type="button" class="drawer-pill-item" onclick="closeDrawer(); openModal('toeicCertModal');">
+            <span>🇺🇸 TOEIC 795</span>
+          </button>
+          <button type="button" class="drawer-pill-item" onclick="closeDrawer(); openModal('pearsonModal');">
+            <span>🇨🇦 Pearson 獎學金提名</span>
+          </button>
+          <button type="button" class="drawer-pill-item" onclick="closeDrawer(); openModal('preambleAppModal');">
+            <span>🏆 緒言 Preamble (MAIC)</span>
+          </button>
+        </div>
+      </div>
+    </nav>
+  </div>
 
   <!-- 主內容容器 -->
   <main class="main-container">
@@ -3565,9 +3855,47 @@ class CaseLibraryPage extends StatelessWidget {
       document.body.style.overflow = '';
     }
 
+    // === 手機抽屜式選單控制函式 ===
+    function toggleDrawer() {
+      const overlay = document.getElementById('mobileDrawerOverlay');
+      if (overlay) {
+        overlay.classList.toggle('active');
+        document.body.style.overflow = overlay.classList.contains('active') ? 'hidden' : '';
+      }
+    }
+
+    function closeDrawer(e) {
+      if (e && e.target && e.target !== document.getElementById('mobileDrawerOverlay')) return;
+      const overlay = document.getElementById('mobileDrawerOverlay');
+      if (overlay) {
+        overlay.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function handleDrawerNav(anchor) {
+      closeDrawer();
+      document.querySelectorAll('.drawer-link').forEach(l => l.classList.remove('active'));
+      anchor.classList.add('active');
+      const targetId = anchor.getAttribute('href');
+      const targetElement = document.querySelector(targetId);
+      if (targetElement) {
+        setTimeout(() => {
+          const navOffset = document.querySelector('.top-dual-navbar')?.offsetHeight || 90;
+          const elementPosition = targetElement.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - navOffset - 12;
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+        }, 220);
+      }
+    }
+
     document.addEventListener('keydown', function(e) {
       if (e.key === 'Escape') {
         closeLightbox();
+        closeDrawer();
         document.querySelectorAll('.custom-modal-overlay.active').forEach(m => {
           m.classList.remove('active');
           document.body.style.overflow = '';
@@ -3584,9 +3912,9 @@ class CaseLibraryPage extends StatelessWidget {
         const targetId = this.getAttribute('href');
         const targetElement = document.querySelector(targetId);
         if (targetElement) {
-          const navOffset = 90;
+          const navOffset = document.querySelector('.top-dual-navbar')?.offsetHeight || 90;
           const elementPosition = targetElement.getBoundingClientRect().top;
-          const offsetPosition = elementPosition + window.pageYOffset - navOffset;
+          const offsetPosition = elementPosition + window.pageYOffset - navOffset - 12;
           window.scrollTo({
             top: offsetPosition,
             behavior: "smooth"
