@@ -2360,7 +2360,7 @@
           </a>
           <a href="#kmu-notes" class="drawer-link" onclick="handleDrawerNav(this)">
             <span class="drawer-link-icon">📚</span>
-            <span class="drawer-link-text" id="drawerNavNotes">高醫大筆記大書架 (iPad 數位手稿)</span>
+            <span class="drawer-link-text" id="drawerNavNotes">高醫大筆記大書架 (Mac 數位手稿)</span>
           </a>
           <a href="#papers" class="drawer-link" onclick="handleDrawerNav(this)">
             <span class="drawer-link-icon">🏛️</span>
@@ -2711,18 +2711,18 @@
           <span id="kmuNotesSectionTitle">📚 高醫大兩年醫學與心理專業旁聽筆記大書架</span>
         </h2>
         <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
-          <span class="bento-section-badge" id="kmuNotesSectionBadge">高解析度 iPad 數位手繪手稿庫</span>
+          <span class="bento-section-badge" id="kmuNotesSectionBadge">高解析度 Mac 數位手稿庫</span>
         </div>
       </div>
 
       <div class="shelf-bento-container">
-        <!-- 完整比例 iPad 大書架橫幅 (2880x1800 完整自然展開，不裁切！) -->
-        <div class="ipad-shelf-panorama" onclick="openLightbox('images/kmu_ipad_notes_shelf.png', '高雄醫學大學兩年旁聽數位筆記 iPad 總書架（完整高解析度原圖）', 'Two-Year KMU Course Audit Digital Notes: Complete High-Resolution iPad Shelf')">
-          <img src="images/kmu_ipad_notes_shelf.png" alt="高醫大 iPad 筆記大書架">
+        <!-- 完整比例 Mac 大書架橫幅 (2880x1800 完整自然展開，不裁切！) -->
+        <div class="ipad-shelf-panorama" onclick="openLightbox('images/kmu_ipad_notes_shelf.png', '高雄醫學大學兩年旁聽數位筆記 Mac 總書架（完整高解析度原圖）', 'Two-Year KMU Course Audit Digital Notes: Complete High-Resolution Mac Shelf')">
+          <img src="images/kmu_ipad_notes_shelf.png" alt="高醫大 Mac 筆記大書架">
           <div class="ipad-shelf-overlay">
             <div>
               <h4 id="kmuShelfHeader" style="font-size: 18px; font-weight: 800; color: #ffd54f; margin-bottom: 2px;">
-                📚 高醫大兩年旁聽數位筆記 iPad 總書架
+                📚 高醫大兩年旁聽數位筆記 Mac 總書架
               </h4>
               <p id="kmuShelfSub" style="font-size: 12.5px; color: #e2e8f0;">
                 完整涵蓋普通心理學、認知心理學、變態心理學、知覺心理學、臨床心理學導論等多門專業課程
@@ -5110,7 +5110,7 @@ class CaseLibraryPage extends StatelessWidget {
         drawerNavSummary: "執行摘要 (Summary)",
         drawerNavFlagships: "雙旗艦專案 (緒言 ✕ 伴讀田野)",
         drawerNavEndorsements: "專家推薦函 (林錦宏主任 ✕ 賴亭謖老師)",
-        drawerNavNotes: "高醫大筆記大書架 (iPad 數位手稿)",
+        drawerNavNotes: "高醫大筆記大書架 (Mac 數位手稿)",
         drawerNavPapers: "四大核心學術論文矩陣",
         // 審查標頭 Bar
         headerMainBadge: "🎓 大學特殊選才 ✕ 跨領域自主研究審查專區",
@@ -5202,8 +5202,8 @@ class CaseLibraryPage extends StatelessWidget {
         rec3Quote: `「自禮煬國中三年級起迄今三年的時間裡，我與他在教學第一線共同帶班、備課。面對特殊學童撕破作業簿時，他習慣拉張椅子坐到身邊等孩子降溫，<strong>陪著孩子拿出一張紙把長篇作業拆成十五分鐘能完成的格子，帶著孩子親手打勾。</strong>此外，他主動運用程式專長架設了一套直覺的出勤與行政工具，實質減輕機構排班負擔，具備少見的教育同理心與實務執行力。」`,
         // 高醫大筆記大書架
         kmuNotesSectionTitle: "📚 高醫大兩年醫學與心理專業旁聽筆記大書架",
-        kmuNotesSectionBadge: "高解析度 iPad 數位手繪手稿庫",
-        kmuShelfHeader: "📚 高醫大兩年旁聽數位筆記 iPad 總書架",
+        kmuNotesSectionBadge: "高解析度 Mac 數位手稿庫",
+        kmuShelfHeader: "📚 高醫大兩年旁聽數位筆記 Mac 總書架",
         kmuShelfSub: "完整涵蓋普通心理學、認知心理學、變態心理學、知覺心理學、臨床心理學導論等多門專業課程",
         kmuShelfHint: "🔍 點擊檢視 2880px 完整全景 ➔",
         note1Title: "1. SGT 賭博任務與決策神經機制",
@@ -5316,7 +5316,7 @@ class CaseLibraryPage extends StatelessWidget {
         drawerNavSummary: "Executive Summary",
         drawerNavFlagships: "Dual Flagships (Preamble & ADHD Tutoring)",
         drawerNavEndorsements: "Letters of Recommendation",
-        drawerNavNotes: "KMU Audit Notes (iPad Sketches)",
+        drawerNavNotes: "KMU Audit Notes (Mac Manuscripts)",
         drawerNavPapers: "4 Academic Research Papers",
         // Portfolio Header Bar
         headerMainBadge: "🎓 Special Admissions & Interdisciplinary Research Portfolio",
@@ -5408,8 +5408,8 @@ class CaseLibraryPage extends StatelessWidget {
         rec3Quote: `“Over the past three years since Leon was in 9th grade, we have co-taught and managed classes on the educational frontline. When a student with severe behavioral challenges tore up their workbook, Leon sat patiently beside them until the outburst passed, <strong>taking out a blank sheet to divide assignments into 15-minute checkboxes and guiding the child to tick them off one by one.</strong> Furthermore, he developed an intuitive attendance and shift management system that significantly streamlined our administration. His educational empathy and practical initiative are truly exemplary.”`,
         // KMU Shelf
         kmuNotesSectionTitle: "📚 Two-Year KMU Medical & Psychology Professional Auditing Shelf",
-        kmuNotesSectionBadge: "Hi-Res iPad Digital Manuscript Archives",
-        kmuShelfHeader: "📚 KMU 2-Year University Audit Digital Notes Shelf",
+        kmuNotesSectionBadge: "Hi-Res Mac Digital Manuscript Archives",
+        kmuShelfHeader: "📚 KMU 2-Year University Audit Digital Notes Mac Shelf",
         kmuShelfSub: "Comprehensive coverage across General Psychology, Cognitive Psychology, Abnormal Psychology, Sensation & Perception, and Clinical Psychology",
         kmuShelfHint: "🔍 Click to View 2880px High-Res Panorama ➔",
         note1Title: "1. SGT Task & Neuroeconomics of Decision Making",
