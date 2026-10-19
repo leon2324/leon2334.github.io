@@ -2242,9 +2242,360 @@
       .nav-brand-script { font-size: 21px !important; }
     }
 
+    /* === 3分鐘審查速讀模式控制器 (Fast-Track Controller Bar) === */
+    #fastTrackController {
+      position: fixed;
+      top: 18px;
+      left: 50%;
+      transform: translateX(-50%) translateY(-130px);
+      z-index: 99999;
+      background: rgba(18, 32, 25, 0.95);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border: 1.5px solid #ffd54f;
+      border-radius: 999px;
+      padding: 8px 18px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.45), 0 0 24px rgba(255, 213, 79, 0.35);
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+      opacity: 0;
+      pointer-events: none;
+      color: #fff;
+      font-family: inherit;
+      max-width: 94vw;
+      box-sizing: border-box;
+    }
+    #fastTrackController.active {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .ft-badge {
+      background: linear-gradient(135deg, #ffd54f, #ffb300);
+      color: #102119;
+      font-size: 12px;
+      font-weight: 800;
+      padding: 4px 10px;
+      border-radius: 999px;
+      white-space: nowrap;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .ft-step-label {
+      font-size: 13.5px;
+      font-weight: 700;
+      color: #f1f7f4;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 320px;
+    }
+    @media (max-width: 768px) {
+      .ft-step-label { max-width: 140px; font-size: 12px; }
+      #fastTrackController { padding: 6px 12px; gap: 8px; }
+    }
+    .ft-nav-btn {
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: #fff;
+      font-size: 12.5px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+      font-family: inherit;
+    }
+    .ft-nav-btn:hover {
+      background: rgba(255,255,255,0.25);
+      color: #ffd54f;
+      border-color: #ffd54f;
+    }
+    .ft-close-btn {
+      background: rgba(239, 68, 68, 0.2);
+      border: 1px solid rgba(239, 68, 68, 0.4);
+      color: #fca5a5;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+      font-family: inherit;
+    }
+    .ft-close-btn:hover {
+      background: #ef4444;
+      color: #fff;
+    }
+
+    /* 速讀聚焦樣式 */
+    body.fast-track-active .bento-section,
+    body.fast-track-active .hero-banner-card,
+    body.fast-track-active .metrics-horizontal-grid,
+    body.fast-track-active .archive-bridge-bento {
+      transition: opacity 0.4s ease, filter 0.4s ease, transform 0.4s ease, box-shadow 0.4s ease;
+      opacity: 0.16;
+      filter: blur(0.5px) grayscale(40%);
+    }
+    body.fast-track-active .fast-track-focused {
+      opacity: 1 !important;
+      filter: none !important;
+      box-shadow: 0 0 0 3px #ffd54f, 0 16px 48px rgba(255, 213, 79, 0.32) !important;
+      transform: scale(1.008);
+      position: relative;
+      z-index: 20;
+      border-radius: 20px;
+    }
+
+    /* 頂部操作按鈕 (速讀 + 列印) */
+    .action-pill-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 13px;
+      border-radius: 999px;
+      font-size: 12.5px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-family: inherit;
+      border: none;
+      white-space: nowrap;
+    }
+    .fast-track-btn {
+      background: linear-gradient(135deg, #1A3D2F, #235441);
+      color: #ffd54f;
+      border: 1.5px solid #ffd54f;
+      box-shadow: 0 2px 8px rgba(255, 213, 79, 0.25);
+    }
+    .fast-track-btn:hover {
+      background: #ffd54f;
+      color: #1A3D2F;
+      box-shadow: 0 4px 14px rgba(255, 213, 79, 0.45);
+      transform: translateY(-1px);
+    }
+    .print-pdf-btn {
+      background: #ffffff;
+      color: #1A3D2F;
+      border: 1.5px solid rgba(26,61,47,0.25);
+    }
+    .print-pdf-btn:hover {
+      background: #EFF4F1;
+      border-color: #1A3D2F;
+      transform: translateY(-1px);
+    }
+
+    /* === 大學四年修讀藍圖 (Roadmap Bento) === */
+    .roadmap-bento-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-top: 20px;
+    }
+    @media (max-width: 1080px) {
+      .roadmap-bento-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (max-width: 640px) {
+      .roadmap-bento-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .roadmap-card {
+      background: #ffffff;
+      border: 1.5px solid rgba(26,61,47,0.12);
+      border-radius: 16px;
+      padding: 20px 18px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .roadmap-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 24px rgba(26,61,47,0.12);
+      border-color: var(--green-primary);
+    }
+    .roadmap-card-header {
+      border-bottom: 1.5px solid rgba(26,61,47,0.08);
+      padding-bottom: 14px;
+      margin-bottom: 14px;
+    }
+    .roadmap-year-badge {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.8px;
+      padding: 3px 10px;
+      border-radius: 999px;
+      background: #E8F0EC;
+      color: var(--green-primary);
+      margin-bottom: 8px;
+    }
+    .roadmap-year-title {
+      font-size: 16px;
+      font-weight: 800;
+      color: #1a2a22;
+      line-height: 1.35;
+      margin: 0;
+    }
+    .roadmap-section-label {
+      font-size: 11.5px;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin: 10px 0 6px 0;
+    }
+    .roadmap-courses-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      margin-bottom: 12px;
+    }
+    .roadmap-course-chip {
+      font-size: 11.5px;
+      background: #F4F7F5;
+      color: #234536;
+      padding: 3px 8px;
+      border-radius: 6px;
+      font-weight: 600;
+      border: 1px solid rgba(26,61,47,0.08);
+    }
+    .roadmap-practice-box {
+      background: #FAFBFB;
+      border-left: 3px solid var(--green-accent);
+      padding: 10px 12px;
+      border-radius: 0 8px 8px 0;
+      font-size: 12.5px;
+      color: #2c3e35;
+      line-height: 1.55;
+      margin-bottom: 12px;
+    }
+    .roadmap-impact-box {
+      background: linear-gradient(135deg, rgba(234, 245, 239, 0.75), rgba(255, 250, 235, 0.75));
+      border: 1px solid rgba(197, 160, 89, 0.3);
+      border-radius: 10px;
+      padding: 10px 12px;
+      font-size: 12.5px;
+      color: #1e382b;
+      line-height: 1.5;
+      margin-top: auto;
+    }
+    .roadmap-impact-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 11px;
+      font-weight: 800;
+      color: #8c6b1f;
+      margin-bottom: 4px;
+    }
+    .roadmap-synthesis-card {
+      margin-top: 20px;
+      background: linear-gradient(135deg, #1A3D2F, #12281F);
+      border-radius: 16px;
+      padding: 24px 28px;
+      color: #ffffff;
+      border: 1.5px solid rgba(255, 213, 79, 0.35);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .roadmap-synthesis-text {
+      flex: 1;
+      min-width: 280px;
+      font-size: 14.5px;
+      line-height: 1.65;
+      color: #e2e8f0;
+    }
+    .roadmap-synthesis-text strong {
+      color: #ffd54f;
+    }
+
+    /* === 列印優化 (A4 Official PDF Export) === */
+    @media print {
+      @page {
+        margin: 12mm 10mm;
+        size: A4 portrait;
+      }
+      body {
+        background: #ffffff !important;
+        color: #111111 !important;
+        font-size: 11pt !important;
+      }
+      .top-dual-navbar,
+      .mobile-drawer-overlay,
+      .mobile-drawer-btn,
+      #fastTrackController,
+      .lightbox-overlay,
+      .custom-modal-overlay,
+      .action-pill-btn,
+      .btn-switch-homeschool,
+      .btn-portal-home,
+      .nav-lang-switch,
+      .lang-switch-wrap,
+      .paper-modal-toggle,
+      .hotkey-badge {
+        display: none !important;
+      }
+      main.college-main-container {
+        max-width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+      }
+      .bento-section,
+      .hero-banner-card,
+      .metrics-horizontal-grid,
+      .roadmap-card,
+      .vibe-bento-card {
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+        box-shadow: none !important;
+        border: 1px solid #cccccc !important;
+        background: #ffffff !important;
+        color: #111111 !important;
+        margin-bottom: 16px !important;
+      }
+      .editorial-quote-plaque {
+        background: #f5f5f5 !important;
+        color: #111 !important;
+        border-left: 3px solid #666 !important;
+      }
+      img {
+        max-width: 100% !important;
+        page-break-inside: avoid !important;
+      }
+      a {
+        text-decoration: none !important;
+        color: #111111 !important;
+      }
+    }
+
 </style>
 </head>
 <body>
+
+  <!-- 3分鐘審查速讀模式懸浮控制器 (3-Minute Fast-Track Floating Controller) -->
+  <aside id="fastTrackController" aria-label="3分鐘審查高光速讀模式控制器">
+    <span class="ft-badge" id="ftBadge">⚡ 3分鐘審查速讀模式</span>
+    <span class="ft-step-label" id="ftStepLabel">焦點 1/4 · 4大指標與認知循環</span>
+    <button type="button" class="ft-nav-btn" onclick="prevFocusStep()" aria-label="上一個重點">◀ 上一個</button>
+    <button type="button" class="ft-nav-btn" onclick="nextFocusStep()" aria-label="下一個重點">下一個 ▶</button>
+    <button type="button" class="ft-close-btn" onclick="exitFastTrackMode()" aria-label="退出速讀模式">✕ 退出速讀</button>
+  </aside>
 
   <!-- 頂部經典雙層結構導覽列 (Top Dual Navbar) -->
   <header class="top-dual-navbar">
@@ -2287,9 +2638,16 @@
         <a href="#endorsements" class="nav-tab-btn" id="navTabEndorsements" onclick="setActiveTab(this)">推薦函</a>
         <a href="#kmu-notes" class="nav-tab-btn" id="navTabNotes" onclick="setActiveTab(this)">高醫大筆記</a>
         <a href="#papers" class="nav-tab-btn" id="navTabPapers" onclick="setActiveTab(this)">學術論文</a>
+        <a href="#roadmap" class="nav-tab-btn" id="navTabRoadmap" onclick="setActiveTab(this)">四年修讀藍圖</a>
       </div>
 
       <div class="nav-switch-btns">
+        <button type="button" class="action-pill-btn fast-track-btn" id="headerFastTrackBtn" onclick="toggleFastTrackMode()">
+          <span>⚡</span><span id="fastTrackBtnText">3分鐘速讀</span>
+        </button>
+        <button type="button" class="action-pill-btn print-pdf-btn" id="headerPrintPdfBtn" onclick="window.print()">
+          <span>📄</span><span id="printPdfBtnText">另存備審 PDF</span>
+        </button>
         <a href="homeschool.html" class="spotlight-trigger-btn" id="navHomeschoolLink">
           <span id="navHomeschoolText">📜 五年自學備查庫 (173篇)</span>
           <span class="hotkey-badge">➔</span>
@@ -2323,6 +2681,14 @@
       <!-- 快速通往自學庫與首頁大廳 -->
       <div class="drawer-section">
         <div class="drawer-section-label" id="drawerSectionCore">📌 核心系統切換</div>
+        <button type="button" class="drawer-action-btn" onclick="closeDrawer(); toggleFastTrackMode();" style="background: linear-gradient(135deg, #1A3D2F, #235441); color: #ffd54f; border: 1.5px solid #ffd54f; margin-bottom: 8px; width: 100%; display: flex; align-items: center; justify-content: space-between; padding: 11px 16px; border-radius: 10px; font-size: 13.5px; font-weight: 700; cursor: pointer; font-family: inherit;">
+          <span>⚡ <strong id="drawerFastTrackText">3分鐘高光審查模式</strong></span>
+          <span class="drawer-arrow">➔</span>
+        </button>
+        <button type="button" class="drawer-action-btn" onclick="closeDrawer(); window.print();" style="background: #ffffff; color: #1A3D2F; border: 1.5px solid rgba(26,61,47,0.25); margin-bottom: 10px; width: 100%; display: flex; align-items: center; justify-content: space-between; padding: 11px 16px; border-radius: 10px; font-size: 13.5px; font-weight: 700; cursor: pointer; font-family: inherit;">
+          <span>📄 <strong id="drawerPrintPdfText">另存備審 PDF (A4 規格)</strong></span>
+          <span class="drawer-arrow">➔</span>
+        </button>
         <a href="homeschool.html" class="drawer-action-btn primary-action">
           <span id="drawerHomeschoolText">📜 五年自學備查庫 (173篇)</span>
           <span class="drawer-arrow">➔</span>
@@ -2365,6 +2731,10 @@
           <a href="#papers" class="drawer-link" onclick="handleDrawerNav(this)">
             <span class="drawer-link-icon">🏛️</span>
             <span class="drawer-link-text" id="drawerNavPapers">四大核心學術論文矩陣</span>
+          </a>
+          <a href="#roadmap" class="drawer-link" onclick="handleDrawerNav(this)">
+            <span class="drawer-link-icon">🗺️</span>
+            <span class="drawer-link-text" id="drawerNavRoadmap">四年修讀藍圖 (4-Year Roadmap)</span>
           </a>
         </div>
       </div>
@@ -2870,7 +3240,130 @@
       </div>
     </section>
 
-    <!-- 6. 銜接五年自學備查庫 (Homeschool Archive Bridge) -->
+    <!-- 6. 大學四年修讀藍圖與前瞻研究展望 (4-Year Academic Roadmap & Societal Impact) -->
+    <section id="roadmap" class="bento-section">
+      <div class="bento-section-header">
+        <h2 class="bento-section-title" id="roadmapSectionTitle">🗺️ 大學四年修讀藍圖與前瞻研究展望</h2>
+        <span class="bento-section-badge" id="roadmapSectionBadge">認知人因 ✕ AI 輔助科技 ✕ 社會平權落地</span>
+      </div>
+      <p class="bento-section-subtitle" id="roadmapSubtitle">
+        將五年自學所奠基之「認知心理學 ✕ 全端軟體工藝 ✕ 第一線弱勢伴讀田野」三螺旋核心，於大學四年昇華為具備實徵嚴謹度、人因工程標準與公共社會影響力之整合性研究計畫。
+      </p>
+
+      <div class="roadmap-bento-grid">
+        <!-- Year 1 -->
+        <div class="roadmap-card">
+          <div class="roadmap-card-header">
+            <span class="roadmap-year-badge" id="rmY1Badge">YEAR 1 · 大一</span>
+            <h3 class="roadmap-year-title" id="rmY1Title">方法論奠基 ✕ 社會心理痛點實徵探究</h3>
+          </div>
+          <div>
+            <div class="roadmap-section-label" id="rmY1CoursesLabel">📚 核心預計修讀學門</div>
+            <div class="roadmap-courses-wrap">
+              <span class="roadmap-course-chip" id="rmY1C1">普通心理學</span>
+              <span class="roadmap-course-chip" id="rmY1C2">心理與教育統計學</span>
+              <span class="roadmap-course-chip" id="rmY1C3">實驗心理學與實驗法</span>
+              <span class="roadmap-course-chip" id="rmY1C4">Python 資料結構</span>
+            </div>
+            <div class="roadmap-section-label" id="rmY1PracticeLabel">🔬 實踐與研究推進</div>
+            <div class="roadmap-practice-box" id="rmY1Practice">
+              將高中時期自學之 SGT 東吳賭局與 NASA-TLX 負荷量表，升級為標準化 PsychoPy / jsPsych 行為實驗範式；建構自動化認知數據蒐集管線。
+            </div>
+          </div>
+          <div class="roadmap-impact-box">
+            <div class="roadmap-impact-tag"><span>🌱</span><span id="rmY1ImpactTag">社會接軌實踐</span></div>
+            <div id="rmY1Impact">發表第一份針對一般民眾閱讀民事裁定書之認知障礙質性調查報告，為法律科技降載奠定大眾心理數據。</div>
+          </div>
+        </div>
+
+        <!-- Year 2 -->
+        <div class="roadmap-card">
+          <div class="roadmap-card-header">
+            <span class="roadmap-year-badge" id="rmY2Badge">YEAR 2 · 大二</span>
+            <h3 class="roadmap-year-title" id="rmY2Title">認知人因 ✕ 多模態 AI 語意理解與法律平權</h3>
+          </div>
+          <div>
+            <div class="roadmap-section-label" id="rmY2CoursesLabel">📚 核心預計修讀學門</div>
+            <div class="roadmap-courses-wrap">
+              <span class="roadmap-course-chip" id="rmY2C1">認知心理學</span>
+              <span class="roadmap-course-chip" id="rmY2C2">神經科學導論</span>
+              <span class="roadmap-course-chip" id="rmY2C3">人因工程學</span>
+              <span class="roadmap-course-chip" id="rmY2C4">人機互動 (HCI) 介面設計</span>
+            </div>
+            <div class="roadmap-section-label" id="rmY2PracticeLabel">🔬 實踐與研究推進</div>
+            <div class="roadmap-practice-box" id="rmY2Practice">
+              引進眼動追蹤 (Eye-Tracking) 凝視時間與跳視分析，嚴謹驗證 Paivio 雙重編碼介面之降載成效；將《緒言》App 串接開源多模態 LLM 本地知識庫。
+            </div>
+          </div>
+          <div class="roadmap-impact-box">
+            <div class="roadmap-impact-tag"><span>⚖️</span><span id="rmY2ImpactTag">社會接軌實踐</span></div>
+            <div id="rmY2Impact">與法律扶助基金會或公民社群合作試辦，將裁判文書結構化降載工具開源釋出，保障弱勢當事人知情與司法近用權。</div>
+          </div>
+        </div>
+
+        <!-- Year 3 -->
+        <div class="roadmap-card">
+          <div class="roadmap-card-header">
+            <span class="roadmap-year-badge" id="rmY3Badge">YEAR 3 · 大三</span>
+            <h3 class="roadmap-year-title" id="rmY3Title">國科會大專生計畫 ✕ AI 智慧特教注意力輔具</h3>
+          </div>
+          <div>
+            <div class="roadmap-section-label" id="rmY3CoursesLabel">📚 核心預計修讀學門</div>
+            <div class="roadmap-courses-wrap">
+              <span class="roadmap-course-chip" id="rmY3C1">特殊教育導論</span>
+              <span class="roadmap-course-chip" id="rmY3C2">臨床心理學</span>
+              <span class="roadmap-course-chip" id="rmY3C3">行為改變技術</span>
+              <span class="roadmap-course-chip" id="rmY3C4">認知神經科學專題</span>
+            </div>
+            <div class="roadmap-section-label" id="rmY3PracticeLabel">🔬 實踐與研究推進</div>
+            <div class="roadmap-practice-box" id="rmY3Practice">
+              正式申請並執行「國科會大專學生研究計畫」；將尚學教育三年伴讀累積之「15分鐘微進度條」開發為開源可自適配的 AI 注意力鷹架輔具系統。
+            </div>
+          </div>
+          <div class="roadmap-impact-box">
+            <div class="roadmap-impact-tag"><span>🧩</span><span id="rmY3ImpactTag">社會接軌實踐</span></div>
+            <div id="rmY3Impact">在國小資源班與特教公益機構展開受控田野實驗，驗證神經多樣性學童自我效能提升成效，爭取「國科會研究創作獎」。</div>
+          </div>
+        </div>
+
+        <!-- Year 4 -->
+        <div class="roadmap-card">
+          <div class="roadmap-card-header">
+            <span class="roadmap-year-badge" id="rmY4Badge">YEAR 4 · 大四</span>
+            <h3 class="roadmap-year-title" id="rmY4Title">跨國前瞻合作 ✕ AI 認知人因倫理學士論文</h3>
+          </div>
+          <div>
+            <div class="roadmap-section-label" id="rmY4CoursesLabel">📚 核心預計修讀學門</div>
+            <div class="roadmap-courses-wrap">
+              <span class="roadmap-course-chip" id="rmY4C1">高等認知科學研討</span>
+              <span class="roadmap-course-chip" id="rmY4C2">AI 倫理與認知人因</span>
+              <span class="roadmap-course-chip" id="rmY4C3">學士榮譽畢業論文</span>
+              <span class="roadmap-course-chip" id="rmY4C4">跨領域專題研究</span>
+            </div>
+            <div class="roadmap-section-label" id="rmY4PracticeLabel">🔬 實踐與研究推進</div>
+            <div class="roadmap-practice-box" id="rmY4Practice">
+              憑藉 JLPT N1 頂標日語與 Pearson 獎學金推薦背景，申請前往日本頂尖大學（如東京大學法心理學／認知人因實驗室）或北美進行短期交流研訪。
+            </div>
+          </div>
+          <div class="roadmap-impact-box">
+            <div class="roadmap-impact-tag"><span>🌐</span><span id="rmY4ImpactTag">社會接軌實踐</span></div>
+            <div id="rmY4Impact">完成英文學士論文《超高齡與數位分化社會之認知人因 AI 決策輔助系統》，投稿 ACM CHI 或台灣心理學會年會，接軌國內外前瞻研究所。</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 總成承諾與社會願景橫幅 -->
+      <div class="roadmap-synthesis-card">
+        <div class="roadmap-synthesis-text" id="roadmapSynthesisText">
+          <strong>💡 審查委員寄語與自學承諾：</strong>「自學五年，我從未將學問侷限於課本或分數，而是時刻叩問自己的知識能為真實世界承擔什麼。大學四年，我將以認知心理學為大腦羅盤，以軟體工程為實踐雙手，讓科技與教育真正走入最需要溫暖的弱勢與特教角落。」
+        </div>
+        <button type="button" class="action-pill-btn print-pdf-btn" onclick="window.print()" style="padding: 10px 20px; font-size: 13.5px; border-radius: 999px;">
+          <span>📄 列印 / 另存本完整修讀藍圖 PDF</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- 7. 銜接五年自學備查庫 (Homeschool Archive Bridge) -->
     <section class="archive-bridge-bento">
       <h3 class="archive-bridge-title" id="archiveBridgeTitle">📜 欲檢閱五年完整自學週記與原始備查檔案？</h3>
       <p class="archive-bridge-text" id="archiveBridgeText">
@@ -5258,7 +5751,64 @@ class CaseLibraryPage extends StatelessWidget {
         archiveBridgeText: "本站完整保留高雄市教育局官方備查之 100% 原始存檔：涵蓋 2021 至 2026 年長達 173 週無中斷每週學習週記（189,055 字）、歷年審查委員 Greeting 致詞、各學年評定表及全科 GPA 4.0 互動成績單。",
         archiveBtnHomeschool: `<span>📜 前往五年完整自學備查庫 (173週全記錄)</span><span>➔</span>`,
         archiveBtnHome: `<span>🏠 返回入口大廳 (Portal)</span>`,
-        pageFooter: "© 2021-2026 Leon Chen (陳禮煬). 依據高雄市教育局非學校型態自學五年計畫與大學送審資料整理. All Rights Reserved."
+        pageFooter: "© 2021-2026 Leon Chen (陳禮煬). 依據高雄市教育局非學校型態自學五年計畫與大學送審資料整理. All Rights Reserved.",
+        // 3分鐘審查速讀與導覽按鈕
+        fastTrackBtnText: "3分鐘速讀",
+        printPdfBtnText: "另存備審 PDF",
+        drawerFastTrackText: "3分鐘高光審查模式",
+        drawerPrintPdfText: "另存備審 PDF (A4 規格)",
+        ftBadge: "⚡ 3分鐘審查速讀模式",
+        navTabRoadmap: "四年修讀藍圖",
+        drawerNavRoadmap: "四年修讀藍圖 (4-Year Roadmap)",
+        // 大學四年修讀藍圖 (Roadmap)
+        roadmapSectionTitle: "🗺️ 大學四年修讀藍圖與前瞻研究展望",
+        roadmapSectionBadge: "認知人因 ✕ AI 輔助科技 ✕ 社會平權落地",
+        roadmapSubtitle: "將五年自學所奠基之「認知心理學 ✕ 全端軟體工藝 ✕ 第一線弱勢伴讀田野」三螺旋核心，於大學四年昇華為具備實徵嚴謹度、人因工程標準與公共社會影響力之整合性研究計畫。",
+        rmY1Badge: "YEAR 1 · 大一",
+        rmY1Title: "方法論奠基 ✕ 社會心理痛點實徵探究",
+        rmY1CoursesLabel: "📚 核心預計修讀學門",
+        rmY1C1: "普通心理學",
+        rmY1C2: "心理與教育統計學",
+        rmY1C3: "實驗心理學與實驗法",
+        rmY1C4: "Python 資料結構",
+        rmY1PracticeLabel: "🔬 實踐與研究推進",
+        rmY1Practice: "將高中時期自學之 SGT 東吳賭局與 NASA-TLX 負荷量表，升級為標準化 PsychoPy / jsPsych 行為實驗範式；建構自動化認知數據蒐集管線。",
+        rmY1ImpactTag: "社會接軌實踐",
+        rmY1Impact: "發表第一份針對一般民眾閱讀民事裁定書之認知障礙質性調查報告，為法律科技降載奠定大眾心理數據。",
+        rmY2Badge: "YEAR 2 · 大二",
+        rmY2Title: "認知人因 ✕ 多模態 AI 語意理解與法律平權",
+        rmY2CoursesLabel: "📚 核心預計修讀學門",
+        rmY2C1: "認知心理學",
+        rmY2C2: "神經科學導論",
+        rmY2C3: "人因工程學",
+        rmY2C4: "人機互動 (HCI) 介面設計",
+        rmY2PracticeLabel: "🔬 實踐與研究推進",
+        rmY2Practice: "引進眼動追蹤 (Eye-Tracking) 凝視時間與跳視分析，嚴謹驗證 Paivio 雙重編碼介面之降載成效；將《緒言》App 串接開源多模態 LLM 本地知識庫。",
+        rmY2ImpactTag: "社會接軌實踐",
+        rmY2Impact: "與法律扶助基金會或公民社群合作試辦，將裁判文書結構化降載工具開源釋出，保障弱勢當事人知情與司法近用權。",
+        rmY3Badge: "YEAR 3 · 大三",
+        rmY3Title: "國科會大專生計畫 ✕ AI 智慧特教注意力輔具",
+        rmY3CoursesLabel: "📚 核心預計修讀學門",
+        rmY3C1: "特殊教育導論",
+        rmY3C2: "臨床心理學",
+        rmY3C3: "行為改變技術",
+        rmY3C4: "認知神經科學專題",
+        rmY3PracticeLabel: "🔬 實踐與研究推進",
+        rmY3Practice: "正式申請並執行「國科會大專學生研究計畫」；將尚學教育三年伴讀累積之「15分鐘微進度條」開發為開源可自適配的 AI 注意力鷹架輔具系統。",
+        rmY3ImpactTag: "社會接軌實踐",
+        rmY3Impact: "在國小資源班與特教公益機構展開受控田野實驗，驗證神經多樣性學童自我效能提升成效，爭取「國科會研究創作獎」。",
+        rmY4Badge: "YEAR 4 · 大四",
+        rmY4Title: "跨國前瞻合作 ✕ AI 認知人因倫理學士論文",
+        rmY4CoursesLabel: "📚 核心預計修讀學門",
+        rmY4C1: "高等認知科學研討",
+        rmY4C2: "AI 倫理與認知人因",
+        rmY4C3: "學士榮譽畢業論文",
+        rmY4C4: "跨領域專題研究",
+        rmY4PracticeLabel: "🔬 實踐與研究推進",
+        rmY4Practice: "憑藉 JLPT N1 頂標日語與 Pearson 獎學金推薦背景，申請前往日本頂尖大學（如東京大學法心理學／認知人因實驗室）或北美進行短期交流研訪。",
+        rmY4ImpactTag: "社會接軌實踐",
+        rmY4Impact: "完成英文學士論文《超高齡與數位分化社會之認知人因 AI 決策輔助系統》，投稿 ACM CHI 或台灣心理學會年會，接軌國內外前瞻研究所。",
+        roadmapSynthesisText: `<strong>💡 審查委員寄語與自學承諾：</strong>「自學五年，我從未將學問侷限於課本或分數，而是時刻叩問自己的知識能為真實世界承擔什麼。大學四年，我將以認知心理學為大腦羅盤，以軟體工程為實踐雙手，讓科技與教育真正走入最需要溫暖的弱勢與特教角落。」`
       },
 
       en: {
@@ -5464,7 +6014,64 @@ class CaseLibraryPage extends StatelessWidget {
         archiveBridgeText: "This portal preserves 100% of the raw official archives submitted to the Kaohsiung City Bureau of Education: 173 uninterrupted weekly learning logs (189,055 words, 2021–2026), annual review committee greetings, assessment dossiers, and an interactive 4.0 GPA transcript.",
         archiveBtnHomeschool: `<span>📜 Enter 5-Year Homeschool Archive (173 Wks)</span><span>➔</span>`,
         archiveBtnHome: `<span>🏠 Return to Portal Home</span>`,
-        pageFooter: "© 2021-2026 Leon Chen (陳禮煬). Compiled in accordance with the 5-Year Self-Directed Learning Dossier submitted to the Kaohsiung Bureau of Education and University Admissions Committees. All Rights Reserved."
+        pageFooter: "© 2021-2026 Leon Chen (陳禮煬). Compiled in accordance with the 5-Year Self-Directed Learning Dossier submitted to the Kaohsiung Bureau of Education and University Admissions Committees. All Rights Reserved.",
+        // 3-Minute Fast-Track Review Mode & Navigation Buttons
+        fastTrackBtnText: "3-Min Fast Track",
+        printPdfBtnText: "Save Dossier PDF",
+        drawerFastTrackText: "3-Min Spotlight Review Mode",
+        drawerPrintPdfText: "Save Dossier PDF (A4 Format)",
+        ftBadge: "⚡ 3-Min Fast-Track Review Mode",
+        navTabRoadmap: "4-Year Roadmap",
+        drawerNavRoadmap: "4-Year Roadmap & Impact",
+        // 4-Year Academic Roadmap
+        roadmapSectionTitle: "🗺️ 4-Year Academic Roadmap & Forward-Looking Research",
+        roadmapSectionBadge: "Cognitive Ergonomics ✕ AI Assistive Tech ✕ Civic Equity",
+        roadmapSubtitle: "Elevating the 5-year homeschool triad of 'Cognitive Psychology ✕ Full-Stack Software Craft ✕ Frontline Special Ed Tutoring' into an empirically rigorous, ergonomically standardized, and societally impactful undergraduate research program.",
+        rmY1Badge: "YEAR 1 · FRESHMAN",
+        rmY1Title: "Methodological Foundations & Empirical Civic Needs",
+        rmY1CoursesLabel: "📚 Core Projected Coursework",
+        rmY1C1: "General Psychology",
+        rmY1C2: "Psychological & Educational Statistics",
+        rmY1C3: "Experimental Psychology",
+        rmY1C4: "Python & Data Structures",
+        rmY1PracticeLabel: "🔬 Empirical Practice & Research",
+        rmY1Practice: "Upgrade Soochow Gambling Task (SGT) and NASA-TLX workload paradigms into standardized PsychoPy / jsPsych experiments; establish an automated cognitive behavioral data pipeline.",
+        rmY1ImpactTag: "Civic Impact",
+        rmY1Impact: "Publish the first qualitative empirical report on cognitive reading barriers in civil court rulings among everyday citizens, providing psychological ground truth for legal tech.",
+        rmY2Badge: "YEAR 2 · SOPHOMORE",
+        rmY2Title: "Cognitive Ergonomics ✕ Multimodal AI for Civic Equity",
+        rmY2CoursesLabel: "📚 Core Projected Coursework",
+        rmY2C1: "Cognitive Psychology",
+        rmY2C2: "Intro to Neuroscience",
+        rmY2C3: "Human Factors Engineering",
+        rmY2C4: "HCI Interaction Design",
+        rmY2PracticeLabel: "🔬 Empirical Practice & Research",
+        rmY2Practice: "Incorporate eye-tracking fixation and saccade analytics to empirically validate Paivio dual-coding UI; integrate Preamble App with open-source multimodal LLM local knowledge bases.",
+        rmY2ImpactTag: "Civic Impact",
+        rmY2Impact: "Pilot open-source legal text chunking and structured reading tools with legal aid NGOs and civic communities to protect digital human rights and access to justice.",
+        rmY3Badge: "YEAR 3 · JUNIOR",
+        rmY3Title: "NSTC Undergraduate Research ✕ AI Assistive Tech in Fieldwork",
+        rmY3CoursesLabel: "📚 Core Projected Coursework",
+        rmY3C1: "Intro to Special Education",
+        rmY3C2: "Clinical Psychology",
+        rmY3C3: "Behavior Modification",
+        rmY3C4: "Topics in Cognitive Neuroscience",
+        rmY3PracticeLabel: "🔬 Empirical Practice & Research",
+        rmY3Practice: "Apply for and conduct an official NSTC Undergraduate Research Project; transform 3-year Shang-Xue ADHD mentoring experience into an adaptive, open-source AI scaffolding tool.",
+        rmY3ImpactTag: "Civic Impact",
+        rmY3Impact: "Deploy controlled field interventions in primary resource classrooms and special education non-profits to measure executive self-efficacy, targeting the NSTC Research Creativity Award.",
+        rmY4Badge: "YEAR 4 · SENIOR",
+        rmY4Title: "Global Academic Exchange ✕ AI Ethics Honors Thesis",
+        rmY4CoursesLabel: "📚 Core Projected Coursework",
+        rmY4C1: "Adv. Cognitive Science Seminar",
+        rmY4C2: "AI Ethics & Cognitive Ergonomics",
+        rmY4C3: "Honors Bachelor's Thesis",
+        rmY4C4: "Interdisciplinary Research",
+        rmY4PracticeLabel: "🔬 Empirical Practice & Research",
+        rmY4Practice: "Leverage JLPT N1 proficiency and Pearson Scholarship nomination to conduct short-term research visits at top Japanese (e.g. U Tokyo Legal Psychology / Cognitive Ergonomics Lab) or North American institutes.",
+        rmY4ImpactTag: "Civic Impact",
+        rmY4Impact: "Author full English Honors Thesis 'Cognitive AI Decision Support Systems for Hyper-Aging and Digitally Divided Societies', submitting to ACM CHI or TPA conference, bridging to top graduate programs.",
+        roadmapSynthesisText: `<strong>💡 Admissions Commitment & Civic Vision:</strong> “Throughout five years of homeschooling, I have never confined learning to test scores, but continually asked how my knowledge can alleviate real-world suffering. In my four undergraduate years, I will use cognitive psychology as my compass and software craftsmanship as my hands, bringing technology and education to the neurodivergent learners and marginalized communities who need them most.”`
       }
     };
 
@@ -5566,6 +6173,11 @@ class CaseLibraryPage extends StatelessWidget {
         localStorage.setItem('portfolio_lang', activeLang);
       } catch (e) {}
 
+      // 更新速讀模式步數文字（若開啟中）
+      if (fastTrackActive && typeof updateFastTrackLabel === 'function') {
+        updateFastTrackLabel();
+      }
+
       // 6. 更新 URL 查詢參數（保持乾淨無刷新）
       if (updateUrl) {
         const url = new URL(window.location.href);
@@ -5577,6 +6189,102 @@ class CaseLibraryPage extends StatelessWidget {
         window.history.replaceState({ lang: activeLang }, '', url.toString());
       }
     }
+
+    // === 3分鐘審查高光速讀模式 (3-Minute Fast-Track Review Mode) ===
+    const fastTrackSteps = [
+      { id: 'summary', zhLabel: '焦點 1/4 · 4大核心指標與認知循環', enLabel: 'Step 1/4 · Key Metrics & Action Loop' },
+      { id: 'flagships', zhLabel: '焦點 2/4 · 雙旗艦專案（緒言 ✕ 特教田野）', enLabel: 'Step 2/4 · Dual Flagships (Preamble & ADHD)' },
+      { id: 'kmu-notes', zhLabel: '焦點 3/4 · 高醫大先修筆記與4篇論文', enLabel: 'Step 3/4 · KMU Notes & 4 Research Papers' },
+      { id: 'roadmap', zhLabel: '焦點 4/4 · 大學四年修讀藍圖與展望', enLabel: 'Step 4/4 · 4-Year Academic Roadmap & Impact' }
+    ];
+    let fastTrackActive = false;
+    let currentFastTrackIdx = 0;
+
+    function toggleFastTrackMode() {
+      if (fastTrackActive) {
+        exitFastTrackMode();
+      } else {
+        enterFastTrackMode();
+      }
+    }
+
+    function updateFastTrackLabel() {
+      const step = fastTrackSteps[currentFastTrackIdx];
+      if (!step) return;
+      const currentLang = document.documentElement.lang === 'en' ? 'en' : 'zh';
+      const labelEl = document.getElementById('ftStepLabel');
+      if (labelEl) {
+        labelEl.textContent = (currentLang === 'en') ? step.enLabel : step.zhLabel;
+      }
+    }
+
+    function enterFastTrackMode() {
+      fastTrackActive = true;
+      document.body.classList.add('fast-track-active');
+      const ctrl = document.getElementById('fastTrackController');
+      if (ctrl) ctrl.classList.add('active');
+      goToFocusStep(0);
+    }
+
+    function exitFastTrackMode() {
+      fastTrackActive = false;
+      document.body.classList.remove('fast-track-active');
+      const ctrl = document.getElementById('fastTrackController');
+      if (ctrl) ctrl.classList.remove('active');
+      document.querySelectorAll('.fast-track-focused').forEach(el => el.classList.remove('fast-track-focused'));
+    }
+
+    function goToFocusStep(idx) {
+      if (idx < 0) idx = 0;
+      if (idx >= fastTrackSteps.length) idx = fastTrackSteps.length - 1;
+      currentFastTrackIdx = idx;
+
+      document.querySelectorAll('.fast-track-focused').forEach(el => el.classList.remove('fast-track-focused'));
+      const step = fastTrackSteps[idx];
+      const targetEl = document.getElementById(step.id);
+      if (targetEl) {
+        targetEl.classList.add('fast-track-focused');
+        const offset = 85;
+        const bodyRect = document.body.getBoundingClientRect().top;
+        const elementRect = targetEl.getBoundingClientRect().top;
+        const offsetPosition = (elementRect - bodyRect) - offset;
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+      }
+      updateFastTrackLabel();
+    }
+
+    function nextFocusStep() {
+      if (!fastTrackActive) return;
+      if (currentFastTrackIdx < fastTrackSteps.length - 1) {
+        goToFocusStep(currentFastTrackIdx + 1);
+      } else {
+        goToFocusStep(0);
+      }
+    }
+
+    function prevFocusStep() {
+      if (!fastTrackActive) return;
+      if (currentFastTrackIdx > 0) {
+        goToFocusStep(currentFastTrackIdx - 1);
+      } else {
+        goToFocusStep(fastTrackSteps.length - 1);
+      }
+    }
+
+    // 鍵盤無障礙支援 (Esc 退出，方向鍵切換)
+    window.addEventListener('keydown', function(e) {
+      if (!fastTrackActive) return;
+      if (e.key === 'Escape') {
+        exitFastTrackMode();
+      } else if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+        nextFocusStep();
+      } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+        prevFocusStep();
+      }
+    });
 
     // 初始化語言：URL 參數優先 -> localStorage -> 預設 'zh'
     function initLanguage() {
