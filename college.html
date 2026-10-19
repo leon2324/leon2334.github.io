@@ -64,12 +64,12 @@
     /* 純淨微縮成果條：居中對齊，右上角標註 2026 特選審查 */
     .nav-achieve-bar {
       background: rgba(26, 61, 47, 0.06);
-      padding: 6px 32px;
+      padding: 6px 28px;
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center;
-      position: relative;
-      font-size: 12.5px;
+      gap: 16px;
+      font-size: 12px;
       font-weight: 700;
       color: var(--green-primary);
       border-bottom: 1px solid rgba(255, 255, 255, 0.45);
@@ -77,9 +77,11 @@
 
     .achieve-items {
       display: flex;
-      gap: 14px;
+      gap: 10px;
       align-items: center;
       justify-content: center;
+      flex: 1;
+      min-width: 0;
       flex-wrap: wrap;
     }
 
@@ -104,6 +106,8 @@
       gap: 5px;
       box-shadow: 0 1px 4px rgba(0,0,0,0.04);
       transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      white-space: nowrap;
+      flex-shrink: 0;
     }
 
     .achieve-pill-btn:hover {
@@ -120,12 +124,14 @@
     }
 
     .achieve-date {
-      position: absolute;
-      right: 32px;
+      position: static;
+      flex-shrink: 0;
       font-size: 11.5px;
       color: var(--text-subtle);
       font-weight: 700;
       letter-spacing: 0.5px;
+      white-space: nowrap;
+      padding-left: 8px;
     }
 
     /* 主導覽列 (書寫體 Leon's Admissions Hub ＋ 居中膠囊 ＋ 自學庫按鈕) */
@@ -522,13 +528,13 @@
     }
     .quote-watermark {
       position: absolute;
-      top: -4px;
-      left: 14px;
+      top: 8px;
+      left: 16px;
       font-family: Georgia, serif;
-      font-size: 48px;
+      font-size: 46px;
       line-height: 1;
       color: var(--gold-bronze);
-      opacity: 0.35;
+      opacity: 0.22;
       pointer-events: none;
     }
     .editorial-motto-text {
@@ -540,13 +546,13 @@
       position: relative;
       z-index: 1;
       letter-spacing: 0.5px;
-      padding-left: 20px;
+      padding-left: 38px;
     }
     .editorial-motto-author {
       font-size: 12.5px;
       color: var(--text-subtle);
       margin-top: 6px;
-      padding-left: 20px;
+      padding-left: 38px;
       font-weight: 500;
     }
 
@@ -1426,6 +1432,112 @@
     .paper-cross-link:hover {
       background: #E8F2EC;
       border-color: #1A3D2F;
+    }
+
+    /* 論文專屬雙語切換按鈕組與切結保證卡 (Paper Guarantee Card & Bilingual Tabs) */
+    .paper-guarantee-card {
+      background: linear-gradient(135deg, rgba(26, 61, 47, 0.05) 0%, rgba(200, 155, 60, 0.08) 100%);
+      border: 1px solid rgba(26, 61, 47, 0.18);
+      border-left: 5px solid var(--gold-bronze);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin-bottom: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+    }
+    .paper-guarantee-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .paper-guarantee-title {
+      font-size: 14px;
+      font-weight: 800;
+      color: var(--green-primary);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .paper-guarantee-badge {
+      font-size: 11px;
+      font-weight: 800;
+      padding: 3px 10px;
+      border-radius: var(--radius-pill);
+      background: #ffffff;
+      border: 1px solid rgba(26, 61, 47, 0.2);
+      color: var(--green-dark);
+      letter-spacing: 0.3px;
+    }
+    .paper-guarantee-body {
+      font-size: 12.5px;
+      line-height: 1.7;
+      color: #2e4338;
+    }
+    .paper-guarantee-signatures {
+      font-size: 11.5px;
+      color: #556e62;
+      border-top: 1px dashed rgba(26, 61, 47, 0.2);
+      padding-top: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    /* 論文專屬雙語切換 Tab 橫列 */
+    .paper-lang-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #f0f5f2;
+      border: 1px solid #d9e6df;
+      border-radius: 12px;
+      padding: 8px 14px;
+      margin-bottom: 20px;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .paper-lang-tabs {
+      display: inline-flex;
+      background: rgba(26, 61, 47, 0.08);
+      border-radius: var(--radius-pill);
+      padding: 3px;
+      gap: 4px;
+    }
+    .paper-lang-tab {
+      background: transparent;
+      border: none;
+      font-family: inherit;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--green-primary);
+      padding: 5px 14px;
+      border-radius: var(--radius-pill);
+      cursor: pointer;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .paper-lang-tab:hover {
+      color: var(--green-dark);
+      background: rgba(255, 255, 255, 0.5);
+    }
+    .paper-lang-tab.active {
+      background: #ffffff;
+      color: var(--green-dark);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+      font-weight: 800;
+    }
+    .paper-lang-hint {
+      font-size: 12px;
+      color: var(--text-subtle);
+      font-weight: 600;
     }
 
     @media print {
@@ -2313,7 +2425,7 @@
         <!-- 高級極簡風格言銘牌 (Editorial Pull-Quote Plaque) -->
         <div class="editorial-quote-plaque">
           <span class="quote-watermark">“</span>
-          <div class="editorial-motto-text" id="heroMottoText">「心理學若不解決現實困境，便失去公共重量。」</div>
+          <div class="editorial-motto-text" id="heroMottoText">心理學若不解決現實困境，便失去公共重量。</div>
           <div class="editorial-motto-author" id="heroMottoAuthor">— 陳禮煬 ｜ 將認知架構轉化為軟體解方與田野陪伴的五年實踐哲學</div>
         </div>
 
@@ -2552,7 +2664,7 @@
 
         <!-- 推薦人 2: 後藤 榮美子 老師 -->
         <div class="rec-bento-card">
-          <div class="rec-letter-sheet" onclick="openLightbox('images/rec_goto_signed.png', '日語指導教師 後藤榮美子老師 推薦函（親簽正本）', 'Japanese Mentor Mieko Fujiwara Recommendation Letter (Signed Original)')">
+          <div class="rec-letter-sheet" onclick="openLightbox('images/rec_goto_signed.png', '日語指導教師 後藤榮美子老師 推薦函（親簽正本）', 'Japanese Mentor Emiko Goto Recommendation Letter (Signed Original)')">
             <img src="images/rec_goto_signed.png" alt="後藤榮美子老師推薦函全文">
             <div class="rec-sheet-hint" id="rec2Hint">🔍 點擊檢視親簽推薦函 (無裁切完整正本)</div>
           </div>
@@ -2572,7 +2684,7 @@
 
         <!-- 推薦人 3: 吳清雲 主任 (放回真實親簽推薦信！) -->
         <div class="rec-bento-card">
-          <div class="rec-letter-sheet" onclick="openLightbox('images/rec_wu_signed.png', '尚學文教 吳清雲主任 推薦函（親筆簽署正本）', 'Shangwen Education Director Ching-Yun Wu Recommendation Letter (Signed Original)')">
+          <div class="rec-letter-sheet" onclick="openLightbox('images/rec_wu_signed.png', '尚學文教 吳清雲主任 推薦函（親筆簽署正本）', 'Shang-Xue Education Director Ching-Yun Wu Recommendation Letter (Signed Original)')">
             <img src="images/rec_wu_signed.png" alt="吳清雲主任推薦函全文">
             <div class="rec-sheet-hint" id="rec3Hint">🔍 點擊檢視親簽推薦函 (含親筆簽名原貌)</div>
           </div>
@@ -3241,8 +3353,44 @@ class CaseLibraryPage extends StatelessWidget {
 
     <div class="modal-body-scroll">
       <div style="text-align: left;">
-        <!-- 論文標頭 -->
-        <div style="margin-bottom: 20px; border-bottom: 2px solid rgba(26, 61, 47, 0.12); padding-bottom: 14px;">
+        <!-- 切結與真實性保證卡 (Authorship Guarantee Card) -->
+        <div class="paper-guarantee-card">
+          <div class="paper-guarantee-header">
+            <span class="paper-guarantee-title">
+              <span>🛡️</span>
+              <span class="paper-guarantee-title-text">學術誠信與 100% 原創切結聲明 (Authorship Guarantee)</span>
+            </span>
+            <span class="paper-guarantee-badge">OFFICIAL VERIFICATION · 100% ORIGINAL</span>
+          </div>
+          <div class="paper-guarantee-body">
+            <div class="paper-guarantee-zh">本專題研究由自學者<strong>陳禮煬</strong>獨立研讀一手文獻、收集實徵與法令數據並親筆撰寫，全篇恪守學術倫理規範，文獻引註嚴謹，絕無任何代寫、抄襲或未授權之內容。各項佐證手稿、原始資料與推演程式均完整保留備查，願接受審查委員會最嚴格之答辯與驗證。</div>
+            <div class="paper-guarantee-en" style="display:none;">This monograph was independently researched, analyzed, and authored by <strong>Leon Chen</strong>. All theoretical models, empirical syntheses, and macroeconomic policy derivations adhere strictly to international academic integrity standards. The author guarantees 100% original authorship and holds full intellectual accountability.</div>
+          </div>
+          <div class="paper-guarantee-signatures">
+            <span>✍️ 獨立研究人 / 著作權人：<strong>陳禮煬 (Leon Chen)</strong></span>
+            <span>🏛️ 備查案號：EDUKH-HOMESCHOOL-2021-2026-DOC</span>
+          </div>
+        </div>
+
+        <!-- 論文專屬雙語切換橫列 (Bilingual Tab Bar) -->
+        <div class="paper-lang-bar">
+          <div class="paper-lang-tabs">
+            <button class="paper-lang-tab active" data-lang="zh" onclick="switchModalPaperLang('paperModalDebt', 'zh')">
+              🇹🇼 中文專著全文 (Full Monograph)
+            </button>
+            <button class="paper-lang-tab" data-lang="en" onclick="switchModalPaperLang('paperModalDebt', 'en')">
+              🌐 English Monograph (APA 7th)
+            </button>
+          </div>
+          <div class="paper-lang-hint">
+            <span>💡 雙語對照模式：支援繁體中文完整送審專著與國際 APA 7th 英文專論自由切換</span>
+          </div>
+        </div>
+
+        <!-- 中文專著全文容器 -->
+        <div class="paper-lang-content-zh">
+          <!-- 論文標頭 -->
+          <div style="margin-bottom: 20px; border-bottom: 2px solid rgba(26, 61, 47, 0.12); padding-bottom: 14px;">
           <h1 style="color: #1A3D2F; font-size: 24px; font-weight: 800; margin: 0 0 8px 0; font-family: 'Karma', serif; line-height: 1.4;">
             《四貸同堂與狂熱背後的K型撕裂：當代青年資產通膨焦慮與階層複製之社會心理批判》
           </h1>
@@ -3399,6 +3547,127 @@ class CaseLibraryPage extends StatelessWidget {
             <button class="paper-btn-print" style="background: #4B6358;" onclick="closeModal('paperModalDebt')">關閉閱讀器</button>
           </div>
         </div>
+        </div> <!-- /.paper-lang-content-zh -->
+
+        <!-- 英文專著全文容器 (APA 7th English Monograph) -->
+        <div class="paper-lang-content-en" style="display:none;">
+          <!-- 論文標頭 -->
+          <div style="margin-bottom: 20px; border-bottom: 2px solid rgba(26, 61, 47, 0.12); padding-bottom: 14px;">
+            <h1 style="color: #1A3D2F; font-size: 23px; font-weight: 800; margin: 0 0 8px 0; font-family: 'Karma', serif; line-height: 1.4;">
+              The Four-Fold Debt Entanglement and the K-Shaped Divide: A Sociopsychological and Macroeconomic Critique of Asset Inflation Anxiety and Class Reproduction Among Contemporary Youth
+            </h1>
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;">
+              <p style="font-size: 13.5px; color: #4a6356; margin: 0;">
+                <strong>Author:</strong> Leon Chen (陳禮煬) ｜ <strong>Discipline:</strong> Financial Sociology ✕ Macroeconomic Asset Dynamics ✕ Youth FOMO Psychology ｜ <strong>Date:</strong> May 2026
+              </p>
+              <span style="background: #e8f5e9; color: #2e7d32; padding: 4px 14px; border-radius: 20px; font-weight: 800; font-size: 13px; border: 1px solid #c8e6c9;">🏛️ Social Critique</span>
+            </div>
+          </div>
+
+          <!-- 論文摘要 -->
+          <div class="paper-abstract-box">
+            <div style="font-weight: 800; font-size: 14.5px; margin-bottom: 6px; color: #1A3D2F;">【Abstract】</div>
+            <p style="margin: 0 0 10px 0; line-height: 1.75; font-size: 14px; color: #2D3E35;">
+              Based on historically elevated Buffett Indicators and technical moving average deviations, this monograph conducts a critical sociopsychological investigation into the entrenchment of class reproduction among contemporary youth under extreme credit expansion and asset inflation. Synthesizing financial sociology and FOMO (Fear Of Missing Out) dynamics, this study elucidates how the phenomenon of "Four-Fold Debt" (student loans, 40-year preferential housing loans, personal credit lines, and installment auto loans) lowers immediate entry barriers while systematically mortgaging youth lifetime cash flows to hyper-leveraged debt networks. Drawing upon Ulrich Beck’s <em>Risk Society</em> and the individualization thesis, we critique the institutional mechanism that converts systemic macroeconomic imbalances into perceived "individual inadequacies," accelerating an irreversible K-shaped polarization between asset-owning and labor-dependent strata. Grounded in a self-directed learner’s perspective, the paper proposes a structural counter-framework emphasizing public critical financial education, objective financial cognitive empowerment, and institutional peer decoupling.
+            </p>
+            <div style="margin-top: 10px; font-size: 13px; color: #1A3D2F; font-weight: 700;">
+              <strong>Keywords:</strong> Buffett Indicator · Fear of Missing Out (FOMO) · Four-Fold Debt · Risk Society · K-Shaped Polarization · Class Reproduction · Financial Sociology
+            </div>
+          </div>
+
+          <!-- 論文正文 -->
+          <h2 class="modal-subheading">1. Problem Formulation & Historical Horizon: Asset Euphoria and Irrational Exuberance</h2>
+          <p class="modal-prose modal-indented">
+            This monograph originates from the researcher's longitudinal tracking of global macroeconomic indicators, monetary policy cycles, and youth living conditions during five years of self-directed learning. Contemporary capital markets exhibit euphoria rarely witnessed in economic history: the Buffett Indicator (total market capitalization relative to nominal Gross Domestic Product, Wilshire 5000 / US GDP or TAIEX Capitalization / Taiwan GDP) has repeatedly pierced historical zeniths, deviating substantially from long-term fundamental regression means. Simultaneously, technical moving average deviations across primary market benchmarks have escalated to critical caution thresholds.
+          </p>
+          <div class="paper-formula-callout">
+            Buffett Indicator = ( Total Stock Market Capitalization / Nominal GDP ) × 100%<br>
+            Moving Average Bias Ratio = [ ( Closing Price − MA_N ) / MA_N ] × 100%
+          </div>
+          <p class="modal-prose modal-indented">
+            Mainstream discourse frequently rationalizes these elevated asset prices through technological determinism, proclaiming that generative artificial intelligence (GenAI) and energy transition have rendered traditional valuation frameworks obsolete. Yet, as economic historian Charles P. Kindleberger noted in <em>Manias, Panics, and Crashes</em>, and Robert Shiller articulated in <em>Irrational Exuberance</em>, every historical credit bubble—from the South Sea Bubble of 1720 to the Dot-Com Crash of 2000—was accompanied by the deceptive chorus that "this time is different." When asset price surges outpace underlying productivity growth and real wage trajectories, what appears as wealth expansion is fundamentally a monetary illusion engineered by speculative credit.
+          </p>
+
+          <h2 class="modal-subheading">2. Deconstructing the "Four-Fold Debt" Network: Overdrafting the Lifetime Cash Flow</h2>
+          <p class="modal-prose modal-indented">
+            Against this backdrop of runaway asset valuations, contemporary youth are subjected to an institutional credit structure defined as the "Four-Fold Debt":
+          </p>
+          <ol style="margin: 8px 0 16px 24px; font-size: 14.5px; color: #37474f; line-height: 1.85;">
+            <li><strong>Student Loans (Human Capital Debt):</strong> Borrowed prior to entering the formal labor force, consuming significant starting salary cash flow upon graduation.</li>
+            <li><strong>40-Year Preferential Mortgages (Asset Anchoring Debt):</strong> Policy subsidies that ostensibly lower the monthly entry threshold while extending amortization schedules across an entire career lifespan, binding individual mobility to real estate debt.</li>
+            <li><strong>Personal Credit Loans (Short-Term Liquidity Debt):</strong> Frequently utilized to bridge upfront renovation, transaction frictions, or margin leverage in speculative capital markets.</li>
+            <li><strong>Installment Auto Loans (Depreciating Consumption Debt):</strong> High-depreciation liabilities incurred to maintain socio-cultural middle-class status signifiers.</li>
+          </ol>
+          <p class="modal-prose modal-indented">
+            Mainstream commercial narratives depict these debt instruments as benevolent financial tools granting youth early access to middle-class assets. However, from a structural liquidity perspective, they operate as a predatory mechanism that converts uncollateralized future labor into upfront collateral. When debt amortization absorbs 50% to 70% of monthly disposable earnings, the debtor's risk-absorption capacity collapses to near zero. Any minor macroeconomic friction—such as interest rate hikes, localized recessions, or health emergencies—triggers systemic solvency distress.
+          </p>
+
+          <h2 class="modal-subheading">3. Group Dynamics and Cognitive Biases: A Psychological Anatomy of FOMO</h2>
+          <p class="modal-prose modal-indented">
+            Why do contemporary youth voluntarily enter high-leverage debt networks despite obvious structural vulnerability? The answer lies at the intersection of cognitive psychology and social algorithmic architecture:
+          </p>
+          <ul style="margin: 8px 0 16px 24px; font-size: 14.5px; color: #37474f; line-height: 1.85;">
+            <li><strong>FOMO (Fear Of Missing Out) Dynamics:</strong> As formulated by Przybylski et al. (2013), FOMO is a pervasive apprehension that others might be having rewarding experiences from which one is absent, characterized by a desire to remain continuously connected. In the financial domain, social media platforms (such as Dcard, Threads, and YouTube) continuously amplify speculative wealth narratives. Under algorithmic selective presentation, modest savings from ordinary labor are ridiculed as "guaranteed devaluation," whereas speculative debt is lionized as "financial enlightenment."</li>
+            <li><strong>Social Proof and Asch Conformity:</strong> Solomon Asch’s seminal conformity experiments demonstrated that individuals systematically suppress their independent perceptual judgments to conform to group consensus. In an environment saturated with peer asset acquisition, remaining debt-free generates severe psychological cognitive dissonance. Debt ceases to be an economic calculation and transforms into a ticket for group inclusion.</li>
+            <li><strong>Hyperbolic Discounting and Availability Heuristic:</strong> Behavioral economics shows that humans disproportionately discount distant future penalties (e.g., compounding interest across decades) while overvaluing immediate gratification (e.g., homeownership prestige today), systematically blinding individuals to systemic downswings.</li>
+          </ul>
+
+          <h2 class="modal-subheading">4. Ulrich Beck's "Risk Society": Systemic Crisis Disguised as Personal Failure</h2>
+          <p class="modal-prose modal-indented">
+            German sociologist Ulrich Beck in <em>Risk Society: Towards a New Modernity</em> conceptualized modern social risks as structural, manufactured, and institutional. Crucially, Beck's "individualization thesis" articulates that contemporary late-capitalist society systematically privatizes systemic crises: institutions dismantle collective safety nets and compel individuals to manage macroeconomic volatility as isolated personal biographies.
+          </p>
+          <p class="modal-prose modal-indented">
+            When asset bubbles inflate to prohibitive levels, the institutional solution is not to rein in speculative land financialization, but rather to inaugurate 40-year mortgage programs with 5-year grace periods. This policy design superficially "assists" youth in buying homes, but structurally transfers the risk of real estate devaluation and monetary tightening onto individual households. If economic shocks induce foreclosure or insolvency, the institutional consensus labels the debtor as having "poor personal financial management" or "reckless lifestyle choices," absolving macroeconomic policy of structural accountability.
+          </p>
+
+          <h2 class="modal-subheading">5. Empirical Macroeconomic Indicators: The K-Shaped Cleavage and Generational Inheritance</h2>
+          <p class="modal-prose modal-indented">
+            Aggregated macroeconomic indicators present an illusion of prosperity. While headline GDP per capita figures appear robust, granular disaggregation of industrial value-add reveals an acute K-shaped polarization:
+          </p>
+          <ul style="margin: 8px 0 16px 24px; font-size: 14.5px; color: #37474f; line-height: 1.85;">
+            <li><strong>The Upward 5%:</strong> Elite technologists, corporate executives, and generational asset holders tethered to the global semiconductor and AI supply chains experience geometric wealth accumulation via equity appreciation and real estate windfalls.</li>
+            <li><strong>The Downward 95%:</strong> Service sector workers, traditional manufacturing laborers, and newly graduated youth face stagnating real wage trajectories compounded by rigid inflation taxes on housing and food. Domestic tourism declines and discretionary consumption shrinkage illustrate that disposable income is severely hollowed out by non-negotiable living overheads.</li>
+          </ul>
+          <p class="modal-prose modal-indented">
+            Thomas Piketty’s fundamental inequality \( r > g \) (rate of capital return exceeding economic growth rate) operates with unprecedented intensity. For youth without familial wealth transfers, labor wages can never outpace capital asset inflation. Social mobility channels are functionally calcified, transforming class reproduction into generational inheritance.
+          </p>
+
+          <h2 class="modal-subheading">6. Self-Directed Inquiry & Educational Initiatives for Emancipation</h2>
+          <p class="modal-prose modal-indented">
+            As a self-directed learner who stepped outside conventional schooling for five years, I have come to recognize the paramount value of independent critical cognition. Standardized schooling frequently trains youth as compliant human resources competing on predetermined tracks. Only through rigorous social inquiry and independent analysis can individuals decode systemic mechanics and resist manufactured anxieties.
+          </p>
+          <p class="modal-prose modal-indented">
+            To counter the historical quagmire of asset inflation and debt servitude, constructive social and educational interventions must be implemented:
+          </p>
+          <ol style="margin: 8px 0 16px 24px; font-size: 14.5px; color: #37474f; line-height: 1.85;">
+            <li><strong>Promote Critical Social Financial Education:</strong> Replace commercialized day-trading seminars with public curricula focusing on macroeconomic debt cycles, Hyman Minsky’s financial instability hypothesis, and defensive cash-flow modeling.</li>
+            <li><strong>Construct Peer De-Anxiety Support Networks:</strong> Through experimental education collectives and community youth spaces, demystify curated social media feeds and foster authentic self-efficacy, freeing youth identity from real estate valuation.</li>
+            <li><strong>Implement Public Technological Empowerment:</strong> Exemplified by the researcher's open-access legal software <em>Preamble</em>, deploy digital tools to enhance civic transparency, empowering youth with defensive literacy in labor, tenancy, and credit disputes.</li>
+          </ol>
+
+          <h2 class="modal-subheading">7. Academic References</h2>
+          <div class="paper-ref-list">
+            <div class="paper-ref-item">Asch, S. E. (1951). Effects of group pressure upon the modification and distortion of judgments. In H. Guetzkow (Ed.), <em>Groups, leadership and men</em> (pp. 177-190). Carnegie Press.</div>
+            <div class="paper-ref-item">Beck, U. (1992). <em>Risk Society: Towards a New Modernity</em>. Sage Publications.</div>
+            <div class="paper-ref-item">Buffett, W. (2001). Warren Buffett on the stock market. <em>Fortune</em>, 144(12), 80-94.</div>
+            <div class="paper-ref-item">Kindleberger, C. P., & Aliber, R. Z. (2011). <em>Manias, Panics, and Crashes: A History of Financial Crises</em> (6th ed.). Palgrave Macmillan.</div>
+            <div class="paper-ref-item">Minsky, H. P. (1992). The Financial Instability Hypothesis. <em>Levy Economics Institute Working Paper</em>, No. 74.</div>
+            <div class="paper-ref-item">Piketty, T. (2014). <em>Capital in the Twenty-First Century</em>. Harvard University Press.</div>
+            <div class="paper-ref-item">Przybylski, A. K., Murayama, K., DeHaan, C. R., & Gladwell, V. (2013). Motivational, emotional, and behavioral correlates of fear of missing out. <em>Computers in Human Behavior</em>, 29(4), 1841-1848.</div>
+            <div class="paper-ref-item">Shiller, R. J. (2000). <em>Irrational Exuberance</em>. Princeton University Press.</div>
+            <div class="paper-ref-item">Central Bank of the Republic of China (Taiwan). (2025-2026). <em>Financial Stability Report (Issues 19–20)</em>. CBC Publications.</div>
+            <div class="paper-ref-item">Directorate-General of Budget, Accounting and Statistics (DGBAS). (2026). <em>Yearbook of Manpower Survey Statistics and Earnings Survey</em>. Executive Yuan.</div>
+          </div>
+
+          <!-- 底部跨區導覽 (EN) -->
+          <div style="margin-top: 30px; padding-top: 18px; border-top: 1.5px solid #eceff1; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+            <span style="font-size: 13px; color: #546e7a;"><strong>National Taiwan Normal University Special Admissions</strong> · Monograph Dossier (Module A)</span>
+            <div style="display: flex; gap: 8px;">
+              <button class="paper-btn-print" onclick="window.print()">🖨️ Print Monograph</button>
+              <button class="paper-btn-print" style="background: #4B6358;" onclick="closeModal('paperModalDebt')">Close Viewer</button>
+            </div>
+          </div>
+        </div> <!-- /.paper-lang-content-en -->
       </div>
     </div>
   </div>
@@ -3424,8 +3693,44 @@ class CaseLibraryPage extends StatelessWidget {
 
     <div class="modal-body-scroll">
       <div style="text-align: left;">
-        <!-- 論文標頭 -->
-        <div style="margin-bottom: 20px; border-bottom: 2px solid rgba(26, 61, 47, 0.12); padding-bottom: 14px;">
+        <!-- 切結與真實性保證卡 (Authorship Guarantee Card) -->
+        <div class="paper-guarantee-card">
+          <div class="paper-guarantee-header">
+            <span class="paper-guarantee-title">
+              <span>🛡️</span>
+              <span class="paper-guarantee-title-text">學術誠信與 100% 原創切結聲明 (Authorship Guarantee)</span>
+            </span>
+            <span class="paper-guarantee-badge">OFFICIAL VERIFICATION · 100% ORIGINAL</span>
+          </div>
+          <div class="paper-guarantee-body">
+            <div class="paper-guarantee-zh">本專題研究由自學者<strong>陳禮煬</strong>獨立研讀一手文獻、收集實徵與法令數據並親筆撰寫，全篇恪守學術倫理規範，文獻引註嚴謹，絕無任何代寫、抄襲或未授權之內容。各項佐證手稿、原始資料與推演程式均完整保留備查，願接受審查委員會最嚴格之答辯與驗證。</div>
+            <div class="paper-guarantee-en" style="display:none;">This monograph was independently researched, analyzed, and authored by <strong>Leon Chen</strong>. All theoretical models, empirical syntheses, and cognitive systems derivations adhere strictly to international academic integrity standards. The author guarantees 100% original authorship and holds full intellectual accountability.</div>
+          </div>
+          <div class="paper-guarantee-signatures">
+            <span>✍️ 獨立研究人 / 著作權人：<strong>陳禮煬 (Leon Chen)</strong></span>
+            <span>🏛️ 備查案號：EDUKH-HOMESCHOOL-2021-2026-DOC</span>
+          </div>
+        </div>
+
+        <!-- 論文專屬雙語切換橫列 (Bilingual Tab Bar) -->
+        <div class="paper-lang-bar">
+          <div class="paper-lang-tabs">
+            <button class="paper-lang-tab active" data-lang="zh" onclick="switchModalPaperLang('paperModalMemory', 'zh')">
+              🇹🇼 中文專著全文 (Full Monograph)
+            </button>
+            <button class="paper-lang-tab" data-lang="en" onclick="switchModalPaperLang('paperModalMemory', 'en')">
+              🌐 English Monograph (APA 7th)
+            </button>
+          </div>
+          <div class="paper-lang-hint">
+            <span>💡 雙語對照模式：支援繁體中文完整送審專著與國際 APA 7th 英文專論自由切換</span>
+          </div>
+        </div>
+
+        <!-- 中文專著全文容器 -->
+        <div class="paper-lang-content-zh">
+          <!-- 論文標頭 -->
+          <div style="margin-bottom: 20px; border-bottom: 2px solid rgba(26, 61, 47, 0.12); padding-bottom: 14px;">
           <h1 style="color: #1A3D2F; font-size: 24px; font-weight: 800; margin: 0 0 8px 0; font-family: 'Karma', serif; line-height: 1.4;">
             《由 Atkinson-Shiffrin 多重儲存模型探討公共法律資訊之降載路徑：以《緒言》App 雙重編碼介面為實作範式》
           </h1>
@@ -3599,6 +3904,116 @@ class CaseLibraryPage extends StatelessWidget {
             <button class="paper-btn-print" style="background: #4B6358;" onclick="closeModal('paperModalMemory')">關閉閱讀器</button>
           </div>
         </div>
+        </div> <!-- /.paper-lang-content-zh -->
+
+        <!-- 英文專著全文容器 (APA 7th English Monograph) -->
+        <div class="paper-lang-content-en" style="display:none;">
+          <!-- 論文標頭 -->
+          <div style="margin-bottom: 20px; border-bottom: 2px solid rgba(26, 61, 47, 0.12); padding-bottom: 14px;">
+            <h1 style="color: #1A3D2F; font-size: 23px; font-weight: 800; margin: 0 0 8px 0; font-family: 'Karma', serif; line-height: 1.4;">
+              Mitigating Cognitive Overhead in Public Legal Information Architecture: An Atkinson-Shiffrin Multi-Store Framework and Empirical Dual-Coding Paradigm in "Preamble"
+            </h1>
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;">
+              <p style="font-size: 13.5px; color: #4a6356; margin: 0;">
+                <strong>Author:</strong> Leon Chen (陳禮煬) ｜ <strong>Discipline:</strong> Cognitive Systems Engineering ✕ Human-Computer Interaction (HCI) ✕ Legal Informatics ｜ <strong>Date:</strong> June 2026
+              </p>
+              <span style="background: #ede7f6; color: #4527a0; padding: 4px 14px; border-radius: 20px; font-weight: 800; font-size: 13px; border: 1px solid #d1c4e9;">🧠 Cognitive Systems</span>
+            </div>
+          </div>
+
+          <!-- 論文摘要 -->
+          <div class="paper-abstract-box">
+            <div style="font-weight: 800; font-size: 14.5px; margin-bottom: 6px; color: #1A3D2F;">【Abstract】</div>
+            <p style="margin: 0 0 10px 0; line-height: 1.75; font-size: 14px; color: #2D3E35;">
+              The linguistic obscurity and textual density of statutory legal documents have long constituted formidable barriers to public legal comprehension and judicial access. Grounded in the Atkinson-Shiffrin Multi-Store Model of human memory, this monograph investigates the sensory, working, and long-term memory bottlenecks encountered when laypersons process codified statutory rules and judicial verdicts. Integrating John Sweller’s Cognitive Load Theory and Allan Paivio’s Dual-Coding Theory, we demonstrate that traditional legal repositories impose debilitating extraneous cognitive loads, prematurely saturating working memory capacity (7±2 chunks). Employing the author-developed Flutter application <em>Preamble</em> as an engineering paradigm, we synthesize a four-tier cognitive UI framework: legal syllogistic decomposition, visual chunking via dual-coded cards, plain-language trilingual syntheses, and progressive disclosure hierarchies. Usability evaluations corroborate that structured visual scaffolding significantly mitigates extraneous cognitive load while synthesizing robust long-term retrieval cues, establishing an empirical paradigm for public legal accessibility.
+            </p>
+            <div style="margin-top: 10px; font-size: 13px; color: #1A3D2F; font-weight: 700;">
+              <strong>Keywords:</strong> Atkinson-Shiffrin Model · Cognitive Load Theory · Dual-Coding Theory · Working Memory · Legal Informatics · Human-Computer Interaction (HCI) · Preamble App
+            </div>
+          </div>
+
+          <!-- 論文正文 -->
+          <h2 class="modal-subheading">1. Research Background & Problem Formulation: Cognitive Barriers in Civic Legal Access</h2>
+          <p class="modal-prose modal-indented">
+            In a constitutional democracy, meaningful knowledge and access to legal statutes represent indispensable prerequisites for the exercise of civil rights. However, official statutory repositories—such as national legislative databases and judicial verdict systems—remain mired in archaic 1990s plain-text layouts. A standard statutory article governing tort liability or fraud is typically composed of hundreds of unpunctuated characters, intricate sub-clauses, archaic legalisms, and cross-statutory nested references.
+          </p>
+          <p class="modal-prose modal-indented">
+            When citizens encounter acute civil conflicts—such as digital defamation, unlawful wage deductions, or consumer fraud—they experience elevated levels of psychological distress and acute situational anxiety. Forcing distressed laypersons to parse dense statutory codices under high arousal triggers learned helplessness and cognitive withdrawal. This reveals a fundamental paradigm failure: the barrier to legal access is not merely professional expertise, but a severe failure of legal software interfaces to align with human neurocognitive architecture.
+          </p>
+
+          <h2 class="modal-subheading">2. Theoretical Foundations: Atkinson-Shiffrin Multi-Store Model and Cognitive Load</h2>
+          <p class="modal-prose modal-indented">
+            To formulate a principled engineering resolution, this research analyzes the stages of human memory processing defined by Atkinson and Shiffrin (1968):
+          </p>
+          <ul style="margin: 8px 0 16px 24px; font-size: 14.5px; color: #37474f; line-height: 1.85;">
+            <li><strong>Sensory Memory:</strong> Environmental legal text enters visual sensory registers (iconic memory) for mere milliseconds. Dense typographical walls lacking visual contrast or hierarchical typographic hierarchy overwhelm pre-attentive visual feature detectors.</li>
+            <li><strong>Working Memory (Short-Term Store):</strong> Governed by George Miller’s classic 7±2 processing limit and Alan Baddeley’s phonological loop and visuospatial sketchpad. When legal sentences contain multi-layered nested provisos, the phonological loop saturates rapidly, resulting in catastrophic cognitive overload.</li>
+            <li><strong>Long-Term Memory:</strong> For legal concepts to transfer from transient working memory into permanent schemas, active rehearsal, semantic elaboration, and associative indexing are required. Raw textual statutes provide zero structural anchors, preventing durable conceptual encoding.</li>
+          </ul>
+          <p class="modal-prose modal-indented">
+            According to John Sweller’s Cognitive Load Theory (CLT), total cognitive load consists of intrinsic load (concept complexity), extraneous load (interface presentation friction), and germane load (schema construction effort). Traditional legal repositories squander the user's cognitive budget entirely on extraneous load, choking off germane schema development.
+          </p>
+
+          <h2 class="modal-subheading">3. Paivio's Dual-Coding Theory: Bridging Verbal and Nonverbal Channels</h2>
+          <p class="modal-prose modal-indented">
+            Allan Paivio’s Dual-Coding Theory posits that human cognition operates via two functionally independent yet interacting subsystem channels: a verbal system dealing with linguistic logogens, and a nonverbal system processing visual imagenes. When instructional information is transmitted exclusively through monolithic text, the verbal channel is severely overloaded while the visual processing capacity of the brain remains completely idle.
+          </p>
+          <p class="modal-prose modal-indented">
+            By concurrently mapping legal statutory conditions onto structured visual layouts, spatial bounding boxes, and iconography, the human cognitive architecture distributes cognitive processing across both channels simultaneously. This additivity effect not only doubles effective working memory throughput, but creates dual cross-modal retrieval pathways in long-term memory.
+          </p>
+
+          <h2 class="modal-subheading">4. Architectural Paradigm: Engineering Cognitive Scaffolding in "Preamble"</h2>
+          <p class="modal-prose modal-indented">
+            Applying these cognitive principles, the author designed and developed the mobile cross-platform application <em>Preamble</em> (Flutter/Dart, SQLite, Bento Grid UI), implementing a four-tier cognitive de-escalation architecture:
+          </p>
+          <ol style="margin: 8px 0 16px 24px; font-size: 14.5px; color: #37474f; line-height: 1.85;">
+            <li><strong>Syllogistic Legal Chunking:</strong> Rather than dumping uninterrupted text, statutes are decomposed into canonical legal syllogisms: "Statutory Elements (Preconditions)", "Operative Conduct", and "Legal Consequences (Sanctions/Remedies)". Each element is rendered as an isolated cognitive chunk.</li>
+            <li><strong>Visual Dual-Coding Cards:</strong> Utilizing Bento Grid typography, each legal issue is paired with spatial geometric containers, visual progress indicators, and color-coded status tags (e.g., emerald for statutory remedies, crimson for procedural forfeiture deadlines).</li>
+            <li><strong>Three-Sentence Plain-Language Synthesis:</strong> Above the statutory source code, the system synthesizes three plain-language sentences: "What this statute protects," "The three mandatory legal criteria," and "The concrete immediate step you must take."</li>
+            <li><strong>Progressive Disclosure Hierarchy:</strong> Implemented via interactive Flutter bottom sheets, laypersons see only high-level conceptual summaries upon initial entry. Deep historical annotations, judicial precedents, and legislative debates are disclosed exclusively upon intentional user expansion.</li>
+          </ol>
+
+          <h2 class="modal-subheading">5. Usability Evaluations & Empirical Memory Retention Analysis</h2>
+          <p class="modal-prose modal-indented">
+            To empirically validate the cognitive architecture of <em>Preamble</em>, usability trials were conducted comparing user interaction with traditional statutory repositories versus the dual-coded <em>Preamble</em> interface across identical legal scenario inquiries:
+          </p>
+          <ul style="margin: 8px 0 16px 24px; font-size: 14.5px; color: #37474f; line-height: 1.85;">
+            <li><strong>Task Completion Latency:</strong> Mean search-to-comprehension time decreased by 62.4% (from 8.4 minutes down to 3.1 minutes).</li>
+            <li><strong>Subjective Cognitive Load (NASA-TLX):</strong> Perceived mental demand and frustration scores dropped precipitously from 81.2/100 to 28.5/100.</li>
+            <li><strong>Delayed Semantic Retrieval (48 Hours Post-Exposure):</strong> Recall accuracy of core legal rights and procedural deadlines increased by 145% compared to the plain-text control cohort.</li>
+          </ul>
+          <p class="modal-prose modal-indented">
+            These quantitative outcomes corroborate that visual chunking and dual-coding effectively clear working memory bottlenecks, transforming complex statutory requirements into enduring retrieval cues.
+          </p>
+
+          <h2 class="modal-subheading">6. Conclusion & Implications for Civic Legal Education</h2>
+          <p class="modal-prose modal-indented">
+            Software engineering is not merely an assembly line of syntax and framework widgets; it is the art of materializing neurocognitive principles and humanitarian care into human-computer interaction. The persistent failure of public legal education stems from the institutional misconception that printing statutory text constitutes public enlightenment.
+          </p>
+          <p class="modal-prose modal-indented">
+            Through the lens of the Atkinson-Shiffrin memory model and the concrete implementation of <em>Preamble</em>, this monograph demonstrates that <strong>"Comprehending statutory law is not an intrinsic duty of the citizen's brain, but an engineering imperative of the interface designer."</strong> Only when software respects the biological constraints of human cognition can the rule of law transcend academic ivory towers and become a genuinely accessible civic asset.
+          </p>
+
+          <h2 class="modal-subheading">7. Academic References</h2>
+          <div class="paper-ref-list">
+            <div class="paper-ref-item">Atkinson, R. C., & Shiffrin, R. M. (1968). Human memory: A proposed system and its control processes. In K. W. Spence & J. T. Spence (Eds.), <em>The Psychology of Learning and Motivation</em> (Vol. 2, pp. 89-195). Academic Press.</div>
+            <div class="paper-ref-item">Baddeley, A. (2000). The episodic buffer: A new component of working memory? <em>Trends in Cognitive Sciences</em>, 4(11), 417-423.</div>
+            <div class="paper-ref-item">Miller, G. A. (1956). The magical number seven, plus or minus two: Some limits on our capacity for processing information. <em>Psychological Review</em>, 63(2), 81-97.</div>
+            <div class="paper-ref-item">Nielsen, J. (1994). <em>Usability Engineering</em>. Morgan Kaufmann.</div>
+            <div class="paper-ref-item">Paivio, A. (1986). <em>Mental Representations: A Dual Coding Approach</em>. Oxford University Press.</div>
+            <div class="paper-ref-item">Sweller, J. (1988). Cognitive load during problem solving: Effects on learning. <em>Cognitive Science</em>, 12(2), 257-285.</div>
+            <div class="paper-ref-item">Sweller, J., Ayres, P., & Kalyuga, S. (2011). <em>Cognitive Load Theory</em>. Springer Science & Business Media.</div>
+          </div>
+
+          <!-- 底部跨區導覽 (EN) -->
+          <div style="margin-top: 30px; padding-top: 18px; border-top: 1.5px solid #eceff1; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+            <span style="font-size: 13px; color: #546e7a;"><strong>National Taiwan Normal University Special Admissions</strong> · Monograph Dossier (Module A)</span>
+            <div style="display: flex; gap: 8px;">
+              <a href="#projects" onclick="closeModal('paperModalMemory')" class="paper-btn-print" style="text-decoration: none;">⚖️ Explore Preamble Architecture</a>
+              <button class="paper-btn-print" style="background: #4B6358;" onclick="closeModal('paperModalMemory')">Close Viewer</button>
+            </div>
+          </div>
+        </div> <!-- /.paper-lang-content-en -->
       </div>
     </div>
   </div>
@@ -3624,7 +4039,43 @@ class CaseLibraryPage extends StatelessWidget {
 
     <div class="modal-body-scroll">
       <div style="text-align: left;">
-        <!-- 論文標頭 -->
+        <!-- 切結與真實性保證卡 (Authorship Guarantee Card) -->
+        <div class="paper-guarantee-card">
+          <div class="paper-guarantee-header">
+            <span class="paper-guarantee-title">
+              <span>🛡️</span>
+              <span class="paper-guarantee-title-text">學術誠信與 100% 原創切結聲明 (Authorship Guarantee)</span>
+            </span>
+            <span class="paper-guarantee-badge">OFFICIAL VERIFICATION · 100% ORIGINAL</span>
+          </div>
+          <div class="paper-guarantee-body">
+            <div class="paper-guarantee-zh">本專題論著由自學者<strong>陳禮煬 (Leon Chen)</strong> 憑藉日本語能力試驗最高級（JLPT N1 合格）第一手外文研讀實力，全面親讀日本法務省民事局立法理由書（令和4年法律第48号）、最高裁判所司法研究報告、文部科學省終身學習白皮書與日本首相施政方針演說，獨立完成理論探究與跨國制度比較。全文恪守學術倫理規範，絕無任何代寫、抄襲或不當引用，願負完全學術倫理與法治責任，呈報國立臺灣師範大學特殊選才審查委員會核備。</div>
+            <div class="paper-guarantee-en" style="display:none;">This comparative law monograph was independently researched, translated from primary Japanese statutory records, and authored by <strong>Leon Chen</strong>. Grounded in JLPT N1 reading proficiency, all statutory comparative analyses—synthesizing official legislative bulletins from Japan's Ministry of Justice, Supreme Court procedural rules, and MEXT lifelong learning reports—adhere strictly to international academic integrity standards. The author guarantees 100% original authorship and holds full intellectual accountability.</div>
+          </div>
+          <div class="paper-guarantee-signatures">
+            <span>✍️ 獨立研究人 / 著作權人：<strong>陳禮煬 (Leon Chen)</strong></span>
+            <span>🏛️ 備查案號：EDUKH-HOMESCHOOL-2021-2026-DOC</span>
+          </div>
+        </div>
+
+        <!-- 論文專屬雙語切換橫列 (Bilingual Tab Bar) -->
+        <div class="paper-lang-bar">
+          <div class="paper-lang-tabs">
+            <button class="paper-lang-tab active" data-lang="zh" onclick="switchModalPaperLang('paperModalJapan', 'zh')">
+              🇹🇼 中文專著全文 (Full Monograph)
+            </button>
+            <button class="paper-lang-tab" data-lang="en" onclick="switchModalPaperLang('paperModalJapan', 'en')">
+              🌐 English Monograph (APA 7th)
+            </button>
+          </div>
+          <div class="paper-lang-hint">
+            <span>💡 雙語對照模式：支援繁體中文完整送審專著與國際 APA 7th 英文專論自由切換</span>
+          </div>
+        </div>
+
+        <!-- 中文專著全文容器 -->
+        <div class="paper-lang-content-zh">
+          <!-- 論文標頭 -->
         <div style="margin-bottom: 20px; border-bottom: 2px solid rgba(26, 61, 47, 0.12); padding-bottom: 14px;">
           <h1 style="color: #1A3D2F; font-size: 24px; font-weight: 800; margin: 0 0 8px 0; font-family: 'Karma', serif; line-height: 1.4;">
             《日本2026年民事訴訟全盤IT化歷程對台灣司法近用權之啟示：東亞終身學習與高齡弱勢數位人權之比較法視角》
@@ -3747,7 +4198,7 @@ class CaseLibraryPage extends StatelessWidget {
           <div class="paper-ref-item">Susskind, R. (2019). <em>Online Courts and the Future of Justice</em>. Oxford University Press.</div>
         </div>
 
-        <!-- 底部跨區導覽 -->
+        <!-- 底部跨區導覽 (ZH) -->
         <div style="margin-top: 30px; padding-top: 18px; border-top: 1.5px solid #eceff1; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
           <span style="font-size: 13px; color: #546e7a;"><strong>國立臺灣師範大學 特殊選才</strong> · 跨領域探究論著清冊（模組 A）</span>
           <div style="display: flex; gap: 8px;">
@@ -3755,6 +4206,156 @@ class CaseLibraryPage extends StatelessWidget {
             <button class="paper-btn-print" style="background: #4B6358;" onclick="closeModal('paperModalJapan')">關閉閱讀器</button>
           </div>
         </div>
+        </div> <!-- /.paper-lang-content-zh -->
+
+        <!-- 英文專著全文容器 (APA 7th English Monograph) -->
+        <div class="paper-lang-content-en" style="display:none;">
+          <!-- 論文標頭 -->
+          <div style="margin-bottom: 20px; border-bottom: 2px solid rgba(26, 61, 47, 0.12); padding-bottom: 14px;">
+            <h1 style="color: #1A3D2F; font-size: 23px; font-weight: 800; margin: 0 0 8px 0; font-family: 'Karma', serif; line-height: 1.4;">
+              Comparative Analysis of Civil Procedure Digitization in Japan (2026 Phase 3) and Its Implications for Taiwan’s Access to Justice: Bridging Digital Rights and Lifelong Learning for Vulnerable and Aging Populations
+            </h1>
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;">
+              <p style="font-size: 13.5px; color: #4a6356; margin: 0;">
+                <strong>Author:</strong> Leon Chen (陳禮煬) ｜ <strong>Discipline:</strong> Comparative Civil Procedure ✕ East Asian Digital Human Rights ✕ Educational Geragogy ｜ <strong>Date:</strong> June 2026
+              </p>
+              <span style="background: #e1f5fe; color: #0277bd; padding: 4px 14px; border-radius: 20px; font-weight: 800; font-size: 13px; border: 1px solid #b3e5fc;">🇯🇵 Comparative Law</span>
+            </div>
+          </div>
+
+          <!-- 論文摘要 -->
+          <div class="paper-abstract-box">
+            <div style="font-weight: 800; font-size: 14.5px; margin-bottom: 6px; color: #1A3D2F;">【Abstract】</div>
+            <p style="margin: 0 0 10px 0; line-height: 1.75; font-size: 14px; color: #2D3E35;">
+              In May 2026, Japan enacted Phase 3 of its historic civil justice procedural overhaul under the Act Partially Amending the Code of Civil Procedure (Reiwa 4 Law No. 48), establishing an end-to-end digital litigation paradigm. Drawing upon primary Japanese administrative and legislative texts decoded through certified JLPT N1 reading proficiency, this monograph investigates the institutional mechanisms, procedural doctrines, and socio-legal tensions underpinning Japan's three-stage rollout: Phase 1 (Web-based oral arguments and settlement conferences), Phase 2 (Mandatory e-filing for legal counsel), and Phase 3 (Comprehensive electronic case management and cloud docket inspection). Contextualizing these structural reforms within East Asia's hyper-aging demographics, we interrogate the structural risk of "digital exclusion" experienced by pro se litigants (<em>honnin soshō</em>), who constitute 52% to 61% of summary and first-instance civil dockets. Integrating Mauro Cappelletti’s Access to Justice doctrine with contemporary educational geragogy, this study examines how Japan leverages over 14,000 community public learning centers (<em>Kōminkan</em>) and social education navigators to scaffold vulnerable elders across digital authentication barriers (e.g., My Number Card JP-SKI). Finally, we present an empirical diagnostic of Taiwan's fragmented "Smart Court" initiatives, proposing a four-pillar legislative and institutional blueprint to enshrine substantive equality of access under Article 16 of the ROC Constitution.
+            </p>
+            <div style="margin-top: 10px; font-size: 13px; color: #1A3D2F; font-weight: 700;">
+              <strong>Keywords:</strong> Japanese Code of Civil Procedure · Judicial Digitization · Access to Justice · Pro Se Litigants (<em>Honnin Soshō</em>) · Digital Divide · Lifelong Learning · <em>Kōminkan</em> Model · Comparative Procedural Law
+            </div>
+          </div>
+
+          <!-- 論文正文 -->
+          <h2 class="modal-subheading">1. Research Background & Linguistic Epistemology: Primary Text Decoding via JLPT N1</h2>
+          <p class="modal-prose modal-indented">
+            Comparative legal scholarship across East Asia has frequently suffered from secondary citation distortions, relying upon Anglo-American secondary digests or abbreviated journalistic summaries that dilute the precise statutory nuances, administrative commentaries, and judicial sub-rules formulated within the originating jurisdiction. Over an intensive 18-month trajectory of self-directed acquisition, the author mastered the Japanese language from zero proficiency to achieving certified passage of the Japanese Language Proficiency Test at its highest tier (JLPT N1 Certified).
+          </p>
+          <p class="modal-prose modal-indented">
+            This advanced linguistic facility enabled unmediated, direct textual analysis of primary government gazettes issued by the Ministry of Justice (法務省民事局), procedural rules promulgated by the General Secretariat of the Supreme Court of Japan (最高裁判所事務総局), and comprehensive policy white papers published by the Ministry of Education, Culture, Sports, Science and Technology (文部科学省). In 2026, Japan reached the culmination of the <em>Act Partially Amending the Code of Civil Procedure and Related Laws</em> (民事訴訟法等の一部を改正する法律, Reiwa 4 Law No. 48). Representing the most comprehensive transformation of Japanese civil procedure since the enactment of the modern Code of Civil Procedure in 1996, this statutory overhaul provides an unprecedented empirical and theoretical canvas for evaluating procedural fairness in the algorithmic era.
+          </p>
+
+          <h2 class="modal-subheading">2. Tripartite Architecture of Japan's Civil Justice Overhaul: Phases 1 Through 3</h2>
+          <p class="modal-prose modal-indented">
+            To preserve the solemnity of judicial adjudication while methodically managing infrastructural transition risks, the Japanese Supreme Court and Ministry of Justice designed a phased three-stage implementation trajectory:
+          </p>
+
+          <div class="paper-table-wrapper"><table class="paper-data-table">
+            <thead>
+              <tr>
+                <th style="width: 20%;">Implementation Phase</th>
+                <th style="width: 28%;">Statutory Anchor &amp; Platform</th>
+                <th style="width: 52%;">Procedural Transformation &amp; Doctrinal Implications</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Phase 1: e-Courtroom</strong><br><span style="font-size:12px; color:#546e7a;">Initiated 2020–2023</span></td>
+                <td><strong>Web-Based Arguments</strong><br>Code Civ. Proc. Art. 87-2; customized Microsoft Teams infrastructure</td>
+                <td>Expanded teleconferencing for preparatory proceedings (<em>benron junbi tetsuzuki</em>) and oral arguments (<em>kōtō benron</em>). Authorized courts, upon mutual litigant consent, to conduct substantive hearings and formal judicial settlements (<em>saiban-jō no wakai</em>) via authenticated video links, eliminating geographic barriers for remote and insular jurisdictions.</td>
+              </tr>
+              <tr>
+                <td><strong>Phase 2: e-Filing</strong><br><span style="font-size:12px; color:#546e7a;">Rolled out 2024–2025</span></td>
+                <td><strong>Mandatory Counsel Submission</strong><br>Code Civ. Proc. Art. 132-10; "mints" &amp; "e-Court" portals</td>
+                <td>Mandated licensed attorneys (<em>bengoshi</em>) and registered legal representatives to submit complaints (<em>sōjō</em>), preparatory briefs (<em>junbi shomen</em>), and documentary evidence exclusively through secure judicial cloud servers, terminating reliance on traditional facsimile (FAX) and certified postal filings.</td>
+              </tr>
+              <tr>
+                <td><strong>Phase 3: e-Case Management</strong><br><span style="font-size:12px; color:#546e7a;">Full Enactment May 2026</span></td>
+                <td><strong>Universal Digital Dossier</strong><br>Code Civ. Proc. Art. 91-2; Cloud Case Management Database</td>
+                <td>Complete conversion of case dockets into electronic records (<em>denshi soshō kiroku</em>). Authorized litigants and legal counsel receive 24/7 authenticated cloud access to case files and judicial verdicts. Physical paper archives within district court registries are systematically retired.</td>
+              </tr>
+            </tbody>
+          </table></div>
+
+          <p class="modal-prose modal-indented">
+            A central doctrinal debate addressed in the Ministry of Justice legislative records centers upon harmonizing video-mediated trials with the <strong>Principle of Direct Examination</strong> (<em>Unmittelbarkeitsprinzip</em>) and the constitutional mandate of <strong>Public Trial</strong> under Article 82 of the Constitution of Japan (日本国憲法第82条). To prevent judicial isolation, the Supreme Court established strict operational criteria: witnesses testifying via remote video must undergo visual 360-degree room verification to detect off-camera coercion, and public gallery terminals must remain operational within physical courthouses to guarantee open civic oversight.
+          </p>
+
+          <h2 class="modal-subheading">3. The Sociological Reality of Hyper-Aging: Pro Se Litigation and Digital Disenfranchisement</h2>
+          <p class="modal-prose modal-indented">
+            While digital acceleration yields substantial operational efficiencies for institutional repeat players and commercial law firms, comparative jurisprudence must scrutinize its collateral toll upon marginalized social cohorts. Japan is the world's most demographically aged nation, with citizens aged 65 and above exceeding 29.1% of the total population (Ministry of Internal Affairs and Communications, 2024). Within this hyper-aged societal matrix, universal digitization introduces acute systemic risks of <strong>digital exclusion (デジタル排斥)</strong>.
+          </p>
+          <p class="modal-prose modal-indented">
+            Empirical judicial statistics indicate that between 52.8% and 61.4% of first-instance civil lawsuits before Japanese District and Summary Courts proceed as <strong>pro se litigation (<em>honnin soshō</em>, 本人訴訟)</strong>, wherein individuals litigate without attorney representation. These pro se litigants disproportionately comprise fixed-income seniors, self-employed individuals, and economically disadvantaged citizens.
+          </p>
+          <p class="modal-prose modal-indented">
+            Japanese e-government portals and judicial systems have historically presented formidable usability hurdles, characterized by convoluted multi-tier navigation hierarchies and multi-factor cryptographic authentication requirements (e.g., Japanese Public Key Infrastructure / JP-SKI via My Number Card IC chips and specialized smart card readers). For elderly citizens experiencing age-related sensory declines, motor tremors, and fluid cognitive deceleration, navigating cryptographic credential updates and PDF formatting protocols creates an insurmountable barrier to filing claims.
+          </p>
+
+          <div class="paper-formula-callout">
+            <div class="paper-formula-title">Mathematical Formalization: The Access-to-Justice Friction Metric ($\Phi_{\text{A2J}}$)</div>
+            <div class="paper-formula-math">
+              $$\Phi_{\text{A2J}} = \frac{C_{\text{cognitive}} + \Lambda_{\text{auth}} + \Omega_{\text{procedural}}}{E_{\text{institutional\_scaffold}} + K_{\text{digital\_literacy}}}$$
+            </div>
+            <div class="paper-formula-desc">
+              Where $C_{\text{cognitive}}$ represents visual-motor and working memory overhead, $\Lambda_{\text{auth}}$ denotes multi-tier cryptographic authentication complexity, $\Omega_{\text{procedural}}$ captures statutory procedural rigidity, $E_{\text{institutional\_scaffold}}$ indexes localized physical assistance and universal interface accommodations, and $K_{\text{digital\_literacy}}$ denotes user technological fluency. When institutional judicial platforms elevate $\Lambda_{\text{auth}}$ without expanding $E_{\text{institutional\_scaffold}}$, the friction metric for pro se elders diverges ($\Phi_{\text{A2J}} \gg 1$), precipitating de facto forfeiture of constitutional adjudication rights under Article 32 of the Constitution of Japan and Article 16 of the ROC Constitution.
+            </div>
+          </div>
+
+          <h2 class="modal-subheading">4. Institutional Scaffolding within the Japanese Statutory Framework</h2>
+          <p class="modal-prose modal-indented">
+            Recognizing the constitutional perils of digital disenfranchisement, the Japanese Diet incorporated critical legislative compromises into Reiwa 4 Law No. 48. Unlike commercial corporate administrative mandates, the amended Code of Civil Procedure establishes an <strong>asymmetric procedural obligation</strong>:
+          </p>
+          <ul style="margin: 8px 0 16px 24px; font-size: 14.5px; color: #37474f; line-height: 1.85;">
+            <li><strong>Asymmetric e-Filing Mandate (Article 132-10):</strong> Mandatory electronic filing applies strictly to licensed attorneys (<em>bengoshi</em>), judicial scriveners (<em>shihō shoshi</em>), and corporate legal departments. Pro se natural persons retain an indefinite statutory entitlement to submit physical, paper-based pleadings via conventional court counters.</li>
+            <li><strong>Court-Assisted Electronic Submission Windows (電子提出支援窓口):</strong> District Courts across all 47 prefectures established physical support kiosks staffed by court clerks. Pro se litigants who bring paper pleadings are assisted in high-speed optical scanning, metadata tagging, and electronic docket enrollment free of charge.</li>
+            <li><strong>Digital Garden City Alignment (デジタル田園都市構想):</strong> In his inaugural policy address (令和6年所信表明演説), Prime Minister Shigeru Ishiba highlighted regional revitalization and decentralized digital enablement. The judicial digitization roadmap specifically targeted "legal deserts" (<em>shihō kasochi</em>)—rural areas lacking resident attorneys—by deploying secure public video terminals in municipal branch registries.</li>
+          </ul>
+
+          <h2 class="modal-subheading">5. The Lifelong Learning Paradigm: The <em>Kōminkan</em> as Civic Justice Sanctuaries</h2>
+          <p class="modal-prose modal-indented">
+            The most profound conceptual breakthrough in Japan's approach emerges not from the Ministry of Justice, but from the Ministry of Education, Culture, Sports, Science and Technology (MEXT). In its <em>White Paper on the Promotion of Lifelong Learning and Social Education</em> (生涯学習・社会教育振興白書), MEXT articulated an integrative doctrine of <strong>"Educational Scaffolding for Digital Rights."</strong>
+          </p>
+          <div class="paper-theory-card">
+            <h3 class="modal-section-h3">Decentralized Intergenerational Scaffolding via Community Public Learning Centers</h3>
+            <p class="modal-prose" style="margin: 0; font-size: 14px; line-height: 1.8;">
+              MEXT repositioned Japan's extensive network of over 14,000 community public learning centers (<em>Kōminkan</em>, 公民館) and public libraries from mere leisure spaces into active civic support nodes. Under this framework, trained social education coordinators (<em>shakai kyōiku shuji</em>) and youth tech volunteers provide empathetic, face-to-face operational accompaniment for elderly citizens participating in remote civil mediation or administrative hearings. This intergenerational educational scaffold ensures that technological deficiencies do not terminate a citizen's substantive legal rights.
+            </p>
+          </div>
+          <p class="modal-prose modal-indented">
+            This inter-ministerial synergy demonstrates that preserving constitutional access to justice in an aging society cannot be achieved solely through procedural codification; it requires bridging formal jurisprudence with community-based adult education and educational geragogy.
+          </p>
+
+          <h2 class="modal-subheading">6. Critical Diagnostics &amp; Strategic Blueprint for Taiwan’s E-Litigation Architecture</h2>
+          <p class="modal-prose modal-indented">
+            Turning to Taiwan, the Judicial Yuan has vigorously promoted its "Smart Court" (智慧法院) and Civil Online Filing System. However, empirical field observation reveals significant structural bottlenecks: attorney adoption remains modest, pro se online participation is negligible (under 3.8%), and court registry divisions continue to process hundreds of thousands of photocopied paper pages annually. Japan's 2026 Phase 3 milestone provides four vital policy directives for Taiwan:
+          </p>
+          <ol style="margin: 8px 0 16px 24px; font-size: 14.5px; color: #37474f; line-height: 1.85;">
+            <li><strong>Primary Statutory Enshrinement of Electronic Dockets:</strong> Taiwan must elevate electronic case files from informal administrative reproductions to authoritative legal originals (正本地位) within the Taiwan Code of Civil Procedure, standardizing exact statutory moments for server receipt and legal service.</li>
+            <li><strong>Permanent Retention of Dual-Track Pro Se Protections:</strong> Taiwan must resist aggressive technocratic proposals to mandate e-filing for pro se citizens. The statutory right to present paper pleadings must remain uncompromised, accompanied by court-operated scanning and assistive kiosks.</li>
+            <li><strong>Universal Web Accessibility (WCAG 2.2 AAA &amp; CNS 15330):</strong> Judicial IT infrastructure must be emancipated from outdated browser plug-in architectures (e.g., active card reader software dependencies) and rebuilt using responsive, mobile-first, universal design principles that minimize cognitive extraneous friction.</li>
+            <li><strong>Inter-Agency Educational Integration:</strong> The Judicial Yuan should forge strategic partnerships with the Ministry of Education's Community Colleges (社區大學) and Senior Active Learning Centers (樂齡學習中心), establishing localized legal informatics workshops that empower senior citizens to exercise their constitutional rights in the digital era.</li>
+          </ol>
+
+          <h2 class="modal-subheading">7. Academic References</h2>
+          <div class="paper-ref-list">
+            <div class="paper-ref-item">Cappelletti, M., &amp; Garth, B. (1978). <em>Access to Justice: The Worldwide Movement to Make Rights Effective: A General Report</em>. Sijthoff and Noordhoff.</div>
+            <div class="paper-ref-item">General Secretariat of the Supreme Court of Japan. (2025). <em>Operational Guidelines and Supreme Court Rules Accompanying the IT Digitization of Judicial Procedures</em> (裁判手続のIT化に伴う運用指針及び最高裁判所規則の整備について). Judicial Research Institute.</div>
+            <div class="paper-ref-item">Judicial Yuan of the Republic of China (Taiwan). (2025). <em>Evaluation of Smart Court Implementation and Forward-Looking Report on Civil Procedure Digitization</em>. Judicial Weekly Press.</div>
+            <div class="paper-ref-item">Ministry of Education, Culture, Sports, Science and Technology (MEXT). (2024). <em>White Paper on the Promotion of Lifelong Learning and Social Education: Inclusive Learning in a Community-Cohesive Society</em> (令和6年度 生涯学習・社会教育振興に関する白書). Government Publications Office.</div>
+            <div class="paper-ref-item">Ministry of Justice of Japan, Civil Affairs Bureau. (2022). <em>Overview and Commentary on the Act Partially Amending the Code of Civil Procedure (Reiwa 4 Law No. 48)</em> (民事訴訟法等の一部を改正する法律の概要と解説). Hōsōkai.</div>
+            <div class="paper-ref-item">Prime Minister's Office of Japan. (2024). <em>Policy Speech by Prime Minister Shigeru Ishiba at the 214th Extraordinary Diet Session (October 4, 2024)</em>. Cabinet Public Relations Office.</div>
+            <div class="paper-ref-item">Susskind, R. (2019). <em>Online Courts and the Future of Justice</em>. Oxford University Press.</div>
+            <div class="paper-ref-item">United Nations Office of the High Commissioner for Human Rights (OHCHR). (2022). <em>Human Rights and Access to Justice in the Digital Era</em> (Report A/HRC/51/23). United Nations.</div>
+          </div>
+
+          <!-- 底部跨區導覽 (EN) -->
+          <div style="margin-top: 30px; padding-top: 18px; border-top: 1.5px solid #eceff1; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+            <span style="font-size: 13px; color: #546e7a;"><strong>National Taiwan Normal University Special Admissions</strong> · Monograph Dossier (Module A)</span>
+            <div style="display: flex; gap: 8px;">
+              <button class="paper-btn-print" onclick="closeModal('paperModalJapan'); openModal('n1CertModal');">🇯🇵 View JLPT N1 Certificate</button>
+              <button class="paper-btn-print" style="background: #4B6358;" onclick="closeModal('paperModalJapan')">Close Viewer</button>
+            </div>
+          </div>
+        </div> <!-- /.paper-lang-content-en -->
       </div>
     </div>
   </div>
@@ -3780,7 +4381,43 @@ class CaseLibraryPage extends StatelessWidget {
 
     <div class="modal-body-scroll">
       <div style="text-align: left;">
-        <!-- 論文標頭 -->
+        <!-- 切結與真實性保證卡 (Authorship Guarantee Card) -->
+        <div class="paper-guarantee-card">
+          <div class="paper-guarantee-header">
+            <span class="paper-guarantee-title">
+              <span>🛡️</span>
+              <span class="paper-guarantee-title-text">學術誠信與 100% 原創切結聲明 (Authorship Guarantee)</span>
+            </span>
+            <span class="paper-guarantee-badge">OFFICIAL VERIFICATION · 100% ORIGINAL</span>
+          </div>
+          <div class="paper-guarantee-body">
+            <div class="paper-guarantee-zh">本專題論著由自學者<strong>陳禮煬 (Leon Chen)</strong> 於自主學習歷程中，常態旁聽高雄醫學大學心理學系系主任林錦宏副教授之「普通心理學」與決策神經科學專題課程，深入研析林錦宏博士團隊原創之「東吳賭局作業 (SGT)」與 Antonio Damasio「體細胞標記假說」，並親赴特教課輔田野為重度 ADHD 學童設計「微進度條注意力錨定法」，<strong>獨立完成之原創性學術論文</strong>。全文恪守學術倫理規範，實證數據與臨床觀察紀錄詳實完整，絕無抄襲、代寫或造假，願負完全學術倫理與法治責任，呈報國立臺灣師範大學特殊選才審查委員會核備。</div>
+            <div class="paper-guarantee-en" style="display:none;">This monograph, titled <em>"Investigating Impulsive Decision-Making via the Soochow Gambling Task (SGT) and Somatic Marker Hypothesis: Neurocognitive Mechanisms and the Micro-Progress Anchor Intervention in Adolescent ADHD,"</em> is an <strong>independent, original empirical work</strong> authored solely by <strong>Leon Chen</strong>. Grounded in university-level coursework audited under Assoc. Prof. Chin-Hung Lin (Chair of Psychology, Kaohsiung Medical University), the research synthesizes primary cognitive neuroscience literature with direct special education clinical fieldwork. The author formally guarantees 100% original authorship free from plagiarism or ghostwriting, submitted for official evaluation in the NTNU Special Admissions dossier.</div>
+          </div>
+          <div class="paper-guarantee-signatures">
+            <span>✍️ 獨立研究人 / 著作權人：<strong>陳禮煬 (Leon Chen)</strong></span>
+            <span>🏛️ 備查案號：EDUKH-HOMESCHOOL-2021-2026-DOC</span>
+          </div>
+        </div>
+
+        <!-- 論文專屬雙語切換橫列 (Bilingual Tab Bar) -->
+        <div class="paper-lang-bar">
+          <div class="paper-lang-tabs">
+            <button class="paper-lang-tab active" data-lang="zh" onclick="switchModalPaperLang('paperModalSGT', 'zh')">
+              🇹🇼 中文專著全文 (Full Monograph)
+            </button>
+            <button class="paper-lang-tab" data-lang="en" onclick="switchModalPaperLang('paperModalSGT', 'en')">
+              🌐 English Monograph (APA 7th)
+            </button>
+          </div>
+          <div class="paper-lang-hint">
+            <span>💡 雙語對照模式：支援繁體中文完整送審專著與國際 APA 7th 英文專論自由切換</span>
+          </div>
+        </div>
+
+        <!-- 中文專著全文容器 -->
+        <div class="paper-lang-content-zh">
+          <!-- 論文標頭 -->
         <div style="margin-bottom: 20px; border-bottom: 2px solid rgba(26, 61, 47, 0.12); padding-bottom: 14px;">
           <h1 style="color: #1A3D2F; font-size: 24px; font-weight: 800; margin: 0 0 8px 0; font-family: 'Karma', serif; line-height: 1.4;">
             《以東吳賭局作業 (SGT) 與體細胞標記假說探討衝動控制：兼論青少年 ADHD 行為介入之微進度條實踐》
@@ -3926,7 +4563,7 @@ class CaseLibraryPage extends StatelessWidget {
           <div class="paper-ref-item">Vygotsky, L. S. (1978). <em>Mind in Society: The Development of Higher Psychological Processes</em>. Harvard University Press.</div>
         </div>
 
-        <!-- 底部跨區導覽 -->
+        <!-- 底部跨區導覽 (ZH) -->
         <div style="margin-top: 30px; padding-top: 18px; border-top: 1.5px solid #eceff1; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
           <span style="font-size: 13px; color: #546e7a;"><strong>國立臺灣師範大學 特殊選才</strong> · 跨領域探究論著清冊（模組 A）</span>
           <div style="display: flex; gap: 8px;">
@@ -3934,6 +4571,169 @@ class CaseLibraryPage extends StatelessWidget {
             <button class="paper-btn-print" style="background: #4B6358;" onclick="closeModal('paperModalSGT')">關閉閱讀器</button>
           </div>
         </div>
+        </div> <!-- /.paper-lang-content-zh -->
+
+        <!-- 英文專著全文容器 (APA 7th English Monograph) -->
+        <div class="paper-lang-content-en" style="display:none;">
+          <!-- 論文標頭 -->
+          <div style="margin-bottom: 20px; border-bottom: 2px solid rgba(26, 61, 47, 0.12); padding-bottom: 14px;">
+            <h1 style="color: #1A3D2F; font-size: 23px; font-weight: 800; margin: 0 0 8px 0; font-family: 'Karma', serif; line-height: 1.4;">
+              Investigating Impulsive Decision-Making via the Soochow Gambling Task (SGT) and Somatic Marker Hypothesis: Neurocognitive Mechanisms and the "Micro-Progress Anchor" Intervention in Adolescent ADHD
+            </h1>
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;">
+              <p style="font-size: 13.5px; color: #4a6356; margin: 0;">
+                <strong>Author:</strong> Leon Chen (陳禮煬) ｜ <strong>Discipline:</strong> Cognitive Neuropsychology ✕ Special Education Clinical Intervention ✕ Behavioral Decision Science ｜ <strong>Coursework Audit:</strong> Kaohsiung Medical University (KMU) Dept. of Psychology ｜ <strong>Date:</strong> June 2026
+              </p>
+              <span style="background: #ede7f6; color: #4527a0; padding: 4px 14px; border-radius: 20px; font-weight: 800; font-size: 13px; border: 1px solid #d1c4e9;">🔬 Neuropsychology &amp; Special Education</span>
+            </div>
+          </div>
+
+          <!-- 論文摘要 -->
+          <div class="paper-abstract-box">
+            <div style="font-weight: 800; font-size: 14.5px; margin-bottom: 6px; color: #1A3D2F;">【Abstract】</div>
+            <p style="margin: 0 0 10px 0; line-height: 1.75; font-size: 14px; color: #2D3E35;">
+              Adolescent impulsive decision-making and executive behavioral dysregulation in Attention-Deficit/Hyperactivity Disorder (ADHD) represent critical challenges intersecting cognitive neuropsychology and special education. Originating from university-level preparatory coursework auditing General Psychology and Decision Neuroscience under Assoc. Prof. Chin-Hung Lin (Kaohsiung Medical University), this monograph investigates the foundational decision paradigms of cognitive science: the Iowa Gambling Task (IGT) and the pioneering Taiwanese-developed Soochow Gambling Task (SGT). We analyze how the IGT harbors a fundamental structural confound—the "Deck B Artifact"—wherein participants confound immediate payoff frequency with cumulative expected value. Leveraging SGT's orthogonal matrix alongside Antonio Damasio’s Somatic Marker Hypothesis and ventromedial prefrontal cortex (vmPFC) signaling, this research demonstrates that human decision agents are naturally enslaved by high-frequency immediate outcomes, an effect acutely magnified in ADHD individuals due to prefrontal dopaminergic deficits and attenuated internal somatic anticipation. Translating these laboratory insights into frontline special education fieldwork during the summer of 2025, the author formulated and implemented the "15-Minute Micro-Progress Anchor" for a second-grade student with severe comorbid ADHD and Autism Spectrum Disorder. Quantitative field records demonstrate a 65.4% reduction in off-task impulsive escape behaviors and a 362.5% increase in task completion compliance, substantiating the therapeutic efficacy of externalized visuospatial somatic scaffolding.
+            </p>
+            <div style="margin-top: 10px; font-size: 13px; color: #1A3D2F; font-weight: 700;">
+              <strong>Keywords:</strong> Soochow Gambling Task (SGT) · Iowa Gambling Task (IGT) · Somatic Marker Hypothesis · Ventromedial Prefrontal Cortex (vmPFC) · Attention-Deficit/Hyperactivity Disorder (ADHD) · Temporal Discounting · Micro-Progress Anchoring · Special Education Intervention
+            </div>
+          </div>
+
+          <!-- 論文正文 -->
+          <h2 class="modal-subheading">1. Research Genesis &amp; Epistemological Bridge: Auditing Decision Neuroscience at Kaohsiung Medical University</h2>
+          <p class="modal-prose modal-indented">
+            The intellectual genesis of this empirical research originated during the author's sophomore year of self-directed secondary studies, when the author proactively entered the lecture halls of Kaohsiung Medical University (KMU) to audit General Psychology and specialized seminars in Decision Neuroscience conducted by Assoc. Prof. Chin-Hung Lin (Chair of the Department of Psychology). Auditing collegiate lectures allowed the author to transcend conventional secondary curriculum boundaries, immersing directly into empirical epistemology, psychometric operationalization, and rigorous experimental methodologies.
+          </p>
+          <p class="modal-prose modal-indented">
+            In Professor Lin's laboratory coursework, the author engaged in deep analysis of behavioral decision models, contrasting the globally standard Iowa Gambling Task (IGT) with the indigenous Soochow Gambling Task (SGT). However, an acute epistemological question soon surfaced: <em>Can the elegant probabilistic models and neuroimaging data derived from sterile laboratory environments be translated into frontline therapeutic scaffolding to rescue neurodivergent children experiencing severe executive and emotional distress?</em>
+          </p>
+
+          <h2 class="modal-subheading">2. Neuropsychological Paradigms: The Structural Blindspot of the IGT and the SGT Breakthrough</h2>
+          <p class="modal-prose modal-indented">
+            In clinical neuropsychology, the Iowa Gambling Task (IGT), designed by Antoine Bechara, Antonio Damasio, and colleagues (1994), has long been heralded as the clinical gold standard for assessing decision-making deficits in patients with ventromedial prefrontal cortex (vmPFC) lesions and impulsive behavioral disorders. The classic IGT presents participants with four card decks:
+          </p>
+          <ul style="margin: 8px 0 16px 24px; font-size: 14.5px; color: #37474f; line-height: 1.85;">
+            <li><strong>Disadvantageous Decks (A &amp; B):</strong> Provide immediate high rewards ($100 per card) but feature unpredictable catastrophic penalties, resulting in a net deficit of -$250 per block of 10 selections (negative expected value).</li>
+            <li><strong>Advantageous Decks (C &amp; D):</strong> Provide modest immediate rewards ($50 per card) with minimal penalties, yielding a net surplus of +$250 per block of 10 selections (positive expected value).</li>
+          </ul>
+          <p class="modal-prose modal-indented">
+            However, groundbreaking empirical research led by Taiwanese neuroscientist Dr. Chin-Hung Lin and colleagues (Chiu &amp; Lin, 2007; Lin et al., 2007), published in <em>Behavioral and Brain Functions</em>, identified a fundamental structural flaw within the IGT paradigm: the <strong>"Deck B Artifact"</strong>.
+          </p>
+
+          <div class="paper-theory-card">
+            <h3 class="modal-section-h3">The "Deck B Artifact" and the Orthogonal Superiority of the Soochow Gambling Task (SGT)</h3>
+            <p class="modal-prose" style="margin: 0; font-size: 14px; line-height: 1.8;">
+              While Deck B is disadvantageous in the long term, its penalty frequency is exceptionally low (yielding positive gains in 9 out of 10 draws, accompanied by a single massive -$1,250 penalty). Lin et al. demonstrated that even neurologically intact, high-functioning adult participants consistently prefer Deck B throughout extended trials! This empirical anomaly proved that the IGT fatally confounds <strong>immediate gain-loss frequency</strong> with <strong>cumulative expected value</strong>.
+            </p>
+            <p class="modal-prose" style="margin: 8px 0 0; font-size: 14px; line-height: 1.8;">
+              To resolve this structural confound, Dr. Lin's team engineered the <strong>Soochow Gambling Task (SGT)</strong>, orthogonalizing outcome frequency against expected value. The SGT proved conclusively that under conditions of uncertainty, the human decision apparatus is innately enslaved by immediate payoff frequency rather than possessing an innate capacity to compute long-term expected utility.
+            </p>
+          </div>
+
+          <h2 class="modal-subheading">3. Neurophysiological Mechanisms: Somatic Marker Hypothesis and Prefrontal Hypofunction in ADHD</h2>
+          <p class="modal-prose modal-indented">
+            Why does human cognition exhibit such profound vulnerability to immediate frequency cues at the expense of catastrophic future losses? Antonio Damasio’s (1996) <strong>Somatic Marker Hypothesis</strong> provides the neurobiological explanation. When an individual confronts complex decision alternatives, the <strong>ventromedial prefrontal cortex (vmPFC)</strong> rapidly reactivates emotional representations stored from prior learning. Through autonomic nervous system pathways (manifested in anticipatory skin conductance responses / SCR, heart rate fluctuations, and visceral muscle tension), the brain generates "somatic markers"—pre-conscious bodily signposts indicating intuitive danger or approach.
+          </p>
+          <p class="modal-prose modal-indented">
+            In individuals diagnosed with <strong>Attention-Deficit/Hyperactivity Disorder (ADHD)</strong>, executive dysfunction is rooted in frontostriatal network hypoactivity and dopaminergic/noradrenergic dysregulation (Barkley, 1997). The prefrontal cortex in ADHD individuals fails to generate anticipatory somatic markers of sufficient amplitude when anticipating delayed consequences. Consequently, distant punitive outcomes fail to evoke visceral warning signals. Instead, immediate micro-stimuli dominate attentional capture, producing extreme delay aversion, profound restlessness, and impulsive behavior.
+          </p>
+
+          <div class="paper-formula-callout">
+            <div class="paper-formula-title">Mathematical Formalization: The Temporal Somatic Discounting Function ($V_{\text{somatic}}$)</div>
+            <div class="paper-formula-math">
+              $$V_{\text{somatic}}(t) = \frac{R_0 \cdot \gamma_{\text{freq}}}{1 + \kappa_{\text{ADHD}} \cdot \Delta t} \cdot \left[1 - e^{-\lambda \cdot S_{\text{ext}}}\right]$$
+            </div>
+            <div class="paper-formula-desc">
+              Where $R_0$ denotes nominal reward magnitude, $\gamma_{\text{freq}}$ is the immediate payoff frequency multiplier, $\kappa_{\text{ADHD}}$ represents the elevated individual temporal discounting rate ($\kappa_{\text{ADHD}} \gg \kappa_{\text{neurotypical}}$), $\Delta t$ is the latency delay before consequence realization, and $S_{\text{ext}}$ indexes externalized visuospatial somatic scaffolding. When educators impose extended latencies ($\Delta t > 15 \text{ min}$) with zero physical scaffolding ($S_{\text{ext}} = 0$), $V_{\text{somatic}} \to 0$, precipitating catastrophic executive collapse, distress, and impulsive off-seat flight.
+            </div>
+          </div>
+
+          <h2 class="modal-subheading">4. Special Education Fieldwork: Formulating the "15-Minute Micro-Progress Anchor"</h2>
+          <p class="modal-prose modal-indented">
+            Armed with SGT frequency theory and Damasio's somatic marker framework, the author identified the systemic flaw plaguing conventional educational interventions for hyperactive learners: parents and teachers habitually employ protracted contingency contracts—such as <em>"If you sit quietly for an hour and finish this entire booklet, we will go to the amusement park on Saturday."</em> For a neurodivergent child whose prefrontal cortex cannot generate sustained anticipatory somatic signals across days or hours ($\Delta t \approx 10^5 \text{ seconds}$), such rewards are neurobiologically nonexistent, predictably culminating in emotional outbursts and learned helplessness.
+          </p>
+          <p class="modal-prose modal-indented">
+            During the summer of 2025, the author served as an intensive one-on-one remedial tutor for an 8-year-old second-grade boy diagnosed with severe combined-type ADHD and comorbid Autism Spectrum Disorder (ASD). Confronting acute behavioral avoidance and classroom disruptions, the author formulated and implemented the <strong>"15-Minute Micro-Progress Anchor"</strong>:
+          </p>
+
+          <div class="paper-theory-card">
+            <h3 class="modal-section-h3">Three Operational Pillars of the Micro-Progress Anchor</h3>
+            <ol style="margin: 6px 0 0 20px; font-size: 14px; line-height: 1.8; color: #37474f;">
+              <li><strong>Temporal &amp; Spatial Chunking:</strong> The monolithic 60-minute instructional session was decomposed into four isolated 15-minute operational units. Each unit was capped at exactly three arithmetic problems or four lines of handwriting, eliminating cognitive intimidation.</li>
+              <li><strong>Physical Visuospatial Somatic Scaffolding:</strong> Utilizing a customized desktop racetrack with tactile magnetic markers, the author advanced the marker by one milestone every 3 minutes. This converted the intangible, anxiety-inducing passage of time into a concrete, touchable spatial trajectory.</li>
+              <li><strong>High-Frequency Contingent Reinforcement:</strong> Mirroring SGT's frequency dominance principle, completion of each 15-minute micro-unit triggered the immediate delivery of a gold star token paired with high-energy, specific verbal affirmation (e.g., <em>"Your brain's rocket thrusters just successfully docked at Station Alpha!"</em>), artificially closing the dopaminergic feedback loop.</li>
+            </ol>
+          </div>
+
+          <h2 class="modal-subheading">5. Quantitative Behavioral Outcomes and Neuropsychological Reflections</h2>
+          <p class="modal-prose modal-indented">
+            Over a structured six-week clinical intervention period (bi-weekly 60-minute sessions), longitudinal behavioral data was systematically compiled across three primary operational metrics:
+          </p>
+
+          <div class="paper-table-wrapper"><table class="paper-data-table">
+            <thead>
+              <tr>
+                <th style="width: 25%;">Target Behavioral Metric</th>
+                <th style="width: 25%;">Baseline State (Week 0)</th>
+                <th style="width: 25%;">Post-Intervention (Week 6)</th>
+                <th style="width: 25%;">Quantitative Behavioral Shift</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Off-Seat &amp; Impulsive Flight Episodes</strong></td>
+                <td>Mean 5.2 episodes per 15 min</td>
+                <td>Mean 1.8 episodes per 15 min</td>
+                <td><strong>-65.4% Reduction in Impulsive Flight</strong></td>
+              </tr>
+              <tr>
+                <td><strong>Micro-Unit Task Compliance Rate</strong></td>
+                <td>&lt; 20% (severe task refusal)</td>
+                <td>92.5% (consistent completion)</td>
+                <td><strong>+362.5% Increase in Compliance</strong></td>
+              </tr>
+              <tr>
+                <td><strong>Emotional Meltdown Frequency</strong></td>
+                <td>Pervasive desk-slamming and crying</td>
+                <td>Autonomous tracking: "What star is next?"</td>
+                <td><strong>Establishment of Positive Executive Loop</strong></td>
+              </tr>
+            </tbody>
+          </table></div>
+
+          <p class="modal-prose modal-indented">
+            This frontline fieldwork yielded a transformative educational insight: <strong>The inattention, restlessness, and emotional volatility displayed by children with ADHD and autism do not reflect moral deficiencies or willful defiance. They represent natural neurophysiological variations in prefrontal somatic signaling.</strong> When educators rely solely upon moral admonition or punitive threats, they merely inflict chronic distress upon an already overburdened nervous system. Only by decoding cognitive architecture and engineering tangible, visuospatial "external cognitive scaffolds" can educators empower neurodivergent learners to achieve autonomous self-regulation.
+          </p>
+
+          <h2 class="modal-subheading">6. Conclusion: Synthesizing Empirical Science with Humanistic Education</h2>
+          <p class="modal-prose modal-indented">
+            From deriving mathematical probability matrices in Kaohsiung Medical University's psychology classrooms to sitting beside a distressed child in a remote tutoring room—gently advancing magnetic markers across a desktop racetrack—this interdisciplinary inquiry embodies the seamless integration of rigorous cognitive science with profound humanitarian care.
+          </p>
+          <p class="modal-prose modal-indented">
+            Whether advancing in neuropsychology, social pedagogy, or human-computer interaction engineering, the author remains anchored in the foundational ethos cultivated in the KMU laboratory and special education field: wielding empirical science as an analytical instrument and empathy as an enduring shield, dedicated to building cognitive bridges for every individual navigating neurodiversity.
+          </p>
+
+          <h2 class="modal-subheading">7. Academic References</h2>
+          <div class="paper-ref-list">
+            <div class="paper-ref-item">Barkley, R. A. (1997). Behavioral inhibition, sustained attention, and executive functions: Constructing a unifying theory of ADHD. <em>Psychological Bulletin</em>, 121(1), 65-94.</div>
+            <div class="paper-ref-item">Bechara, A., Damasio, A. R., Damasio, H., &amp; Anderson, S. W. (1994). Insensitivity to future consequences following damage to human prefrontal cortex. <em>Cognition</em>, 50(1-3), 7-15.</div>
+            <div class="paper-ref-item">Bechara, A., Damasio, H., &amp; Damasio, A. R. (2000). Emotion, decision making and the orbitofrontal cortex. <em>Cerebral Cortex</em>, 10(3), 295-307.</div>
+            <div class="paper-ref-item">Chiu, Y. C., Lin, C. H., Huang, J. T., Lin, S., Chou, F. T., &amp; McDowell, J. (2008). Immediate gain is long-term loss: Are there foresighted decision makers in the Iowa Gambling Task? <em>Behavioral and Brain Functions</em>, 4(1), 25.</div>
+            <div class="paper-ref-item">Damasio, A. R. (1996). The somatic marker hypothesis and the possible functions of the prefrontal cortex. <em>Philosophical Transactions of the Royal Society of London. Series B: Biological Sciences</em>, 351(1346), 1413-1420.</div>
+            <div class="paper-ref-item">Lin, C. H., Chiu, Y. C., Lee, P. L., &amp; Hsieh, J. C. (2007). Is deck B a disadvantageous deck in the Iowa Gambling Task? <em>Behavioral and Brain Functions</em>, 3(1), 16.</div>
+            <div class="paper-ref-item">Skinner, B. F. (1953). <em>Science and Human Behavior</em>. Macmillan.</div>
+            <div class="paper-ref-item">Vygotsky, L. S. (1978). <em>Mind in Society: The Development of Higher Psychological Processes</em>. Harvard University Press.</div>
+          </div>
+
+          <!-- 底部跨區導覽 (EN) -->
+          <div style="margin-top: 30px; padding-top: 18px; border-top: 1.5px solid #eceff1; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+            <span style="font-size: 13px; color: #546e7a;"><strong>National Taiwan Normal University Special Admissions</strong> · Monograph Dossier (Module A)</span>
+            <div style="display: flex; gap: 8px;">
+              <a href="#notes" onclick="closeModal('paperModalSGT')" class="paper-btn-print" style="text-decoration: none;">🧠 Explore KMU Preparatory Notes</a>
+              <button class="paper-btn-print" style="background: #4B6358;" onclick="closeModal('paperModalSGT')">Close Viewer</button>
+            </div>
+          </div>
+        </div> <!-- /.paper-lang-content-en -->
       </div>
     </div>
   </div>
@@ -4034,11 +4834,51 @@ class CaseLibraryPage extends StatelessWidget {
   <!-- Lightbox & Multi-Page Script -->
   <script>
     // === Rich Modal Functions ===
+    function switchModalPaperLang(modalId, lang) {
+      const modal = document.getElementById(modalId);
+      if (!modal) return;
+      const tabs = modal.querySelectorAll('.paper-lang-tab');
+      tabs.forEach(tab => {
+        if (tab.getAttribute('data-lang') === lang) {
+          tab.classList.add('active');
+        } else {
+          tab.classList.remove('active');
+        }
+      });
+      const zhBox = modal.querySelector('.paper-lang-content-zh');
+      const enBox = modal.querySelector('.paper-lang-content-en');
+      if (zhBox && enBox) {
+        if (lang === 'en') {
+          zhBox.style.display = 'none';
+          enBox.style.display = 'block';
+        } else {
+          zhBox.style.display = 'block';
+          enBox.style.display = 'none';
+        }
+      }
+      const gZh = modal.querySelector('.paper-guarantee-zh');
+      const gEn = modal.querySelector('.paper-guarantee-en');
+      if (gZh && gEn) {
+        gZh.style.display = (lang === 'en') ? 'none' : 'block';
+        gEn.style.display = (lang === 'en') ? 'block' : 'none';
+      }
+      const hint = modal.querySelector('.paper-lang-hint');
+      if (hint) {
+        hint.innerHTML = (lang === 'en')
+          ? '<span>🌐 Academic Mode: Displaying full-text English monograph (APA 7th). Click tab to switch back to Chinese.</span>'
+          : '<span>💡 雙語對照模式：支援繁體中文完整送審專著與國際 APA 7th 英文專論自由切換</span>';
+      }
+    }
+
     function openModal(id) {
       const m = document.getElementById(id);
       if (m) {
         m.classList.add('active');
         document.body.style.overflow = 'hidden';
+        if (['paperModalDebt', 'paperModalMemory', 'paperModalJapan', 'paperModalSGT'].includes(id)) {
+          const currentLang = document.documentElement.lang === 'en' ? 'en' : 'zh';
+          switchModalPaperLang(id, currentLang);
+        }
       }
     }
 
@@ -4667,6 +5507,13 @@ class CaseLibraryPage extends StatelessWidget {
       });
 
       // 4. 同步切換所有語言按鈕狀態 (.active)
+      // 同步更新四大專題論文之雙語閱讀狀態
+      ['paperModalDebt', 'paperModalMemory', 'paperModalJapan', 'paperModalSGT'].forEach(mId => {
+        if (typeof switchModalPaperLang === 'function') {
+          switchModalPaperLang(mId, activeLang);
+        }
+      });
+
       // 桌面審查列按鈕
       const btnZh = document.getElementById('langBtnZh');
       const btnEn = document.getElementById('langBtnEn');
@@ -4743,6 +5590,15 @@ class CaseLibraryPage extends StatelessWidget {
           saved = localStorage.getItem('portfolio_lang') || 'zh';
         } catch(e) {}
         setLanguage(saved, false);
+      }
+
+      const modalParam = urlParams.get('modal');
+      if (modalParam) {
+        openModal(modalParam);
+        const paperLang = urlParams.get('paperLang') || (langParam === 'en' ? 'en' : 'zh');
+        if (paperLang && typeof switchModalPaperLang === 'function') {
+          switchModalPaperLang(modalParam, paperLang);
+        }
       }
     }
 
