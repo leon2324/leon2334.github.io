@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Leon's Homeschooling Hub · 陳禮煬 學習歷程與特殊選才總入口</title>
+  <title id="docTitle">Leon's Homeschooling Hub · 陳禮煬 學習歷程與特殊選才總入口</title>
   
   <!-- 網頁專屬現代微縮向量 Favicon -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImJnR3JhZCIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMTAwJSI+CiAgICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiMwMTQ0NkUiIC8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzAwMUYzNSIgLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImdvbGRHcmFkIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI0ZGRDU0RiIgLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgICA8ZmlsdGVyIGlkPSJnbG93IiB4PSItMjAlIiB5PSItMjAlIiB3aWR0aD0iMTQwJSIgaGVpZ2h0PSIxNDAlIj4KICAgIDwvZmlsdGVyPgogIDwvZGVmcz4KICA8cmVjdCB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHJ4PSIxNiIgZmlsbD0idXJsKCNiZ0dyYWQpIiAvPgogIDxyZWN0IHg9IjEiIHk9IjEiIHdpZHRoPSI2MiIgaGVpZ2h0PSI2MiIgcng9IjE1IiBmaWxsPSJub25lIiBzdHJva2U9InJnYmEoMjU1LDI1NSwyNTUsMC4xOCkiIHN0cm9rZS13aWR0aD0iMSIgLz4KICA8cGF0aCBkPSJNMjIgMTcgVjQ1IEMyMiA0Ni4xIDIyLjkgNDcgMjQgNDcgSDQyIiBzdHJva2U9IiNGRkZGRkYiIHN0cm9rZS13aWR0aD0iNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBmaWxsPSJub25lIiBmaWx0ZXI9InVybCgjZ2xvdykiLz4KICA8cGF0aCBkPSJNNDQgMTQgTDQ2LjIgMjEuMiBMNTMgMjMuNSBMNDYuMiAyNS44IEw0NCAzMyBMNDEuOCAyNS44IEwzNSAyMy41IEw0MS44IDIxLjIgWiIgZmlsbD0idXJsKCNnb2xkR3JhZCkiIC8+CiAgPGNpcmNsZSBjeD0iNDQiIGN5PSIyMy41IiByPSIxLjUiIGZpbGw9IiNGRkZGRkYiIC8+Cjwvc3ZnPg==">
@@ -58,6 +58,8 @@
       align-items: center;
       justify-content: space-between;
       box-shadow: 0 4px 16px rgba(1, 68, 110, 0.05);
+      flex-wrap: wrap;
+      gap: 10px;
     }
     .portal-brand {
       font-family: 'Caveat', 'Dancing Script', cursive;
@@ -81,6 +83,8 @@
     .portal-nav-links {
       display: flex;
       gap: 10px;
+      align-items: center;
+      flex-wrap: wrap;
     }
     .portal-nav-pill {
       background: rgba(255, 255, 255, 0.85);
@@ -97,6 +101,38 @@
       background: #ffffff;
       transform: translateY(-1px);
       box-shadow: 0 3px 10px rgba(1, 68, 110, 0.12);
+    }
+
+    /* 頂部語言切換按鈕組 */
+    .portal-lang-switch {
+      display: inline-flex;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid rgba(1, 68, 110, 0.25);
+      border-radius: var(--radius-pill);
+      padding: 2px 4px;
+      gap: 2px;
+      box-shadow: 0 2px 8px rgba(1, 68, 110, 0.06);
+    }
+    .portal-lang-btn {
+      background: transparent;
+      border: none;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--navy-primary);
+      padding: 4px 10px;
+      border-radius: var(--radius-pill);
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-family: inherit;
+    }
+    .portal-lang-btn:hover {
+      background: rgba(1, 68, 110, 0.08);
+    }
+    .portal-lang-btn.active {
+      background: var(--navy-primary);
+      color: #ffffff;
+      box-shadow: 0 2px 6px rgba(1, 68, 110, 0.25);
     }
 
     /* 主容器 */
@@ -141,6 +177,7 @@
       display: flex;
       align-items: baseline;
       gap: 12px;
+      flex-wrap: wrap;
     }
     .hero-bio {
       font-size: 15px;
@@ -249,6 +286,7 @@
       align-items: center;
       gap: 8px;
       margin-bottom: 12px;
+      flex-wrap: wrap;
     }
     .tag-college-green {
       background: #1A3D2F;
@@ -377,6 +415,36 @@
       color: var(--navy-primary);
     }
 
+    /* 懸浮語言切換膠囊 (Floating Language Pill) */
+    .portal-floating-lang {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 999;
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1.5px solid rgba(1, 68, 110, 0.22);
+      box-shadow: 0 8px 24px rgba(1, 68, 110, 0.16);
+      border-radius: 50px;
+      padding: 9px 18px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      font-size: 13px;
+      font-weight: 800;
+      color: var(--navy-primary);
+      user-select: none;
+    }
+    .portal-floating-lang:hover {
+      transform: translateY(-3px) scale(1.03);
+      box-shadow: 0 12px 28px rgba(1, 68, 110, 0.25);
+      border-color: var(--navy-primary);
+      background: #ffffff;
+    }
+
     /* 響應式微調 */
     @media (max-width: 960px) {
       .portal-hero-bento {
@@ -386,6 +454,7 @@
       .hero-photo { margin: 0 auto; }
       .portal-badges-stack { margin: 0 auto; }
       .portal-cards-grid { grid-template-columns: 1fr; }
+      .portal-floating-lang { bottom: 16px; right: 16px; padding: 7px 14px; font-size: 12px; }
     }
   </style>
 </head>
@@ -395,12 +464,17 @@
   <header class="portal-nav">
     <a href="index.html" class="portal-brand">
       <span>Leon's Homeschooling Hub</span>
-      <span class="portal-nav-tag">2.0 入口大廳</span>
+      <span class="portal-nav-tag" id="portalBrandTag">2.0 入口大廳</span>
     </a>
     <div class="portal-nav-links">
-      <a href="college.html" class="portal-nav-pill" style="font-weight: 800; color: #1A3D2F; border-color: #1A3D2F; background: #e8f0ec;">🎓 大學特殊選才專頁</a>
-      <a href="college.html?lang=en" class="portal-nav-pill" style="font-weight: 700; color: #1e3a5f; border-color: rgba(30,58,95,0.3); background: #eff6ff;">🌐 English Version</a>
-      <a href="homeschool.html" class="portal-nav-pill">📜 五年自學備查庫 (173篇)</a>
+      <a href="college.html" class="portal-nav-pill" id="navLinkCollege" style="font-weight: 800; color: #1A3D2F; border-color: #1A3D2F; background: #e8f0ec;">🎓 大學特殊選才專頁</a>
+      <a href="homeschool.html" class="portal-nav-pill" id="navLinkHomeschool">📜 五年自學備查庫 (173篇)</a>
+      
+      <!-- 雙語切換按鈕 (Top Navbar Switcher) -->
+      <div class="portal-lang-switch">
+        <button type="button" class="portal-lang-btn active" id="portalLangZh" onclick="setLanguage('zh')">🇹🇼 中文</button>
+        <button type="button" class="portal-lang-btn" id="portalLangEn" onclick="setLanguage('en')">🌐 EN</button>
+      </div>
     </div>
   </header>
 
@@ -414,36 +488,36 @@
 
       <div class="hero-title-box">
         <h1>
-          <span>陳禮煬</span>
-          <span style="font-size: 20px; font-weight: 600; color: #546e7a;">Leon Chen</span>
+          <span id="heroNameZh">陳禮煬</span>
+          <span id="heroNameEn" style="font-size: 20px; font-weight: 600; color: #546e7a;">Leon Chen</span>
         </h1>
-        <p class="hero-bio">五年非學校型態自學 ｜ 認知心理學理論 ✕ 軟體工程實踐 ✕ 田野伴讀關懷</p>
+        <p class="hero-bio" id="heroBio">五年非學校型態自學 ｜ 認知心理學理論 ✕ 軟體工程實踐 ✕ 田野伴讀關懷</p>
 
         <!-- 高級極簡風格言銘牌 -->
         <div class="portal-motto">
           <div class="portal-quote-watermark">“</div>
-          <div class="portal-motto-quote">「心理學若不解決現實困境，便失去公共重量。」</div>
-          <div class="portal-motto-credit">— 陳禮煬 ｜ 將認知架構轉化為工程解方與田野陪伴的五年實踐哲學</div>
+          <div class="portal-motto-quote" id="heroMottoQuote">「心理學若不解決現實困境，便失去公共重量。」</div>
+          <div class="portal-motto-credit" id="heroMottoCredit">— 陳禮煬 ｜ 將認知架構轉化為工程解方與田野陪伴的五年實踐哲學</div>
         </div>
       </div>
 
       <!-- 右側 4 大指標群 -->
       <div class="portal-badges-stack">
         <div class="mini-badge-card">
-          <div class="mini-badge-val mini-badge-gold">4.0 <span style="font-size: 11px;">/4.0</span></div>
-          <div class="mini-badge-sub">自學全科 GPA 滿分</div>
+          <div class="mini-badge-val mini-badge-gold" id="miniBadgeVal1">4.0 <span style="font-size: 11px;">/4.0</span></div>
+          <div class="mini-badge-sub" id="miniBadgeSub1">自學全科 GPA 滿分</div>
         </div>
         <div class="mini-badge-card">
-          <div class="mini-badge-val">N1 <span style="font-size: 11px;">合格</span></div>
-          <div class="mini-badge-sub">JLPT 日檢最高級</div>
+          <div class="mini-badge-val" id="miniBadgeVal2">N1 <span style="font-size: 11px;">合格</span></div>
+          <div class="mini-badge-sub" id="miniBadgeSub2">JLPT 日檢最高級</div>
         </div>
         <div class="mini-badge-card">
-          <div class="mini-badge-val">795 <span style="font-size: 11px;">分</span></div>
-          <div class="mini-badge-sub">TOEIC 國際英語測驗</div>
+          <div class="mini-badge-val" id="miniBadgeVal3">795 <span style="font-size: 11px;">分</span></div>
+          <div class="mini-badge-sub" id="miniBadgeSub3">TOEIC 國際英語測驗</div>
         </div>
         <div class="mini-badge-card">
-          <div class="mini-badge-val mini-badge-gold">唯一 <span style="font-size: 11px;">提名</span></div>
-          <div class="mini-badge-sub">多倫多大學 Pearson 獎</div>
+          <div class="mini-badge-val mini-badge-gold" id="miniBadgeVal4">唯一 <span style="font-size: 11px;">提名</span></div>
+          <div class="mini-badge-sub" id="miniBadgeSub4">多倫多大學 Pearson 獎</div>
         </div>
       </div>
     </section>
@@ -454,44 +528,44 @@
       <!-- Card A: 大學特殊選才審查專區 -->
       <article class="gateway-bento-card">
         <div class="card-tag-row">
-          <span class="tag-college-green">🎓 2026 大學特殊選才</span>
-          <span style="font-size: 12px; font-weight: 700; color: #1A3D2F;">評審委員專用導覽</span>
+          <span class="tag-college-green" id="cardTagCollege">🎓 2026 大學特殊選才</span>
+          <span id="cardAudienceCollege" style="font-size: 12px; font-weight: 700; color: #1A3D2F;">評審委員專用導覽</span>
         </div>
-        <h2 class="gateway-title">大學特殊選才審查專區</h2>
-        <p class="gateway-desc">聚焦認知心理學理論、全端軟體工程與田野伴讀之跨領域深度整合成果</p>
+        <h2 class="gateway-title" id="gatewayTitleCollege">大學特殊選才審查專區</h2>
+        <p class="gateway-desc" id="gatewayDescCollege">聚焦認知心理學理論、全端軟體工程與田野伴讀之跨領域深度整合成果</p>
 
         <ul class="gateway-features-list">
           <li class="gateway-item">
             <span class="gateway-icon">📊</span>
-            <div>
+            <div id="gatewayItemCollege1">
               <strong>執行摘要與量化能力指標：</strong>
               高中自學四年全科 GPA 4.0 滿分評定、自學一年通過 JLPT N1、TOEIC 795，及多倫多大學 Pearson 獎學金高雄市唯一官方推薦公函。
             </div>
           </li>
           <li class="gateway-item">
             <span class="gateway-icon">🚀</span>
-            <div>
+            <div id="gatewayItemCollege2">
               <strong>雙旗艦專案深度專題：</strong>
               《緒言 Preamble》法律條文閱讀輔助 App（Flutter Clean Architecture / Bento Grid）✕ ADHD 過動兒童伴讀田野實踐（真實伴讀書桌照與現場實踐手記）。
             </div>
           </li>
           <li class="gateway-item">
             <span class="gateway-icon">📜</span>
-            <div>
+            <div id="gatewayItemCollege3">
               <strong>推薦函黃金三角：</strong>
               高醫大心理系主任林錦宏副教授（旁聽授課指導）、日語指導教師後藤榮美子老師（N1日語指導）、尚學文教吳清雲主任（三年教學第一線協作夥伴）具名推薦。
             </div>
           </li>
           <li class="gateway-item">
             <span class="gateway-icon">📚</span>
-            <div>
+            <div id="gatewayItemCollege4">
               <strong>高醫大兩年旁聽筆記大書架：</strong>
               2880px iPad 完整展開書架，涵蓋 SGT 愛荷華賭博任務、Baddeley 工作記憶模型、轉化症課堂實況等高精細度數位手繪手稿。
             </div>
           </li>
           <li class="gateway-item">
             <span class="gateway-icon">📝</span>
-            <div>
+            <div id="gatewayItemCollege5">
               <strong>四篇正式學術小論文與專題：</strong>
               涵蓋 Asch 從眾與自我效能、法律閱讀認知負荷 HCI 實驗、日本司法 IT 化改革、SGT 衝動決策神經機制。
             </div>
@@ -499,22 +573,21 @@
         </ul>
 
         <div style="margin-top: auto;">
-          <a href="college.html" class="btn-gateway-college">
-            <span>進入大學特殊選才審查專頁</span>
-            <span>➔</span>
+          <a href="college.html" class="btn-gateway-college" id="btnCollege">
+            <span id="btnCollegeText">進入大學特殊選才審查專頁 ➔</span>
           </a>
           <div class="gateway-sublinks">
-            <a href="college.html#summary" class="sublink-pill">能力儀表板</a>
-            <a href="college.html#flagships" class="sublink-pill">雙旗艦專案</a>
-            <a href="college.html#endorsements" class="sublink-pill">推薦函三角</a>
-            <a href="college.html#kmu-notes" class="sublink-pill">高醫大筆記</a>
-            <a href="college.html#papers" class="sublink-pill">學術論文</a>
+            <a href="college.html#summary" class="sublink-pill" id="sublinkSummary">能力儀表板</a>
+            <a href="college.html#flagships" class="sublink-pill" id="sublinkFlagships">雙旗艦專案</a>
+            <a href="college.html#endorsements" class="sublink-pill" id="sublinkEndorsements">推薦函三角</a>
+            <a href="college.html#kmu-notes" class="sublink-pill" id="sublinkNotes">高醫大筆記</a>
+            <a href="college.html#papers" class="sublink-pill" id="sublinkPapers">學術論文</a>
           </div>
 
-          <!-- 雙語獨立版本通道 (Bilingual Versions) -->
+          <!-- 雙語快捷通道 (Bilingual Channel) -->
           <div style="margin-top: 14px; padding-top: 12px; border-top: 1px dashed rgba(26,61,47,0.18); display: flex; gap: 8px; flex-wrap: wrap; align-items: center;">
-            <span style="font-size: 11.5px; font-weight: 700; color: #1A3D2F;">🌐 國際留學全英專區：</span>
-            <a href="college.html?lang=en" class="sublink-pill" style="background: #1e3a5f; color: #ffffff; border-color: #1e3a5f; font-weight: 700; padding: 4px 12px;">English Portfolio (Academic English / Pearson) ➔</a>
+            <span id="gatewayChannelLabel" style="font-size: 11.5px; font-weight: 700; color: #1A3D2F;">🌐 國際留學全英專區：</span>
+            <a href="college.html?lang=en" id="gatewayChannelBtn" class="sublink-pill" style="background: #1e3a5f; color: #ffffff; border-color: #1e3a5f; font-weight: 700; padding: 4px 12px;">English Portfolio (Academic English / Pearson) ➔</a>
           </div>
         </div>
       </article>
@@ -522,44 +595,44 @@
       <!-- Card B: 非學校型態實驗教育五年備查庫 -->
       <article class="gateway-bento-card">
         <div class="card-tag-row">
-          <span class="tag-homeschool-blue">📜 高雄市教育局官方備查</span>
-          <span style="font-size: 12px; font-weight: 700; color: var(--navy-primary);">100% 原始存檔</span>
+          <span class="tag-homeschool-blue" id="cardTagHomeschool">📜 高雄市教育局官方備查</span>
+          <span id="cardAudienceHomeschool" style="font-size: 12px; font-weight: 700; color: var(--navy-primary);">100% 原始存檔</span>
         </div>
-        <h2 class="gateway-title">五年自學歷程備查庫</h2>
-        <p class="gateway-desc">2021-2026 五年無中斷自主學習紀實：每週週記、評定表與原創備查系統</p>
+        <h2 class="gateway-title" id="gatewayTitleHomeschool">五年自學歷程備查庫</h2>
+        <p class="gateway-desc" id="gatewayDescHomeschool">2021-2026 五年無中斷自主學習紀實：每週週記、評定表與原創備查系統</p>
 
         <ul class="gateway-features-list">
           <li class="gateway-item">
             <span class="gateway-icon">✍️</span>
-            <div>
+            <div id="gatewayItemHomeschool1">
               <strong>189,055 字每週學習週記：</strong>
               第 1 週至第 173 週無間斷紀錄，原汁原味呈現五年來在各學科、自學探索與生活反思的真實手記。
             </div>
           </li>
           <li class="gateway-item">
             <span class="gateway-icon">💬</span>
-            <div>
+            <div id="gatewayItemHomeschool2">
               <strong>歷年審查委員 Greeting 致詞：</strong>
               完整收錄自學申請、期中訪視與年度審查委員對自主學習成果之肯定與期許。
             </div>
           </li>
           <li class="gateway-item">
             <span class="gateway-icon">📈</span>
-            <div>
+            <div id="gatewayItemHomeschool3">
               <strong>全科精熟 GPA 4.0 互動成績單：</strong>
               內建各學年自學成果評定表彈窗，完整展示國英數社自跨領域全科優異成績。
             </div>
           </li>
           <li class="gateway-item">
             <span class="gateway-icon">🗂️</span>
-            <div>
+            <div id="gatewayItemHomeschool4">
               <strong>官方申請計畫書與進程時間軸：</strong>
               完整保留提交高雄市政府教育局非學校型態實驗教育審議會之申請書原貌與進程。
             </div>
           </li>
           <li class="gateway-item">
             <span class="gateway-icon">🎨</span>
-            <div>
+            <div id="gatewayItemHomeschool5">
               <strong>原創設計系統完整保留：</strong>
               包含書寫手寫字體、成果微縮列、週記摺疊卡片、JLPT N1 / TOEIC 795 原始證件照片檢閱彈窗。
             </div>
@@ -567,15 +640,14 @@
         </ul>
 
         <div style="margin-top: auto;">
-          <a href="homeschool.html" class="btn-gateway-homeschool">
-            <span>進入五年完整自學備查庫 (173週)</span>
-            <span>➔</span>
+          <a href="homeschool.html" class="btn-gateway-homeschool" id="btnHomeschool">
+            <span id="btnHomeschoolText">進入五年完整自學備查庫 (173週) ➔</span>
           </a>
           <div class="gateway-sublinks">
-            <a href="homeschool.html#greeting" class="sublink-pill">審查委員致詞</a>
-            <a href="homeschool.html" class="sublink-pill">173篇週記總覽</a>
-            <a href="homeschool.html" class="sublink-pill">各學年成績評定</a>
-            <a href="homeschool.html" class="sublink-pill">申請計畫備查</a>
+            <a href="homeschool.html#greeting" class="sublink-pill" id="sublinkGreeting">審查委員致詞</a>
+            <a href="homeschool.html" class="sublink-pill" id="sublinkLogs">173篇週記總覽</a>
+            <a href="homeschool.html" class="sublink-pill" id="sublinkGrades">各學年成績評定</a>
+            <a href="homeschool.html" class="sublink-pill" id="sublinkProposals">申請計畫備查</a>
           </div>
         </div>
       </article>
@@ -584,9 +656,228 @@
 
   </main>
 
-  <footer style="text-align: center; padding: 30px 20px; font-size: 12.5px; color: #78909c;">
+  <footer style="text-align: center; padding: 30px 20px; font-size: 12.5px; color: #78909c;" id="portalFooterText">
     © 2021-2026 Leon Chen (陳禮煬). 依據高雄市教育局非學校型態自學五年計畫與大學送審資料整理. All Rights Reserved.
   </footer>
+
+  <!-- 右下角懸浮語言切換膠囊 (Floating Language Pill) -->
+  <div class="portal-floating-lang" id="portalFloatingLang" onclick="toggleLanguage()">
+    <span id="floatingLangText">🌐 Switch to English</span>
+  </div>
+
+  <script>
+    // === 雙語國際化字典 (i18n Dictionary) ===
+    const i18n = {
+      zh: {
+        docTitle: "Leon's Homeschooling Hub · 陳禮煬 學習歷程與特殊選才總入口",
+        portalBrandTag: "2.0 入口大廳",
+        navLinkCollege: "🎓 大學特殊選才專頁",
+        navLinkHomeschool: "📜 五年自學備查庫 (173篇)",
+        heroNameZh: "陳禮煬",
+        heroNameEn: "Leon Chen",
+        heroBio: "五年非學校型態自學 ｜ 認知心理學理論 ✕ 軟體工程實踐 ✕ 田野伴讀關懷",
+        heroMottoQuote: "「心理學若不解決現實困境，便失去公共重量。」",
+        heroMottoCredit: "— 陳禮煬 ｜ 將認知架構轉化為工程解方與田野陪伴的五年實踐哲學",
+        miniBadgeVal1: "4.0 <span style=\"font-size: 11px;\">/4.0</span>",
+        miniBadgeSub1: "自學全科 GPA 滿分",
+        miniBadgeVal2: "N1 <span style=\"font-size: 11px;\">合格</span>",
+        miniBadgeSub2: "JLPT 日檢最高級",
+        miniBadgeVal3: "795 <span style=\"font-size: 11px;\">分</span>",
+        miniBadgeSub3: "TOEIC 國際英語測驗",
+        miniBadgeVal4: "唯一 <span style=\"font-size: 11px;\">提名</span>",
+        miniBadgeSub4: "多倫多大學 Pearson 獎",
+        cardTagCollege: "🎓 2026 大學特殊選才",
+        cardAudienceCollege: "評審委員專用導覽",
+        gatewayTitleCollege: "大學特殊選才審查專區",
+        gatewayDescCollege: "聚焦認知心理學理論、全端軟體工程與田野伴讀之跨領域深度整合成果",
+        gatewayItemCollege1: "<strong>執行摘要與量化能力指標：</strong>高中自學四年全科 GPA 4.0 滿分評定、自學一年通過 JLPT N1、TOEIC 795，及多倫多大學 Pearson 獎學金高雄市唯一官方推薦公函。",
+        gatewayItemCollege2: "<strong>雙旗艦專案深度專題：</strong>《緒言 Preamble》法律條文閱讀輔助 App（Flutter Clean Architecture / Bento Grid）✕ ADHD 過動兒童伴讀田野實踐（真實伴讀書桌照與現場實踐手記）。",
+        gatewayItemCollege3: "<strong>推薦函黃金三角：</strong>高醫大心理系主任林錦宏副教授（旁聽授課指導）、日語指導教師後藤榮美子老師（N1日語指導）、尚學文教吳清雲主任（三年教學第一線協作夥伴）具名推薦。",
+        gatewayItemCollege4: "<strong>高醫大兩年旁聽筆記大書架：</strong>2880px iPad 完整展開書架，涵蓋 SGT 愛荷華賭博任務、Baddeley 工作記憶模型、轉化症課堂實況等高精細度數位手繪手稿。",
+        gatewayItemCollege5: "<strong>四篇正式學術小論文與專題：</strong>涵蓋 Asch 從眾與自我效能、法律閱讀認知負荷 HCI 實驗、日本司法 IT 化改革、SGT 衝動決策神經機制。",
+        btnCollegeText: "進入大學特殊選才審查專頁 ➔",
+        sublinkSummary: "能力儀表板",
+        sublinkFlagships: "雙旗艦專案",
+        sublinkEndorsements: "推薦函三角",
+        sublinkNotes: "高醫大筆記",
+        sublinkPapers: "學術論文",
+        gatewayChannelLabel: "🌐 國際留學全英專區：",
+        gatewayChannelBtn: "English Portfolio (Academic English / Pearson) ➔",
+        cardTagHomeschool: "📜 高雄市教育局官方備查",
+        cardAudienceHomeschool: "100% 原始存檔",
+        gatewayTitleHomeschool: "五年自學歷程備查庫",
+        gatewayDescHomeschool: "2021-2026 五年無中斷自主學習紀實：每週週記、評定表與原創備查系統",
+        gatewayItemHomeschool1: "<strong>189,055 字每週學習週記：</strong>第 1 週至第 173 週無間斷紀錄，原汁原味呈現五年來在各學科、自學探索與生活反思的真實手記。",
+        gatewayItemHomeschool2: "<strong>歷年審查委員 Greeting 致詞：</strong>完整收錄自學申請、期中訪視與年度審查委員對自主學習成果之肯定與期許。",
+        gatewayItemHomeschool3: "<strong>全科精熟 GPA 4.0 互動成績單：</strong>內建各學年自學成果評定表彈窗，完整展示國英數社自跨領域全科優異成績。",
+        gatewayItemHomeschool4: "<strong>官方申請計畫書與進程時間軸：</strong>完整保留提交高雄市政府教育局非學校型態實驗教育審議會之申請書原貌與進程。",
+        gatewayItemHomeschool5: "<strong>原創設計系統完整保留：</strong>包含書寫手寫字體、成果微縮列、週記摺疊卡片、JLPT N1 / TOEIC 795 原始證件照片檢閱彈窗。",
+        btnHomeschoolText: "進入五年完整自學備查庫 (173週) ➔",
+        sublinkGreeting: "審查委員致詞",
+        sublinkLogs: "173篇週記總覽",
+        sublinkGrades: "各學年成績評定",
+        sublinkProposals: "申請計畫備查",
+        portalFooterText: "© 2021-2026 Leon Chen (陳禮煬). 依據高雄市教育局非學校型態自學五年計畫與大學送審資料整理. All Rights Reserved.",
+        floatingLangText: "🌐 Switch to English"
+      },
+      en: {
+        docTitle: "Leon's Homeschooling Hub · Leon Chen Special Admissions & Homeschool Portal",
+        portalBrandTag: "2.0 Portal",
+        navLinkCollege: "🎓 Special Admissions Hub",
+        navLinkHomeschool: "📜 5-Year Homeschool Archive (173 Wks)",
+        heroNameZh: "Leon Chen",
+        heroNameEn: "Chen Li-Yang",
+        heroBio: "Five-Year Independent Homeschooler | Cognitive Psychology × Software Engineering × Field Mentorship",
+        heroMottoQuote: "“If psychology fails to address real-world suffering, it loses its public weight.”",
+        heroMottoCredit: "— Leon Chen | A 5-year praxis translating cognitive architecture into engineering solutions and field empathy",
+        miniBadgeVal1: "4.0 <span style=\"font-size: 11px;\">/4.0</span>",
+        miniBadgeSub1: "Cumulative GPA (Distinction)",
+        miniBadgeVal2: "JLPT N1 <span style=\"font-size: 11px;\">Pass</span>",
+        miniBadgeSub2: "Highest Japanese Mastery",
+        miniBadgeVal3: "795 <span style=\"font-size: 11px;\">pts</span>",
+        miniBadgeSub3: "TOEIC International English",
+        miniBadgeVal4: "Sole <span style=\"font-size: 11px;\">Nominee</span>",
+        miniBadgeSub4: "U of Toronto Pearson Award",
+        cardTagCollege: "🎓 2026 Special Admissions",
+        cardAudienceCollege: "Admissions Committee Tour",
+        gatewayTitleCollege: "Special Admissions & Research Portfolio",
+        gatewayDescCollege: "Interdisciplinary synthesis of cognitive psychology, full-stack software engineering, and frontline field mentorship",
+        gatewayItemCollege1: "<strong>Executive Summary & Quantitative Metrics:</strong> 4-year cumulative GPA 4.0, JLPT N1 within 1 yr of self-study, TOEIC 795, and U of Toronto Lester B. Pearson Scholarship Kaohsiung sole official nomination.",
+        gatewayItemCollege2: "<strong>Dual Flagship In-Depth Projects:</strong> Preamble App (Flutter Clean Architecture / Bento Grid) × ADHD Frontline Child Mentorship (authentic study desk photo & fieldwork reflections).",
+        gatewayItemCollege3: "<strong>Golden Triangle of Endorsements:</strong> KMU Dept. of Psychology Chair Prof. Chin-Hung Lin (Audit & Research Mentorship), Japanese Mentor Mieko Fujiwara (N1 Mastery), and Shangwen Education Director Ching-Yun Wu (3-Year Frontline Collaboration).",
+        gatewayItemCollege4: "<strong>2-Year KMU Course Audit Digital Notes Shelf:</strong> 2880px uncompressed iPad GoodNotes shelf, featuring SGT Iowa Gambling Task, Baddeley Working Memory Model, and Conversion Disorder clinical lecture notes.",
+        gatewayItemCollege5: "<strong>4 Academic Research Monographs:</strong> Asch Conformity & Self-Efficacy, Legal HCI Cognitive Load Experiment, Japanese Judicial Digitalization, and SGT Neural Decision Mechanisms.",
+        btnCollegeText: "Explore Special Admissions Portfolio ➔",
+        sublinkSummary: "Executive Summary",
+        sublinkFlagships: "Dual Flagships",
+        sublinkEndorsements: "Letters of Rec",
+        sublinkNotes: "KMU Notes",
+        sublinkPapers: "Research Papers",
+        gatewayChannelLabel: "🌐 Traditional Chinese Version:",
+        gatewayChannelBtn: "切換為繁體中文審查專頁 (Traditional Chinese) ➔",
+        cardTagHomeschool: "📜 Official Education Bureau Archive",
+        cardAudienceHomeschool: "100% Raw Records",
+        gatewayTitleHomeschool: "5-Year Homeschool Archive (173 Wks)",
+        gatewayDescHomeschool: "2021–2026 Uninterrupted Independent Learning Archive: Weekly reflections, grade reports, and original documentation",
+        gatewayItemHomeschool1: "<strong>189,055 Words of Weekly Learning Logs:</strong> 173 uninterrupted weekly logs, authentic documentation of subject exploration, intellectual curiosity, and self-reflection.",
+        gatewayItemHomeschool2: "<strong>Official Review Committee Greetings:</strong> Complete transcripts of preliminary, mid-term, and annual evaluations from official reviewers.",
+        gatewayItemHomeschool3: "<strong>Interactive Cumulative GPA 4.0 Transcript:</strong> Built-in yearly assessment modal showcasing cross-disciplinary mastery across humanities, sciences, and languages.",
+        gatewayItemHomeschool4: "<strong>Official Proposals & Milestones:</strong> Original formal application proposals and progression milestones submitted to the Kaohsiung Education Bureau.",
+        gatewayItemHomeschool5: "<strong>Authentic Design System Preserved:</strong> Custom cursive typography, achievement badge tickers, weekly log drawers, and official test credential previews.",
+        btnHomeschoolText: "Access 5-Year Homeschool Archive (173 Wks) ➔",
+        sublinkGreeting: "Greetings",
+        sublinkLogs: "173 Weekly Logs",
+        sublinkGrades: "Grade Reports",
+        sublinkProposals: "Proposals",
+        portalFooterText: "© 2021–2026 Leon Chen. Curated from official 5-year experimental homeschooling records and university admissions portfolios. All Rights Reserved.",
+        floatingLangText: "🇹🇼 切換為繁體中文"
+      }
+    };
+
+    let activeLang = 'zh';
+
+    function setLanguage(lang, updateUrl = true) {
+      activeLang = (lang === 'en') ? 'en' : 'zh';
+      const dict = i18n[activeLang];
+
+      // 更新 HTML lang 屬性
+      document.documentElement.lang = (activeLang === 'en') ? 'en' : 'zh-TW';
+
+      // 替換所有對應 ID 的元素內容
+      for (const [id, val] of Object.entries(dict)) {
+        const el = document.getElementById(id);
+        if (el) {
+          if (val.includes('<') && val.includes('>')) {
+            el.innerHTML = val;
+          } else {
+            el.textContent = val;
+          }
+        }
+      }
+
+      // 網頁標題
+      document.title = dict.docTitle;
+
+      // 按鈕連結與狀態更新
+      const btnCollege = document.getElementById('btnCollege');
+      const navLinkCollege = document.getElementById('navLinkCollege');
+      const gatewayChannelBtn = document.getElementById('gatewayChannelBtn');
+
+      if (activeLang === 'en') {
+        if (btnCollege) btnCollege.href = 'college.html?lang=en';
+        if (navLinkCollege) navLinkCollege.href = 'college.html?lang=en';
+        if (gatewayChannelBtn) {
+          gatewayChannelBtn.href = 'college.html?lang=zh';
+          gatewayChannelBtn.onclick = function(e) {
+            e.preventDefault();
+            setLanguage('zh');
+          };
+        }
+      } else {
+        if (btnCollege) btnCollege.href = 'college.html';
+        if (navLinkCollege) navLinkCollege.href = 'college.html';
+        if (gatewayChannelBtn) {
+          gatewayChannelBtn.href = 'college.html?lang=en';
+          gatewayChannelBtn.onclick = function(e) {
+            e.preventDefault();
+            setLanguage('en');
+          };
+        }
+      }
+
+      // 更新導覽列切換按鈕高亮
+      const btnZh = document.getElementById('portalLangZh');
+      const btnEn = document.getElementById('portalLangEn');
+      if (btnZh && btnEn) {
+        btnZh.classList.toggle('active', activeLang === 'zh');
+        btnEn.classList.toggle('active', activeLang === 'en');
+      }
+
+      // 儲存語言設定至 localStorage
+      try {
+        localStorage.setItem('portfolio_lang', activeLang);
+      } catch (e) {}
+
+      // 更新 URL 參數
+      if (updateUrl && window.history && window.history.pushState) {
+        const url = new URL(window.location.href);
+        url.searchParams.set('lang', activeLang);
+        window.history.pushState({ lang: activeLang }, '', url.toString());
+      }
+    }
+
+    function toggleLanguage() {
+      setLanguage(activeLang === 'zh' ? 'en' : 'zh');
+    }
+
+    function initLanguage() {
+      try {
+        const params = new URLSearchParams(window.location.search);
+        const urlLang = params.get('lang');
+        if (urlLang === 'en' || urlLang === 'zh') {
+          setLanguage(urlLang, false);
+          return;
+        }
+        const savedLang = localStorage.getItem('portfolio_lang');
+        if (savedLang === 'en' || savedLang === 'zh') {
+          setLanguage(savedLang, false);
+          return;
+        }
+      } catch (e) {}
+      setLanguage('zh', false);
+    }
+
+    window.addEventListener('popstate', function(event) {
+      if (event.state && event.state.lang) {
+        setLanguage(event.state.lang, false);
+      } else {
+        initLanguage();
+      }
+    });
+
+    document.addEventListener('DOMContentLoaded', initLanguage);
+    initLanguage();
+  </script>
 
 </body>
 </html>

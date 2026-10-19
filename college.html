@@ -2140,26 +2140,26 @@
     <div class="nav-achieve-bar">
       <div class="achieve-items">
         <button type="button" class="achieve-pill-btn" onclick="openModal('gradeModal')">
-          <span>🎓 GPA 4.0 全科滿分評定</span> <span class="pill-cam">📊</span>
+          <span id="tickerPillGpa">🎓 GPA 4.0 全科滿分評定</span> <span class="pill-cam">📊</span>
         </button>
         <span class="sep">•</span>
         <button type="button" class="achieve-pill-btn" onclick="openModal('pearsonModal')">
-          <span>🇨🇦 Pearson 獎學金高雄唯一提名</span> <span class="pill-cam">📜</span>
+          <span id="tickerPillPearson">🇨🇦 Pearson 獎學金高雄唯一提名</span> <span class="pill-cam">📜</span>
         </button>
         <span class="sep">•</span>
         <button type="button" class="achieve-pill-btn" onclick="openModal('n1CertModal')">
-          <span>🇯🇵 JLPT N1 合格</span> <span class="pill-cam">📷</span>
+          <span id="tickerPillJlpt">🇯🇵 JLPT N1 合格</span> <span class="pill-cam">📷</span>
         </button>
         <span class="sep">•</span>
         <button type="button" class="achieve-pill-btn" onclick="openModal('toeicCertModal')">
-          <span>🇺🇸 TOEIC 795</span> <span class="pill-cam">📷</span>
+          <span id="tickerPillToeic">🇺🇸 TOEIC 795</span> <span class="pill-cam">📷</span>
         </button>
         <span class="sep">•</span>
         <button type="button" class="achieve-pill-btn" onclick="openModal('preambleAppModal')">
-          <span>🏆 緒言 Preamble (MAIC)</span> <span class="pill-cam">📱</span>
+          <span id="tickerPillPreamble">🏆 緒言 Preamble (MAIC)</span> <span class="pill-cam">📱</span>
         </button>
       </div>
-      <span class="achieve-date">2026 特選送審</span>
+      <span class="achieve-date" id="tickerSubmissionDate">2026 特選送審</span>
     </div>
 
     <!-- 下層書寫體導覽列 (Leon's Admissions Hub ＋ 居中膠囊 ＋ 自學庫按鈕) -->
@@ -2259,22 +2259,22 @@
 
       <!-- 送審重要成果微徽章 -->
       <div class="drawer-section drawer-footer-section">
-        <div class="drawer-section-label">🎓 送審評定與榮譽</div>
+        <div class="drawer-section-label" id="drawerHonorLabel">🎓 送審評定與榮譽</div>
         <div class="drawer-pills-grid">
           <button type="button" class="drawer-pill-item" onclick="closeDrawer(); openModal('gradeModal');">
-            <span>🎓 GPA 4.0 全科滿分</span>
+            <span id="drawerPillGpa">🎓 GPA 4.0 全科滿分</span>
           </button>
           <button type="button" class="drawer-pill-item" onclick="closeDrawer(); openModal('n1CertModal');">
-            <span>🇯🇵 JLPT N1 合格</span>
+            <span id="drawerPillJlpt">🇯🇵 JLPT N1 合格</span>
           </button>
           <button type="button" class="drawer-pill-item" onclick="closeDrawer(); openModal('toeicCertModal');">
-            <span>🇺🇸 TOEIC 795</span>
+            <span id="drawerPillToeic">🇺🇸 TOEIC 795</span>
           </button>
           <button type="button" class="drawer-pill-item" onclick="closeDrawer(); openModal('pearsonModal');">
-            <span>🇨🇦 Pearson 獎學金提名</span>
+            <span id="drawerPillPearson">🇨🇦 Pearson 獎學金提名</span>
           </button>
           <button type="button" class="drawer-pill-item" onclick="closeDrawer(); openModal('preambleAppModal');">
-            <span>🏆 緒言 Preamble (MAIC)</span>
+            <span id="drawerPillPreamble">🏆 緒言 Preamble (MAIC)</span>
           </button>
         </div>
       </div>
@@ -2451,7 +2451,7 @@
           </p>
 
           <!-- 筆記自然比例圖片 (不裁切) -->
-          <div class="natural-media-card" onclick="openLightbox('images/kmu_notes_memory.png', '《緒言》App 介面設計理論基礎：Baddeley 工作記憶模型手繪手稿')">
+          <div class="natural-media-card" onclick="openLightbox('images/kmu_notes_memory.png', '《緒言》App 介面設計理論基礎：Baddeley 工作記憶模型手繪手稿', 'Preamble App UI Design Theoretical Foundation: Baddeley Working Memory Model Hand-Drawn Manuscript')">
             <img src="images/kmu_notes_memory.png" alt="工作記憶模型手稿">
             <div class="media-card-label" id="flagship1MediaLabel">
               <span>手繪手稿：Baddeley 工作記憶模型神經映射</span>
@@ -2477,7 +2477,7 @@
           </p>
 
           <!-- 伴讀現場真實照片 (自然比例垂直展示，完整無裁切) -->
-          <div class="natural-media-card" onclick="openLightbox('images/adhd_live_desk.jpg', '送審事證：伴讀現場書桌實況與一對一輔導現場')">
+          <div class="natural-media-card" onclick="openLightbox('images/adhd_live_desk.jpg', '送審事證：伴讀現場書桌真實實況與一對一輔導現場', 'Submission Evidence: ADHD Frontline Mentorship Study Desk & One-on-One Tutoring Environment')">
             <img src="images/adhd_live_desk.jpg" alt="伴讀現場真實書桌照片" style="max-height: 280px;">
             <div class="media-card-label" id="flagship2MediaLabel">
               <span>送審事證：伴讀現場書桌真實實況</span>
@@ -2517,7 +2517,7 @@
             由<strong>高雄市政府教育局</strong>官方正式遴選提名，陳禮煬同學以其在非學校型態自學期間傑出的學術探究熱忱、跨學科整合研究能力及深厚的社會關懷實踐，獲推舉為<strong>高雄市全體高中自學學生中唯一官方推薦代表</strong>。
           </p>
         </div>
-        <div class="nom-img-wrap" onclick="openLightbox('images/pearson_nomination.png', '多倫多大學 Lester B. Pearson 國際獎學金 高雄市教育局官方提名公函截圖')">
+        <div class="nom-img-wrap" onclick="openLightbox('images/pearson_nomination.png', '多倫多大學 Lester B. Pearson 國際獎學金 高雄市教育局官方提名公函截圖', 'U of Toronto Lester B. Pearson Scholarship: Official Nomination Letter from Kaohsiung Education Bureau')">
           <img src="images/pearson_nomination.png" alt="Pearson 獎學金官方提名公函">
           <span id="pearsonNomHint" style="font-size: 11px; font-weight: 700; color: var(--gold-bronze); margin-top: 4px; display: block;">📄 點擊檢視教育局官方公函 ➔</span>
         </div>
@@ -2552,7 +2552,7 @@
 
         <!-- 推薦人 2: 後藤 榮美子 老師 -->
         <div class="rec-bento-card">
-          <div class="rec-letter-sheet" onclick="openLightbox('images/rec_goto_signed.png', '日語指導教師 後藤榮美子老師 推薦函（親簽正本）')">
+          <div class="rec-letter-sheet" onclick="openLightbox('images/rec_goto_signed.png', '日語指導教師 後藤榮美子老師 推薦函（親簽正本）', 'Japanese Mentor Mieko Fujiwara Recommendation Letter (Signed Original)')">
             <img src="images/rec_goto_signed.png" alt="後藤榮美子老師推薦函全文">
             <div class="rec-sheet-hint" id="rec2Hint">🔍 點擊檢視親簽推薦函 (無裁切完整正本)</div>
           </div>
@@ -2572,7 +2572,7 @@
 
         <!-- 推薦人 3: 吳清雲 主任 (放回真實親簽推薦信！) -->
         <div class="rec-bento-card">
-          <div class="rec-letter-sheet" onclick="openLightbox('images/rec_wu_signed.png', '尚學文教 吳清雲主任 推薦函（親筆簽署正本）')">
+          <div class="rec-letter-sheet" onclick="openLightbox('images/rec_wu_signed.png', '尚學文教 吳清雲主任 推薦函（親筆簽署正本）', 'Shangwen Education Director Ching-Yun Wu Recommendation Letter (Signed Original)')">
             <img src="images/rec_wu_signed.png" alt="吳清雲主任推薦函全文">
             <div class="rec-sheet-hint" id="rec3Hint">🔍 點擊檢視親簽推薦函 (含親筆簽名原貌)</div>
           </div>
@@ -2605,7 +2605,7 @@
 
       <div class="shelf-bento-container">
         <!-- 完整比例 iPad 大書架橫幅 (2880x1800 完整自然展開，不裁切！) -->
-        <div class="ipad-shelf-panorama" onclick="openLightbox('images/kmu_ipad_notes_shelf.png', '高雄醫學大學兩年旁聽數位筆記 iPad 總書架（完整高解析度原圖）')">
+        <div class="ipad-shelf-panorama" onclick="openLightbox('images/kmu_ipad_notes_shelf.png', '高雄醫學大學兩年旁聽數位筆記 iPad 總書架（完整高解析度原圖）', 'Two-Year KMU Course Audit Digital Notes: Complete High-Resolution iPad Shelf')">
           <img src="images/kmu_ipad_notes_shelf.png" alt="高醫大 iPad 筆記大書架">
           <div class="ipad-shelf-overlay">
             <div>
@@ -2623,12 +2623,12 @@
         <!-- 3 大核心筆記展示 (完整紙張比例展示) -->
         <div class="notes-trio-grid">
           <!-- 筆記 1: SGT 愛荷華賭博任務 -->
-          <div class="note-trio-card" onclick="openLightbox('images/kmu_notes_sgt.png', '神經心理學實證手稿：愛荷華賭博任務 (Iowa Gambling Task) 與決策歷程筆記')">
+          <div class="note-trio-card" onclick="openLightbox('images/kmu_notes_sgt.png', '神經心理學實證手稿：愛荷華賭博任務 (Iowa Gambling Task) 與決策歷程筆記', 'Neuropsychology Empirical Manuscript: Iowa Gambling Task (SGT/IGT) & Decision-Making Dynamics')">
             <img src="images/kmu_notes_sgt.png" alt="SGT 賭博任務手稿">
             <div class="note-trio-info">
               <div class="note-trio-title">
                 <span id="note1Title">1. SGT 賭博任務與決策神經機制</span>
-                <span style="color: var(--green-accent); font-size: 11px;">🔍 點擊放大</span>
+                <span style="color: var(--green-accent); font-size: 11px;" id="noteZoom1">🔍 點擊放大</span>
               </div>
               <div class="note-trio-desc" id="note1Desc">
                 探討腹內側前額葉皮質 (vmPFC) 功能異常與體細胞標記假說 (Somatic Marker Hypothesis)，並連結衝動控制介入。
@@ -2637,12 +2637,12 @@
           </div>
 
           <!-- 筆記 2: 工作記憶模型 -->
-          <div class="note-trio-card" onclick="openLightbox('images/kmu_notes_memory.png', '認知心理學架構手稿：Baddeley 工作記憶模型 (Working Memory Model) 與認知負載分析')">
+          <div class="note-trio-card" onclick="openLightbox('images/kmu_notes_memory.png', '認知心理學架構手稿：Baddeley 工作記憶模型 (Working Memory Model) 與認知負載分析', 'Cognitive Psychology Architecture: Baddeley Working Memory Model & Cognitive Load Analysis')">
             <img src="images/kmu_notes_memory.png" alt="Baddeley 工作記憶手稿">
             <div class="note-trio-info">
               <div class="note-trio-title">
                 <span id="note2Title">2. Baddeley 工作記憶模型</span>
-                <span style="color: var(--green-accent); font-size: 11px;">🔍 點擊放大</span>
+                <span style="color: var(--green-accent); font-size: 11px;" id="noteZoom2">🔍 點擊放大</span>
               </div>
               <div class="note-trio-desc" id="note2Desc">
                 剖析語音迴路、視覺空間畫布與中央執行部，作為《緒言》App 雙重編碼排版與降低認知超載之介面藍圖。
@@ -2651,12 +2651,12 @@
           </div>
 
           <!-- 筆記 3: 臨床轉化症課堂實況 -->
-          <div class="note-trio-card" onclick="openLightbox('images/adhd_live_chart.png', '高醫大心理學課堂實況：人為障礙症（轉化症）與代理人孟喬森症候群病理剖析')">
+          <div class="note-trio-card" onclick="openLightbox('images/adhd_live_chart.png', '高醫大心理學課堂實況：人為障礙症（轉化症）與代理人孟喬森症候群病理剖析', 'KMU Clinical Psychology Lecture: Factitious Disorder (Conversion Disorder) & Munchausen by Proxy Pathology')">
             <img src="images/adhd_live_chart.png" alt="高醫大心理學課堂實況筆記">
             <div class="note-trio-info">
               <div class="note-trio-title">
                 <span id="note3Title">3. 轉化症與人為障礙症實況</span>
-                <span style="color: var(--green-accent); font-size: 11px;">🔍 點擊放大</span>
+                <span style="color: var(--green-accent); font-size: 11px;" id="noteZoom3">🔍 點擊放大</span>
               </div>
               <div class="note-trio-desc" id="note3Desc">
                 深入探討心因性生理表徵與次級增強機制，反思病症標籤背後隱含之內在焦慮與心理防衛機轉。
@@ -2946,7 +2946,7 @@
             <div class="cert-card-item" style="background: #F4F8F6; border: 1.5px solid #E2ECE6; border-radius: 16px; padding: 18px; box-shadow: 0 4px 12px rgba(0,0,0,0.03);">
               <h4 style="color: #1A3D2F; font-size: 17px; font-weight: 800; margin-bottom: 8px;">📜 【官方提名公函】高雄市政府教育局正式遴選公文</h4>
               <p style="font-size: 13px; color: #5B7268; margin-bottom: 12px;">提名機關：高雄市政府教育局 ｜ 推薦學生：陳禮煬 ｜ 申請年度：2026/2027 年度全球本科遴選</p>
-              <div style="text-align: center; background: white; padding: 12px; border-radius: 12px; border: 1px solid #D6E4DC; cursor: pointer;" onclick="openLightbox('images/pearson_nomination.png', '加拿大多倫多大學 Lester B. Pearson 獎學金 高雄市政府教育局官方提名公函')">
+              <div style="text-align: center; background: white; padding: 12px; border-radius: 12px; border: 1px solid #D6E4DC; cursor: pointer;" onclick="openLightbox('images/pearson_nomination.png', '加拿大多倫多大學 Lester B. Pearson 獎學金 高雄市政府教育局官方提名公函', 'U of Toronto Lester B. Pearson Scholarship: Kaohsiung Education Bureau Official Nomination')">
                 <img src="images/pearson_nomination.png" alt="Pearson 獎學金推薦提名函" style="max-width: 100%; max-height: 480px; object-fit: contain; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.08);">
                 <div style="margin-top: 8px; font-size: 12px; color: #5B7268; font-weight: 600;">🔍 點擊圖片可開啟全螢幕高解析度燈箱檢視</div>
               </div>
@@ -3234,8 +3234,8 @@ class CaseLibraryPage extends StatelessWidget {
         <span id="paperModalCodeTag1" style="font-size: 11px; font-weight: 700; color: #2e7d32; background: #e8f5e9; padding: 2px 8px; border-radius: 10px;">正式送審論文 · RESEARCH-01</span>
       </div>
       <div class="action-bar-actions">
-        <button class="paper-btn-print" onclick="window.print()">🖨️ 列印 / 另存論文 PDF</button>
-        <a href="homeschool.html" target="_blank" class="paper-cross-link">🏛️ 五年間自學成果庫 (173篇) ➔</a>
+        <button class="paper-btn-print" id="paperModalPrint1" onclick="window.print()">🖨️ 列印 / 另存論文 PDF</button>
+        <a href="homeschool.html" target="_blank" class="paper-cross-link" id="paperModalCrossLink1">🏛️ 五年間自學成果庫 (173篇) ➔</a>
       </div>
     </div>
 
@@ -3417,8 +3417,8 @@ class CaseLibraryPage extends StatelessWidget {
         <span id="paperModalCodeTag2" style="font-size: 11px; font-weight: 700; color: #4527a0; background: #ede7f6; padding: 2px 8px; border-radius: 10px;">2026 MAIC 大賽開發實作 · RESEARCH-02</span>
       </div>
       <div class="action-bar-actions">
-        <button class="paper-btn-print" onclick="window.print()">🖨️ 列印 / 另存論文 PDF</button>
-        <a href="#projects" onclick="closeModal('paperModalMemory')" class="paper-cross-link">⚖️ 檢視《緒言》旗艦專案 ➔</a>
+        <button class="paper-btn-print" id="paperModalPrint2" onclick="window.print()">🖨️ 列印 / 另存論文 PDF</button>
+        <a href="#projects" onclick="closeModal('paperModalMemory')" class="paper-cross-link" id="paperModalCrossLink2">⚖️ 檢視《緒言》旗艦專案 ➔</a>
       </div>
     </div>
 
@@ -3617,8 +3617,8 @@ class CaseLibraryPage extends StatelessWidget {
         <span id="paperModalCodeTag3" style="font-size: 11px; font-weight: 700; color: #0277bd; background: #e1f5fe; padding: 2px 8px; border-radius: 10px;">JLPT N1 一手研讀 · RESEARCH-03</span>
       </div>
       <div class="action-bar-actions">
-        <button class="paper-btn-print" onclick="window.print()">🖨️ 列印 / 另存論文 PDF</button>
-        <button class="paper-cross-link" onclick="closeModal('paperModalJapan'); openModal('n1CertModal');">🇯🇵 檢視 JLPT N1 證書 ➔</button>
+        <button class="paper-btn-print" id="paperModalPrint3" onclick="window.print()">🖨️ 列印 / 另存論文 PDF</button>
+        <button class="paper-cross-link" id="paperModalCrossLink3" onclick="closeModal('paperModalJapan'); openModal('n1CertModal');">🇯🇵 檢視 JLPT N1 證書 ➔</button>
       </div>
     </div>
 
@@ -3773,8 +3773,8 @@ class CaseLibraryPage extends StatelessWidget {
         <span id="paperModalCodeTag4" style="font-size: 11px; font-weight: 700; color: #4527a0; background: #ede7f6; padding: 2px 8px; border-radius: 10px;">高醫大先修 · RESEARCH-04</span>
       </div>
       <div class="action-bar-actions">
-        <button class="paper-btn-print" onclick="window.print()">🖨️ 列印 / 另存論文 PDF</button>
-        <a href="#notes" onclick="closeModal('paperModalSGT')" class="paper-cross-link">🧠 檢視高醫大筆記區塊 ➔</a>
+        <button class="paper-btn-print" id="paperModalPrint4" onclick="window.print()">🖨️ 列印 / 另存論文 PDF</button>
+        <a href="#notes" onclick="closeModal('paperModalSGT')" class="paper-cross-link" id="paperModalCrossLink4">🧠 檢視高醫大筆記區塊 ➔</a>
       </div>
     </div>
 
@@ -4062,50 +4062,72 @@ class CaseLibraryPage extends StatelessWidget {
 
     let currentLinPage = 1;
 
+    let currentLightboxSrc = '';
+    let currentLightboxTitleZh = '';
+    let currentLightboxTitleEn = '';
+
     function switchLinPage(pageNum, btn) {
       currentLinPage = pageNum;
       const img = document.getElementById('linLetterImg');
       const hint = document.getElementById('linSheetHint');
       document.querySelectorAll('.page-toggle-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      const isEn = document.documentElement.lang === 'en';
+      if (btn) btn.classList.add('active');
+      const isEn = (document.documentElement.lang === 'en');
       if (pageNum === 1) {
-        img.src = 'images/rec_lin_p1.png';
-        hint.textContent = isEn
-          ? '🔍 Click to view Page 1 (Academic Observations & Empirical Mindset)'
-          : '🔍 點擊檢視第 1 頁大圖 (學術觀察與實徵思維)';
+        if (img) img.src = 'images/rec_lin_p1.png';
+        if (hint) {
+          hint.textContent = isEn
+            ? '🔍 Click to view Page 1 (Academic Observations & Empirical Mindset)'
+            : '🔍 點擊檢視第 1 頁大圖 (學術觀察與實徵思維)';
+        }
       } else {
-        img.src = 'images/rec_lin_p2.png';
-        hint.textContent = isEn
-          ? '🔍 Click to view Page 2 (Self-Directed Drive & Official Signature)'
-          : '🔍 點擊檢視第 2 頁大圖 (自學驅力與親筆簽署)';
+        if (img) img.src = 'images/rec_lin_p2.png';
+        if (hint) {
+          hint.textContent = isEn
+            ? '🔍 Click to view Page 2 (Self-Directed Drive & Official Signature)'
+            : '🔍 點擊檢視第 2 頁大圖 (自學驅力與親筆簽署)';
+        }
       }
     }
 
     function openLinLightbox() {
-      const isEn = document.documentElement.lang === 'en';
       if (currentLinPage === 1) {
-        openLightbox('images/rec_lin_p1.png', isEn
-          ? 'KMU Dept Chair Dr. Chin-Hung Lin Recommendation Letter (Page 1: Academic Observations)'
-          : '高雄醫學大學心理學系主任 林錦宏副教授 推薦函（第 1 頁：學術觀察與實徵思維）');
+        openLightbox('images/rec_lin_p1.png',
+          '高雄醫學大學心理學系主任 林錦宏副教授 推薦函（第 1 頁：學術觀察與實徵思維）',
+          'KMU Dept Chair Dr. Chin-Hung Lin Recommendation Letter (Page 1: Academic Observations)');
       } else {
-        openLightbox('images/rec_lin_p2.png', isEn
-          ? 'KMU Dept Chair Dr. Chin-Hung Lin Recommendation Letter (Page 2: Self-Directed Drive & Signature)'
-          : '高雄醫學大學心理學系主任 林錦宏副教授 推薦函（第 2 頁：自學驅力與親筆簽署）');
+        openLightbox('images/rec_lin_p2.png',
+          '高雄醫學大學心理學系主任 林錦宏副教授 推薦函（第 2 頁：自學驅力與親筆簽署）',
+          'KMU Dept Chair Dr. Chin-Hung Lin Recommendation Letter (Page 2: Self-Directed Drive & Signature)');
       }
     }
 
-    function openLightbox(src, title) {
+    function openLightbox(src, titleZh, titleEn) {
       const modal = document.getElementById('lightboxModal');
       const img = document.getElementById('lightboxImg');
+      
+      currentLightboxSrc = src;
+      currentLightboxTitleZh = titleZh || '';
+      currentLightboxTitleEn = titleEn || titleZh || '';
+      
+      if (img) img.src = src;
+      updateLightboxText();
+      if (modal) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+    }
+
+    function updateLightboxText() {
+      const isEn = (document.documentElement.lang === 'en');
       const titleElem = document.getElementById('lightboxTitle');
       const footerElem = document.getElementById('lightboxFooter');
-      
-      img.src = src;
-      titleElem.textContent = title || '檢視佐證文件與照片';
-      footerElem.textContent = title ? title + ' (按 Esc 或點擊任一處關閉)' : '按 Esc 或點擊任一處關閉';
-      modal.classList.add('active');
-      document.body.style.overflow = 'hidden';
+      const title = isEn ? (currentLightboxTitleEn || currentLightboxTitleZh) : (currentLightboxTitleZh || currentLightboxTitleEn);
+      const closeHint = isEn ? '(Press Esc or click anywhere to close)' : '(按 Esc 或點擊任一處關閉)';
+      const defaultTitle = isEn ? 'Document & Verification Viewer' : '證件與手稿檢視';
+
+      if (titleElem) titleElem.textContent = title || defaultTitle;
+      if (footerElem) footerElem.textContent = title ? (title + " " + closeHint) : closeHint;
     }
 
     function closeLightbox(e) {
@@ -4195,6 +4217,41 @@ class CaseLibraryPage extends StatelessWidget {
     const i18n = {
       zh: {
         pageTitle: "陳禮煬 ｜ 大學特殊選才 ✕ 跨領域自主研究審查專區 (Leon Chen Portfolio)",
+        // Top Achievements Bar
+        tickerPillGpa: "🎓 GPA 4.0 全科滿分評定",
+        tickerPillPearson: "🇨🇦 Pearson 獎學金高雄唯一提名",
+        tickerPillJlpt: "🇯🇵 JLPT N1 合格",
+        tickerPillToeic: "🇺🇸 TOEIC 795",
+        tickerPillPreamble: "🏆 緒言 Preamble (MAIC)",
+        tickerSubmissionDate: "2026 特選送審",
+        // Mobile Drawer Honors
+        drawerHonorLabel: "🎓 送審評定與榮譽",
+        drawerPillGpa: "🎓 GPA 4.0 全科滿分",
+        drawerPillJlpt: "🇯🇵 JLPT N1 合格",
+        drawerPillToeic: "🇺🇸 TOEIC 795",
+        drawerPillPearson: "🇨🇦 Pearson 獎學金提名",
+        drawerPillPreamble: "🏆 緒言 Preamble (MAIC)",
+        // KMU Notes Cards
+        noteZoom1: "🔍 點擊放大",
+        noteZoom2: "🔍 點擊放大",
+        noteZoom3: "🔍 點擊放大",
+        // Paper Modals Action Bars
+        paperModalTopTag1: "跨領域自主探究 · 專題論著一",
+        paperModalCodeTag1: "正式送審論文 · RESEARCH-01",
+        paperModalPrint1: "🖨️ 列印 / 另存論文 PDF",
+        paperModalCrossLink1: "🏛️ 五年間自學成果庫 (173篇) ➔",
+        paperModalTopTag2: "跨領域自主探究 · 專題論著二",
+        paperModalCodeTag2: "2026 MAIC 大賽開發實作 · RESEARCH-02",
+        paperModalPrint2: "🖨️ 列印 / 另存論文 PDF",
+        paperModalCrossLink2: "⚖️ 檢視《緒言》旗艦專案 ➔",
+        paperModalTopTag3: "跨領域自主探究 · 國際文獻解碼",
+        paperModalCodeTag3: "JLPT N1 一手研讀 · RESEARCH-03",
+        paperModalPrint3: "🖨️ 列印 / 另存論文 PDF",
+        paperModalCrossLink3: "🇯🇵 檢視 JLPT N1 證書 ➔",
+        paperModalTopTag4: "跨領域自主探究 · 認知與行為實證",
+        paperModalCodeTag4: "高醫大先修 · RESEARCH-04",
+        paperModalPrint4: "🖨️ 列印 / 另存論文 PDF",
+        paperModalCrossLink4: "🧠 檢視高醫大筆記區塊 ➔",
         // 頂部導覽列
         navHomeschoolText: "📜 五年自學備查庫 (173篇)",
         navHomeLink: "🏠 大廳",
@@ -4366,6 +4423,41 @@ class CaseLibraryPage extends StatelessWidget {
 
       en: {
         pageTitle: "Leon Chen ｜ University Special Admissions & Research Portfolio",
+        // Top Achievements Bar
+        tickerPillGpa: "🎓 GPA 4.0 Maximum Distinction",
+        tickerPillPearson: "🇨🇦 Pearson Scholarship Sole Nominee (Kaohsiung)",
+        tickerPillJlpt: "🇯🇵 JLPT N1 Certified",
+        tickerPillToeic: "🇺🇸 TOEIC 795",
+        tickerPillPreamble: "🏆 Preamble (MAIC Finalist)",
+        tickerSubmissionDate: "2026 Admissions Submission",
+        // Mobile Drawer Honors
+        drawerHonorLabel: "🎓 Accreditations & Honors",
+        drawerPillGpa: "🎓 GPA 4.0 Distinction",
+        drawerPillJlpt: "🇯🇵 JLPT N1 Certified",
+        drawerPillToeic: "🇺🇸 TOEIC 795",
+        drawerPillPearson: "🇨🇦 Pearson Nominee",
+        drawerPillPreamble: "🏆 Preamble (MAIC)",
+        // KMU Notes Cards
+        noteZoom1: "🔍 Click to Enlarge",
+        noteZoom2: "🔍 Click to Enlarge",
+        noteZoom3: "🔍 Click to Enlarge",
+        // Paper Modals Action Bars
+        paperModalTopTag1: "Interdisciplinary Inquiry · Monograph 01",
+        paperModalCodeTag1: "Official Submission · RESEARCH-01",
+        paperModalPrint1: "🖨️ Print / Save Paper as PDF",
+        paperModalCrossLink1: "🏛️ 5-Year Homeschool Archive (173 Wks) ➔",
+        paperModalTopTag2: "Interdisciplinary Inquiry · Monograph 02",
+        paperModalCodeTag2: "2026 MAIC Competition Prototype · RESEARCH-02",
+        paperModalPrint2: "🖨️ Print / Save Paper as PDF",
+        paperModalCrossLink2: "⚖️ View Preamble Flagship Project ➔",
+        paperModalTopTag3: "Interdisciplinary Inquiry · Global Literature Analysis",
+        paperModalCodeTag3: "Primary Japanese Research · RESEARCH-03",
+        paperModalPrint3: "🖨️ Print / Save Paper as PDF",
+        paperModalCrossLink3: "🇯🇵 View JLPT N1 Certificate ➔",
+        paperModalTopTag4: "Interdisciplinary Inquiry · Cognitive & Behavioral Empirics",
+        paperModalCodeTag4: "KMU Advanced Coursework · RESEARCH-04",
+        paperModalPrint4: "🖨️ Print / Save Paper as PDF",
+        paperModalCrossLink4: "🧠 View KMU Notes Section ➔",
         // Top Navbar
         navHomeschoolText: "📜 5-Year Homeschool Archive (173 Wks)",
         navHomeLink: "🏠 Portal",
@@ -4543,6 +4635,17 @@ class CaseLibraryPage extends StatelessWidget {
 
       // 1. 更新 document.documentElement lang 屬性
       document.documentElement.lang = activeLang === 'en' ? 'en' : 'zh-TW';
+
+      // 更新全螢幕燈箱文字（若已開啟或後續開啟）
+      if (typeof updateLightboxText === 'function') updateLightboxText();
+
+      // 更新推薦信第 1/2 頁提示文字
+      const linHint = document.getElementById('linSheetHint');
+      if (linHint) {
+        linHint.textContent = (activeLang === 'en')
+          ? (currentLinPage === 1 ? '🔍 Click to view Page 1 (Academic Observations & Empirical Mindset)' : '🔍 Click to view Page 2 (Self-Directed Drive & Official Signature)')
+          : (currentLinPage === 1 ? '🔍 點擊檢視第 1 頁大圖 (學術觀察與實徵思維)' : '🔍 點擊檢視第 2 頁大圖 (自學驅力與親筆簽署)');
+      }
 
       // 2. 更新頁面 Title
       if (dict.pageTitle) {
