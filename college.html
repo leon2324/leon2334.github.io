@@ -41,6 +41,11 @@
       padding: 0;
     }
 
+    html, body {
+      max-width: 100%;
+      overflow-x: hidden;
+    }
+
     body {
       background-color: var(--bg-canvas);
       color: var(--text-main);
@@ -139,46 +144,51 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 10px 32px;
-      gap: 16px;
+      padding: 8px 18px;
+      gap: 12px;
+      box-sizing: border-box;
+      width: 100%;
     }
 
     .nav-brand-script {
       font-family: 'Caveat', 'Dancing Script', cursive;
-      font-size: 32px;
+      font-size: 25px;
       color: var(--green-primary);
       font-weight: 700;
       line-height: 1.1;
       letter-spacing: 0.5px;
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 6px;
       text-decoration: none;
+      flex-shrink: 0;
+      white-space: nowrap;
     }
 
     .brand-sparkle {
       color: var(--gold-bronze);
-      font-size: 18px;
+      font-size: 16px;
       display: inline-block;
       transform: translateY(-2px);
     }
 
     .nav-center-capsule {
       display: flex;
-      gap: 6px;
-      background: rgba(255, 255, 255, 0.65);
-      padding: 4px 8px;
+      gap: 4px;
+      background: rgba(255, 255, 255, 0.7);
+      padding: 3px 6px;
       border-radius: var(--radius-pill);
-      border: 1px solid rgba(255, 255, 255, 0.9);
+      border: 1px solid rgba(255, 255, 255, 0.95);
       box-shadow: 0 2px 8px rgba(26, 61, 47, 0.04);
+      flex-shrink: 1;
     }
 
     .nav-tab-btn {
       border: none;
       background: transparent;
-      padding: 6px 16px;
+      padding: 5px 11px;
       border-radius: var(--radius-pill);
-      font-size: 13.5px;
+      font-size: 12.5px;
       font-weight: 600;
       color: var(--text-muted);
       text-decoration: none;
@@ -188,7 +198,7 @@
     }
 
     .nav-tab-btn:hover {
-      background: rgba(255, 255, 255, 0.85);
+      background: rgba(255, 255, 255, 0.9);
       color: var(--green-primary);
     }
 
@@ -201,38 +211,39 @@
     .nav-switch-btns {
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 6px;
+      flex-shrink: 0;
     }
 
     .spotlight-trigger-btn {
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 6px;
       background: #ffffff;
       border: 1.5px solid rgba(255, 255, 255, 0.95);
-      padding: 7px 18px;
+      padding: 5px 12px;
       border-radius: var(--radius-pill);
       color: var(--green-primary);
-      font-size: 13.5px;
+      font-size: 12px;
       font-weight: 700;
       cursor: pointer;
-      box-shadow: 0 3px 12px rgba(26, 61, 47, 0.08);
-      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 2px 8px rgba(26, 61, 47, 0.06);
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
       white-space: nowrap;
       text-decoration: none;
     }
 
     .spotlight-trigger-btn:hover {
-      transform: translateY(-2px) scale(1.02);
-      box-shadow: 0 6px 20px rgba(26, 61, 47, 0.15);
+      transform: translateY(-1.5px);
+      box-shadow: 0 4px 14px rgba(26, 61, 47, 0.12);
       color: var(--green-dark);
     }
 
     .hotkey-badge {
       background: rgba(26, 61, 47, 0.08);
-      padding: 2px 7px;
-      border-radius: 5px;
-      font-size: 11px;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 10.5px;
       color: var(--green-accent);
       font-weight: 700;
     }
@@ -241,14 +252,15 @@
       background: rgba(255, 255, 255, 0.75);
       color: var(--text-muted);
       border: 1px solid rgba(26, 61, 47, 0.15);
-      font-size: 12.5px;
+      font-size: 12px;
       font-weight: 600;
-      padding: 7px 14px;
+      padding: 5px 11px;
       border-radius: var(--radius-pill);
       text-decoration: none;
       transition: all 0.2s ease;
       display: inline-flex;
       align-items: center;
+      white-space: nowrap;
     }
 
     .btn-portal-home:hover {
@@ -1540,38 +1552,6 @@
       font-weight: 600;
     }
 
-    @media print {
-      body * {
-        visibility: hidden !important;
-      }
-      .custom-modal-overlay.active,
-      .custom-modal-overlay.active * {
-        visibility: visible !important;
-      }
-      .custom-modal-overlay.active {
-        position: absolute !important;
-        left: 0 !important;
-        top: 0 !important;
-        width: 100% !important;
-        height: auto !important;
-        background: white !important;
-        padding: 0 !important;
-      }
-      .custom-modal-content {
-        max-width: 100% !important;
-        box-shadow: none !important;
-        border: none !important;
-        max-height: none !important;
-      }
-      .modal-close-btn, .paper-action-bar {
-        display: none !important;
-      }
-      .modal-body-scroll {
-        overflow: visible !important;
-        padding: 0 !important;
-      }
-    }
-
     /* === 彈出閱讀視窗 (Custom Modal) 規範 === */
     .custom-modal-overlay {
       position: fixed;
@@ -1692,20 +1672,23 @@
       position: fixed;
       top: 0;
       left: 0;
-      width: 100vw;
-      height: 100vh;
+      width: 100%;
+      height: 100%;
       background: rgba(15, 38, 28, 0.55);
       backdrop-filter: blur(8px);
       -webkit-backdrop-filter: blur(8px);
       z-index: 55000;
       opacity: 0;
+      visibility: hidden;
       pointer-events: none;
-      transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      overflow: hidden;
+      transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.3s;
       display: flex;
       justify-content: flex-end;
     }
     .mobile-drawer-overlay.active {
       opacity: 1;
+      visibility: visible;
       pointer-events: auto;
     }
     .mobile-drawer-panel {
@@ -1852,6 +1835,75 @@
       color: var(--green-dark);
       cursor: pointer;
       font-weight: 600;
+    }
+
+    /* 0.5 筆電與中小螢幕適配 (<= 1380px，如 MacBook Air 13"/15" 預設視窗) */
+    @media (max-width: 1380px) {
+      .nav-main-bar {
+        padding: 8px 14px;
+        gap: 8px;
+      }
+      .nav-brand-script {
+        font-size: 23px;
+      }
+      .nav-center-capsule {
+        gap: 3px;
+        padding: 2px 4px;
+      }
+      .nav-tab-btn {
+        padding: 5px 9px;
+        font-size: 11.5px;
+      }
+      .action-pill-btn {
+        padding: 4px 9px;
+        font-size: 11.5px;
+      }
+      .spotlight-trigger-btn {
+        padding: 4px 10px;
+        font-size: 11.5px;
+      }
+      .btn-portal-home {
+        padding: 4px 9px;
+        font-size: 11.5px;
+      }
+    }
+
+    /* 0.8 緊湊型筆電螢幕適配 (<= 1200px) */
+    @media (max-width: 1200px) {
+      /* 在 1200px 以下，中間膠囊導覽無縫收納進抽屜選單，開啟漢堡按鈕，徹底防止橫向外溢 */
+      .nav-center-capsule {
+        display: none !important;
+      }
+      .mobile-drawer-btn {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 36px !important;
+        height: 36px !important;
+        border-radius: 10px !important;
+        background: #ffffff !important;
+        border: 1.5px solid #D6E4DC !important;
+        color: var(--green-primary) !important;
+        font-size: 18px !important;
+        cursor: pointer !important;
+        box-shadow: 0 2px 8px rgba(26, 61, 47, 0.08) !important;
+        transition: all 0.2s ease !important;
+        flex-shrink: 0 !important;
+        margin-left: 4px !important;
+      }
+      .mobile-drawer-btn:active {
+        transform: scale(0.95) !important;
+        background: #EFF4F1 !important;
+      }
+    }
+
+    /* 0.9 平板橫向與小螢幕 (<= 992px) */
+    @media (max-width: 992px) {
+      .fast-track-btn,
+      .spotlight-trigger-btn,
+      .btn-portal-home {
+        display: none !important;
+      }
     }
 
     /* 1. 平板與小筆電 (<= 1024px) */
@@ -2356,10 +2408,10 @@
     .action-pill-btn {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
-      padding: 5px 13px;
+      gap: 5px;
+      padding: 5px 11px;
       border-radius: 999px;
-      font-size: 12.5px;
+      font-size: 12px;
       font-weight: 700;
       cursor: pointer;
       transition: all 0.2s ease;
@@ -2525,62 +2577,130 @@
       color: #ffd54f;
     }
 
-    /* === 列印優化 (A4 Official PDF Export) === */
+    /* === 列印優化 (A4 Official PDF Export & Paper Monograph Print) === */
     @media print {
       @page {
-        margin: 12mm 10mm;
+        margin: 10mm 10mm;
         size: A4 portrait;
       }
-      body {
+      *, *::before, *::after {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+      html, body {
         background: #ffffff !important;
         color: #111111 !important;
         font-size: 11pt !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        overflow: visible !important;
+        height: auto !important;
       }
-      .top-dual-navbar,
-      .mobile-drawer-overlay,
-      .mobile-drawer-btn,
-      #fastTrackController,
-      .lightbox-overlay,
-      .custom-modal-overlay,
-      .action-pill-btn,
-      .btn-switch-homeschool,
-      .btn-portal-home,
-      .nav-lang-switch,
-      .lang-switch-wrap,
-      .paper-modal-toggle,
-      .hotkey-badge {
+
+      /* === 情境 A：當開啟論文彈窗並點擊「列印論文」時，僅印該篇論文全文 === */
+      body.printing-modal * {
+        visibility: hidden !important;
+      }
+      body.printing-modal .custom-modal-overlay.active,
+      body.printing-modal .custom-modal-overlay.active * {
+        visibility: visible !important;
+      }
+      body.printing-modal .custom-modal-overlay.active {
+        position: absolute !important;
+        left: 0 !important;
+        top: 0 !important;
+        width: 100% !important;
+        height: auto !important;
+        background: #ffffff !important;
+        padding: 0 !important;
+      }
+      body.printing-modal .custom-modal-content {
+        max-width: 100% !important;
+        box-shadow: none !important;
+        border: none !important;
+        max-height: none !important;
+      }
+      body.printing-modal .modal-close-btn, 
+      body.printing-modal .paper-action-bar {
         display: none !important;
       }
-      main.college-main-container {
+      body.printing-modal .modal-body-scroll {
+        overflow: visible !important;
+        padding: 0 !important;
+      }
+
+      /* === 情境 B：完整全站備審資歷列印 (Dossier Portfolio Mode) === */
+      body:not(.printing-modal) .top-dual-navbar,
+      body:not(.printing-modal) .mobile-drawer-overlay,
+      body:not(.printing-modal) .mobile-drawer-btn,
+      body:not(.printing-modal) #fastTrackController,
+      body:not(.printing-modal) .lightbox-overlay,
+      body:not(.printing-modal) .custom-modal-overlay,
+      body:not(.printing-modal) .action-pill-btn,
+      body:not(.printing-modal) .btn-switch-homeschool,
+      body:not(.printing-modal) .btn-portal-home,
+      body:not(.printing-modal) .nav-lang-switch,
+      body:not(.printing-modal) .lang-switch-wrap,
+      body:not(.printing-modal) .floating-lang-pill,
+      body:not(.printing-modal) #floatingLangPill,
+      body:not(.printing-modal) .paper-modal-toggle,
+      body:not(.printing-modal) .hotkey-badge,
+      body:not(.printing-modal) .paper-btn-print {
+        display: none !important;
+      }
+
+      /* 主容器鋪滿 A4 頁面 */
+      body:not(.printing-modal) main.main-container,
+      body:not(.printing-modal) .main-container {
         max-width: 100% !important;
+        width: 100% !important;
         padding: 0 !important;
         margin: 0 !important;
+        overflow: visible !important;
       }
-      .bento-section,
-      .hero-banner-card,
-      .metrics-horizontal-grid,
-      .roadmap-card,
-      .vibe-bento-card {
+
+      /* 章節容器允許自然分頁跨頁，避免 Chrome 因過大容器而空白或截斷 */
+      body:not(.printing-modal) .bento-section {
+        break-inside: auto !important;
+        page-break-inside: auto !important;
+        margin-bottom: 24px !important;
+      }
+
+      /* 具體卡片保持整體完整，不被中間分頁切斷 */
+      body:not(.printing-modal) .hero-banner-card,
+      body:not(.printing-modal) .portfolio-header-bar,
+      body:not(.printing-modal) .metric-impact-card,
+      body:not(.printing-modal) .flagship-card,
+      body:not(.printing-modal) .endorsement-card,
+      body:not(.printing-modal) .paper-card,
+      body:not(.printing-modal) .kmu-note-card,
+      body:not(.printing-modal) .roadmap-card,
+      body:not(.printing-modal) .vibe-bento-card,
+      body:not(.printing-modal) .editorial-quote-plaque,
+      body:not(.printing-modal) .roadmap-phase-card,
+      body:not(.printing-modal) .nomination-banner-bento {
         break-inside: avoid !important;
         page-break-inside: avoid !important;
         box-shadow: none !important;
-        border: 1px solid #cccccc !important;
-        background: #ffffff !important;
-        color: #111111 !important;
+        border: 1px solid #d0d7de !important;
         margin-bottom: 16px !important;
       }
-      .editorial-quote-plaque {
-        background: #f5f5f5 !important;
+
+      body:not(.printing-modal) .editorial-quote-plaque {
+        background: #f8fafc !important;
         color: #111 !important;
-        border-left: 3px solid #666 !important;
+        border-left: 4px solid #1A3D2F !important;
       }
-      img {
+
+      body:not(.printing-modal) img {
         max-width: 100% !important;
+        break-inside: avoid !important;
         page-break-inside: avoid !important;
       }
-      a {
+
+      body:not(.printing-modal) a {
         text-decoration: none !important;
-        color: #111111 !important;
+        color: #1A3D2F !important;
       }
     }
 
@@ -2645,11 +2765,11 @@
         <button type="button" class="action-pill-btn fast-track-btn" id="headerFastTrackBtn" onclick="toggleFastTrackMode()">
           <span>⚡</span><span id="fastTrackBtnText">3分鐘速讀</span>
         </button>
-        <button type="button" class="action-pill-btn print-pdf-btn" id="headerPrintPdfBtn" onclick="window.print()">
+        <button type="button" class="action-pill-btn print-pdf-btn" id="headerPrintPdfBtn" onclick="printPortfolioDossier()">
           <span>📄</span><span id="printPdfBtnText">另存備審 PDF</span>
         </button>
         <a href="homeschool.html" class="spotlight-trigger-btn" id="navHomeschoolLink">
-          <span id="navHomeschoolText">📜 五年自學備查庫 (173篇)</span>
+          <span id="navHomeschoolText">📜 自學備查庫 (173篇)</span>
           <span class="hotkey-badge">➔</span>
         </a>
         <a href="index.html" class="btn-portal-home" id="navHomeLink">🏠 大廳</a>
@@ -2685,7 +2805,7 @@
           <span>⚡ <strong id="drawerFastTrackText">3分鐘高光審查模式</strong></span>
           <span class="drawer-arrow">➔</span>
         </button>
-        <button type="button" class="drawer-action-btn" onclick="closeDrawer(); window.print();" style="background: #ffffff; color: #1A3D2F; border: 1.5px solid rgba(26,61,47,0.25); margin-bottom: 10px; width: 100%; display: flex; align-items: center; justify-content: space-between; padding: 11px 16px; border-radius: 10px; font-size: 13.5px; font-weight: 700; cursor: pointer; font-family: inherit;">
+        <button type="button" class="drawer-action-btn" onclick="closeDrawer(); printPortfolioDossier();" style="background: #ffffff; color: #1A3D2F; border: 1.5px solid rgba(26,61,47,0.25); margin-bottom: 10px; width: 100%; display: flex; align-items: center; justify-content: space-between; padding: 11px 16px; border-radius: 10px; font-size: 13.5px; font-weight: 700; cursor: pointer; font-family: inherit;">
           <span>📄 <strong id="drawerPrintPdfText">另存備審 PDF (A4 規格)</strong></span>
           <span class="drawer-arrow">➔</span>
         </button>
@@ -5383,6 +5503,28 @@ class CaseLibraryPage extends StatelessWidget {
       }
     }
 
+    // 另存備審 PDF (專屬完整備審列印，關閉所有彈窗並移除 printing-modal)
+    function printPortfolioDossier() {
+      document.querySelectorAll('.custom-modal-overlay.active').forEach(m => m.classList.remove('active'));
+      document.body.classList.remove('printing-modal');
+      document.body.style.overflow = '';
+      window.print();
+    }
+
+    // 智慧辨識列印情境：論文彈窗內只印該論文，主畫面則印全站備審
+    window.addEventListener('beforeprint', function() {
+      const activePaperModal = document.querySelector('.custom-modal-overlay.active');
+      if (activePaperModal && activePaperModal.id && activePaperModal.id.startsWith('paperModal')) {
+        document.body.classList.add('printing-modal');
+      } else {
+        document.body.classList.remove('printing-modal');
+      }
+    });
+
+    window.addEventListener('afterprint', function() {
+      document.body.classList.remove('printing-modal');
+    });
+
     // 點擊空白處關閉 Modal
     document.querySelectorAll('.custom-modal-overlay').forEach(overlay => {
       overlay.addEventListener('click', function(e) {
@@ -5508,12 +5650,28 @@ class CaseLibraryPage extends StatelessWidget {
 
     document.addEventListener('keydown', function(e) {
       if (e.key === 'Escape') {
-        closeLightbox();
-        closeDrawer();
-        document.querySelectorAll('.custom-modal-overlay.active').forEach(m => {
-          m.classList.remove('active');
-          document.body.style.overflow = '';
-        });
+        const lb = document.getElementById('lightboxModal');
+        if (lb && lb.classList.contains('active')) {
+          closeLightbox();
+          return;
+        }
+        const activeModals = document.querySelectorAll('.custom-modal-overlay.active');
+        if (activeModals.length > 0) {
+          activeModals.forEach(m => {
+            m.classList.remove('active');
+            document.body.style.overflow = '';
+          });
+          return;
+        }
+        const drawer = document.getElementById('mobileDrawerOverlay');
+        if (drawer && drawer.classList.contains('active')) {
+          closeDrawer();
+          return;
+        }
+        if (typeof fastTrackActive !== 'undefined' && fastTrackActive) {
+          exitFastTrackMode();
+          return;
+        }
       }
     });
 
@@ -5586,7 +5744,7 @@ class CaseLibraryPage extends StatelessWidget {
         paperModalPrint4: "🖨️ 列印 / 另存論文 PDF",
         paperModalCrossLink4: "🧠 檢視高醫大筆記區塊 ➔",
         // 頂部導覽列
-        navHomeschoolText: "📜 五年自學備查庫 (173篇)",
+        navHomeschoolText: "📜 自學備查庫 (173篇)",
         navHomeLink: "🏠 大廳",
         navTabSummary: "★ 執行摘要",
         navTabFlagships: "雙旗艦專案",
@@ -5849,7 +6007,7 @@ class CaseLibraryPage extends StatelessWidget {
         paperModalPrint4: "🖨️ Print / Save Paper as PDF",
         paperModalCrossLink4: "🧠 View KMU Notes Section ➔",
         // Top Navbar
-        navHomeschoolText: "📜 5-Year Homeschool Archive (173 Wks)",
+        navHomeschoolText: "📜 Homeschool Archive (173)",
         navHomeLink: "🏠 Portal",
         navTabSummary: "★ Summary",
         navTabFlagships: "Flagships",
@@ -6274,12 +6432,10 @@ class CaseLibraryPage extends StatelessWidget {
       }
     }
 
-    // 鍵盤無障礙支援 (Esc 退出，方向鍵切換)
+    // 鍵盤無障礙支援 (方向鍵切換，Esc 統一由全域層級處理)
     window.addEventListener('keydown', function(e) {
       if (!fastTrackActive) return;
-      if (e.key === 'Escape') {
-        exitFastTrackMode();
-      } else if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+      if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
         nextFocusStep();
       } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
         prevFocusStep();
