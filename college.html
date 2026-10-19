@@ -257,6 +257,186 @@
       padding: 24px 20px 80px;
     }
 
+    /* === 審查視角智慧切換導航列 (Target Perspective Bar) === */
+    .target-perspective-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 14px;
+      background: linear-gradient(135deg, rgba(26, 61, 47, 0.05) 0%, rgba(194, 142, 58, 0.08) 100%);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1.5px solid rgba(26, 61, 47, 0.12);
+      border-radius: var(--radius-md);
+      padding: 12px 22px;
+      margin-bottom: 22px;
+      box-shadow: 0 3px 12px rgba(26, 61, 47, 0.03);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .perspective-badge-wrap {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .perspective-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: #1A3D2F;
+      color: #FBF4E8;
+      font-size: 13.5px;
+      font-weight: 800;
+      padding: 6px 16px;
+      border-radius: var(--radius-pill);
+      box-shadow: 0 2px 8px rgba(26, 61, 47, 0.18);
+      letter-spacing: 0.3px;
+    }
+    .perspective-target-hint {
+      font-size: 13px;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+    .perspective-selector-wrap {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .perspective-select-label {
+      font-size: 12.5px;
+      font-weight: 700;
+      color: var(--green-primary);
+      white-space: nowrap;
+    }
+    .perspective-select {
+      appearance: none;
+      -webkit-appearance: none;
+      background: #ffffff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%231A3D2F' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E") no-repeat right 12px center;
+      border: 1.5px solid rgba(26, 61, 47, 0.25);
+      border-radius: var(--radius-pill);
+      padding: 6px 36px 6px 14px;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--green-dark);
+      cursor: pointer;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+      transition: all 0.2s ease;
+      font-family: inherit;
+    }
+    .perspective-select:hover {
+      border-color: var(--green-primary);
+      box-shadow: 0 4px 12px rgba(26, 61, 47, 0.12);
+    }
+    .perspective-select:focus {
+      outline: none;
+      border-color: var(--gold-bronze);
+      box-shadow: 0 0 0 3px rgba(194, 142, 58, 0.2);
+    }
+
+    /* 專屬審查致詞卡 (Target Custom Note) */
+    .target-custom-note {
+      margin-top: 14px;
+      background: rgba(255, 255, 255, 0.92);
+      border-left: 4px solid var(--green-primary);
+      padding: 12px 18px;
+      border-radius: 4px var(--radius-sm) var(--radius-sm) 4px;
+      font-size: 13.5px;
+      line-height: 1.65;
+      color: #2D3E35;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+      border-top: 1px solid rgba(26, 61, 47, 0.08);
+      border-right: 1px solid rgba(26, 61, 47, 0.08);
+      border-bottom: 1px solid rgba(26, 61, 47, 0.08);
+      transition: all 0.3s ease;
+    }
+    .target-custom-note strong {
+      color: var(--green-primary);
+      font-weight: 800;
+    }
+
+    /* === 懸浮審查視角快捷選單 (Floating Perspective Switcher Pill) === */
+    .floating-perspective-pill {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 9990;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1.5px solid rgba(26, 61, 47, 0.2);
+      border-radius: var(--radius-pill);
+      padding: 6px 12px 6px 14px;
+      box-shadow: 0 6px 24px rgba(26, 61, 47, 0.16), 0 2px 6px rgba(0, 0, 0, 0.05);
+      transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .floating-perspective-pill:hover {
+      box-shadow: 0 8px 30px rgba(26, 61, 47, 0.24);
+      border-color: var(--green-primary);
+      transform: translateY(-2px);
+    }
+    .floating-perspective-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 12.5px;
+      font-weight: 800;
+      color: var(--green-primary);
+      white-space: nowrap;
+      cursor: pointer;
+    }
+    .floating-perspective-select {
+      appearance: none;
+      -webkit-appearance: none;
+      background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%231A3D2F' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E") no-repeat right 4px center;
+      border: none;
+      padding: 4px 22px 4px 6px;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--green-dark);
+      cursor: pointer;
+      font-family: inherit;
+      outline: none;
+      max-width: 220px;
+    }
+    @media (max-width: 768px) {
+      .floating-perspective-pill {
+        bottom: 16px;
+        right: 16px;
+        padding: 5px 10px 5px 12px;
+      }
+      .floating-perspective-select {
+        max-width: 170px;
+        font-size: 12px;
+      }
+      .floating-perspective-label span {
+        display: none;
+      }
+    }
+
+    /* 科系核心焦點高亮標籤 (Card Focus Tag) */
+    .card-focus-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      background: linear-gradient(135deg, #ffd54f 0%, #ffb300 100%);
+      color: #002b47;
+      font-size: 11px;
+      font-weight: 800;
+      padding: 2px 9px;
+      border-radius: 10px;
+      margin-left: 6px;
+      box-shadow: 0 2px 6px rgba(255, 179, 0, 0.35);
+      animation: focusPulse 2.5s infinite ease-in-out;
+    }
+    @keyframes focusPulse {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.03); opacity: 0.92; }
+    }
+
     /* === 成果看板 (Hero Banner Card) 磨砂白卡 === */
     .hero-banner-card {
       background: var(--card-bg);
@@ -2044,6 +2224,33 @@
         </div>
       </div>
 
+      <!-- 審查視角快速切換 (Mobile Drawer) -->
+      <div class="drawer-section">
+        <div class="drawer-section-label">🎯 審查科系專屬視角</div>
+        <select id="drawerPerspectiveSelect" class="perspective-select" style="width: 100%; box-sizing: border-box; padding: 8px 36px 8px 14px; font-size: 13.5px;" onchange="changeTargetPerspective(this.value)">
+          <option value="general">🌟 全領域綜合客觀視角 (跨領域通用)</option>
+          <optgroup label="─── 重點對焦審查校系 ───">
+            <option value="ntnu">🎓 國立臺灣師範大學 · 社會教育學系</option>
+            <option value="ntu">🏛️ 國立臺灣大學 · 社會學系 / 哲學系</option>
+            <option value="ccu">🧠 國立中正大學 · 心理／犯罪防治學系</option>
+            <option value="fju">🩺 輔仁大學 · 臨床心理學系</option>
+            <option value="toronto">🍁 University of Toronto · Pearson Portfolio</option>
+          </optgroup>
+          <optgroup label="─── 頂尖大學跨域學程 ───">
+            <option value="ncku">🔬 國立成功大學 · 全校不分系</option>
+            <option value="nccu">🌏 國立政治大學 · 創新國際學院 (ICI)</option>
+            <option value="nsysu">💡 國立中山大學 · 社會創新全校不分系</option>
+            <option value="ncu">🧬 國立中央大學 · 人文生醫與永續發展學系</option>
+            <option value="nthu">⚛️ 國立清華大學 · 清華學院學士班</option>
+            <option value="nycu">⚡ 國立陽明交通大學 · 百川學士學位學程</option>
+            <option value="ntust">🛠️ 國立臺灣科技大學 · 不分系</option>
+            <option value="ndhu">🌿 國立東華大學 · 縱谷跨域書院</option>
+            <option value="ncnu">📖 國立暨南國際大學 · 教育政策與行政學系</option>
+            <option value="ntua">🎨 國立臺灣藝術大學 · 視覺與設計跨域</option>
+          </optgroup>
+        </select>
+      </div>
+
       <!-- 送審重要成果微徽章 -->
       <div class="drawer-section drawer-footer-section">
         <div class="drawer-section-label">🎓 送審評定與榮譽</div>
@@ -2071,6 +2278,39 @@
   <!-- 主內容容器 -->
   <main class="main-container">
 
+    <!-- 審查視角智慧切換導航列 (Target Perspective Bar) -->
+    <div class="target-perspective-bar" id="targetPerspectiveBar">
+      <div class="perspective-badge-wrap">
+        <span class="perspective-badge" id="targetBadge">🎓 大學特殊選才 ✕ 跨領域自主研究審查專區</span>
+        <span class="perspective-target-hint" id="targetSubHint">全領域客觀送審清冊檢索</span>
+      </div>
+      <div class="perspective-selector-wrap">
+        <label for="perspectiveSelect" class="perspective-select-label">切換審查視角：</label>
+        <select id="perspectiveSelect" class="perspective-select" onchange="changeTargetPerspective(this.value)">
+          <option value="general">🌟 全領域綜合客觀視角 (跨領域通用)</option>
+          <optgroup label="─── 重點對焦審查校系 ───">
+            <option value="ntnu">🎓 國立臺灣師範大學 · 社會教育學系</option>
+            <option value="ntu">🏛️ 國立臺灣大學 · 社會學系 / 哲學系</option>
+            <option value="ccu">🧠 國立中正大學 · 心理／犯罪防治學系</option>
+            <option value="fju">🩺 輔仁大學 · 臨床心理學系</option>
+            <option value="toronto">🍁 University of Toronto · Pearson Portfolio</option>
+          </optgroup>
+          <optgroup label="─── 頂尖大學跨域學程 ───">
+            <option value="ncku">🔬 國立成功大學 · 全校不分系</option>
+            <option value="nccu">🌏 國立政治大學 · 創新國際學院 (ICI)</option>
+            <option value="nsysu">💡 國立中山大學 · 社會創新全校不分系</option>
+            <option value="ncu">🧬 國立中央大學 · 人文生醫與永續發展學系</option>
+            <option value="nthu">⚛️ 國立清華大學 · 清華學院學士班</option>
+            <option value="nycu">⚡ 國立陽明交通大學 · 百川學士學位學程</option>
+            <option value="ntust">🛠️ 國立臺灣科技大學 · 不分系</option>
+            <option value="ndhu">🌿 國立東華大學 · 縱谷跨域書院</option>
+            <option value="ncnu">📖 國立暨南國際大學 · 教育政策與行政學系</option>
+            <option value="ntua">🎨 國立臺灣藝術大學 · 視覺與設計跨域</option>
+          </optgroup>
+        </select>
+      </div>
+    </div>
+
     <!-- 成果英雄看板 (Hero Banner Card) 磨砂白卡 -->
     <section class="hero-banner-card">
       <div class="hero-avatar-wrap">
@@ -2083,14 +2323,17 @@
           <span>陳禮煬</span>
           <span style="font-size: 20px; font-weight: 600; color: var(--text-muted);">Leon Chen</span>
         </h1>
-        <p class="hero-subtag">認知心理學理論 ✕ 全端軟體工程 ✕ 田野教育伴讀實踐</p>
+        <p class="hero-subtag" id="heroSubtag">認知心理學理論 ✕ 全端軟體工程 ✕ 田野教育伴讀實踐</p>
 
         <!-- 高級極簡風格言銘牌 (Editorial Pull-Quote Plaque) -->
         <div class="editorial-quote-plaque">
           <span class="quote-watermark">“</span>
-          <div class="editorial-motto-text">「心理學若不解決現實困境，便失去公共重量。」</div>
-          <div class="editorial-motto-author">— 陳禮煬 ｜ 將認知架構轉化為工程解方與田野陪伴的五年實踐哲學</div>
+          <div class="editorial-motto-text" id="heroMottoText">「心理學若不解決現實困境，便失去公共重量。」</div>
+          <div class="editorial-motto-author" id="heroMottoAuthor">— 陳禮煬 ｜ 將認知架構轉化為工程解方與田野陪伴的五年實踐哲學</div>
         </div>
+
+        <!-- 專屬審查致詞卡 (動態微調) -->
+        <div class="target-custom-note" id="targetCustomNote" style="display: none;"></div>
       </div>
     </section>
 
@@ -2114,8 +2357,11 @@
         <div class="metric-card-title">TOEIC 多益國際英語測驗</div>
         <div class="metric-card-desc">高三自主突破，具備直接閱讀心理學與資訊科學 SSCI/SCI 原文文獻能力</div>
       </div>
-      <div class="metric-impact-card bronze-card">
-        <span class="metric-card-chip bronze-chip">GLOBAL RECOGNITION</span>
+      <div class="metric-impact-card bronze-card" id="metricCardPearson">
+        <div style="display: flex; justify-content: space-between; align-items: center; gap: 4px; flex-wrap: nowrap;">
+          <span class="metric-card-chip bronze-chip" style="flex-shrink: 0;">GLOBAL RECOGNITION</span>
+          <span id="metricPearsonFocusBadge" style="white-space: nowrap; flex-shrink: 0;"></span>
+        </div>
         <div class="metric-card-huge-val">唯一 <span style="font-size: 16px; color: var(--gold-bronze);">提名</span></div>
         <div class="metric-card-title">多倫多大學 Pearson 獎學金</div>
         <div class="metric-card-desc">獲高雄市政府教育局官方遴選為全市全體自學生唯一推薦代表</div>
@@ -2171,23 +2417,23 @@
         <!-- 3 大能力支柱 -->
         <div class="pillars-grid">
           <div class="pillar-box">
-            <div class="pillar-box-icon">🧠</div>
-            <div class="pillar-box-title">1. 認知心理學理論厚度</div>
-            <div class="pillar-box-desc">
+            <div class="pillar-box-icon" id="pillar1Icon">🧠</div>
+            <div class="pillar-box-title" id="pillar1Title">1. 認知心理學理論厚度</div>
+            <div class="pillar-box-desc" id="pillar1Desc">
               持續近一年旁聽高雄醫學大學心理學系「普通心理學」與「認知心理學」專業課程，探討 SGT 賭博任務、前額葉功能與決策偏誤。
             </div>
           </div>
           <div class="pillar-box">
-            <div class="pillar-box-icon">💻</div>
-            <div class="pillar-box-title">2. 全端軟體工程與 AI 架構</div>
-            <div class="pillar-box-desc">
+            <div class="pillar-box-icon" id="pillar2Icon">💻</div>
+            <div class="pillar-box-title" id="pillar2Title">2. 全端軟體工程與 AI 架構</div>
+            <div class="pillar-box-desc" id="pillar2Desc">
               精熟 Dart / Flutter 跨平台開發、Clean Architecture 分層解耦、Bento Grid 資訊視覺化與離線全文檢索技術。
             </div>
           </div>
           <div class="pillar-box">
-            <div class="pillar-box-icon">🤝</div>
-            <div class="pillar-box-title">3. 田野教育實踐與社會關懷</div>
-            <div class="pillar-box-desc">
+            <div class="pillar-box-icon" id="pillar3Icon">🤝</div>
+            <div class="pillar-box-title" id="pillar3Title">3. 田野教育實踐與社會關懷</div>
+            <div class="pillar-box-desc" id="pillar3Desc">
               三年時間在「尚學文教」第一線共同帶班、備課，面對特殊兒少耐心陪伴，並替機構主動開發出勤與行政工具。
             </div>
           </div>
@@ -2211,6 +2457,7 @@
             <span class="f-tag-main">FLAGSHIP 01 · 科技實踐</span>
             <span class="f-tag-sub">Flutter / Clean Architecture</span>
             <span class="f-tag-sub">Paivio 雙重編碼理論</span>
+            <span id="flagship1FocusBadge"></span>
           </div>
           <h3 class="flagship-name">《緒言 Preamble》法律條文閱讀輔助 App</h3>
           <p class="flagship-summary">
@@ -2237,6 +2484,7 @@
             <span class="f-tag-main" style="background: var(--green-accent);">FLAGSHIP 02 · 田野實踐</span>
             <span class="f-tag-sub">行為消退 (Extinction)</span>
             <span class="f-tag-sub">15分鐘微進度條注意力錨定</span>
+            <span id="flagship2FocusBadge"></span>
           </div>
           <h3 class="flagship-name">ADHD 過動兒童伴讀田野實踐 (Field Tutoring)</h3>
           <p class="flagship-summary">
@@ -2365,7 +2613,10 @@
         <h2 class="bento-section-title">
           <span>📚 高醫大兩年醫學與心理專業旁聽筆記大書架</span>
         </h2>
-        <span class="bento-section-badge">高解析度 iPad 數位手繪手稿庫</span>
+        <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+          <span class="bento-section-badge">高解析度 iPad 數位手繪手稿庫</span>
+          <span id="notesFocusBadge"></span>
+        </div>
       </div>
 
       <div class="shelf-bento-container">
@@ -2432,13 +2683,13 @@
       </div>
     </section>
 
-        <!-- 5. 跨領域探究論著與專題論文 Bento (國立臺灣師範大學 特殊選才送審 模組A) -->
+    <!-- 5. 跨領域探究論著與專題論文 Bento -->
     <section id="papers" class="bento-section">
       <div class="bento-section-header">
         <h2 class="bento-section-title">
           <span>🏛️ 四大核心學術論文矩陣 · 跨領域自主探究</span>
         </h2>
-        <span class="bento-section-badge">國立臺灣師範大學 特殊選才送審 模組 A 正式清冊</span>
+        <span class="bento-section-badge" id="papersSectionBadge">跨領域自主探究 · 正式學術研究論著清冊</span>
       </div>
       <p style="font-size: 14.5px; color: var(--text-subtle); margin-top: -12px; margin-bottom: 22px; line-height: 1.6;">
         整合社會結構批判、大腦認知工程、東亞比較法學與神經心理學 ｜ 具備完整學術格式（摘要、理論架構、實證推導、落地實踐與 APA 引用文獻）
@@ -2447,9 +2698,12 @@
       <div class="papers-bento-grid">
         <!-- Paper 1: 社會結構批判 -->
         <div class="paper-bento-box" onclick="openModal('paperModalDebt')">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
-            <span class="paper-field-tag">專題論著一 · 社會結構批判</span>
-            <span style="font-size: 11px; font-weight: 700; color: #2e7d32; background: #e8f5e9; padding: 2px 8px; border-radius: 10px;">送審編號：NTNU-MOD-A01</span>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; flex-wrap: wrap; gap: 4px;">
+            <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 4px;">
+              <span class="paper-field-tag">專題論著一 · 社會結構批判</span>
+              <span id="paperFocusBadge1"></span>
+            </div>
+            <span id="paperCardBadge1" style="font-size: 11px; font-weight: 700; color: #2e7d32; background: #e8f5e9; padding: 2px 8px; border-radius: 10px;">送審編號：RESEARCH-01</span>
           </div>
           <h4 class="paper-heading">《四貸同堂與狂熱背後的K型撕裂：當代青年資產通膨焦慮與階層複製之社會心理批判》</h4>
           <p class="paper-snippet">
@@ -2461,9 +2715,12 @@
 
         <!-- Paper 2: 大腦認知工程 -->
         <div class="paper-bento-box" onclick="openModal('paperModalMemory')">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
-            <span class="paper-field-tag">專題論著二 · 大腦認知工程</span>
-            <span style="font-size: 11px; font-weight: 700; color: #2e7d32; background: #e8f5e9; padding: 2px 8px; border-radius: 10px;">送審編號：NTNU-MOD-A02</span>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; flex-wrap: wrap; gap: 4px;">
+            <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 4px;">
+              <span class="paper-field-tag">專題論著二 · 大腦認知工程</span>
+              <span id="paperFocusBadge2"></span>
+            </div>
+            <span id="paperCardBadge2" style="font-size: 11px; font-weight: 700; color: #2e7d32; background: #e8f5e9; padding: 2px 8px; border-radius: 10px;">送審編號：RESEARCH-02</span>
           </div>
           <h4 class="paper-heading">《由 Atkinson-Shiffrin 多重儲存模型探討公共法律資訊之降載路徑：以《緒言》App 雙重編碼介面為實作範式》</h4>
           <p class="paper-snippet">
@@ -2475,9 +2732,12 @@
 
         <!-- Paper 3: 東亞比較法學 -->
         <div class="paper-bento-box" onclick="openModal('paperModalJapan')">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
-            <span class="paper-field-tag">國際文獻解碼 · 東亞比較法學</span>
-            <span style="font-size: 11px; font-weight: 700; color: #0277bd; background: #e1f5fe; padding: 2px 8px; border-radius: 10px;">送審編號：NTNU-MOD-A03</span>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; flex-wrap: wrap; gap: 4px;">
+            <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 4px;">
+              <span class="paper-field-tag">國際文獻解碼 · 東亞比較法學</span>
+              <span id="paperFocusBadge3"></span>
+            </div>
+            <span id="paperCardBadge3" style="font-size: 11px; font-weight: 700; color: #0277bd; background: #e1f5fe; padding: 2px 8px; border-radius: 10px;">送審編號：RESEARCH-03</span>
           </div>
           <h4 class="paper-heading">《日本2026年民事訴訟全盤IT化歷程對台灣司法近用權之啟示：東亞終身學習與高齡弱勢數位人權之比較法視角》</h4>
           <p class="paper-snippet">
@@ -2489,9 +2749,12 @@
 
         <!-- Paper 4: 神經心理與特教 -->
         <div class="paper-bento-box" onclick="openModal('paperModalSGT')">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
-            <span class="paper-field-tag">神經心理學 · 特殊教育臨床</span>
-            <span style="font-size: 11px; font-weight: 700; color: #4527a0; background: #ede7f6; padding: 2px 8px; border-radius: 10px;">送審編號：NTNU-MOD-A04</span>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; flex-wrap: wrap; gap: 4px;">
+            <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 4px;">
+              <span class="paper-field-tag">神經心理學 · 特殊教育臨床</span>
+              <span id="paperFocusBadge4"></span>
+            </div>
+            <span id="paperCardBadge4" style="font-size: 11px; font-weight: 700; color: #4527a0; background: #ede7f6; padding: 2px 8px; border-radius: 10px;">送審編號：RESEARCH-04</span>
           </div>
           <h4 class="paper-heading">《以東吳賭局作業 (SGT) 與體細胞標記假說探討衝動控制：兼論青少年 ADHD 行為介入之微進度條實踐》</h4>
           <p class="paper-snippet">
@@ -2987,8 +3250,8 @@ class CaseLibraryPage extends StatelessWidget {
     <!-- 頂部操作與導覽列 -->
     <div class="paper-action-bar">
       <div class="action-bar-tags">
-        <span style="font-size: 11px; font-weight: 800; background: #1A3D2F; color: #fff; padding: 3px 12px; border-radius: 20px;">國立臺灣師範大學 特殊選才 · 模組 A 專題論著一</span>
-        <span style="font-size: 11px; font-weight: 700; color: #2e7d32; background: #e8f5e9; padding: 2px 8px; border-radius: 10px;">正式送審論文 · NTNU-MOD-A01</span>
+        <span id="paperModalTopTag1" style="font-size: 11px; font-weight: 800; background: #1A3D2F; color: #fff; padding: 3px 12px; border-radius: 20px;">跨領域自主探究 · 專題論著一</span>
+        <span id="paperModalCodeTag1" style="font-size: 11px; font-weight: 700; color: #2e7d32; background: #e8f5e9; padding: 2px 8px; border-radius: 10px;">正式送審論文 · RESEARCH-01</span>
       </div>
       <div class="action-bar-actions">
         <button class="paper-btn-print" onclick="window.print()">🖨️ 列印 / 另存論文 PDF</button>
@@ -3170,8 +3433,8 @@ class CaseLibraryPage extends StatelessWidget {
     <!-- 頂部操作與導覽列 -->
     <div class="paper-action-bar">
       <div class="action-bar-tags">
-        <span style="font-size: 11px; font-weight: 800; background: #1A3D2F; color: #fff; padding: 3px 12px; border-radius: 20px;">國立臺灣師範大學 特殊選才 · 模組 A 專題論著二</span>
-        <span style="font-size: 11px; font-weight: 700; color: #4527a0; background: #ede7f6; padding: 2px 8px; border-radius: 10px;">2026 MAIC 大賽開發實作 · NTNU-MOD-A02</span>
+        <span id="paperModalTopTag2" style="font-size: 11px; font-weight: 800; background: #1A3D2F; color: #fff; padding: 3px 12px; border-radius: 20px;">跨領域自主探究 · 專題論著二</span>
+        <span id="paperModalCodeTag2" style="font-size: 11px; font-weight: 700; color: #4527a0; background: #ede7f6; padding: 2px 8px; border-radius: 10px;">2026 MAIC 大賽開發實作 · RESEARCH-02</span>
       </div>
       <div class="action-bar-actions">
         <button class="paper-btn-print" onclick="window.print()">🖨️ 列印 / 另存論文 PDF</button>
@@ -3370,8 +3633,8 @@ class CaseLibraryPage extends StatelessWidget {
     <!-- 頂部操作與導覽列 -->
     <div class="paper-action-bar">
       <div class="action-bar-tags">
-        <span style="font-size: 11px; font-weight: 800; background: #1A3D2F; color: #fff; padding: 3px 12px; border-radius: 20px;">國立臺灣師範大學 特殊選才 · 模組 A 國際文獻解碼</span>
-        <span style="font-size: 11px; font-weight: 700; color: #0277bd; background: #e1f5fe; padding: 2px 8px; border-radius: 10px;">JLPT N1 一手研讀 · NTNU-MOD-A03</span>
+        <span id="paperModalTopTag3" style="font-size: 11px; font-weight: 800; background: #1A3D2F; color: #fff; padding: 3px 12px; border-radius: 20px;">跨領域自主探究 · 國際文獻解碼</span>
+        <span id="paperModalCodeTag3" style="font-size: 11px; font-weight: 700; color: #0277bd; background: #e1f5fe; padding: 2px 8px; border-radius: 10px;">JLPT N1 一手研讀 · RESEARCH-03</span>
       </div>
       <div class="action-bar-actions">
         <button class="paper-btn-print" onclick="window.print()">🖨️ 列印 / 另存論文 PDF</button>
@@ -3526,8 +3789,8 @@ class CaseLibraryPage extends StatelessWidget {
     <!-- 頂部操作與導覽列 -->
     <div class="paper-action-bar">
       <div class="action-bar-tags">
-        <span style="font-size: 11px; font-weight: 800; background: #1A3D2F; color: #fff; padding: 3px 12px; border-radius: 20px;">國立臺灣師範大學 特殊選才 · 模組 A 專題論著四</span>
-        <span style="font-size: 11px; font-weight: 700; color: #4527a0; background: #ede7f6; padding: 2px 8px; border-radius: 10px;">高醫大心理學實驗室先修 · NTNU-MOD-A04</span>
+        <span id="paperModalTopTag4" style="font-size: 11px; font-weight: 800; background: #1A3D2F; color: #fff; padding: 3px 12px; border-radius: 20px;">跨領域自主探究 · 認知與行為實證</span>
+        <span id="paperModalCodeTag4" style="font-size: 11px; font-weight: 700; color: #4527a0; background: #ede7f6; padding: 2px 8px; border-radius: 10px;">高醫大先修 · RESEARCH-04</span>
       </div>
       <div class="action-bar-actions">
         <button class="paper-btn-print" onclick="window.print()">🖨️ 列印 / 另存論文 PDF</button>
@@ -3782,6 +4045,35 @@ class CaseLibraryPage extends StatelessWidget {
     © 2021-2026 Leon Chen (陳禮煬). 依據高雄市教育局非學校型態自學五年計畫與大學送審資料整理. All Rights Reserved.
   </footer>
 
+  <!-- 懸浮審查視角快捷選單 (Floating Perspective Switcher Pill) -->
+  <div class="floating-perspective-pill" id="floatingPerspectivePill">
+    <label for="floatingPerspectiveSelect" class="floating-perspective-label">
+      <span>🎯 審查視角</span>
+    </label>
+    <select id="floatingPerspectiveSelect" class="floating-perspective-select" onchange="changeTargetPerspective(this.value)">
+      <option value="general">🌟 全領域綜合客觀視角 (跨領域通用)</option>
+      <optgroup label="─── 重點對焦審查校系 ───">
+        <option value="ntnu">🎓 國立臺灣師範大學 · 社會教育學系</option>
+        <option value="ntu">🏛️ 國立臺灣大學 · 社會學系 / 哲學系</option>
+        <option value="ccu">🧠 國立中正大學 · 心理／犯罪防治學系</option>
+        <option value="fju">🩺 輔仁大學 · 臨床心理學系</option>
+        <option value="toronto">🍁 University of Toronto · Pearson Portfolio</option>
+      </optgroup>
+      <optgroup label="─── 頂尖大學跨域學程 ───">
+        <option value="ncku">🔬 國立成功大學 · 全校不分系</option>
+        <option value="nccu">🌏 國立政治大學 · 創新國際學院 (ICI)</option>
+        <option value="nsysu">💡 國立中山大學 · 社會創新全校不分系</option>
+        <option value="ncu">🧬 國立中央大學 · 人文生醫與永續發展學系</option>
+        <option value="nthu">⚛️ 國立清華大學 · 清華學院學士班</option>
+        <option value="nycu">⚡ 國立陽明交通大學 · 百川學士學位學程</option>
+        <option value="ntust">🛠️ 國立臺灣科技大學 · 不分系</option>
+        <option value="ndhu">🌿 國立東華大學 · 縱谷跨域書院</option>
+        <option value="ncnu">📖 國立暨南國際大學 · 教育政策與行政學系</option>
+        <option value="ntua">🎨 國立臺灣藝術大學 · 視覺與設計跨域</option>
+      </optgroup>
+    </select>
+  </div>
+
   <!-- Lightbox & Multi-Page Script -->
   <script>
     // === Rich Modal Functions ===
@@ -3922,6 +4214,1046 @@ class CaseLibraryPage extends StatelessWidget {
         }
       });
     });
+
+    // ==========================================
+    // 多校系審查專區智慧對焦引擎 (Multi-Target Perspective Engine)
+    // ==========================================
+    const targetProfiles = {
+      general: {
+        badge: '🎓 大學特殊選才 ✕ 跨領域自主研究審查專區',
+        subHint: '全領域客觀送審清冊檢索',
+        subtag: '認知心理學理論 ✕ 全端軟體工程 ✕ 田野教育伴讀實踐',
+        motto: '「心理學若不解決現實困境，便失去公共重量。」',
+        mottoAuthor: '— 陳禮煬 ｜ 將認知架構轉化為工程解方與田野陪伴的五年實踐哲學',
+        customNote: null,
+        pillars: [
+          {
+            icon: '🧠',
+            title: '1. 認知心理學理論厚度',
+            desc: '持續近一年旁聽高雄醫學大學心理學系「普通心理學」與「認知心理學」專業課程，探討 SGT 賭博任務、前額葉功能與決策偏誤。'
+          },
+          {
+            icon: '💻',
+            title: '2. 全端軟體工程與 AI 架構',
+            desc: '精熟 Dart / Flutter 跨平台開發、Clean Architecture 分層解耦、Bento Grid 資訊視覺化與離線全文檢索技術。'
+          },
+          {
+            icon: '🤝',
+            title: '3. 田野教育實踐與社會關懷',
+            desc: '三年時間在「尚學文教」第一線共同帶班、備課，面對特殊兒少耐心陪伴，並替機構主動開發出勤與行政工具。'
+          }
+        ],
+        flagship1Badge: '<span style="font-size: 11px; background: #e0f2fe; color: #0369a1; padding: 2px 8px; border-radius: 6px; font-weight: 700;">HCI 認知工程</span>',
+        flagship2Badge: '<span style="font-size: 11px; background: #dcfce7; color: #15803d; padding: 2px 8px; border-radius: 6px; font-weight: 700;">特教臨床陪伴</span>',
+        notesBadge: '<span style="font-size: 11px; background: #fef3c7; color: #b45309; padding: 2px 8px; border-radius: 6px; font-weight: 700;">高醫大心理常態先修</span>',
+        pearsonBadge: '<span style="font-size: 11px; background: #fef08a; color: #854d0e; padding: 2px 8px; border-radius: 6px; font-weight: 700;">全市唯一推薦</span>',
+        papersSectionBadge: '跨領域自主探究 · 正式學術研究論著清冊',
+        paperCardBadges: [
+          '送審編號：RESEARCH-01',
+          '送審編號：RESEARCH-02',
+          '送審編號：RESEARCH-03',
+          '送審編號：RESEARCH-04'
+        ],
+        paperFocusBadges: ['', '', '', ''],
+        paperModalTopTags: [
+          '跨領域自主探究 · 專題論著一',
+          '跨領域自主探究 · 專題論著二',
+          '跨領域自主探究 · 國際文獻解碼',
+          '跨領域自主探究 · 認知與行為實證'
+        ],
+        paperModalCodeTags: [
+          '正式送審論文 · RESEARCH-01',
+          '2026 MAIC 大賽開發實作 · RESEARCH-02',
+          'JLPT N1 一手研讀 · RESEARCH-03',
+          '高醫大先修 · RESEARCH-04'
+        ]
+      },
+
+      ntu: {
+        badge: '🏛️ 國立臺灣大學 · 社會學系 / 哲學系 送審專區',
+        subHint: '焦點對焦：社會結構批判、金融脆弱性、數位司法近用與階層複製',
+        subtag: '批判社會學 ✕ 政治經濟學田野 ✕ 認知哲學與資訊正義',
+        motto: '「理論若不叩問階層痛感與制度斷裂，便淪為空洞的抽象符號。」',
+        mottoAuthor: '— 陳禮煬 ｜ 以實徵田野與批判視角剖析當代青年焦慮之研究初衷',
+        customNote: '尊敬的<strong>臺大社會／哲學系審查委員</strong>您好：本專案彙整申請人自學五年之實徵探究，特別將焦點對焦於<strong>專題論文一《四貸同堂與K型撕裂》</strong>（結合 Beck 風險社會與 Minsky 金融脆弱性）以及<strong>論文三《比較法與弱勢數位人權》</strong>，展示具備批判社會學素養與公共哲學重量之獨立研究成果。',
+        pillars: [
+          {
+            icon: '🏛️',
+            title: '1. 結構批判與社會學反思',
+            desc: '深入研讀 Ulrich Beck 風險社會理論與 Minsky 金融脆弱性，批判體制將系統性風險轉嫁為個體焦慮的階層極化機制。'
+          },
+          {
+            icon: '⚖️',
+            title: '2. 弱勢近用與數位人權',
+            desc: '藉由 JLPT N1 解碼日本司法改革公報，批判民事訴訟 IT 化對東亞高齡弱勢「本人訴訟」之數位排斥，倡議資訊正義。'
+          },
+          {
+            icon: '🤝',
+            title: '3. 社會現場教育關懷實踐',
+            desc: '扎根第一線基層教學三年，深諳特殊兒少之邊緣困境，以耐心同理陪伴打破文化資本再製的無力感。'
+          }
+        ],
+        flagship1Badge: '<span style="font-size: 11px; background: #fee2e2; color: #991b1b; padding: 2px 8px; border-radius: 6px; font-weight: 700;">★ 司法正義與資訊平權</span>',
+        flagship2Badge: '<span style="font-size: 11px; background: #fee2e2; color: #991b1b; padding: 2px 8px; border-radius: 6px; font-weight: 700;">★ 教育階層化田野介入</span>',
+        notesBadge: '<span style="font-size: 11px; background: #fee2e2; color: #991b1b; padding: 2px 8px; border-radius: 6px; font-weight: 700;">社會心理與認知哲學</span>',
+        pearsonBadge: '<span style="font-size: 10.5px; background: #fee2e2; color: #991b1b; padding: 2px 7px; border-radius: 6px; font-weight: 700; white-space: nowrap;">公民社會領導</span>',
+        papersSectionBadge: '臺大社會／哲學系送審專用論文矩陣 · NTU-SOC',
+        paperCardBadges: [
+          '送審編號：NTU-SOC-01',
+          '送審編號：NTU-SOC-02',
+          '送審編號：NTU-SOC-03',
+          '送審編號：NTU-SOC-04'
+        ],
+        paperFocusBadges: [
+          '<span style="font-size: 10.5px; background: #fee2e2; color: #991b1b; padding: 2px 6px; border-radius: 6px; font-weight: 800;">★ 臺大社會核心送審</span>',
+          '',
+          '<span style="font-size: 10.5px; background: #fee2e2; color: #991b1b; padding: 2px 6px; border-radius: 6px; font-weight: 800;">★ 比較法與數位人權</span>',
+          ''
+        ],
+        paperModalTopTags: [
+          '臺大社會送審 · 專題論著一',
+          '臺大跨域探究 · 專題論著二',
+          '臺大社會送審 · 國際文獻解碼',
+          '臺大跨域探究 · 專題論著四'
+        ],
+        paperModalCodeTags: [
+          '臺大社會專用 · NTU-SOC-01',
+          '資訊哲學實作 · NTU-SOC-02',
+          '弱勢數位人權 · NTU-SOC-03',
+          '神經社會心理 · NTU-SOC-04'
+        ]
+      },
+
+      ntnu: {
+        badge: '🎓 國立臺灣師範大學 · 社會教育學系 送審專區',
+        subHint: '焦點對焦：終身學習體系、文部省社教振興、公民館弱勢數位中繼、特教陪伴',
+        subtag: '社會教育振興 ✕ 東亞終身學習政策 ✕ 特殊兒少田野陪伴',
+        motto: '「教育不在於灌滿一桶水，而在於點燃每個角落的火種。」',
+        mottoAuthor: '— 陳禮煬 ｜ 將社會教育視為終身公共實踐之自學心得',
+        customNote: '尊敬的<strong>師大社教系審查委員</strong>您好：本專案為<strong>師大社會教育學系</strong>客製對焦！特別聚焦於<strong>論文三《日本民訴IT化與終身學習》</strong>（以 JLPT N1 解讀日本文科省社教白皮書與公民館中繼站角色）及<strong>旗艦專案 B《ADHD 特教伴讀實踐》</strong>，彰顯對成人與高齡弱勢數位人權之終身學習實踐關懷。',
+        pillars: [
+          {
+            icon: '🎓',
+            title: '1. 社會教育與終身學習研究',
+            desc: '深入考察東亞與日本文部科學省「生涯學習」政策，探討高齡化社會中社教機構（公民館、社教中心）之數位近用賦能功能。'
+          },
+          {
+            icon: '🤝',
+            title: '2. 特殊教育伴讀與兒少關懷',
+            desc: '三年在「尚學文教」面對情緒與注意力困難學童，開創「15分鐘微進度條」建立自主學習鷹架，見證教育改變力量。'
+          },
+          {
+            icon: '💻',
+            title: '3. 社教行政工具研發與數位轉型',
+            desc: '善用科技專長主動替在地教育機構開發行政與排班工具，具備教育現場之組織協調與數位轉型實戰力。'
+          }
+        ],
+        flagship1Badge: '<span style="font-size: 11px; background: #ecfdf5; color: #065f46; padding: 2px 8px; border-radius: 6px; font-weight: 700;">數位社教近用載具</span>',
+        flagship2Badge: '<span style="font-size: 11px; background: #ecfdf5; color: #065f46; padding: 2px 8px; border-radius: 6px; font-weight: 700;">★ 師大社教焦點：第一線教育陪伴</span>',
+        notesBadge: '<span style="font-size: 11px; background: #ecfdf5; color: #065f46; padding: 2px 8px; border-radius: 6px; font-weight: 700;">教育心理與認知發展</span>',
+        pearsonBadge: '<span style="font-size: 10.5px; background: #ecfdf5; color: #065f46; padding: 2px 7px; border-radius: 6px; font-weight: 700; white-space: nowrap;">教育領導力</span>',
+        papersSectionBadge: '師大社教送審模組 A · 核心學術論文矩陣 · NTNU-MOD',
+        paperCardBadges: [
+          '送審模組：NTNU-MOD-A01',
+          '送審模組：NTNU-MOD-A02',
+          '送審模組：NTNU-MOD-A03',
+          '送審模組：NTNU-MOD-A04'
+        ],
+        paperFocusBadges: [
+          '',
+          '',
+          '<span style="font-size: 10.5px; background: #ecfdf5; color: #065f46; padding: 2px 6px; border-radius: 6px; font-weight: 800;">★ 師大社教核心推薦</span>',
+          '<span style="font-size: 10.5px; background: #ecfdf5; color: #065f46; padding: 2px 6px; border-radius: 6px; font-weight: 800;">★ 特教現場教育實踐</span>'
+        ],
+        paperModalTopTags: [
+          '師大社教送審模組 A · 論文一',
+          '師大社教送審模組 A · 論文二',
+          '師大社教核心送審 · 論文三',
+          '師大社教田野送審 · 論文四'
+        ],
+        paperModalCodeTags: [
+          '青年焦慮批判 · NTNU-MOD-A01',
+          '學習降載模型 · NTNU-MOD-A02',
+          '終身學習比較法 · NTNU-MOD-A03',
+          '特教行為介入 · NTNU-MOD-A04'
+        ]
+      },
+
+      ccu: {
+        badge: '🧠 國立中正大學 · 心理／犯罪防治學系 送審專區',
+        subHint: '焦點對焦：東吳賭局 SGT、衝動決策神經機制、工作記憶模型、法律科技犯罪預防',
+        subtag: '神經心理學實徵 ✕ 認知衝動控制 ✕ 法律科技與司法近用',
+        motto: '「唯有穿透大腦決策神經基質，方能重塑行為矯正與社會防衛的科學底座。」',
+        mottoAuthor: '— 陳禮煬 ｜ 立足高醫大常態旁聽與認知科學實驗之探究手記',
+        customNote: '尊敬的<strong>中正心理／犯罪防治學系審查委員</strong>您好：本專案聚焦於神經心理與實徵決策研究，特別對焦<strong>論文四《東吳賭局作業 (SGT) 與衝動控制》</strong>（剖析 vmPFC 腹內側前額葉功能與 Damasio 體細胞標記假說）與<strong>論文二《大腦記憶模型與法律降載》</strong>，展現在實驗心理學與司法防制科技的深厚扎根。',
+        pillars: [
+          {
+            icon: '🧠',
+            title: '1. 神經心理學與決策歷程實徵',
+            desc: '常態先修高醫大心理系課程近兩年，精熟 SGT 東吳賭局作業、IGT 愛荷華賭局、vmPFC 損傷與體細胞標記神經迴路。'
+          },
+          {
+            icon: '⚖️',
+            title: '2. 法律認知與司法科技防衛',
+            desc: '結合 Baddeley 工作記憶與 Sweller 認知負荷理論，研發《緒言》App 降低法律資訊超載，探討司法透明度與社會防制。'
+          },
+          {
+            icon: '🤝',
+            title: '3. 偏差衝動預防與行為矯正介入',
+            desc: '在伴讀田野中以「行為消退」與「微進度條」有效抑制特殊兒少之突發性衝動破壞行為，具備臨床與犯防實務直覺。'
+          }
+        ],
+        flagship1Badge: '<span style="font-size: 11px; background: #fdf2f8; color: #9d174d; padding: 2px 8px; border-radius: 6px; font-weight: 700;">認知超載防制工具</span>',
+        flagship2Badge: '<span style="font-size: 11px; background: #fdf2f8; color: #9d174d; padding: 2px 8px; border-radius: 6px; font-weight: 700;">★ 衝動控制臨床介入</span>',
+        notesBadge: '<span style="font-size: 11px; background: #fdf2f8; color: #9d174d; padding: 2px 8px; border-radius: 6px; font-weight: 700;">★ SGT 神經心理手繪手稿庫</span>',
+        pearsonBadge: '<span style="font-size: 11px; background: #fdf2f8; color: #9d174d; padding: 2px 8px; border-radius: 6px; font-weight: 700;">官方唯一推薦</span>',
+        papersSectionBadge: '中正心理／犯防送審專用論文矩陣 · CCU-PSY',
+        paperCardBadges: [
+          '送審編號：CCU-PSY-01',
+          '送審編號：CCU-PSY-02',
+          '送審編號：CCU-PSY-03',
+          '送審編號：CCU-PSY-04'
+        ],
+        paperFocusBadges: [
+          '',
+          '<span style="font-size: 10.5px; background: #fdf2f8; color: #9d174d; padding: 2px 6px; border-radius: 6px; font-weight: 800;">★ 認知工程與法律科技</span>',
+          '',
+          '<span style="font-size: 10.5px; background: #fdf2f8; color: #9d174d; padding: 2px 6px; border-radius: 6px; font-weight: 800;">★ SGT 衝動決策核心論文</span>'
+        ],
+        paperModalTopTags: [
+          '中正跨域探究 · 論文一',
+          '中正認知工程 · 論文二',
+          '中正司法科技 · 論文三',
+          '中正心理核心送審 · 論文四'
+        ],
+        paperModalCodeTags: [
+          '社會心裡分析 · CCU-PSY-01',
+          '認知負荷模型 · CCU-PSY-02',
+          '司法近用人權 · CCU-PSY-03',
+          'SGT 神經衝動決策 · CCU-PSY-04'
+        ]
+      },
+
+      fju: {
+        badge: '🩺 輔仁大學 · 臨床心理學系 送審專區',
+        subHint: '焦點對焦：神經多樣性、ADHD 行為消退與微進度條、高醫大臨床心理學先修',
+        subtag: '臨床心理學先修 ✕ 神經多樣性伴讀 ✕ 認知評估與心理病理',
+        motto: '「在每一個情緒撕裂與注意力潰散的背後，都有一顆渴望被無條件理解的心靈。」',
+        mottoAuthor: '— 陳禮煬 ｜ 三年田野特教伴讀與臨床心理學先修之深刻領悟',
+        customNote: '尊敬的<strong>輔仁大學臨床心理學系審查委員</strong>您好：本專案聚焦於臨床實務與神經多樣性陪伴！特別呈獻申請人長達兩年常態旁聽高醫大心理系林錦宏主任之「普通心理學」、「認知心理學」與變態心理學筆記，並於第一線落地<strong>《ADHD 過動學童伴讀田野手記》</strong>，實證行為消退與微進度條介入，展現真摯的臨床同理心。',
+        pillars: [
+          {
+            icon: '🩺',
+            title: '1. 臨床心理與變態心理學扎實基礎',
+            desc: '系統性旁聽高醫大心理系課程，深入鑽研人為障礙症（轉化症）、孟喬森症候群、憂鬱與焦慮障礙之心理病理與評估。'
+          },
+          {
+            icon: '🤝',
+            title: '2. 神經多樣性 (ADHD) 臨床陪伴實務',
+            desc: '在教育現場以「無條件正向關懷」陪伴注意力缺陷與過動學童，自創「15分鐘微進度條」建立成功體驗與自我調節能力。'
+          },
+          {
+            icon: '🧠',
+            title: '3. 認知與神經心理決策機制',
+            desc: '精研 Damasio 體細胞標記假說與 SGT 東吳賭局，將神經科學對前額葉執行功能之理解，轉化為具體的臨床行為引導架構。'
+          }
+        ],
+        flagship1Badge: '<span style="font-size: 11px; background: #fff7ed; color: #9a3412; padding: 2px 8px; border-radius: 6px; font-weight: 700;">認知超載輔助系統</span>',
+        flagship2Badge: '<span style="font-size: 11px; background: #fff7ed; color: #9a3412; padding: 2px 8px; border-radius: 6px; font-weight: 700;">★ 輔仁臨床核心：ADHD 伴讀手記</span>',
+        notesBadge: '<span style="font-size: 11px; background: #fff7ed; color: #9a3412; padding: 2px 8px; border-radius: 6px; font-weight: 700;">★ 臨床心理學導論與病理筆記庫</span>',
+        pearsonBadge: '<span style="font-size: 11px; background: #fff7ed; color: #9a3412; padding: 2px 8px; border-radius: 6px; font-weight: 700;">官方推薦</span>',
+        papersSectionBadge: '輔仁臨床心理送審專用論文矩陣 · FJU-CPSY',
+        paperCardBadges: [
+          '送審編號：FJU-CPSY-01',
+          '送審編號：FJU-CPSY-02',
+          '送審編號：FJU-CPSY-03',
+          '送審編號：FJU-CPSY-04'
+        ],
+        paperFocusBadges: [
+          '',
+          '',
+          '',
+          '<span style="font-size: 10.5px; background: #fff7ed; color: #9a3412; padding: 2px 6px; border-radius: 6px; font-weight: 800;">★ 臨床神經心理核心論文</span>'
+        ],
+        paperModalTopTags: [
+          '輔仁跨域論著 · 論文一',
+          '輔仁認知工程 · 論文二',
+          '輔仁法學心理 · 論文三',
+          '輔仁臨床心理核心 · 論文四'
+        ],
+        paperModalCodeTags: [
+          '社會心裡批判 · FJU-CPSY-01',
+          '認知結構降載 · FJU-CPSY-02',
+          '弱勢人權近用 · FJU-CPSY-03',
+          'ADHD 行為臨床介入 · FJU-CPSY-04'
+        ]
+      },
+
+      toronto: {
+        badge: '🍁 University of Toronto · Lester B. Pearson Scholarship Portfolio',
+        subHint: 'Sole Official Nominee from Kaohsiung City | Cognitive Science ✕ Full-Stack Software Engineering ✕ Civic Action',
+        subtag: 'Cognitive Psychology ✕ Clean Software Architecture ✕ Field Education & Civic Impact',
+        motto: '“Psychology loses its civic gravity if it does not alleviate real-world suffering.”',
+        mottoAuthor: '— Leon Chen ｜ Five-Year Self-Directed Learning Odyssey & Engineering Philosophy',
+        customNote: 'Dear <strong>Admissions & Scholarship Committee at the University of Toronto</strong>: Welcome to Leon Chen\'s Pearson Scholarship Portfolio. Formally nominated as the <strong>sole representative of all self-directed high school students by the Kaohsiung City Bureau of Education</strong>, Leon integrates cognitive psychology (auditing KMU for two years), software craftsmanship (Clean Architecture Flutter developer), bilingual fluency (JLPT N1 & TOEIC 795), and three years of frontline tutoring for neurodivergent youth.',
+        pillars: [
+          {
+            icon: '🍁',
+            title: '1. Global Perspective & Bilingual Mastery',
+            desc: 'Self-taught mastery: JLPT N1 within one year, TOEIC 795, deciphering original East Asian legal reforms and international SSCI literature with ease.'
+          },
+          {
+            icon: '💻',
+            title: '2. Software Craftsmanship & HCI Architecture',
+            desc: 'Architect of Preamble App using Flutter and Clean Architecture, translating Baddeley\'s memory model into humane digital products with 38% cognitive load reduction.'
+          },
+          {
+            icon: '🤝',
+            title: '3. Frontline Civic Impact & Neurodiversity',
+            desc: 'Three years of dedicated field tutoring for ADHD children using customized behavioral extinction and micro-progress milestone tracking.'
+          }
+        ],
+        flagship1Badge: '<span style="font-size: 11px; background: #fefce8; color: #854d0e; padding: 2px 8px; border-radius: 6px; font-weight: 700;">★ HCI Cognitive Innovation</span>',
+        flagship2Badge: '<span style="font-size: 11px; background: #fefce8; color: #854d0e; padding: 2px 8px; border-radius: 6px; font-weight: 700;">★ Neurodiversity Community Care</span>',
+        notesBadge: '<span style="font-size: 11px; background: #fefce8; color: #854d0e; padding: 2px 8px; border-radius: 6px; font-weight: 700;">Two-Year University Audit Notes</span>',
+        pearsonBadge: '<span style="font-size: 10px; background: #fef08a; color: #854d0e; padding: 2px 6px; border-radius: 6px; font-weight: 800; white-space: nowrap;">★ SOLE NOMINEE</span>',
+        papersSectionBadge: 'U of T Pearson Portfolio Monograph Matrix · UofT-PORT',
+        paperCardBadges: [
+          'Portfolio Code: UofT-PORT-01',
+          'Portfolio Code: UofT-PORT-02',
+          'Portfolio Code: UofT-PORT-03',
+          'Portfolio Code: UofT-PORT-04'
+        ],
+        paperFocusBadges: [
+          '<span style="font-size: 10.5px; background: #fefce8; color: #854d0e; padding: 2px 6px; border-radius: 6px; font-weight: 800;">★ Global Inequality Critique</span>',
+          '<span style="font-size: 10.5px; background: #fefce8; color: #854d0e; padding: 2px 6px; border-radius: 6px; font-weight: 800;">★ Human-Centered Engineering</span>',
+          '<span style="font-size: 10.5px; background: #fefce8; color: #854d0e; padding: 2px 6px; border-radius: 6px; font-weight: 800;">★ Comparative Legal Rights</span>',
+          '<span style="font-size: 10.5px; background: #fefce8; color: #854d0e; padding: 2px 6px; border-radius: 6px; font-weight: 800;">★ Empirical Neuropsychology</span>'
+        ],
+        paperModalTopTags: [
+          'U of T Pearson Portfolio · Paper I',
+          'U of T Pearson Portfolio · Paper II',
+          'U of T Pearson Portfolio · Paper III',
+          'U of T Pearson Portfolio · Paper IV'
+        ],
+        paperModalCodeTags: [
+          'Macro Socio-Economics · UofT-PORT-01',
+          'Cognitive Load Reduction · UofT-PORT-02',
+          'Digital Justice in East Asia · UofT-PORT-03',
+          'SGT & Neurodiversity · UofT-PORT-04'
+        ]
+      },
+
+      ncku: {
+        badge: '🔬 國立成功大學 · 全校不分系 送審專區',
+        subHint: '焦點對焦：跨領域自主探究、工程落地與人文反思、成大踏溯精神',
+        subtag: '認知科學 ✕ 跨平台工程 ✕ 在地教育田野踏溯',
+        motto: '「窮理致知，將知識化為踏實改變社會的工程力量。」',
+        mottoAuthor: '— 陳禮煬 ｜ 實踐跨域整合與自律學習的自主探索者',
+        customNote: '尊敬的<strong>成大全校不分系審查委員</strong>您好：本專案完整呈現五邊形自主學習成果，將<strong>認知心理學實徵研究</strong>與<strong>軟體工程嚴謹架構</strong>及<strong>三年第一線教育田野</strong>無界融合，展現具備成大「窮理致知」精神的跨領域自驅力。',
+        pillars: [
+          {
+            icon: '🔬',
+            title: '1. 理論實徵與探究精神',
+            desc: '常態旁聽高醫大心理系兩年，深入 SGT 神經決策與工作記憶模型，具備嚴謹研究方法與實徵推導力。'
+          },
+          {
+            icon: '💻',
+            title: '2. 系統架構與工程落地',
+            desc: '以 Clean Architecture 架構獨立開發《緒言》App 與在地機構出勤自動化工具，兼具架構思維與產品落地力。'
+          },
+          {
+            icon: '🌾',
+            title: '3. 踏溯田野與在地關懷',
+            desc: '三年深入基層教學現場陪伴特殊兒少，親自踏訪南部在地教育脈絡，展現深厚的同理與社會實踐。'
+          }
+        ],
+        flagship1Badge: '<span style="font-size: 11px; background: #e0f2fe; color: #0369a1; padding: 2px 8px; border-radius: 6px; font-weight: 700;">跨域科技實作</span>',
+        flagship2Badge: '<span style="font-size: 11px; background: #dcfce7; color: #15803d; padding: 2px 8px; border-radius: 6px; font-weight: 700;">在地社會實踐</span>',
+        notesBadge: '<span style="font-size: 11px; background: #fef3c7; color: #b45309; padding: 2px 8px; border-radius: 6px; font-weight: 700;">跨域先修筆記</span>',
+        pearsonBadge: '<span style="font-size: 11px; background: #fef08a; color: #854d0e; padding: 2px 8px; border-radius: 6px; font-weight: 700;">全人推薦</span>',
+        papersSectionBadge: '成大全校不分系跨領域論文矩陣 · NCKU-CROSS',
+        paperCardBadges: [
+          '送審編號：NCKU-CROSS-01',
+          '送審編號：NCKU-CROSS-02',
+          '送審編號：NCKU-CROSS-03',
+          '送審編號：NCKU-CROSS-04'
+        ],
+        paperFocusBadges: [
+          '<span style="font-size: 10.5px; background: #e0f2fe; color: #0369a1; padding: 2px 6px; border-radius: 6px; font-weight: 800;">★ 社會脈絡</span>',
+          '<span style="font-size: 10.5px; background: #e0f2fe; color: #0369a1; padding: 2px 6px; border-radius: 6px; font-weight: 800;">★ 科技工程</span>',
+          '<span style="font-size: 10.5px; background: #e0f2fe; color: #0369a1; padding: 2px 6px; border-radius: 6px; font-weight: 800;">★ 國際比較</span>',
+          '<span style="font-size: 10.5px; background: #e0f2fe; color: #0369a1; padding: 2px 6px; border-radius: 6px; font-weight: 800;">★ 認知田野</span>'
+        ],
+        paperModalTopTags: [
+          '成大跨域矩陣 · 專題一',
+          '成大跨域矩陣 · 專題二',
+          '成大跨域矩陣 · 專題三',
+          '成大跨域矩陣 · 專題四'
+        ],
+        paperModalCodeTags: [
+          '宏觀結構 · NCKU-CROSS-01',
+          '工程降載 · NCKU-CROSS-02',
+          '司法IT化 · NCKU-CROSS-03',
+          '行為實徵 · NCKU-CROSS-04'
+        ]
+      },
+
+      nccu: {
+        badge: '🌏 國立政治大學 · 創新國際學院 (ICI) 送審專區',
+        subHint: '焦點對焦：全球化治理、東亞比較法學、弱勢數位人權、JLPT N1 國際接軌',
+        subtag: '國際比較法學 ✕ 全球治理視野 ✕ 雙外語自主研發',
+        motto: '「以在地實踐為錨，以全球治理與比較法學為帆。」',
+        mottoAuthor: '— 陳禮煬 ｜ 兼具東亞比較文獻解碼力與在地關懷之自學軌跡',
+        customNote: '尊敬的<strong>政大創新國際學院 (ICI) 審查委員</strong>您好：本專案聚焦於國際比較治理與社會正義，特別對焦<strong>論文三《日本民訴IT化與弱勢數位人權》</strong>（自學通過 JLPT N1 直接解碼東亞法律公報）與多倫多大學 Pearson 官方推薦，具備全英語文獻研讀及全球公民行動力。',
+        pillars: [
+          {
+            icon: '🌏',
+            title: '1. 國際比較法學與東亞治理',
+            desc: '以 JLPT N1 頂標實力直接解讀日本法務省裁判 IT 化白皮書，比較東亞高齡化社會之數位人權與司法近用保障機制。'
+          },
+          {
+            icon: '🗣️',
+            title: '2. 跨文化雙外語頂標實力',
+            desc: '自學一年通過 JLPT N1，高三自主考取 TOEIC 795，具備直接閱讀國際 SSCI 政治經濟與心理學原文文獻之學術英語力。'
+          },
+          {
+            icon: '🤝',
+            title: '3. 永續發展與弱勢平權實踐',
+            desc: '將批判性思維轉化為基層行動，在在地教學現場陪伴弱勢特殊兒少，具備實踐全球永續目標 (SDGs) 之公民胸襟。'
+          }
+        ],
+        flagship1Badge: '<span style="font-size: 11px; background: #f0fdf4; color: #166534; padding: 2px 8px; border-radius: 6px; font-weight: 700;">資訊平權科技</span>',
+        flagship2Badge: '<span style="font-size: 11px; background: #f0fdf4; color: #166534; padding: 2px 8px; border-radius: 6px; font-weight: 700;">在地包容實踐</span>',
+        notesBadge: '<span style="font-size: 11px; background: #f0fdf4; color: #166534; padding: 2px 8px; border-radius: 6px; font-weight: 700;">國際學術筆記庫</span>',
+        pearsonBadge: '<span style="font-size: 11px; background: #fef08a; color: #854d0e; padding: 2px 8px; border-radius: 6px; font-weight: 800;">★ 國際領導力推薦</span>',
+        papersSectionBadge: '政大創新國際學院專用論文矩陣 · NCCU-ICI',
+        paperCardBadges: [
+          '送審編號：NCCU-ICI-01',
+          '送審編號：NCCU-ICI-02',
+          '送審編號：NCCU-ICI-03',
+          '送審編號：NCCU-ICI-04'
+        ],
+        paperFocusBadges: [
+          '<span style="font-size: 10.5px; background: #dcfce7; color: #166534; padding: 2px 6px; border-radius: 6px; font-weight: 800;">★ 全球不平等</span>',
+          '',
+          '<span style="font-size: 10.5px; background: #dcfce7; color: #166534; padding: 2px 6px; border-radius: 6px; font-weight: 800;">★ 核心送審：東亞比較法</span>',
+          ''
+        ],
+        paperModalTopTags: [
+          '政大 ICI 送審 · 專題一',
+          '政大 ICI 探究 · 專題二',
+          '政大 ICI 核心送審 · 專題三',
+          '政大 ICI 探究 · 專題四'
+        ],
+        paperModalCodeTags: [
+          '全球風險社會 · NCCU-ICI-01',
+          '人機資訊界面 · NCCU-ICI-02',
+          '東亞數位人權 · NCCU-ICI-03',
+          '神經決策實徵 · NCCU-ICI-04'
+        ]
+      },
+
+      nsysu: {
+        badge: '💡 國立中山大學 · 社會創新全校不分系 送審專區',
+        subHint: '焦點對焦：高雄在地自學五年、南部教育田野深耕、社會創新方案設計',
+        subtag: '社會設計 ✕ 科技創新解方 ✕ 高雄在地教育深耕',
+        motto: '「以海派的胸襟擁抱真實問題，用代碼與陪伴在南方土地寫下答案。」',
+        mottoAuthor: '— 陳禮煬 ｜ 扎根高雄、以社會創新為志向之五年自學軌跡',
+        customNote: '尊敬的<strong>中山社會創新全校不分系審查委員</strong>您好：身為高雄市五年在地自學生，本專案完整呈現「社會問題發現 ➔ 理論探索 ➔ 科技原型研發 ➔ 田野驗證」的社會創新閉環，展現服務南部土地的強烈使命感。',
+        pillars: [
+          {
+            icon: '💡',
+            title: '1. 社會痛點洞察與原型設計',
+            desc: '看見司法資訊高牆與特殊學童注意力困境，主動開發《緒言》App 與微進度條，以社會設計思維落實科技平權。'
+          },
+          {
+            icon: '⚓',
+            title: '2. 高雄在地教育深耕三年',
+            desc: '三年在高雄在地教育機構無私投入伴讀特教兒少，並自主設計出勤自動化系統，是貨真價實的在地實踐者。'
+          },
+          {
+            icon: '🌱',
+            title: '3. 跨域自學高度自律力',
+            desc: '五年非學校型態自學，連續四年獲高雄市評定精熟滿分，獲教育局官方唯一提名 Pearson 獎學金，具強大探索能量。'
+          }
+        ],
+        flagship1Badge: '<span style="font-size: 11px; background: #e0f2fe; color: #0369a1; padding: 2px 8px; border-radius: 6px; font-weight: 700;">社會創新科技</span>',
+        flagship2Badge: '<span style="font-size: 11px; background: #dcfce7; color: #15803d; padding: 2px 8px; border-radius: 6px; font-weight: 700;">★ 高雄在地田野深耕</span>',
+        notesBadge: '<span style="font-size: 11px; background: #fef3c7; color: #b45309; padding: 2px 8px; border-radius: 6px; font-weight: 700;">心理學先修筆記</span>',
+        pearsonBadge: '<span style="font-size: 11px; background: #fef08a; color: #854d0e; padding: 2px 8px; border-radius: 6px; font-weight: 800;">★ 高雄唯一提名</span>',
+        papersSectionBadge: '中山社會創新專用論文矩陣 · NSYSU-SOC',
+        paperCardBadges: [
+          '送審編號：NSYSU-SOC-01',
+          '送審編號：NSYSU-SOC-02',
+          '送審編號：NSYSU-SOC-03',
+          '送審編號：NSYSU-SOC-04'
+        ],
+        paperFocusBadges: [
+          '<span style="font-size: 10.5px; background: #e0f2fe; color: #0369a1; padding: 2px 6px; border-radius: 6px; font-weight: 800;">★ 青年困境批判</span>',
+          '<span style="font-size: 10.5px; background: #e0f2fe; color: #0369a1; padding: 2px 6px; border-radius: 6px; font-weight: 800;">★ 社會科技實作</span>',
+          '',
+          '<span style="font-size: 10.5px; background: #e0f2fe; color: #0369a1; padding: 2px 6px; border-radius: 6px; font-weight: 800;">★ 在地特教伴讀</span>'
+        ],
+        paperModalTopTags: [
+          '中山社創送審 · 專題一',
+          '中山社創送審 · 專題二',
+          '中山社創探究 · 專題三',
+          '中山社創送審 · 專題四'
+        ],
+        paperModalCodeTags: [
+          '結構痛點 · NSYSU-SOC-01',
+          '科技解方 · NSYSU-SOC-02',
+          '國際比較 · NSYSU-SOC-03',
+          '行動驗證 · NSYSU-SOC-04'
+        ]
+      },
+
+      ncu: {
+        badge: '🧬 國立中央大學 · 人文生醫與永續發展學系 送審專區',
+        subHint: '焦點對焦：生醫認知科學、大腦記憶模型、神經心理決策、永續社會弱勢人權',
+        subtag: '神經認知科學 ✕ 生醫資訊工程 ✕ 社會永續關懷',
+        motto: '「探索大腦神經機制的奧秘，守護每個人面對生命困頓的認知尊嚴。」',
+        mottoAuthor: '— 陳禮煬 ｜ 穿透大腦神經迴路與社會人文關懷之實踐者',
+        customNote: '尊敬的<strong>中央人文生醫與永續學系審查委員</strong>您好：本專案聚焦於生醫神經心理與人本科技的跨域交會，呈現高醫大旁聽之 SGT 愛荷華賭局、前額葉功能、工作記憶理論與第一線 ADHD 行為介入成果，完美呼應人文生醫精神。',
+        pillars: [
+          {
+            icon: '🧬',
+            title: '1. 神經認知與決策歷程研究',
+            desc: '深入研讀 Damasio 體細胞標記假說、vmPFC 與杏仁核神經連結，剖析 SGT 賭博任務中的情緒與理性決策基質。'
+          },
+          {
+            icon: '💻',
+            title: '2. 認知工程與人機互動界面',
+            desc: '運用 Atkinson-Shiffrin 記憶模型與 Sweller 認知負荷理論，打造符合人體工學與認知降載的數位工具。'
+          },
+          {
+            icon: '🌱',
+            title: '3. 神經多樣性友善與社會永續',
+            desc: '以非藥物之行為介入方案陪伴 ADHD 過動學童，倡議尊重神經多樣性 (Neurodiversity) 的永續共融社會。'
+          }
+        ],
+        flagship1Badge: '<span style="font-size: 11px; background: #e0f2fe; color: #0369a1; padding: 2px 8px; border-radius: 6px; font-weight: 700;">人因認知工程</span>',
+        flagship2Badge: '<span style="font-size: 11px; background: #dcfce7; color: #15803d; padding: 2px 8px; border-radius: 6px; font-weight: 700;">神經多樣性伴讀</span>',
+        notesBadge: '<span style="font-size: 11px; background: #e0f2fe; color: #0369a1; padding: 2px 8px; border-radius: 6px; font-weight: 700;">★ 生醫認知手繪筆記庫</span>',
+        pearsonBadge: '<span style="font-size: 11px; background: #fef08a; color: #854d0e; padding: 2px 8px; border-radius: 6px; font-weight: 700;">官方推薦</span>',
+        papersSectionBadge: '中央人文生醫專用論文矩陣 · NCU-BIO',
+        paperCardBadges: [
+          '送審編號：NCU-BIO-01',
+          '送審編號：NCU-BIO-02',
+          '送審編號：NCU-BIO-03',
+          '送審編號：NCU-BIO-04'
+        ],
+        paperFocusBadges: [
+          '',
+          '<span style="font-size: 10.5px; background: #e0f2fe; color: #0369a1; padding: 2px 6px; border-radius: 6px; font-weight: 800;">★ 核心：認知負荷工程</span>',
+          '',
+          '<span style="font-size: 10.5px; background: #e0f2fe; color: #0369a1; padding: 2px 6px; border-radius: 6px; font-weight: 800;">★ 核心：神經決策實徵</span>'
+        ],
+        paperModalTopTags: [
+          '中央跨域探究 · 論文一',
+          '中央生醫認知 · 論文二',
+          '中央弱勢近用 · 論文三',
+          '中央神經心理 · 論文四'
+        ],
+        paperModalCodeTags: [
+          '社會結構 · NCU-BIO-01',
+          '認知工程 · NCU-BIO-02',
+          '數位人權 · NCU-BIO-03',
+          'SGT 神經決策 · NCU-BIO-04'
+        ]
+      },
+
+      nthu: {
+        badge: '⚛️ 國立清華大學 · 清華學院學士班 送審專區',
+        subHint: '焦點對焦：清華跨域探索典範、高維度自律學習、認知科學 ✕ 資訊架構 ✕ 田野實踐',
+        subtag: '清華學院跨域自由探索 ✕ 認知神經科學 ✕ 全端軟體工程',
+        motto: '「自強不息，厚德載物；在知識的無垠邊界，走出屬於自學者的開拓之路。」',
+        mottoAuthor: '— 陳禮煬 ｜ 五年自學、追求極致跨域整合之自主探究者',
+        customNote: '尊敬的<strong>清華學院學士班審查委員</strong>您好：自學五年以來，我始終秉持清華學院「跨界打破疆界」的自主探究精神，拒絕被單一學門窄化，將高醫大認知科學旁聽、Flutter 全端工程實作與弱勢伴讀緊密扣合，展現無畏的自律學習力。',
+        pillars: [
+          {
+            icon: '⚛️',
+            title: '1. 清華跨域精神與自主學習力',
+            desc: '五年非學校型態自學，173週全記錄無間斷，高二即完成 GPA 4.0 滿分、JLPT N1、TOEIC 795，具備無與倫比的自主學習動能。'
+          },
+          {
+            icon: '💻',
+            title: '2. 資訊科技與演算法工程',
+            desc: '精熟 Clean Architecture、Dart/Flutter 跨平台與離線搜尋引擎，實踐軟體工程學的解耦、高內聚與極致使用者體驗。'
+          },
+          {
+            icon: '🤝',
+            title: '3. 人文關懷與厚德載物',
+            desc: '三年投身第一線教育現場陪伴特殊學童，以行動實踐社會責任，具備清華學子兼濟天下的格局與胸懷。'
+          }
+        ],
+        flagship1Badge: '<span style="font-size: 11px; background: #e0f2fe; color: #0369a1; padding: 2px 8px; border-radius: 6px; font-weight: 700;">資訊工程實作</span>',
+        flagship2Badge: '<span style="font-size: 11px; background: #dcfce7; color: #15803d; padding: 2px 8px; border-radius: 6px; font-weight: 700;">人本教育實踐</span>',
+        notesBadge: '<span style="font-size: 11px; background: #fef3c7; color: #b45309; padding: 2px 8px; border-radius: 6px; font-weight: 700;">認知科學大書架</span>',
+        pearsonBadge: '<span style="font-size: 11px; background: #fef08a; color: #854d0e; padding: 2px 8px; border-radius: 6px; font-weight: 800;">★ 清華跨域典範推薦</span>',
+        papersSectionBadge: '清華學院跨域學術論文矩陣 · NTHU-COLL',
+        paperCardBadges: [
+          '送審編號：NTHU-COLL-01',
+          '送審編號：NTHU-COLL-02',
+          '送審編號：NTHU-COLL-03',
+          '送審編號：NTHU-COLL-04'
+        ],
+        paperFocusBadges: [
+          '<span style="font-size: 10.5px; background: #e0f2fe; color: #0369a1; padding: 2px 6px; border-radius: 6px; font-weight: 800;">★ 跨域批判</span>',
+          '<span style="font-size: 10.5px; background: #e0f2fe; color: #0369a1; padding: 2px 6px; border-radius: 6px; font-weight: 800;">★ 資訊實作</span>',
+          '<span style="font-size: 10.5px; background: #e0f2fe; color: #0369a1; padding: 2px 6px; border-radius: 6px; font-weight: 800;">★ 比較法學</span>',
+          '<span style="font-size: 10.5px; background: #e0f2fe; color: #0369a1; padding: 2px 6px; border-radius: 6px; font-weight: 800;">★ 神經決策</span>'
+        ],
+        paperModalTopTags: [
+          '清華跨域探究 · 專題一',
+          '清華跨域探究 · 專題二',
+          '清華跨域探究 · 專題三',
+          '清華跨域探究 · 專題四'
+        ],
+        paperModalCodeTags: [
+          '社會批判 · NTHU-COLL-01',
+          '大腦工程 · NTHU-COLL-02',
+          '司法科技 · NTHU-COLL-03',
+          '認知實徵 · NTHU-COLL-04'
+        ]
+      },
+
+      nycu: {
+        badge: '⚡ 國立陽明交通大學 · 百川學士學位學程 送審專區',
+        subHint: '焦點對焦：百川納海跨域極客、高階軟體架構、認知工程 HCI、跨界整合',
+        subtag: '軟體系統架構 ✕ 認知人機互動 ✕ 百川跨域自學實踐',
+        motto: '「百川匯海，不拒細流；在代碼邏輯與認知理論交織處，架構具溫度的系統。」',
+        mottoAuthor: '— 陳禮煬 ｜ 兼具極客精神與人文思辨的自學架構師',
+        customNote: '尊敬的<strong>陽明交大百川學士學位學程審查委員</strong>您好：本專案聚焦於「軟體架構工藝（Clean Architecture）✕ 認知科學理論」之極客跨界實踐，展現自學者獨立設計全端系統、人機互動介面實驗與高階邏輯抽象能力。',
+        pillars: [
+          {
+            icon: '⚡',
+            title: '1. 軟體架構工藝與 Clean Architecture',
+            desc: '精熟領域驅動設計 (DDD) 與分層架構，撰寫兼具高內聚低耦合的軟體系統，反思生成式 AI 狂潮下的架構師價值。'
+          },
+          {
+            icon: '🧠',
+            title: '2. 認知工程與人機互動 (HCI)',
+            desc: '將 Baddeley 工作記憶模型轉譯為介面空間分塊演算法，以可量化的實驗驗證降低認知超載 38% 之實徵成效。'
+          },
+          {
+            icon: '🌐',
+            title: '3. 百川跨界開拓與國際視野',
+            desc: '外語能力突破 JLPT N1 與 TOEIC 795，自學涉獵法律、心理、資訊與社會學，高度契合百川學程打破常規之育才精神。'
+          }
+        ],
+        flagship1Badge: '<span style="font-size: 11px; background: #e0f2fe; color: #0369a1; padding: 2px 8px; border-radius: 6px; font-weight: 700;">★ 百川核心：Clean Architecture 實作</span>',
+        flagship2Badge: '<span style="font-size: 11px; background: #dcfce7; color: #15803d; padding: 2px 8px; border-radius: 6px; font-weight: 700;">田野行為介入</span>',
+        notesBadge: '<span style="font-size: 11px; background: #fef3c7; color: #b45309; padding: 2px 8px; border-radius: 6px; font-weight: 700;">認知神經科學手稿庫</span>',
+        pearsonBadge: '<span style="font-size: 11px; background: #fef08a; color: #854d0e; padding: 2px 8px; border-radius: 6px; font-weight: 800;">★ 百川極客典範推薦</span>',
+        papersSectionBadge: '陽明交大百川學程專用論文矩陣 · NYCU-RIV',
+        paperCardBadges: [
+          '送審編號：NYCU-RIV-01',
+          '送審編號：NYCU-RIV-02',
+          '送審編號：NYCU-RIV-03',
+          '送審編號：NYCU-RIV-04'
+        ],
+        paperFocusBadges: [
+          '',
+          '<span style="font-size: 10.5px; background: #e0f2fe; color: #0369a1; padding: 2px 6px; border-radius: 6px; font-weight: 800;">★ 百川核心：HCI 認知工程</span>',
+          '',
+          '<span style="font-size: 10.5px; background: #e0f2fe; color: #0369a1; padding: 2px 6px; border-radius: 6px; font-weight: 800;">★ 神經決策實徵</span>'
+        ],
+        paperModalTopTags: [
+          '百川跨域探究 · 論文一',
+          '百川核心送審 · 論文二',
+          '百川比較法學 · 論文三',
+          '百川神經心理 · 論文四'
+        ],
+        paperModalCodeTags: [
+          '宏觀結構 · NYCU-RIV-01',
+          'HCI工程降載 · NYCU-RIV-02',
+          '司法IT化 · NYCU-RIV-03',
+          '神經決策 · NYCU-RIV-04'
+        ]
+      },
+
+      ntust: {
+        badge: '🛠️ 國立臺灣科技大學 · 不分系 送審專區',
+        subHint: '焦點對焦：技職與科技創新整合、實作工程落地、Flutter 全端應用、機構自動化出勤系統',
+        subtag: '全端軟體實作 ✕ 科技創新落地 ✕ 機構行政數位轉型',
+        motto: '「以工程思維解構痛點，用極致匠心打磨出能解決真實問題的產品。」',
+        mottoAuthor: '— 陳禮煬 ｜ 重視實踐落地與產品工藝之自學開發者',
+        customNote: '尊敬的<strong>臺科大不分系審查委員</strong>您好：本專案聚焦於「強悍工程實作與產品落地力」！呈現申請人自主研發之《緒言》App（獲 MAIC 大賽技術肯定）及主動替教育機構打造的自動化行政出勤系統，具備高效率的產品工程實戰力。',
+        pillars: [
+          {
+            icon: '🛠️',
+            title: '1. 全端跨平台工程實戰',
+            desc: '精熟 Flutter/Dart，獨立實踐 Clean Architecture、SQLite 本機全文索引與狀態管理，具備產品級工程開發實力。'
+          },
+          {
+            icon: '⚙️',
+            title: '2. 機構自動化與系統整合',
+            desc: '看見教育機構排班與簽到痛點，主動架設全套自動化打卡與工時統計工具，為機構節省數十小時行政成本。'
+          },
+          {
+            icon: '🧠',
+            title: '3. 跨領域認知理論導入',
+            desc: '不只寫代碼，更將認知心理學之雙重編碼理論融入產品介面，讓技術真正具備提升大腦吸收效率的實質價值。'
+          }
+        ],
+        flagship1Badge: '<span style="font-size: 11px; background: #e0f2fe; color: #0369a1; padding: 2px 8px; border-radius: 6px; font-weight: 700;">★ 臺科大實作焦點：全端工程落地</span>',
+        flagship2Badge: '<span style="font-size: 11px; background: #dcfce7; color: #15803d; padding: 2px 8px; border-radius: 6px; font-weight: 700;">機構自動化工具</span>',
+        notesBadge: '<span style="font-size: 11px; background: #fef3c7; color: #b45309; padding: 2px 8px; border-radius: 6px; font-weight: 700;">架構與認知手繪筆記</span>',
+        pearsonBadge: '<span style="font-size: 11px; background: #fef08a; color: #854d0e; padding: 2px 8px; border-radius: 6px; font-weight: 700;">技術實作推薦</span>',
+        papersSectionBadge: '臺科大不分系實作論文矩陣 · NTUST-TECH',
+        paperCardBadges: [
+          '送審編號：NTUST-TECH-01',
+          '送審編號：NTUST-TECH-02',
+          '送審編號：NTUST-TECH-03',
+          '送審編號：NTUST-TECH-04'
+        ],
+        paperFocusBadges: [
+          '',
+          '<span style="font-size: 10.5px; background: #e0f2fe; color: #0369a1; padding: 2px 6px; border-radius: 6px; font-weight: 800;">★ 核心：全端工程論文</span>',
+          '',
+          ''
+        ],
+        paperModalTopTags: [
+          '臺科大跨域探究 · 論文一',
+          '臺科大工程核心 · 論文二',
+          '臺科大司法資訊 · 論文三',
+          '臺科大行為介入 · 論文四'
+        ],
+        paperModalCodeTags: [
+          '社會批判 · NTUST-TECH-01',
+          '全端工程 · NTUST-TECH-02',
+          '司法IT化 · NTUST-TECH-03',
+          '特教介入 · NTUST-TECH-04'
+        ]
+      },
+
+      ndhu: {
+        badge: '🌿 國立東華大學 · 縱谷跨域書院 送審專區',
+        subHint: '焦點對焦：自由靈魂與深邃探究、無界學習、教育陪伴、非學校型態自學 173 週堅持',
+        subtag: '縱谷跨域無界自主探索 ✕ 田野深情陪伴 ✕ 實徵科學探究',
+        motto: '「在縱谷的遼闊天地間，傾聽心靈的微弱呼求，走出不被框架拘束的自學之路。」',
+        mottoAuthor: '— 陳禮煬 ｜ 173週無間斷學習週記、具備深邃反思靈魂之自學者',
+        customNote: '尊敬的<strong>東華縱谷跨域書院審查委員</strong>您好：五年的非學校型態自學歷程中，我始終抱持縱谷書院所倡導的「自由探索、深邃反思、與人連結」精神，在 173 週、近 19 萬字的週記中真實記錄每一刻的挫折、沉澱與蛻變。',
+        pillars: [
+          {
+            icon: '🌿',
+            title: '1. 自由探索與自主學習毅力',
+            desc: '173週連續無中斷自主學習記錄，歷時五年累積近19萬字，展現高度內在動機與深邃的生命反思力。'
+          },
+          {
+            icon: '🤝',
+            title: '2. 溫暖田野與人本關懷',
+            desc: '三年陪伴特殊兒童，看見被體制忽視的微光，以同理與耐心開創個人化陪伴策略，體現人本精神。'
+          },
+          {
+            icon: '📚',
+            title: '3. 跨領域知識整合與對話',
+            desc: '穿梭於心理學、社會學、比較法與軟體開發之間，以開闊視野打破分科藩籬，追求知識的純粹與本真。'
+          }
+        ],
+        flagship1Badge: '<span style="font-size: 11px; background: #e0f2fe; color: #0369a1; padding: 2px 8px; border-radius: 6px; font-weight: 700;">人本科技設計</span>',
+        flagship2Badge: '<span style="font-size: 11px; background: #dcfce7; color: #15803d; padding: 2px 8px; border-radius: 6px; font-weight: 700;">★ 縱谷核心：田野人本陪伴</span>',
+        notesBadge: '<span style="font-size: 11px; background: #fef3c7; color: #b45309; padding: 2px 8px; border-radius: 6px; font-weight: 700;">兩年自主研讀筆記庫</span>',
+        pearsonBadge: '<span style="font-size: 11px; background: #fef08a; color: #854d0e; padding: 2px 8px; border-radius: 6px; font-weight: 800;">★ 自由自主學習典範</span>',
+        papersSectionBadge: '東華縱谷跨域學術論文矩陣 · NDHU-VAL',
+        paperCardBadges: [
+          '送審編號：NDHU-VAL-01',
+          '送審編號：NDHU-VAL-02',
+          '送審編號：NDHU-VAL-03',
+          '送審編號：NDHU-VAL-04'
+        ],
+        paperFocusBadges: [
+          '<span style="font-size: 10.5px; background: #f0fdf4; color: #166534; padding: 2px 6px; border-radius: 6px; font-weight: 800;">★ 人本批判</span>',
+          '',
+          '<span style="font-size: 10.5px; background: #f0fdf4; color: #166534; padding: 2px 6px; border-radius: 6px; font-weight: 800;">★ 弱勢人權</span>',
+          '<span style="font-size: 10.5px; background: #f0fdf4; color: #166534; padding: 2px 6px; border-radius: 6px; font-weight: 800;">★ 田野心靈</span>'
+        ],
+        paperModalTopTags: [
+          '縱谷無界探究 · 論文一',
+          '縱谷認知工程 · 論文二',
+          '縱谷數位人權 · 論文三',
+          '縱谷核心送審 · 論文四'
+        ],
+        paperModalCodeTags: [
+          '社會反思 · NDHU-VAL-01',
+          '資訊介面 · NDHU-VAL-02',
+          '司法近用 · NDHU-VAL-03',
+          '特教陪伴 · NDHU-VAL-04'
+        ]
+      },
+
+      ncnu: {
+        badge: '📖 國立暨南國際大學 · 教育政策與行政學系 送審專區',
+        subHint: '焦點對焦：實驗教育法制備查經驗、地方社教行政、教育政策反思、數位平權',
+        subtag: '實驗教育法制實務 ✕ 教育行政政策 ✕ 地方社區教育深耕',
+        motto: '「政策的良窳，最終要看它能否溫柔接住每一個體制邊緣的學習者。」',
+        mottoAuthor: '— 陳禮煬 ｜ 完整經歷五年實驗教育備查與基層教育實務之反思者',
+        customNote: '尊敬的<strong>暨大教育政策與行政學系審查委員</strong>您好：身為完整經歷五年非學校型態實驗教育法規審議、年度期末面談與訪視備查的自學生，我深切體會教育政策與行政體系對學習者的深遠影響，具備獨一無二的法制實務反思力。',
+        pillars: [
+          {
+            icon: '📖',
+            title: '1. 實驗教育法制與政策深切體會',
+            desc: '親身經歷高雄市實驗教育審議五年全流程，熟稔自學計畫書擬定、訪視評估與備查機制，深具制度反思力。'
+          },
+          {
+            icon: '🏢',
+            title: '2. 基層教育行政與數位化治理',
+            desc: '三年第一線機構帶班經驗，主動研發教職員出勤與排班數位工具，具備教育行政資訊化與組織流程優化實務。'
+          },
+          {
+            icon: '🤝',
+            title: '3. 地方弱勢教育與公平正義',
+            desc: '在地方教育機構長期陪伴特殊需求學童，實踐教育機會均等與拔尖扶弱的公共行政理想。'
+          }
+        ],
+        flagship1Badge: '<span style="font-size: 11px; background: #e0f2fe; color: #0369a1; padding: 2px 8px; border-radius: 6px; font-weight: 700;">教育輔助科技</span>',
+        flagship2Badge: '<span style="font-size: 11px; background: #dcfce7; color: #15803d; padding: 2px 8px; border-radius: 6px; font-weight: 700;">★ 暨大教育核心：第一線特教陪伴</span>',
+        notesBadge: '<span style="font-size: 11px; background: #fef3c7; color: #b45309; padding: 2px 8px; border-radius: 6px; font-weight: 700;">教育心理學筆記庫</span>',
+        pearsonBadge: '<span style="font-size: 11px; background: #fef08a; color: #854d0e; padding: 2px 8px; border-radius: 6px; font-weight: 700;">教育行政推薦</span>',
+        papersSectionBadge: '暨大教政系送審專用論文矩陣 · NCNU-EDU',
+        paperCardBadges: [
+          '送審編號：NCNU-EDU-01',
+          '送審編號：NCNU-EDU-02',
+          '送審編號：NCNU-EDU-03',
+          '送審編號：NCNU-EDU-04'
+        ],
+        paperFocusBadges: [
+          '<span style="font-size: 10.5px; background: #ecfdf5; color: #065f46; padding: 2px 6px; border-radius: 6px; font-weight: 800;">★ 青年焦慮政策</span>',
+          '',
+          '<span style="font-size: 10.5px; background: #ecfdf5; color: #065f46; padding: 2px 6px; border-radius: 6px; font-weight: 800;">★ 終身學習政策</span>',
+          '<span style="font-size: 10.5px; background: #ecfdf5; color: #065f46; padding: 2px 6px; border-radius: 6px; font-weight: 800;">★ 特教現場政策</span>'
+        ],
+        paperModalTopTags: [
+          '暨大教政送審 · 論文一',
+          '暨大教政探究 · 論文二',
+          '暨大教政送審 · 論文三',
+          '暨大教政送審 · 論文四'
+        ],
+        paperModalCodeTags: [
+          '社會流動 · NCNU-EDU-01',
+          '認知降載 · NCNU-EDU-02',
+          '社教政策 · NCNU-EDU-03',
+          '特教實踐 · NCNU-EDU-04'
+        ]
+      },
+
+      ntua: {
+        badge: '🎨 國立臺灣藝術大學 · 視覺與設計跨域 送審專區',
+        subHint: '焦點對焦：Bento Grid 資訊視覺美學、人機互動介面設計、雙重編碼視覺化',
+        subtag: '資訊設計美學 ✕ Bento Grid 人機介面 ✕ 認知雙重編碼視覺化',
+        motto: '「設計不是裝飾，而是將大腦的混亂認知秩序化的高尚藝術。」',
+        mottoAuthor: '— 陳禮煬 ｜ 將認知負荷理論化為優雅視覺介面之設計開發者',
+        customNote: '尊敬的<strong>臺藝大設計跨域審查委員</strong>您好：本專案聚焦於「資訊設計 (Information Design) 與認知視覺化」！全站以自創高規格 Bento Grid 與雙重編碼理論為基底，將密集的學術論著與繁複檔案轉化為直覺、優雅且具呼吸感的現代視覺體驗。',
+        pillars: [
+          {
+            icon: '🎨',
+            title: '1. 資訊視覺化與 Bento Grid 美學',
+            desc: '深諳現代 UI/UX 設計潮流，靈活運用 Bento Grid 模組化排版、微光卡片與呼吸感留白，營造典雅的數位閱讀質感。'
+          },
+          {
+            icon: '👁️',
+            title: '2. 認知雙重編碼視覺轉譯',
+            desc: '將抽象複雜的法律條文與大腦模型，轉化為直觀的視覺空間映射，實質降低學習者的認知負擔達 38%。'
+          },
+          {
+            icon: '💻',
+            title: '3. 前端工程與動態互動落實',
+            desc: '具備純手刻 CSS 動畫、響應式抽屜選單與彈窗互動設計實力，完美架接設計美學與前端工程的最後一哩路。'
+          }
+        ],
+        flagship1Badge: '<span style="font-size: 11px; background: #fdf4ff; color: #86198f; padding: 2px 8px; border-radius: 6px; font-weight: 700;">★ 臺藝大焦點：Bento Grid 介面美學</span>',
+        flagship2Badge: '<span style="font-size: 11px; background: #dcfce7; color: #15803d; padding: 2px 8px; border-radius: 6px; font-weight: 700;">視覺注意力錨定</span>',
+        notesBadge: '<span style="font-size: 11px; background: #fdf4ff; color: #86198f; padding: 2px 8px; border-radius: 6px; font-weight: 700;">★ 手繪心智圖與視覺筆記庫</span>',
+        pearsonBadge: '<span style="font-size: 11px; background: #fef08a; color: #854d0e; padding: 2px 8px; border-radius: 6px; font-weight: 700;">視覺跨域推薦</span>',
+        papersSectionBadge: '臺藝大視覺設計專用論文矩陣 · NTUA-DES',
+        paperCardBadges: [
+          '送審編號：NTUA-DES-01',
+          '送審編號：NTUA-DES-02',
+          '送審編號：NTUA-DES-03',
+          '送審編號：NTUA-DES-04'
+        ],
+        paperFocusBadges: [
+          '',
+          '<span style="font-size: 10.5px; background: #fdf4ff; color: #86198f; padding: 2px 6px; border-radius: 6px; font-weight: 800;">★ 核心：雙重編碼視覺介面</span>',
+          '',
+          ''
+        ],
+        paperModalTopTags: [
+          '臺藝大跨域探究 · 論文一',
+          '臺藝大視覺核心 · 論文二',
+          '臺藝大資訊人權 · 論文三',
+          '臺藝大行為設計 · 論文四'
+        ],
+        paperModalCodeTags: [
+          '視覺批判 · NTUA-DES-01',
+          '雙重編碼介面 · NTUA-DES-02',
+          '司法視覺化 · NTUA-DES-03',
+          '微進度條設計 · NTUA-DES-04'
+        ]
+      }
+    };
+
+    const aliasMap = {
+      'all': 'general', 'default': 'general', 'global': 'general', 'general': 'general',
+      'ntu_soc': 'ntu', 'soc': 'ntu', 'philosophy': 'ntu', 'taiwan_u': 'ntu', 'ntu': 'ntu',
+      'ace': 'ntnu', 'adult_edu': 'ntnu', 'ntnu_ace': 'ntnu', 'normal': 'ntnu', 'ntnu': 'ntnu',
+      'ccu_psy': 'ccu', 'psy': 'ccu', 'crime': 'ccu', 'chungcheng': 'ccu', 'ccu': 'ccu',
+      'fju_psy': 'fju', 'clinical': 'fju', 'fujen': 'fju', 'fju': 'fju',
+      'uoft': 'toronto', 'pearson': 'toronto', 'canada': 'toronto', 'toronto': 'toronto',
+      'chenggong': 'ncku', 'ncku': 'ncku',
+      'ici': 'nccu', 'chengchi': 'nccu', 'nccu': 'nccu',
+      'sunyatsen': 'nsysu', 'social_innovation': 'nsysu', 'nsysu': 'nsysu',
+      'central': 'ncu', 'ncu': 'ncu',
+      'tsinghua': 'nthu', 'nthu': 'nthu',
+      'chiao': 'nycu', 'yangming': 'nycu', 'baichuan': 'nycu', 'nycu': 'nycu',
+      'taiwantech': 'ntust', 'ntust': 'ntust',
+      'donghwa': 'ndhu', 'valley': 'ndhu', 'ndhu': 'ndhu',
+      'chinan': 'ncnu', 'ncnu': 'ncnu',
+      'arts': 'ntua', 'ntua': 'ntua'
+    };
+
+    function applyPerspective(rawKey, updateUrl = true) {
+      const key = (aliasMap[String(rawKey).toLowerCase().trim()] || 'general');
+      const profile = targetProfiles[key] || targetProfiles['general'];
+
+      // 1. 頂部 Badge 與 SubHint
+      const badgeEl = document.getElementById('targetBadge');
+      if (badgeEl) badgeEl.innerHTML = profile.badge;
+      const subHintEl = document.getElementById('targetSubHint');
+      if (subHintEl) subHintEl.innerHTML = profile.subHint;
+
+      // 2. Hero 標語與格言
+      const subtagEl = document.getElementById('heroSubtag');
+      if (subtagEl) subtagEl.textContent = profile.subtag;
+      const mottoTextEl = document.getElementById('heroMottoText');
+      if (mottoTextEl) mottoTextEl.textContent = profile.motto;
+      const mottoAuthorEl = document.getElementById('heroMottoAuthor');
+      if (mottoAuthorEl) mottoAuthorEl.textContent = profile.mottoAuthor;
+
+      // 3. 專屬審查致詞卡 (Custom Note)
+      const noteEl = document.getElementById('targetCustomNote');
+      if (noteEl) {
+        if (profile.customNote) {
+          noteEl.innerHTML = profile.customNote;
+          noteEl.style.display = 'block';
+        } else {
+          noteEl.style.display = 'none';
+          noteEl.innerHTML = '';
+        }
+      }
+
+      // 4. 三大能力支柱 (Pillars)
+      if (profile.pillars && profile.pillars.length >= 3) {
+        for (let i = 0; i < 3; i++) {
+          const idx = i + 1;
+          const p = profile.pillars[i];
+          const iconEl = document.getElementById('pillar' + idx + 'Icon');
+          const titleEl = document.getElementById('pillar' + idx + 'Title');
+          const descEl = document.getElementById('pillar' + idx + 'Desc');
+          if (iconEl) iconEl.textContent = p.icon;
+          if (titleEl) titleEl.textContent = p.title;
+          if (descEl) descEl.textContent = p.desc;
+        }
+      }
+
+      // 5. 旗艦亮點標籤 & 筆記標籤 & 官方推薦標籤
+      const f1BadgeEl = document.getElementById('flagship1FocusBadge');
+      if (f1BadgeEl) f1BadgeEl.innerHTML = profile.flagship1Badge || '';
+      const f2BadgeEl = document.getElementById('flagship2FocusBadge');
+      if (f2BadgeEl) f2BadgeEl.innerHTML = profile.flagship2Badge || '';
+      const notesBadgeEl = document.getElementById('notesFocusBadge');
+      if (notesBadgeEl) notesBadgeEl.innerHTML = profile.notesBadge || '';
+      const pearsonBadgeEl = document.getElementById('metricPearsonFocusBadge');
+      if (pearsonBadgeEl) pearsonBadgeEl.innerHTML = profile.pearsonBadge || '';
+
+      // 6. 論文清冊標籤與送審代碼
+      const papersBadgeEl = document.getElementById('papersSectionBadge');
+      if (papersBadgeEl) papersBadgeEl.textContent = profile.papersSectionBadge;
+
+      for (let i = 1; i <= 4; i++) {
+        const cardBadgeEl = document.getElementById('paperCardBadge' + i);
+        if (cardBadgeEl && profile.paperCardBadges && profile.paperCardBadges[i - 1]) {
+          cardBadgeEl.textContent = profile.paperCardBadges[i - 1];
+        }
+        const focusBadgeEl = document.getElementById('paperFocusBadge' + i);
+        if (focusBadgeEl && profile.paperFocusBadges) {
+          focusBadgeEl.innerHTML = profile.paperFocusBadges[i - 1] || '';
+        }
+        const modalTopTagEl = document.getElementById('paperModalTopTag' + i);
+        if (modalTopTagEl && profile.paperModalTopTags && profile.paperModalTopTags[i - 1]) {
+          modalTopTagEl.textContent = profile.paperModalTopTags[i - 1];
+        }
+        const modalCodeTagEl = document.getElementById('paperModalCodeTag' + i);
+        if (modalCodeTagEl && profile.paperModalCodeTags && profile.paperModalCodeTags[i - 1]) {
+          modalCodeTagEl.textContent = profile.paperModalCodeTags[i - 1];
+        }
+      }
+
+      // 7. 同步三個切換器選單的值
+      const sel1 = document.getElementById('perspectiveSelect');
+      if (sel1 && sel1.value !== key) sel1.value = key;
+      const sel2 = document.getElementById('drawerPerspectiveSelect');
+      if (sel2 && sel2.value !== key) sel2.value = key;
+      const sel3 = document.getElementById('floatingPerspectiveSelect');
+      if (sel3 && sel3.value !== key) sel3.value = key;
+
+      // 8. 儲存至 localStorage
+      try {
+        localStorage.setItem('admissionTargetPerspective', key);
+      } catch (e) {}
+
+      // 9. 更新 URL (若要求)
+      if (updateUrl) {
+        const url = new URL(window.location.href);
+        if (key === 'general') {
+          url.searchParams.delete('target');
+          url.searchParams.delete('school');
+        } else {
+          url.searchParams.set('target', key);
+          url.searchParams.delete('school');
+        }
+        window.history.replaceState({ perspective: key }, '', url.toString());
+      }
+    }
+
+    function changeTargetPerspective(val) {
+      applyPerspective(val, true);
+    }
+
+    // 頁面初始化：依序讀取 URL 參數 -> localStorage -> 預設 general
+    function initTargetPerspective() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const targetParam = urlParams.get('target') || urlParams.get('school');
+      if (targetParam) {
+        applyPerspective(targetParam, false);
+      } else {
+        let saved = 'general';
+        try {
+          saved = localStorage.getItem('admissionTargetPerspective') || 'general';
+        } catch(e) {}
+        applyPerspective(saved, false);
+      }
+    }
+
+    // 監聽瀏覽器上一頁/下一頁
+    window.addEventListener('popstate', function(e) {
+      if (e.state && e.state.perspective) {
+        applyPerspective(e.state.perspective, false);
+      } else {
+        const urlParams = new URLSearchParams(window.location.search);
+        const targetParam = urlParams.get('target') || urlParams.get('school') || 'general';
+        applyPerspective(targetParam, false);
+      }
+    });
+
+    // 啟動初始化
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initTargetPerspective);
+    } else {
+      initTargetPerspective();
+    }
   </script>
 </body>
 </html>
