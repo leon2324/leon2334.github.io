@@ -736,7 +736,7 @@
       background: rgba(1, 68, 110, 0.32);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
-      z-index: 500;
+      z-index: 2500;
       display: none;
       align-items: flex-start;
       justify-content: center;
@@ -1082,7 +1082,7 @@
       background: rgba(1, 68, 110, 0.45);
       backdrop-filter: blur(6px);
       -webkit-backdrop-filter: blur(6px);
-      z-index: 600;
+      z-index: 2000;
       display: none;
       align-items: center;
       justify-content: center;
@@ -7972,13 +7972,6 @@ const Color main = Color.fromARGB(255, 155, 138, 122);</span></div>
 
   <!-- 互動腳本 (JS) -->
   <script>
-    // 頁面加載完成後，自動彈出「歡迎進場」視窗！
-    window.addEventListener('DOMContentLoaded', () => {
-      setTimeout(() => {
-        openModal('welcomeModal');
-      }, 150);
-    });
-
     // macOS Spotlight 開關邏輯
     function openSpotlight() {
       const overlay = document.getElementById("spotlightOverlay");
